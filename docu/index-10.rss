@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Kommentare zu: [Ankündigung] Wartungsarbeiten Free-Cloud und Webseite am 06.01.2019</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;p=8592&#038;lang=de" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu/?p=8592&#038;lang=de</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Mon, 07 Jan 2019 20:35:17 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>Von: eric2905</title>
+		<link>http://www.iobroker.net/docu/?p=8592&#038;lang=de#comment-496</link>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+		<pubDate>Mon, 07 Jan 2019 20:35:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8592#comment-496</guid>
+		<description><![CDATA[Hallo,
+
+in der Meldung ist ein Link angegeben - und dort sind alle Infos hinterlegt.
+Bitte lesen (Posting #9 ist das ausschlaggebende : &lt;a href=&quot;https://forum.iobroker.net/viewtopic.php?p=214965#p214965&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;Link&lt;/a&gt;)
+
+Gruß,
+eric2905]]></description>
+		<content:encoded><![CDATA[<p>Hallo,</p>
+<p>in der Meldung ist ein Link angegeben &#8211; und dort sind alle Infos hinterlegt.<br />
+Bitte lesen (Posting #9 ist das ausschlaggebende : <a href="https://forum.iobroker.net/viewtopic.php?p=214965#p214965" target="_blank" rel="nofollow">Link</a>)</p>
+<p>Gruß,<br />
+eric2905</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: Jörg Metzen</title>
+		<link>http://www.iobroker.net/docu/?p=8592&#038;lang=de#comment-495</link>
+		<dc:creator><![CDATA[Jörg Metzen]]></dc:creator>
+		<pubDate>Mon, 07 Jan 2019 20:25:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8592#comment-495</guid>
+		<description><![CDATA[Hallo Zusammen,
+
+seit den Wartungsarbeiten kann ich die AlexaApp nicht mehr verknüpfen.
+
+Dauern die Wartungsarbeiten noch an?
+
+Gruß JM]]></description>
+		<content:encoded><![CDATA[<p>Hallo Zusammen,</p>
+<p>seit den Wartungsarbeiten kann ich die AlexaApp nicht mehr verknüpfen.</p>
+<p>Dauern die Wartungsarbeiten noch an?</p>
+<p>Gruß JM</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

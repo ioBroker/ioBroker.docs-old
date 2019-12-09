@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Kommentare zu: Wartungsarbeiten iobroker.pro am 08.12.2018</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;p=8398&#038;lang=de" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu/?p=8398&#038;lang=de</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Mon, 07 Jan 2019 20:35:17 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>Von: eric2905</title>
+		<link>http://www.iobroker.net/docu/?p=8398&#038;lang=de#comment-475</link>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+		<pubDate>Tue, 11 Dec 2018 23:10:43 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8398#comment-475</guid>
+		<description><![CDATA[Die Wartungsarbeiten sind noch in derselben Nacht beendet worden.
+Bitte hier, in den News, keine Fragen stellen - dafür ist das Forum da und dort wurde auch über den Umfang und das Ende der Arbeiten berichtet sowie evtl. daraus resultierende Probleme diskutiert, usw.
+Dies ist ist ausschließlich ein Kanal, um News zu publizieren.]]></description>
+		<content:encoded><![CDATA[<p>Die Wartungsarbeiten sind noch in derselben Nacht beendet worden.<br />
+Bitte hier, in den News, keine Fragen stellen &#8211; dafür ist das Forum da und dort wurde auch über den Umfang und das Ende der Arbeiten berichtet sowie evtl. daraus resultierende Probleme diskutiert, usw.<br />
+Dies ist ist ausschließlich ein Kanal, um News zu publizieren.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: Rainer</title>
+		<link>http://www.iobroker.net/docu/?p=8398&#038;lang=de#comment-474</link>
+		<dc:creator><![CDATA[Rainer]]></dc:creator>
+		<pubDate>Tue, 11 Dec 2018 19:18:34 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8398#comment-474</guid>
+		<description><![CDATA[seit dem 6.12. kann ich den cloudadapter pro nicht mehr starten und somit besteht auch die ALEXA anbindung
+nicht mehr. Liegt das an den Wartungsarbeiten????]]></description>
+		<content:encoded><![CDATA[<p>seit dem 6.12. kann ich den cloudadapter pro nicht mehr starten und somit besteht auch die ALEXA anbindung<br />
+nicht mehr. Liegt das an den Wartungsarbeiten????</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: Jörg Grobe</title>
+		<link>http://www.iobroker.net/docu/?p=8398&#038;lang=de#comment-473</link>
+		<dc:creator><![CDATA[Jörg Grobe]]></dc:creator>
+		<pubDate>Tue, 11 Dec 2018 13:02:01 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8398#comment-473</guid>
+		<description><![CDATA[Hallo ioBroker Team,
+sind die Wartungsarbeiten beendet? Mein Cloudadapter verbindet sich nicht mehr.
+
+MfG
+Jörg Grobe]]></description>
+		<content:encoded><![CDATA[<p>Hallo ioBroker Team,<br />
+sind die Wartungsarbeiten beendet? Mein Cloudadapter verbindet sich nicht mehr.</p>
+<p>MfG<br />
+Jörg Grobe</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

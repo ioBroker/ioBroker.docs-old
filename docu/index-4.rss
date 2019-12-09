@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ioBroker</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;lang=ru" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Sun, 26 May 2019 12:07:21 +0000</lastBuildDate>
+	<language>ru-RU</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>[внимание] Forum Umstellung am 09.02.2019</title>
+		<link>http://www.iobroker.net/docu/?p=8887&#038;lang=ru</link>
+		<comments>http://www.iobroker.net/docu/?p=8887&#038;lang=ru#respond</comments>
+		<pubDate>Sat, 09 Feb 2019 15:24:53 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Новости]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8887</guid>
+		<description><![CDATA[Здравствуйте уважаемые форумчане, Объявленный переезд форума состоится в субботу 9 февраля с 18:00. Пароли пользователей не перенимаются. По этой причине, пожалуйста, используйте функцию забытого пароля после того как переезд закончится. Пожалуйста, проверьте сейчас, что у вас прописан правильный адрес электронной<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8887&#038;lang=ru">Читать дальше <span class="screen-reader-text"><b><span style="color: #ff0000;">[внимание] Forum Umstellung am 09.02.2019</span></b></span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Здравствуйте уважаемые форумчане,</p>
+<p>Объявленный переезд форума состоится в субботу 9 февраля с 18:00. Пароли пользователей не перенимаются. По этой причине, пожалуйста, используйте функцию забытого пароля после того как переезд закончится.</p>
+<p><strong class="text-strong">Пожалуйста, проверьте сейчас, что у вас прописан правильный адрес электронной почты в вашем профиле! </strong></p>
+<p>Ваша команда ioBroker</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8887</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>* Работа по техническому обслуживанию в облаке 22 декабря 22:00 CET</title>
+		<link>http://www.iobroker.net/docu/?p=8467&#038;lang=ru</link>
+		<comments>http://www.iobroker.net/docu/?p=8467&#038;lang=ru#respond</comments>
+		<pubDate>Wed, 19 Dec 2018 14:44:17 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Новости]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8467</guid>
+		<description><![CDATA[Работы по техническому обслуживанию будут проводиться на облаке в субботу, 22 декабря, 2018 в 22:00. Это займет не более одного часа, если все складки значительно короче. Ваши системы будут автоматически повторно подключаться. На данный момент, на услугу, в том числе<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8467&#038;lang=ru">Читать дальше <span class="screen-reader-text"><b>* Работа по техническому обслуживанию в облаке 22 декабря 22:00 CET</b></span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Работы по техническому обслуживанию будут проводиться на облаке в субботу, 22 декабря, 2018 в 22:00.<br />
+Это займет не более одного часа, если все складки значительно короче.</p>
+<p>Ваши системы будут автоматически повторно подключаться.</p>
+<p>На данный момент, на услугу, в том числе Alexa, не будет доступна.</p>
+<p>Приносим извинения за причиненные неудобства.</p>
+<p>Эта работа служит гарантией непрерывности наших профессиональных услуг.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8467</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Homematic Все в One имидж с ioBroker и piVCCU для TINKERBOARD в распоряжении</title>
+		<link>http://www.iobroker.net/docu/?p=7658&#038;lang=ru</link>
+		<comments>http://www.iobroker.net/docu/?p=7658&#038;lang=ru#respond</comments>
+		<pubDate>Mon, 27 Nov 2017 11:50:23 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Новости]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7658</guid>
+		<description><![CDATA[В области загрузки имидж находится для Asus Tinkerboard с Homematic модуль радио, который содержит наряду с ioBroker также pivCCU при поддержке HM-IP. Область загрузки]]></description>
+				<content:encoded><![CDATA[<p>В <a href="http://www.iobroker.net/docu/?page_id=2563&amp;lang=de">области загрузки</a> имидж находится для Asus Tinkerboard с Homematic модуль радио, который содержит наряду с ioBroker также pivCCU при поддержке HM-IP. Область загрузки</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=7658</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Новый Windows установщик 0.8.0</title>
+		<link>http://www.iobroker.net/docu/?p=5281&#038;lang=ru</link>
+		<comments>http://www.iobroker.net/docu/?p=5281&#038;lang=ru#respond</comments>
+		<pubDate>Mon, 12 Sep 2016 20:54:17 +0000</pubDate>
+		<dc:creator><![CDATA[Bluefox]]></dc:creator>
+				<category><![CDATA[Новости]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/?p=5281</guid>
+		<description><![CDATA[Обновлен node.js до 4.5.0]]></description>
+				<content:encoded><![CDATA[<p>Обновлен node.js до 4.5.0</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=5281</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Telegram и text2command теперь с описанием тоже</title>
+		<link>http://www.iobroker.net/docu/?p=4776&#038;lang=ru</link>
+		<comments>http://www.iobroker.net/docu/?p=4776&#038;lang=ru#respond</comments>
+		<pubDate>Tue, 21 Jun 2016 09:30:04 +0000</pubDate>
+		<dc:creator><![CDATA[Bluefox]]></dc:creator>
+				<category><![CDATA[Новости]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/?p=4776</guid>
+		<description><![CDATA[Описание можно посмотреть здесь и здесь.]]></description>
+				<content:encoded><![CDATA[<p>Описание можно посмотреть <a href="?page_id=4492&#038;lang=ru">здесь</a><br />
+и <a href="?page_id=4459&#038;lang=ru">здесь</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=4776</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Появилось отличное описание sayit</title>
+		<link>http://www.iobroker.net/docu/?p=4450&#038;lang=ru</link>
+		<comments>http://www.iobroker.net/docu/?p=4450&#038;lang=ru#respond</comments>
+		<pubDate>Mon, 30 May 2016 08:53:32 +0000</pubDate>
+		<dc:creator><![CDATA[Bluefox]]></dc:creator>
+				<category><![CDATA[Новости]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/?p=4450</guid>
+		<description><![CDATA[Статью можно найти здесь.]]></description>
+				<content:encoded><![CDATA[<p>Статью можно найти <a href="?page_id=4262&amp;lang=ru">здесь</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=4450</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Написана статья про SQL Драйвер</title>
+		<link>http://www.iobroker.net/docu/?p=4110&#038;lang=ru</link>
+		<comments>http://www.iobroker.net/docu/?p=4110&#038;lang=ru#respond</comments>
+		<pubDate>Wed, 18 May 2016 19:41:58 +0000</pubDate>
+		<dc:creator><![CDATA[Bluefox]]></dc:creator>
+				<category><![CDATA[Новости]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/?p=4110</guid>
+		<description><![CDATA[Посмотреть можно здесь.]]></description>
+				<content:encoded><![CDATA[<p>Посмотреть можно <a href="?page_id=4044&#038;lang=ru">здесь</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=4110</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Переведена статья об Admin</title>
+		<link>http://www.iobroker.net/docu/?p=3909&#038;lang=ru</link>
+		<comments>http://www.iobroker.net/docu/?p=3909&#038;lang=ru#respond</comments>
+		<pubDate>Thu, 12 May 2016 21:35:51 +0000</pubDate>
+		<dc:creator><![CDATA[Bluefox]]></dc:creator>
+				<category><![CDATA[Новости]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/?p=3909</guid>
+		<description><![CDATA[Перевод можно посмотреть здесь.]]></description>
+				<content:encoded><![CDATA[<p>Перевод можно посмотреть <a href="?page_id=3800&#038;lang=ru">здесь</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=3909</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Windows Install для 32х битных систем.</title>
+		<link>http://www.iobroker.net/docu/?p=3108&#038;lang=ru</link>
+		<comments>http://www.iobroker.net/docu/?p=3108&#038;lang=ru#comments</comments>
+		<pubDate>Thu, 10 Mar 2016 12:22:50 +0000</pubDate>
+		<dc:creator><![CDATA[Bluefox]]></dc:creator>
+				<category><![CDATA[Новости]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/?p=3108</guid>
+		<description><![CDATA[Обновился установщик для Windows. Поддерживаются 32х и 64х битные системы. Установка производится по умолчанию в C:/ioBroker, что бы избежать проблем с правами администратора.]]></description>
+				<content:encoded><![CDATA[<p>Обновился установщик для Windows. Поддерживаются 32х и 64х битные системы.<br />
+Установка производится по умолчанию в C:/ioBroker, что бы избежать проблем с правами администратора.<br />
+<a href="http://www.iobroker.net/docu/?ddownload=2614" title="Download" rel="nofollow" class="ddownload-button button-blue id-2614 ext-exe">Download</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=3108</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

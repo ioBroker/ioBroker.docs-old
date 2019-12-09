@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Feedback &#8211; ioBroker</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;tag=feedback&#038;lang=de" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Sun, 26 May 2019 12:07:21 +0000</lastBuildDate>
+	<language>de-DE</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>Unsere neue Seite ist Online</title>
+		<link>http://www.iobroker.net/docu/?p=2645&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=2645&#038;lang=de#respond</comments>
+		<pubDate>Fri, 26 Feb 2016 19:24:26 +0000</pubDate>
+		<dc:creator><![CDATA[Michael]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+		<category><![CDATA[Feedback]]></category>
+		<category><![CDATA[Homepage]]></category>
+		<category><![CDATA[Layout]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/?p=2645</guid>
+		<description><![CDATA[&#160; In den letzten Tagen haben wir viel im Hintergrund gearbeitet und iobroker.net auf das neue Layout umgestellt. In den nächsten Schritten sollen nun alle Seiten mit Inhalt gefüllt werden. Unser Ziel ist es, dass alle wichtigen Informationen und Links<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=2645&#038;lang=de">Weiterlesen <span class="screen-reader-text">Unsere neue Seite ist Online</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>&nbsp;</p>
+<p>In den letzten Tagen haben wir viel im Hintergrund gearbeitet und iobroker.net auf das neue Layout umgestellt.</p>
+<p>In den nächsten Schritten sollen nun alle Seiten mit Inhalt gefüllt werden. Unser Ziel ist es, dass alle wichtigen Informationen und Links hier direkt zu finden sind.</p>
+<p>Über Feedback, Wünsche, Ideen und Anregungen würden wir uns freuen.</p>
+<p>Nutzt hierzu bitte einfach die Kommentarfunktion ganz unten.</p>
+<p>An der einen oder anderen Stelle funktioniert ein Link vielleicht noch nicht richtig, auch sind noch nicht alle Inhalt vollständig übertragen und erfasst, aber wir arbeiten jeden Tag ein wenig weiter.</p>
+<p>Habt ihr noch interessante Infos für uns, die wir hier veröffentlichen sollen? Dann würden wir uns auch über eine <a href="wp-content/uploads/icon_link.png" rel="attachment wp-att-2342"><img class="alignnone size-full wp-image-2342" src="wp-content/uploads/icon_link.png" alt="icon_link" width="16" height="16" /></a><a href="?page_id=2208&amp;lang=de">Info</a> freuen.</p>
+<p>Wir suchen <a href="wp-content/uploads/icon_link.png" rel="attachment wp-att-2342"><img class="alignnone size-full wp-image-2342" src="wp-content/uploads/icon_link.png" alt="icon_link" width="16" height="16" /></a><a href="?page_id=2392&amp;lang=de">Tipps und Tricks</a>, gute <a href="wp-content/uploads/icon_link.png" rel="attachment wp-att-2342"><img class="alignnone size-full wp-image-2342" src="wp-content/uploads/icon_link.png" alt="icon_link" width="16" height="16" /></a><a href="?page_id=2786&amp;lang=de">Codeschnipsel</a> oder Fragen und Antworten für unsere <a href="wp-content/uploads/icon_link.png" rel="attachment wp-att-2342"><img class="alignnone size-full wp-image-2342" src="wp-content/uploads/icon_link.png" alt="icon_link" width="16" height="16" /></a><a href="?page_id=2380&amp;lang=de">FAQ </a>Liste.</p>
+<p>Du bist ein Entwickler eines Adapters und möchtest, dass auf der Seite deines <a href="wp-content/uploads/icon_link.png" rel="attachment wp-att-2342"><img class="alignnone size-full wp-image-2342" src="wp-content/uploads/icon_link.png" alt="icon_link" width="16" height="16" /></a><a href="?page_id=2236&amp;lang=de">Adapters</a> weitere Inhalte veröffentlich werden sollen? Auch in diesem Fall freuen wir uns über deine <a href="wp-content/uploads/icon_link.png" rel="attachment wp-att-2342"><img class="alignnone size-full wp-image-2342" src="wp-content/uploads/icon_link.png" alt="icon_link" width="16" height="16" /></a><a href="?page_id=2208&amp;lang=de">Nachricht</a>.</p>
+<p>Viel Spaß auf den neuen Seiten</p>
+<p>Das</p>
+<p><strong>ioBroker Team</strong></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=2645</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

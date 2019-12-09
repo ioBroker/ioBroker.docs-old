@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Kommentare zu: Neues Layout bei Admin</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;p=2882&#038;lang=de" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu/?p=2882&#038;lang=de</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Mon, 07 Jan 2019 20:35:17 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>Von: eric2905</title>
+		<link>http://www.iobroker.net/docu/?p=2882&#038;lang=de#comment-9</link>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+		<pubDate>Sun, 28 Feb 2016 15:46:56 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/?p=2882#comment-9</guid>
+		<description><![CDATA[Kommando zurück ... hab&#039;s gefunden.
+Man muss auf das Icon/Symbol klicken, dann klappt auch :-)]]></description>
+		<content:encoded><![CDATA[<p>Kommando zurück &#8230; hab&#8217;s gefunden.<br />
+Man muss auf das Icon/Symbol klicken, dann klappt auch 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: eric2905</title>
+		<link>http://www.iobroker.net/docu/?p=2882&#038;lang=de#comment-8</link>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+		<pubDate>Sun, 28 Feb 2016 15:43:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/?p=2882#comment-8</guid>
+		<description><![CDATA[Installation erfolgreich durchgelaufen - sieht gut aus, aber ...
+Man kann aus dem Instanzen-Reiter die gewohnten Webseiten (Songs, Flot, usw.) nicht mehr aufrufen - die Links sind weg.]]></description>
+		<content:encoded><![CDATA[<p>Installation erfolgreich durchgelaufen &#8211; sieht gut aus, aber &#8230;<br />
+Man kann aus dem Instanzen-Reiter die gewohnten Webseiten (Songs, Flot, usw.) nicht mehr aufrufen &#8211; die Links sind weg.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: Tom</title>
+		<link>http://www.iobroker.net/docu/?p=2882&#038;lang=de#comment-7</link>
+		<dc:creator><![CDATA[Tom]]></dc:creator>
+		<pubDate>Sun, 28 Feb 2016 12:04:19 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/?p=2882#comment-7</guid>
+		<description><![CDATA[Hallo akamia,
+
+bei der Installation trat folgender Fehler auf
+
+npm WARN enoent ENOENT: no such file or directory, open &#039;/opt/iobroker/package.json&#039;
+npm WARN iobroker No description
+npm WARN iobroker No repository field.
+npm WARN iobroker No README data
+
+ jedoch funktioniert das neue Admin-Layout und macht sich sehr gut!
+
+Grüße
+Tom]]></description>
+		<content:encoded><![CDATA[<p>Hallo akamia,</p>
+<p>bei der Installation trat folgender Fehler auf</p>
+<p>npm WARN enoent ENOENT: no such file or directory, open &#8216;/opt/iobroker/package.json&#8217;<br />
+npm WARN iobroker No description<br />
+npm WARN iobroker No repository field.<br />
+npm WARN iobroker No README data</p>
+<p> jedoch funktioniert das neue Admin-Layout und macht sich sehr gut!</p>
+<p>Grüße<br />
+Tom</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: Tom</title>
+		<link>http://www.iobroker.net/docu/?p=2882&#038;lang=de#comment-6</link>
+		<dc:creator><![CDATA[Tom]]></dc:creator>
+		<pubDate>Sun, 28 Feb 2016 11:47:56 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/?p=2882#comment-6</guid>
+		<description><![CDATA[Vielen Dank, wird sofort getestet!]]></description>
+		<content:encoded><![CDATA[<p>Vielen Dank, wird sofort getestet!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: akamia</title>
+		<link>http://www.iobroker.net/docu/?p=2882&#038;lang=de#comment-5</link>
+		<dc:creator><![CDATA[akamia]]></dc:creator>
+		<pubDate>Sat, 27 Feb 2016 20:06:01 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/?p=2882#comment-5</guid>
+		<description><![CDATA[npm install https://github.com/ioBroker/ioBroker.admin/tarball/master]]></description>
+		<content:encoded><![CDATA[<p>npm install <a href="https://github.com/ioBroker/ioBroker.admin/tarball/master" rel="nofollow">https://github.com/ioBroker/ioBroker.admin/tarball/master</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: eric2905</title>
+		<link>http://www.iobroker.net/docu/?p=2882&#038;lang=de#comment-4</link>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+		<pubDate>Sat, 27 Feb 2016 14:40:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/?p=2882#comment-4</guid>
+		<description><![CDATA[Ich stelle ich auch als Tester zur Verfügung.]]></description>
+		<content:encoded><![CDATA[<p>Ich stelle ich auch als Tester zur Verfügung.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: Tom</title>
+		<link>http://www.iobroker.net/docu/?p=2882&#038;lang=de#comment-3</link>
+		<dc:creator><![CDATA[Tom]]></dc:creator>
+		<pubDate>Sat, 27 Feb 2016 12:36:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/?p=2882#comment-3</guid>
+		<description><![CDATA[Klasse! 
+Wie kann ich das neue AdminFrontEnd mal testen?]]></description>
+		<content:encoded><![CDATA[<p>Klasse!<br />
+Wie kann ich das neue AdminFrontEnd mal testen?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="en-GB">
+<![endif]-->
+<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="en-GB">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en-GB"><!--<![endif]-->
+	<head>
+				<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"> 
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.iobroker.net/docu/xmlrpc.php">
+		
+		<title>Development &#8211; ioBroker</title>
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Feed" href="index-2.rss?feed=rss2&#038;lang=en">
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Comments Feed" href="index-3.rss?feed=comments-rss2&#038;lang=en">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.iobroker.net\/docu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css' href='wp-content\plugins\crayon-syntax-highlighter\css\min\crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content\plugins\contact-form-7\includes\css\styles.css?ver=4.9.2' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-public.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-gdpr-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-gdpr.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='dedo-css-css' href='wp-content\plugins\delightful-downloads\assets\css\delightful-downloads.min.css?ver=1.6.6' type='text/css' media='all'>
+<link rel='stylesheet' id='mbpro-font-awesome-css' href='wp-content\plugins\maxbuttons\assets\libraries\font-awesome\css\font-awesome.min.css?ver=6.28' type='text/css' media='all'>
+<link rel='stylesheet' id='page-list-style-css' href='wp-content\plugins\page-list\css\page-list.css?ver=5.1' type='text/css' media='all'>
+<link rel='stylesheet' id='pc_google_analytics-frontend-css' href='http://www.iobroker.net/docu/wp-content/plugins/pc-google-analytics/assets/css/frontend.css?ver=1.0.0' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-css' href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' type='text/css' media='screen'>
+<link rel='stylesheet' id='toc-screen-css' href='wp-content\plugins\table-of-contents-plus\screen.min.css?ver=1509' type='text/css' media='all'>
+<link rel='stylesheet' id='parent-style-css' href='wp-content\themes\responsive-mobile\style.css?ver=4.7.5' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-style-css' href='wp-content\themes\responsive-mobile\css\style.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-child-style-css' href='wp-content\themes\responsive-mobile_child\style.css?ver=1.0' type='text/css' media='all'>
+<link rel='stylesheet' id='recent-posts-widget-with-thumbnails-public-style-css' href='wp-content\plugins\recent-posts-widget-with-thumbnails\public.css?ver=6.5.0' type='text/css' media='all'>
+<link rel='stylesheet' id='cleverness_todo_list_frontend-css' href='wp-content\plugins\cleverness-to-do-list\css\cleverness-to-do-list-frontend.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='jquery.ui.theme-css' href='wp-content\plugins\cleverness-to-do-list\css\jquery-ui-fresh.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='tablepress-default-css' href='wp-content\tablepress-combined.min.css?ver=128' type='text/css' media='all'>
+<link rel='stylesheet' id='bootstrap-css' href='wp-content\themes\responsive-mobile\libraries\bootstrap\css\bootstrap.min.css?ver=4.7.5' type='text/css' media='all'>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\crayon-syntax-highlighter\js\min\crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[]};
+var log_object = {"ajax_url":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\cookie-law-info\public\js\cookie-law-info-public.js?ver=1.7.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mb_ajax = {"ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\maxbuttons\js\min\front.js?ver=6.28'></script>
+<script type='text/javascript' src='wp-content\plugins\pc-google-analytics\assets\js\frontend.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\libraries\bootstrap\js\bootstrap.min.js?ver=4.7.5'></script>
+<link rel='https://api.w.org/' href='index.json?rest_route=/'>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.xml?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes\wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.7.5">
+<link rel="canonical" href="index-100.htm?page_id=2674&#038;lang=en">
+<link rel='shortlink' href='http://www.iobroker.net/docu/?p=2674'>
+<link rel="alternate" type="application/json+oembed" href="index-98.json?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D2674%26lang%3Den">
+<link rel="alternate" type="text/xml+oembed" href="index-97.xml?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D2674%26lang%3Den&#038;format=xml">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-86900958-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+
+<style>
+.scroll-back-to-top-wrapper {
+    position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #777777;
+	color: #eeeeee;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-back-to-top-wrapper:hover {
+	background-color: #888888;
+  color: #eeeeee;
+}
+.scroll-back-to-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-back-to-top-wrapper i.fa {
+	line-height: inherit;
+}
+.scroll-back-to-top-wrapper .fa-lg {
+	vertical-align: 0;
+}
+</style><!-- Analytics by WP-Statistics v12.6 - https://wp-statistics.com/ -->
+<link rel="alternate" href="index-11.htm?page_id=2281&#038;lang=de" hreflang="de">
+<link rel="alternate" href="index-100.htm?page_id=2674&#038;lang=en" hreflang="en">
+<link rel="alternate" href="index-152.htm?page_id=2653&#038;lang=ru" hreflang="ru">
+		<script type="text/javascript">
+			var cli_flush_cache=1;
+		</script>
+				<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+.site-content .content-area{
+	/*background: #6592c9;*/
+}		</style>
+	<style type="text/css">
+.paypal-donations { text-align: center !important }
+</style>
+	</head>
+
+<body class="page-template-default page page-id-2674 page-child parent-pageid-2366 group-blog default" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="container" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+	<a class="skip-link screen-reader-text" href="#main-navigation">Skip to main menu</a>
+	<div id="top-menu-container" class="container-full-width">
+		<nav id="top-menu" class="container" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+			<ul id="menu-2016_top_menue" class="top-menu"><li id="menu-item-2203-de" class="lang-item lang-item-4 lang-item-de lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-de"><a href="index-11.htm?page_id=2281&#038;lang=de" hreflang="de-DE" lang="de-DE">Deutsch</a></li>
+<li id="menu-item-2203-en" class="lang-item lang-item-7 lang-item-en current-lang menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-en"><a href="index-100.htm?page_id=2674&#038;lang=en" hreflang="en-GB" lang="en-GB">English</a></li>
+<li id="menu-item-2203-ru" class="lang-item lang-item-20 lang-item-ru menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-ru"><a href="index-152.htm?page_id=2653&#038;lang=ru" hreflang="ru-RU" lang="ru-RU">Русский</a></li>
+</ul>		</nav>
+	</div><!-- top menu container -->
+        <div id="header_section">
+	<header id="header" class="container-full-width site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+				<div class="container">
+			<div class="header-row">
+				<div id="site-branding">
+							<div id="logo">
+			<a href="index-1.htm?lang=en" rel="home" itemprop="url" title="ioBroker">
+				<img src="wp-content\uploads\ioBroker_logo_lang-e1456684383484.png" alt="ioBroker" itemprop="image">
+			</a>
+		</div>
+					</div>
+				<div id="secondary-header">
+					
+	<div id="top-widget" class="top-widget" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+			<div id="search-2" class="responsive-mobile-top-widget widget_search"><form role="search" method="get" class="search-form" action="http://www.iobroker.net/docu/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			<input type="hidden" name="lang" value="en"></form></div>
+			</div><!-- end of #top-widget -->
+				</div>
+			</div>
+		</div>
+
+			</header><!-- #header -->
+
+	<div id="main-menu-container" class="container-full-width">
+		<div id="main-menu" class="container">
+			<nav id="main-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<div id="mobile-current-item">Menu</div>
+				<button id="mobile-nav-button"><span class="accessibile-label">Mobile menu toggle</span></button>
+				<div class="main-nav"><ul id="menu-2016_kopfzeile_en" class="menu"><li id="menu-item-2685" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2685"><a href="..\index-2.htm?lang=en">Start page</a></li>
+<li id="menu-item-2680" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2680"><a href="index-66.htm?page_id=2620&#038;lang=en">News</a></li>
+<li id="menu-item-2634" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2634"><a href="index-67.htm?page_id=2632&#038;lang=en">Installation</a>
+<ul class="sub-menu">
+	<li id="menu-item-5098" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5098"><a href="index-68.htm?page_id=5090&#038;lang=en">Raspberry (JESSIE) – fast install</a></li>
+	<li id="menu-item-5121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5121"><a href="index-69.htm?page_id=5111&#038;lang=en">Pine64 (JESSIE) – fast install</a></li>
+	<li id="menu-item-4922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4922"><a href="index-70.htm?page_id=4919&#038;lang=en">Video</a></li>
+	<li id="menu-item-5351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5351"><a href="index-71.htm?page_id=5347&#038;lang=en">How to install node.js on linux</a></li>
+	<li id="menu-item-5647" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5647"><a href="index-72.htm?page_id=5639&#038;lang=en">Shot instruction for Debian</a></li>
+	<li id="menu-item-5805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5805"><a href="index-73.htm?page_id=5799&#038;lang=en">Install node.js on PogoPlug</a></li>
+</ul>
+</li>
+<li id="menu-item-2681" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2681"><a href="index-74.htm?page_id=2573&#038;lang=en">Adapters</a>
+<ul class="sub-menu">
+	<li id="menu-item-4549" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4549"><a href="index-75.htm?page_id=4541&#038;lang=en">Common</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4198"><a href="index-76.htm?page_id=4179&#038;lang=en">Driver Admin</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4792" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4792"><a href="index-77.htm?page_id=4787&#038;lang=en">Media</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4795" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4795"><a href="index-78.htm?page_id=4713&#038;lang=en">Adapter sayIt</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4793" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4793"><a href="index-79.htm?page_id=4784&#038;lang=en">Scripts and logic</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4794" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4794"><a href="index-80.htm?page_id=4711&#038;lang=en">Adapter text2command</a></li>
+		<li id="menu-item-6775" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6775"><a href="index-81.htm?page_id=5809&#038;lang=en">Javascript</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4550"><a href="index-82.htm?page_id=4538&#038;lang=en">Storage</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4551"><a href="index-83.htm?page_id=4531&#038;lang=en">Adapter History</a></li>
+		<li id="menu-item-5297" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5297"><a href="index-84.htm?page_id=5289&#038;lang=en">Adapter Pushsafer</a></li>
+		<li id="menu-item-4197" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4197"><a href="index-85.htm?page_id=4184&#038;lang=en">Adapter SQL</a></li>
+	</ul>
+</li>
+	<li id="menu-item-5300" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5300"><a href="index-86.htm?page_id=5298&#038;lang=en">Communication</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5301"><a href="index-84.htm?page_id=5289&#038;lang=en">Adapter Pushsafer</a></li>
+		<li id="menu-item-6776" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6776"><a href="index-87.htm?page_id=6624&#038;lang=en">Adapter Telegram</a></li>
+		<li id="menu-item-6777" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6777"><a href="index-88.htm?page_id=6435&#038;lang=en">Adapter MQTT</a></li>
+	</ul>
+</li>
+	<li id="menu-item-6878" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6878"><a href="index-89.htm?page_id=2578&#038;lang=en">Hardware</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6879"><a href="index-90.htm?page_id=2575&#038;lang=en">Siemens SIMATIC S7</a></li>
+		<li id="menu-item-6880" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6880"><a href="index-91.htm?page_id=4188&#038;lang=en">RFLink</a></li>
+	</ul>
+</li>
+	<li id="menu-item-5043" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5043"><a href="index-92.htm?page_id=5038&#038;lang=en">Adapter category VIS</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5034" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5034"><a href="index-37.htm?page_id=5026&#038;lang=de">ioBroker.vis App</a></li>
+	</ul>
+</li>
+	<li id="menu-item-5827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5827"><a href="index-93.htm?page_id=5823&#038;lang=en">Visualisation</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5828" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5828"><a href="index-94.htm?page_id=5816&#038;lang=en">Adapter Flot</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-2682" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2682"><a href="index-95.htm?page_id=2622&#038;lang=en">Downloads</a>
+<ul class="sub-menu">
+	<li id="menu-item-5145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5145"><a href="index-96.htm?page_id=5139&#038;lang=en">Downloads for installation</a></li>
+</ul>
+</li>
+<li id="menu-item-2683" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2683"><a href="index-97.htm?page_id=2676&#038;lang=en">Forum / Support</a>
+<ul class="sub-menu">
+	<li id="menu-item-3009" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3009"><a href="http://forum.iobroker.net">Forum</a></li>
+	<li id="menu-item-3987" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3987"><a href="index-98.htm?page_id=3971&#038;lang=de">Command line interface</a></li>
+	<li id="menu-item-5103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5103"><a href="index-99.htm?page_id=5100&#038;lang=en">ioBroker does not run any more</a></li>
+</ul>
+</li>
+<li id="menu-item-2684" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2674 current_page_item menu-item-2684"><a href="index-100.htm?page_id=2674&#038;lang=en">Development</a></li>
+</ul></div>			</nav><!-- #site-navigation -->
+		</div><!-- #main-menu -->
+	</div><!-- #main-menu-container -->
+	<div id="sub-menu-container" class="container-full-width">
+		<div id="sub-menu" class="container">
+			<nav id="sub-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						</nav><!-- #site-navigation -->
+		</div><!-- #sub-menu -->
+	</div><!-- #sub-menu-container -->
+        </div>
+	<div id="wrapper" class="site-content container-full-width">
+
+	<div id="content" class="content-area">
+			<main id="main" class="site-main" role="main">
+
+				<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#"><span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-1.htm?lang=en">Home</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-379.htm?page_id=2366&lang=en">Englisch</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb-current">Development</span></div>
+				
+					
+<article id="post-2674" class="post-2674 page type-page status-publish hentry">
+		
+	
+<header class="entry-header">
+	<h1 class="entry-title post-title">Development</h1>
+	</header><!-- .entry-header -->
+
+	<div class="post-entry">
+		<h1>Development</h1>
+				
+<footer class="post-data">
+	
+	<div class="entry-meta">
+			</div><!-- .entry-meta -->
+	</footer><!-- .post-data -->
+			</div><!-- .post-entry -->
+	</article><!-- #post-## -->
+
+					
+				
+			</main><!-- #main -->
+			
+<div id="widgets" class="widget-area default-sidebar" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+		<aside id="archives" class="widget-wrapper">
+			<h3 class="widget-title">In Archive</h3>
+			<ul>
+					<li><a href='index-388.htm?m=201902&#038;lang=en'>February 2019</a></li>
+	<li><a href='index-389.htm?m=201901&#038;lang=en'>January 2019</a></li>
+	<li><a href='index-390.htm?m=201812&#038;lang=en'>December 2018</a></li>
+	<li><a href='index-391.htm?m=201801&#038;lang=en'>January 2018</a></li>
+	<li><a href='index-392.htm?m=201712&#038;lang=en'>December 2017</a></li>
+	<li><a href='index-393.htm?m=201711&#038;lang=en'>November 2017</a></li>
+	<li><a href='index-394.htm?m=201710&#038;lang=en'>October 2017</a></li>
+	<li><a href='index-395.htm?m=201609&#038;lang=en'>September 2016</a></li>
+	<li><a href='index-396.htm?m=201603&#038;lang=en'>March 2016</a></li>
+			</ul>
+		</aside>
+
+		</div><!-- #default-sidebar -->
+	</div><!-- #primary -->
+
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+
+<footer id="footer" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div id="footer-wrapper">
+
+		<div id="footer-widgets-container">
+					</div><!-- #footer-widgets-container-->
+
+		<div id="menu-social-container">
+			<nav id="footer-menu-container">
+				<ul id="menu-2016_seitenfuss_en" class="footer-menu"><li id="menu-item-2219" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2219"><a href="index-106.htm?page_id=2216&#038;lang=en">Contact</a></li>
+<li id="menu-item-2533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2533"><a href="index-107.htm?page_id=2528&#038;lang=en">Imprint</a></li>
+<li id="menu-item-2534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2534"><a href="index-108.htm?page_id=2525&#038;lang=en">Privacy policy</a></li>
+<li id="menu-item-2535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2535"><a href="index-109.htm?page_id=2523&#038;lang=en">Sitemap (EN)</a></li>
+<li id="menu-item-2532" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2532"><a href="index-110.htm?page_id=2530&#038;lang=en">THX</a></li>
+</ul>			</nav><!-- #footer-menu -->
+			<div id="social-icons-container">
+				<ul class="social-icons"></ul><!-- .social-icons -->			</div><!-- #social-icons-container-->
+		</div><!-- #menu-social-container -->
+
+		
+		<div id="footer-base">
+			<div class="copyright">
+				&copy; 2019 <a href="index-1.htm?lang=en" title="ioBroker">ioBroker</a>			</div><!-- .copyright -->
+
+			<div class="powered">
+				<a href="http://cyberchimps.com/responsive-II/">Responsive II</a> powered by <a href="http://wordpress.org/">WordPress</a>			</div><!-- end .powered -->
+
+			<div class="scroll-top">
+				<a href="#scroll-top" title="scroll to top">&uarr;</a>
+			</div><!-- .scroll-top -->
+		</div><!-- #footer-base -->
+	</div><!-- #footer-wrapper -->
+	</footer><!-- #footer -->
+<div id="cookie-law-info-bar"><span>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.<a data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button" style="display:inline-block; ">Akzeptieren</a> <a href='..\index-1.htm?page_id=2305&#038;lang=de' id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link" style="display:inline-block;">mehr Infos</a></span></div><div id="cookie-law-info-again" style="display:none;"><span id="cookie_hdr_showagain">Privacy & Cookies Policy</span></div><div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  cli_cookiebar_settings='{"animate_speed_hide":"500","animate_speed_show":"500","background":"#fff","border":"#444","border_on":false,"button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"button_2_hidebar":true,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":true,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":false,"show_once":"10000","logging_on":false,"as_popup":false,"popup_overlay":true,"bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"}';
+  /* ]]> */
+</script><div class="scroll-back-to-top-wrapper">
+	<span class="scroll-back-to-top-inner">
+					<i class="fa fa-2x fa-arrow-circle-up"></i>
+			</span>
+</div><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\contact-form-7\includes\js\scripts.js?ver=4.9.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\scroll-back-to-top\assets\js\scroll-back-to-top.js'></script>
+<script type='text/javascript' src='wp-content\plugins\table-of-contents-plus\front.min.js?ver=1509'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\js\responsive-scripts.min.js?ver=1.2.5'></script>
+<script type='text/javascript' src='wp-includes\js\wp-embed.min.js?ver=4.7.5'></script>
+</body>
+</html>

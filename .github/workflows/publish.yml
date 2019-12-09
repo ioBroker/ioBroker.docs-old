@@ -1,0 +1,21 @@
+name: Publish
+
+on:
+  push
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+      - name: Copy files to web server
+        uses: appleboy/scp-action@v0.0.4
+        with:
+          host: ${{ secrets.WEB_HOST }}
+          username: ${{ secrets.WEB_USERNAME }}
+          password: ${{ secrets.WEB_PASSWORD }}
+          port: ${{ secrets.WEB_PORT }}
+          overwrite: true
+          source: "docu/**/*,docu/*"
+          target: "/opt/doc/front-end/"

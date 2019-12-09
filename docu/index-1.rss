@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Kommentare für ioBroker</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=comments-rss2&#038;lang=de" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Mon, 07 Jan 2019 20:35:17 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>Kommentar zu [Ankündigung] Wartungsarbeiten Free-Cloud und Webseite am 06.01.2019 von eric2905</title>
+		<link>http://www.iobroker.net/docu/?p=8592&#038;lang=de#comment-496</link>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+		<pubDate>Mon, 07 Jan 2019 20:35:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8592#comment-496</guid>
+		<description><![CDATA[Hallo,
+
+in der Meldung ist ein Link angegeben - und dort sind alle Infos hinterlegt.
+Bitte lesen (Posting #9 ist das ausschlaggebende : &lt;a href=&quot;https://forum.iobroker.net/viewtopic.php?p=214965#p214965&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;Link&lt;/a&gt;)
+
+Gruß,
+eric2905]]></description>
+		<content:encoded><![CDATA[<p>Hallo,</p>
+<p>in der Meldung ist ein Link angegeben &#8211; und dort sind alle Infos hinterlegt.<br />
+Bitte lesen (Posting #9 ist das ausschlaggebende : <a href="https://forum.iobroker.net/viewtopic.php?p=214965#p214965" target="_blank" rel="nofollow">Link</a>)</p>
+<p>Gruß,<br />
+eric2905</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Kommentar zu [Ankündigung] Wartungsarbeiten Free-Cloud und Webseite am 06.01.2019 von Jörg Metzen</title>
+		<link>http://www.iobroker.net/docu/?p=8592&#038;lang=de#comment-495</link>
+		<dc:creator><![CDATA[Jörg Metzen]]></dc:creator>
+		<pubDate>Mon, 07 Jan 2019 20:25:17 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8592#comment-495</guid>
+		<description><![CDATA[Hallo Zusammen,
+
+seit den Wartungsarbeiten kann ich die AlexaApp nicht mehr verknüpfen.
+
+Dauern die Wartungsarbeiten noch an?
+
+Gruß JM]]></description>
+		<content:encoded><![CDATA[<p>Hallo Zusammen,</p>
+<p>seit den Wartungsarbeiten kann ich die AlexaApp nicht mehr verknüpfen.</p>
+<p>Dauern die Wartungsarbeiten noch an?</p>
+<p>Gruß JM</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Kommentar zu Wartungsarbeiten iobroker.pro am 08.12.2018 von eric2905</title>
+		<link>http://www.iobroker.net/docu/?p=8398&#038;lang=de#comment-475</link>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+		<pubDate>Tue, 11 Dec 2018 23:10:43 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8398#comment-475</guid>
+		<description><![CDATA[Die Wartungsarbeiten sind noch in derselben Nacht beendet worden.
+Bitte hier, in den News, keine Fragen stellen - dafür ist das Forum da und dort wurde auch über den Umfang und das Ende der Arbeiten berichtet sowie evtl. daraus resultierende Probleme diskutiert, usw.
+Dies ist ist ausschließlich ein Kanal, um News zu publizieren.]]></description>
+		<content:encoded><![CDATA[<p>Die Wartungsarbeiten sind noch in derselben Nacht beendet worden.<br />
+Bitte hier, in den News, keine Fragen stellen &#8211; dafür ist das Forum da und dort wurde auch über den Umfang und das Ende der Arbeiten berichtet sowie evtl. daraus resultierende Probleme diskutiert, usw.<br />
+Dies ist ist ausschließlich ein Kanal, um News zu publizieren.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Kommentar zu Wartungsarbeiten iobroker.pro am 08.12.2018 von Rainer</title>
+		<link>http://www.iobroker.net/docu/?p=8398&#038;lang=de#comment-474</link>
+		<dc:creator><![CDATA[Rainer]]></dc:creator>
+		<pubDate>Tue, 11 Dec 2018 19:18:34 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8398#comment-474</guid>
+		<description><![CDATA[seit dem 6.12. kann ich den cloudadapter pro nicht mehr starten und somit besteht auch die ALEXA anbindung
+nicht mehr. Liegt das an den Wartungsarbeiten????]]></description>
+		<content:encoded><![CDATA[<p>seit dem 6.12. kann ich den cloudadapter pro nicht mehr starten und somit besteht auch die ALEXA anbindung<br />
+nicht mehr. Liegt das an den Wartungsarbeiten????</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Kommentar zu Wartungsarbeiten iobroker.pro am 08.12.2018 von Jörg Grobe</title>
+		<link>http://www.iobroker.net/docu/?p=8398&#038;lang=de#comment-473</link>
+		<dc:creator><![CDATA[Jörg Grobe]]></dc:creator>
+		<pubDate>Tue, 11 Dec 2018 13:02:01 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8398#comment-473</guid>
+		<description><![CDATA[Hallo ioBroker Team,
+sind die Wartungsarbeiten beendet? Mein Cloudadapter verbindet sich nicht mehr.
+
+MfG
+Jörg Grobe]]></description>
+		<content:encoded><![CDATA[<p>Hallo ioBroker Team,<br />
+sind die Wartungsarbeiten beendet? Mein Cloudadapter verbindet sich nicht mehr.</p>
+<p>MfG<br />
+Jörg Grobe</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Kommentar zu Homematic All-In-One Image für  Orange Pi+2e mit piVCCU verfügbar von Homoran</title>
+		<link>http://www.iobroker.net/docu/?p=7761&#038;lang=de#comment-445</link>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+		<pubDate>Fri, 06 Jul 2018 09:31:45 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7761#comment-445</guid>
+		<description><![CDATA[Bitte im Forum besprechen, mit Foto von deiner Platine - und ja, es ist mein OPi+ 2e]]></description>
+		<content:encoded><![CDATA[<p>Bitte im Forum besprechen, mit Foto von deiner Platine &#8211; und ja, es ist mein OPi+ 2e</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Kommentar zu Homematic All-In-One Image für  Orange Pi+2e mit piVCCU verfügbar von Sprite01</title>
+		<link>http://www.iobroker.net/docu/?p=7761&#038;lang=de#comment-444</link>
+		<dc:creator><![CDATA[Sprite01]]></dc:creator>
+		<pubDate>Fri, 06 Jul 2018 09:04:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7761#comment-444</guid>
+		<description><![CDATA[Ist das in der ReadMe angezeigte Bild wirklich ein Orange Pi+2e ?
+Mein Layout sieht anders als das im Bild dargestellte aus,
+von daher bin ich mir unsicher ob die dargestellte Bestückungsvariante des Funkmoduls 
+nun auch für das Orange Pi+2e passt.]]></description>
+		<content:encoded><![CDATA[<p>Ist das in der ReadMe angezeigte Bild wirklich ein Orange Pi+2e ?<br />
+Mein Layout sieht anders als das im Bild dargestellte aus,<br />
+von daher bin ich mir unsicher ob die dargestellte Bestückungsvariante des Funkmoduls<br />
+nun auch für das Orange Pi+2e passt.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Kommentar zu Aktuelles Image für Raspberry 2, 3 und 3B+ verfügbar von Dominic</title>
+		<link>http://www.iobroker.net/docu/?p=8045&#038;lang=de#comment-421</link>
+		<dc:creator><![CDATA[Dominic]]></dc:creator>
+		<pubDate>Thu, 03 May 2018 19:42:51 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8045#comment-421</guid>
+		<description><![CDATA[OK, das erklärts natürlich :)...
+Danke für die Info...]]></description>
+		<content:encoded><![CDATA[<p>OK, das erklärts natürlich :)&#8230;<br />
+Danke für die Info&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Kommentar zu Aktuelles Image für Raspberry 2, 3 und 3B+ verfügbar von Homoran</title>
+		<link>http://www.iobroker.net/docu/?p=8045&#038;lang=de#comment-420</link>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+		<pubDate>Mon, 30 Apr 2018 13:35:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8045#comment-420</guid>
+		<description><![CDATA[Das Swapping wurde nach kontroverser Diskussion im Forum nicht abgeschaltet, sondern dem User überlassen dies zu tun.]]></description>
+		<content:encoded><![CDATA[<p>Das Swapping wurde nach kontroverser Diskussion im Forum nicht abgeschaltet, sondern dem User überlassen dies zu tun.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Kommentar zu Aktuelles Image für Raspberry 2, 3 und 3B+ verfügbar von Dominic</title>
+		<link>http://www.iobroker.net/docu/?p=8045&#038;lang=de#comment-419</link>
+		<dc:creator><![CDATA[Dominic]]></dc:creator>
+		<pubDate>Mon, 30 Apr 2018 12:00:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8045#comment-419</guid>
+		<description><![CDATA[Freut mich, wieder ein Update zu sehen...
+Werde dann mal im Urlaub alles neu aufsetzen...
+Das einzige was mir auffällt, das Swapping wurde noch nicht überarbeitet, oder?
+Sollte ja in zukünftigen Images voreingestellt sein...
+Aber auch von mir vielen Dank für die Arbeit :)...]]></description>
+		<content:encoded><![CDATA[<p>Freut mich, wieder ein Update zu sehen&#8230;<br />
+Werde dann mal im Urlaub alles neu aufsetzen&#8230;<br />
+Das einzige was mir auffällt, das Swapping wurde noch nicht überarbeitet, oder?<br />
+Sollte ja in zukünftigen Images voreingestellt sein&#8230;<br />
+Aber auch von mir vielen Dank für die Arbeit :)&#8230;</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

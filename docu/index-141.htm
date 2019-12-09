@@ -1,0 +1,1103 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="ru-RU">
+<![endif]-->
+<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="ru-RU">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ru-RU"><!--<![endif]-->
+	<head>
+				<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"> 
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.iobroker.net/docu/xmlrpc.php">
+		
+		<title>Драйвер MQTT &#8211; ioBroker</title>
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Feed" href="index-4.rss?feed=rss2&#038;lang=ru">
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Comments Feed" href="index-5.rss?feed=comments-rss2&#038;lang=ru">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.iobroker.net\/docu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css' href='wp-content\plugins\crayon-syntax-highlighter\css\min\crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content\plugins\contact-form-7\includes\css\styles.css?ver=4.9.2' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-public.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-gdpr-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-gdpr.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='dedo-css-css' href='wp-content\plugins\delightful-downloads\assets\css\delightful-downloads.min.css?ver=1.6.6' type='text/css' media='all'>
+<link rel='stylesheet' id='mbpro-font-awesome-css' href='wp-content\plugins\maxbuttons\assets\libraries\font-awesome\css\font-awesome.min.css?ver=6.28' type='text/css' media='all'>
+<link rel='stylesheet' id='page-list-style-css' href='wp-content\plugins\page-list\css\page-list.css?ver=5.1' type='text/css' media='all'>
+<link rel='stylesheet' id='pc_google_analytics-frontend-css' href='http://www.iobroker.net/docu/wp-content/plugins/pc-google-analytics/assets/css/frontend.css?ver=1.0.0' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-css' href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' type='text/css' media='screen'>
+<link rel='stylesheet' id='toc-screen-css' href='wp-content\plugins\table-of-contents-plus\screen.min.css?ver=1509' type='text/css' media='all'>
+<link rel='stylesheet' id='parent-style-css' href='wp-content\themes\responsive-mobile\style.css?ver=4.7.5' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-style-css' href='wp-content\themes\responsive-mobile\css\style.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-child-style-css' href='wp-content\themes\responsive-mobile_child\style.css?ver=1.0' type='text/css' media='all'>
+<link rel='stylesheet' id='recent-posts-widget-with-thumbnails-public-style-css' href='wp-content\plugins\recent-posts-widget-with-thumbnails\public.css?ver=6.5.0' type='text/css' media='all'>
+<link rel='stylesheet' id='cleverness_todo_list_frontend-css' href='wp-content\plugins\cleverness-to-do-list\css\cleverness-to-do-list-frontend.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='jquery.ui.theme-css' href='wp-content\plugins\cleverness-to-do-list\css\jquery-ui-fresh.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='tablepress-default-css' href='wp-content\tablepress-combined.min.css?ver=128' type='text/css' media='all'>
+<link rel='stylesheet' id='bootstrap-css' href='wp-content\themes\responsive-mobile\libraries\bootstrap\css\bootstrap.min.css?ver=4.7.5' type='text/css' media='all'>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"\u041d\u0430\u0436\u043c\u0438\u0442\u0435 %s \u0434\u043b\u044f \u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, %s \u0434\u043b\u044f \u0432\u0441\u0442\u0430\u0432\u043a\u0438","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\crayon-syntax-highlighter\js\min\crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[]};
+var log_object = {"ajax_url":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\cookie-law-info\public\js\cookie-law-info-public.js?ver=1.7.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mb_ajax = {"ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\maxbuttons\js\min\front.js?ver=6.28'></script>
+<script type='text/javascript' src='wp-content\plugins\pc-google-analytics\assets\js\frontend.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\libraries\bootstrap\js\bootstrap.min.js?ver=4.7.5'></script>
+<link rel='https://api.w.org/' href='index.json?rest_route=/'>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.xml?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes\wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.7.5">
+<link rel="canonical" href="index-141.htm?page_id=4643&#038;lang=ru">
+<link rel='shortlink' href='http://www.iobroker.net/docu/?p=4643'>
+<link rel="alternate" type="application/json+oembed" href="index-139.json?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D4643%26lang%3Dru">
+<link rel="alternate" type="text/xml+oembed" href="index-138.xml?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D4643%26lang%3Dru&#038;format=xml">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-86900958-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+
+<style>
+.scroll-back-to-top-wrapper {
+    position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #777777;
+	color: #eeeeee;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-back-to-top-wrapper:hover {
+	background-color: #888888;
+  color: #eeeeee;
+}
+.scroll-back-to-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-back-to-top-wrapper i.fa {
+	line-height: inherit;
+}
+.scroll-back-to-top-wrapper .fa-lg {
+	vertical-align: 0;
+}
+</style><!-- Analytics by WP-Statistics v12.6 - https://wp-statistics.com/ -->
+<link rel="alternate" href="index-378.htm?page_id=3790&#038;lang=de" hreflang="de">
+<link rel="alternate" href="index-88.htm?page_id=6435&#038;lang=en" hreflang="en">
+<link rel="alternate" href="index-141.htm?page_id=4643&#038;lang=ru" hreflang="ru">
+		<script type="text/javascript">
+			var cli_flush_cache=1;
+		</script>
+				<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+.site-content .content-area{
+	/*background: #6592c9;*/
+}		</style>
+	<style type="text/css">
+.paypal-donations { text-align: center !important }
+</style>
+	</head>
+
+<body class="page-template page-template-page-templates page-template-content-sidebar-page_adaptermenue page-template-page-templatescontent-sidebar-page_adaptermenue-php page page-id-4643 page-child parent-pageid-4488 group-blog content-sidebar-page_adaptermenue" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="container" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Перейти к содержимому</a>
+	<a class="skip-link screen-reader-text" href="#main-navigation">Перейти к главному меню</a>
+	<div id="top-menu-container" class="container-full-width">
+		<nav id="top-menu" class="container" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+			<ul id="menu-2016_top_menue" class="top-menu"><li id="menu-item-2203-de" class="lang-item lang-item-4 lang-item-de lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-de"><a href="index-378.htm?page_id=3790&#038;lang=de" hreflang="de-DE" lang="de-DE">Deutsch</a></li>
+<li id="menu-item-2203-en" class="lang-item lang-item-7 lang-item-en menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-en"><a href="index-88.htm?page_id=6435&#038;lang=en" hreflang="en-GB" lang="en-GB">English</a></li>
+<li id="menu-item-2203-ru" class="lang-item lang-item-20 lang-item-ru current-lang menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-ru"><a href="index-141.htm?page_id=4643&#038;lang=ru" hreflang="ru-RU" lang="ru-RU">Русский</a></li>
+</ul>		</nav>
+	</div><!-- top menu container -->
+        <div id="header_section">
+	<header id="header" class="container-full-width site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+				<div class="container">
+			<div class="header-row">
+				<div id="site-branding">
+							<div id="logo">
+			<a href="index-2.htm?lang=ru" rel="home" itemprop="url" title="ioBroker">
+				<img src="wp-content\uploads\ioBroker_logo_lang-e1456684383484.png" alt="ioBroker" itemprop="image">
+			</a>
+		</div>
+					</div>
+				<div id="secondary-header">
+					
+	<div id="top-widget" class="top-widget" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+			<div id="search-2" class="responsive-mobile-top-widget widget_search"><form role="search" method="get" class="search-form" action="http://www.iobroker.net/docu/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			<input type="hidden" name="lang" value="ru"></form></div>
+			</div><!-- end of #top-widget -->
+				</div>
+			</div>
+		</div>
+
+			</header><!-- #header -->
+
+	<div id="main-menu-container" class="container-full-width">
+		<div id="main-menu" class="container">
+			<nav id="main-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<div id="mobile-current-item">Меню</div>
+				<button id="mobile-nav-button"><span class="accessibile-label">Мобильное меню переключения</span></button>
+				<div class="main-nav"><ul id="menu-2016_kopfzeile_ru" class="menu"><li id="menu-item-2686" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2686"><a href="index-111.htm?page_id=2649&#038;lang=ru">Новости</a></li>
+<li id="menu-item-2922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2922"><a href="index-112.htm?page_id=267&#038;lang=ru">Введение</a></li>
+<li id="menu-item-2635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2635"><a href="index-113.htm?page_id=2630&#038;lang=ru">Установка</a>
+<ul class="sub-menu">
+	<li id="menu-item-3313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3313"><a href="index-113.htm?page_id=2630&#038;lang=ru">Установка</a></li>
+	<li id="menu-item-3494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3494"><a href="index-114.htm?page_id=3489&#038;lang=ru">Raspberry (JESSIE) – быстрый старт</a></li>
+	<li id="menu-item-5122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5122"><a href="index-115.htm?page_id=5114&#038;lang=ru">Pine64 (JESSIE) быстрый старт</a></li>
+	<li id="menu-item-4276" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4276"><a href="index-116.htm?page_id=4268&#038;lang=ru">Установка на Armbian</a></li>
+	<li id="menu-item-3312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3312"><a href="index-117.htm?page_id=3303&#038;lang=ru">Обновление драйверов и контроллера</a></li>
+	<li id="menu-item-4917" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4917"><a href="index-118.htm?page_id=4915&#038;lang=ru">Видео</a></li>
+	<li id="menu-item-5533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5533"><a href="index-119.htm?page_id=5506&#038;lang=ru">Как устанавливать драйвера, работающие с serial портом или похожие драйвера</a></li>
+	<li id="menu-item-5648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5648"><a href="index-120.htm?page_id=5637&#038;lang=ru">Быстрая установка на Debian</a></li>
+</ul>
+</li>
+<li id="menu-item-2636" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-2636"><a href="index-121.htm?page_id=2628&#038;lang=ru">Драйвера</a>
+<ul class="sub-menu">
+	<li id="menu-item-4074" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4074"><a href="index-122.htm?page_id=4069&#038;lang=ru">Общие</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3885" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3885"><a href="index-123.htm?page_id=3800&#038;lang=ru">Драйвер Admin</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4089" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4089"><a href="index-124.htm?page_id=4082&#038;lang=ru">Оборудование</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4100"><a href="index-125.htm?page_id=4052&#038;lang=ru">Драйвер MegaD-328</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4167"><a href="index-126.htm?page_id=4086&#038;lang=ru">Визуализация</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="index-127.htm?page_id=4034&#038;lang=ru">Драйвер Flot</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4090" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4090"><a href="index-128.htm?page_id=4075&#038;lang=ru">Хранилище</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3886"><a title="History (рус)" href="index-129.htm?page_id=3636&#038;lang=ru">Драйвер History</a></li>
+		<li id="menu-item-4065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4065"><a href="index-130.htm?page_id=4044&#038;lang=ru">Драйвер SQL</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4101"><a href="index-131.htm?page_id=4091&#038;lang=ru">Сервисные приложения</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4068" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4068"><a href="index-132.htm?page_id=3374&#038;lang=ru">Драйвер Geofency</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4274"><a href="index-133.htm?page_id=4271&#038;lang=ru">Мультимедиа</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4275"><a href="index-134.htm?page_id=4262&#038;lang=ru">Драйвер sayit</a></li>
+		<li id="menu-item-6544" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6544"><a href="index-135.htm?page_id=6099&#038;lang=ru">Драйвер mpd</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4461"><a href="index-136.htm?page_id=4457&#038;lang=ru">Скрипты и логика</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6821" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6821"><a href="index-137.htm?page_id=6703&#038;lang=ru">Драйвер Javascript</a></li>
+		<li id="menu-item-4462" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4462"><a href="index-138.htm?page_id=4459&#038;lang=ru">Драйвер Text2Command</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4498" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-4498"><a href="index-139.htm?page_id=4488&#038;lang=ru">Сетевые</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4497"><a href="index-140.htm?page_id=4492&#038;lang=ru">Драйвер Telegram</a></li>
+		<li id="menu-item-4823" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-4643 current_page_item menu-item-4823"><a href="index-141.htm?page_id=4643&#038;lang=ru">Драйвер MQTT</a></li>
+		<li id="menu-item-6665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6665"><a href="index-142.htm?page_id=6663&#038;lang=ru">Драйвер Email</a></li>
+	</ul>
+</li>
+	<li id="menu-item-5045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5045"><a href="index-143.htm?page_id=5040&#038;lang=ru">Группа драйверов VIS</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5046" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5046"><a href="index-144.htm?page_id=5032&#038;lang=ru">Мобильное приложение ioBroker.vis</a></li>
+		<li id="menu-item-6552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6552"><a href="index-145.htm?page_id=6489&#038;lang=ru">Виджеты ioBroker.vis-players</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-2687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2687"><a href="index-146.htm?page_id=2651&#038;lang=ru">Скачать</a>
+<ul class="sub-menu">
+	<li id="menu-item-4839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4839"><a href="index-147.htm?page_id=2968&#038;lang=ru">Файлы для установки</a></li>
+</ul>
+</li>
+<li id="menu-item-2688" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2688"><a href="index-148.htm?page_id=2678&#038;lang=ru">Форум / Поддержка</a>
+<ul class="sub-menu">
+	<li id="menu-item-3008" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3008"><a href="http://forum.iobroker.net">Форум</a></li>
+	<li id="menu-item-3148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3148"><a href="index-149.htm?page_id=3141&#038;lang=de">Советы и решения</a></li>
+	<li id="menu-item-3010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3010"><a href="index-150.htm?page_id=2991&#038;lang=ru">Часто задаваемые вопросы / FAQ</a></li>
+	<li id="menu-item-5571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5571"><a href="index-151.htm?page_id=5567&#038;lang=ru">Настройка Let&#8217;s Encrypt сертификатов</a></li>
+</ul>
+</li>
+<li id="menu-item-2689" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2689"><a href="index-152.htm?page_id=2653&#038;lang=ru">Разработка</a></li>
+</ul></div>			</nav><!-- #site-navigation -->
+		</div><!-- #main-menu -->
+	</div><!-- #main-menu-container -->
+	<div id="sub-menu-container" class="container-full-width">
+		<div id="sub-menu" class="container">
+			<nav id="sub-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						</nav><!-- #site-navigation -->
+		</div><!-- #sub-menu -->
+	</div><!-- #sub-menu-container -->
+        </div>
+	<div id="wrapper" class="site-content container-full-width">
+
+	<div id="content" class="content-area">
+		<main id="main" class="site-main content-sidebar" role="main">
+
+			
+				<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#"><span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-2.htm?lang=ru">Главная</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-420.htm?page_id=2521&lang=ru">русский</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-121.htm?page_id=2628&lang=ru">Драйвера</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-139.htm?page_id=4488&lang=ru">Сетевые</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb-current">Драйвер MQTT</span></div>
+								
+					
+<article id="post-4643" class="post-4643 page type-page status-publish hentry">
+		
+	
+<header class="entry-header">
+	<h1 class="entry-title post-title">Драйвер MQTT</h1>
+	</header><!-- .entry-header -->
+
+	<div class="post-entry">
+		<p><a href="https://github.com/ioBroker/ioBroker.mqtt"><img class="alignright" style="border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" width="149" height="149"></a><br>
+<img class="alignnone" src="http://download.iobroker.net/img/logo-mqtt.png" width="64" height="64"></p>
+<h2><span id="i">Описание</span></h2>
+<p style="text-align: justify;"><a href="http://mqtt.org/">MQTT</a> (Message Queue Telemetry Transport) это легковесный протокол, применяемый для общения между устройствами (M2M — machine-to-machine). Он использует модель издатель-подписчик (publish/subscribe) для передачи сообщений поверх протокола TCP/IP. Центральная часть протокола это MQTT-сервер или брокер, который имеет доступ к издателю и подписчику. Этот протокол предельно примитивен: с коротким заголовком, без контроля целостности (поэтому передача реализована поверх TCP), не накладывает никаких ограничения на структуру, кодирование или схему данных. Единственное требование к данным в каждом пакете – они должны сопровождаться идентификатором информационного канала. Этот идентификатор в спецификации называется Topic Name.</p>
+<p style="text-align: justify;">Протокол MQTT требует обязательного наличия брокера данных. Это центральная идея технологии. Все устройства посылают данные только брокеру и принимают данные тоже только от него. Получив пакет, брокер рассылает его всем устройствам в сети согласно их подписке. Чтобы устройство что-то получило от брокера оно должно подписаться на топик. Топики возникают динамически по факту подписки или по факту прихода пакета с данным топиком. От подписки на топик можно отказаться. Таким образом топики представляют собой удобный механизм организации связей разных видов: один ко многим, многие к одному и многие ко многим.<br>
+<strong>Важные моменты:</strong></p>
+<ul>
+<li>устройства сами устанавливают связь с брокером, они могут находится за NAT и не иметь статических IP-адресов,</li>
+<li>можно применить протокол SSL для шифрования трафика,</li>
+<li>MQTT брокеры позволяют подключаться к ним через протокол WebSocket на 80-й порт,</li>
+<li>разные брокеры могут соединяться между собой подписываясь на сообщения друг у друга.</li>
+</ul>
+<div id="toc_container" class="no_bullets"><ul class="toc_list"><li><a href="#i"><span class="toc_number toc_depth_1">1</span> Описание</a></li><li><a href="#i-2"><span class="toc_number toc_depth_1">2</span> Информация</a></li><li><a href="#i-3"><span class="toc_number toc_depth_1">3</span> Установка</a></li><li><a href="#i-4"><span class="toc_number toc_depth_1">4</span> Настройка</a><ul><li><a href="#_ioBroker__MQTT"><span class="toc_number toc_depth_2">4.1</span> Работа ioBroker в качестве MQTT-брокера</a></li><li><a href="#_ioBroker__MQTT-2"><span class="toc_number toc_depth_2">4.2</span> Работа ioBroker в качестве MQTT-клиента</a></li></ul></li><li><a href="#_8211__MQTT_8211_ModBus_RTU"><span class="toc_number toc_depth_1">5</span> Применение &#8211; шлюз протоколов MQTT &#8211; ModBus RTU</a></li><li><a href="#_8211"><span class="toc_number toc_depth_1">6</span> Применение &#8211; подключение мобильных клиентов</a></li><li><a href="#_8211-2"><span class="toc_number toc_depth_1">7</span> Применение &#8211; работа с облачными серверами</a></li></ul></div>
+
+<h2><span id="i-2">Информация</span></h2>
+<p>&nbsp;</p>
+<table width="100%">
+<tbody>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Актуальная версия<br>
+</strong></td>
+<td style="width: 50%; height: 20px;"><a href="https://www.npmjs.com/package/iobroker.mqtt"><img class="alignnone" src="http://img.shields.io/npm/v/iobroker.mqtt.svg" width="80" height="20"></a></td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Необходимые условия</strong></td>
+<td style="width: 50%; height: 20px;">/</td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Разработчик</strong></td>
+<td style="width: 50%; height: 20px;">Bluefox</td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Ключевые слова<br>
+</strong></td>
+<td style="width: 50%; height: 20px;">передача данных, датчики, облако, публикация/подписка</td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Github</strong></td>
+<td style="width: 50%; height: 20px;"><img class="alignnone size-full wp-image-2342" src="wp-content\uploads\icon_link.png" alt="icon_link" width="16" height="16"> <a href="https://github.com/ioBroker/ioBroker.mqtt" target="_blank">Ссылка</a></td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Платформа</strong></td>
+<td style="width: 50%; height: 20px;">Javascript/Node.js</td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Лицензия</strong></td>
+<td style="width: 50%; height: 20px;">MIT</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="i-3"><span id="i-3">Установка</span></span></h2>
+<p>Установка осуществляется на вкладке <strong>Драйвера</strong> странички <a href="index-123.htm?page_id=3800&amp;lang=ru">администрирования</a> системы. В группе драйверов <b>Сетевые</b> находим строчку с названием <strong>MQTT Adapter</strong> и нажимаем кнопку со значком плюса в этой строке справа.</p>
+<p><a href="wp-content\uploads\MQTT-install1.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-install1.jpg" width="701" height="243"></a></p>
+<p>На экране появится всплывающее окно установки драйвера, в конце установки оно автоматически закроется.</p>
+<p><a href="wp-content\uploads\MQTT-install2.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-install2.jpg" width="400" height="208"></a></p>
+<p>Если все прошло удачно, на вкладке <strong>Настройка драйверов</strong> появится строка <strong>mqtt.0 </strong>с установленным экземпляром драйвера.</p>
+<p><a href="wp-content\uploads\MQTT-install3.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-install3.jpg" width="698" height="121"></a></p>
+<h2><span id="i-4"><span id="i-3">Настройка</span></span></h2>
+<p>Как писалось выше, протокол MQTT подразумевает наличие брокера и клиентов. Сервер ioBroker может выступать как в роли брокера, так и в роли клиента. Настройка для указания режима работы &#8211; тип (сервер/брокер или клиент/подписчик) Рассмотрим каждый вариант.</p>
+<h3><span id="_ioBroker__MQTT">Работа ioBroker в качестве MQTT-брокера</span></h3>
+<p>Основные настройки, если предполагается использование режима сервер/брокер, приведены на картинке:</p>
+<p><a href="wp-content\uploads\MQTT-server1.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-server1.jpg" width="400" height="417"></a></p>
+<ul>
+<li><strong>Use WebSockets</strong> &#8211; если есть надобность использовать WEB-сокеты для соединения, необходимо установить эту опцию, при этом TCP-server будет работать параллельно с WebSocket-сервером,</li>
+<li><strong>Порт</strong> -порт для установки соединения по TCP (значение по-умолчанию 1883), сервер WebSocket (см. опция выше) запускается по порту +1 (по-умолчанию 1884),</li>
+<li><strong>SSL</strong> &#8211; данная опция используется, если необходимо шифровать трафик (TCP или WebSocket), при этом необходимо указать сертификаты &#8211; просто выбрать из списка заранее установленные (указываются в системных настройках, см. описание драйвера <a href="index-123.htm?page_id=3800&amp;lang=ru">администрирования</a> системы),</li>
+<li><strong>настройки аутентификации</strong> (имя пользователя и пароль) &#8211; указываются, если необходима аутентификация конкретного пользователя, данная настройка всегда используется вместе с опцией SSL-шифрования (чтобы не передавать пароли в открытом виде через незащищенное соединение).</li>
+<li><strong>Маска для собственных значений</strong> &#8211; шаблон (или несколько через запятую) для фильтрации переменных ioBroker, которые будут отправляться клиентам, можно использовать специальные символы чтобы указать группу сообщения (к примеру, <code>memRSS, mqtt.0</code> &#8211; могут передаваться все переменные состояния памяти всех драйверов и все переменные экземпляра драйвера <strong>mqtt.0</strong>)</li>
+<li><strong>Отсылать только изменения</strong> &#8211; отправка данных клиенту будет произведена только в случае изменения переменной (если состояние просто обновилось &#8211; значение не поменялось, клиенту сообщение не будет отправлено), от клиента будет принято любое сообщение, даже если значение не изменилось,</li>
+<li><strong>Выдавать собственные значения при старте</strong> &#8211; для каждого успешного соединения с клиентом ему будут переданы все известные состояния (определяются маской состояний) &#8211; для того, чтобы сообщить клиенту текущее состояние ioBroker,</li>
+<li><strong>Публиковать состояния при подписке</strong> &#8211; сразу после подписки клиенту будет отправлено значение переменной, на которую он подписан (при первом старте или рестарте клиент получит значения переменных, на которые он подписан, можно использовать для инициализации переменных),</li>
+<li><strong>Префикс для всех значений</strong> &#8211; если указано значение, то оно будет добавляться как префикс к каждому отправленному топику, к примеру, если указать <code>iobroker/</code>, то все отправленные топики примерно следующего содержания: <code>iobroker/mqtt/0/connected</code>,</li>
+<li><strong>Вывод лога для каждого изменения</strong> &#8211; в лог-файле будет отображаться отладочная информация по каждому изменению,</li>
+<li><strong>Посылать не только команды, но и состояния (ack=true)</strong> &#8211; если опция не активна, то клиенту будут отправляться только переменные/команды с ack=false, если флаг установлен, то будут переданы переменные не зависимо от состояния ack (false или true),</li>
+<li><strong>Максимальная длина имени топика</strong> &#8211; максимальное кол-во символов для описания топика, включая служебные.</li>
+</ul>
+<p>В качестве примера рассмотрим обмен данными между клиентом на базе платы <a href="https://www.arduino.cc/">arduino</a> и брокером &#8211; экземпляр драйвера mqtt.0 системы ioBroker.</p>
+<ul>
+<li>клиент &#8211; плата для разработки <a href="https://www.arduino.cc/en/Main/ArduinoBoardUno">arduino UNO</a> + <a href="https://store.arduino.cc/product/A000072">ethernet shield</a> на базе чипа W5100,</li>
+<li>для работы с платой ethernet используется стандартная <a href="https://www.arduino.cc/en/Reference/Ethernet">библиотека</a>, для работы с MQTT библиотека <a href="https://github.com/knolleary/pubsubclient">Pubsubclient</a>,</li>
+<li>датчик AM2302 (температура и влажность) подключен на pin_8 для опроса используется библиотека с <a href="https://github.com/RobTillaart/Arduino/tree/master/libraries/DHTlib">DHTlib</a> с ресурса github.com,</li>
+<li>светодиод led_green подключен на pin_9, управление в дискретном режиме вкл/откл,</li>
+<li>брокер &#8211; система ioBroker драйвер mqtt.</li>
+</ul>
+<p>Формат топиков обмена данными:</p>
+<ul>
+<li><code>example1/send_interval</code> &#8211; клиент подписан на изменение интервала отправки показаний температуры и влажности (значение int в секундах)</li>
+<li><code>example1/temp</code> &#8211; клиент публикует с заданным интервалом значение температуры с датчика DHT22 (тип float),</li>
+<li><code>example1/hum</code> -клиент публикует с заданным интервалом значение влажности с датчика DHT22 (тип float),</li>
+<li><code>example1/led</code> -клиент подписан на изменение состояния светодиода (тип text on/off или 0/1 или true/false).</li>
+</ul>
+<p>Настройки драйвера будут следующие:</p>
+<p><a href="wp-content\uploads\MQTT-server2.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-server2.jpg" width="400" height="432"></a></p>
+<p>Подключение по TCP (WebSocket не нужен), порт по-умолчанию 1883. Клиент внутри локальной сети, поэтому шифровать трафик и проводить аутентификацию пользователя нет необходимости. Отсылать будем только изменения, так как клиент подписан на интервал отправки показаний и состояние светодиода, получать информацию только об обновлении (без изменения значения) переменной нет смысла. Публиковать состояния при подписке &#8211; отметим эту опцию, так как при первом подключении (или подключении после обрыва соединения) клиента он должен знать состояния переменных, на которые он подписан (какой текущий интервал отправки и должен ли быть включен светодиод). Настройку отсылать переменные с ack=true или false тоже стоит отметить, так как переменную (на которую подписан клиент) может изменить любой драйвер/скрипт/VIS и все изменения надо отправлять клиенту.</p>
+<p>Полный код для платы arduino будет выглядеть так:</p>
+<p><code>//Подключаем библиотеки</code><br>
+<code lang="C">#include &lt;SPI.h&gt;</code><br>
+<code>#include &lt;Ethernet.h&gt;</code><br>
+<code>#include &lt;PubSubClient.h&gt; //https://github.com/knolleary/pubsubclient</code><br>
+<code>#include &lt;dht.h&gt;          //https://github.com/RobTillaart/Arduino/tree/master/libraries/DHTlib</code><br>
+<code>//Настройки сети</code><br>
+<code>byte mac[] = {  0xAB, 0xBC, 0xCD, 0xDE, 0xEF, 0x31 };</code><br>
+<code>byte ip[] = { 192, 168, 69, 31 }; //IP-адрес платы arduino</code><br>
+<code>byte mqttserver[] = { 192, 168, 69, 51 }; //IP-адрес сервера ioBroker</code><br>
+<code>EthernetClient ethClient;</code><br>
+<code>void callback(char* topic, byte* payload, unsigned int length);</code><br>
+<code>PubSubClient client(mqttserver, 1883, callback, ethClient);</code><br>
+<code>//Глобальные переменные</code><br>
+<code>#define LED_pin 9</code><br>
+<code>unsigned int send_interval = 10; //интервал отправки показаний на сервер по-умолчанию 10 секунд</code><br>
+<code>unsigned long last_time = 0; //текущее время для таймера</code><br>
+<code>dht DHT;</code><br>
+<code>#define DHT22_PIN 8</code><br>
+<code>char buff[20];</code><br>
+<code>//Функция обработки входящих соединений - прием данных по подписке</code><br>
+<code>void callback(char* topic, byte* payload, unsigned int length) {</code><br>
+<code>  Serial.println ("");</code><br>
+<code>  Serial.println ("-------");</code><br>
+<code>  Serial.println ("New callback of MQTT-broker");</code><br>
+<code>  //преобразуем тему(topic) и значение (payload) в строку</code><br>
+<code>  payload[length] = '\0';</code><br>
+<code>  String strTopic = String(topic);</code><br>
+<code>  String strPayload = String((char*)payload);</code><br>
+<code>  //Исследуем что "прилетело" от сервера по подписке:</code><br>
+<code>  //Изменение интервала опроса</code><br>
+<code>  if (strTopic == "example1/send_interval") {</code><br>
+<code>    int tmp = strPayload.toInt();</code><br>
+<code>    if (tmp == 0) {</code><br>
+<code>      send_interval = 10;</code><br>
+<code>    } else {</code><br>
+<code>      send_interval = strPayload.toInt();</code><br>
+<code>    }</code><br>
+<code>  }</code><br>
+<code>  //Управление светодиодом</code><br>
+<code>  if (strTopic == "example1/led") {</code><br>
+<code>    if (strPayload == "off" || strPayload == "0" || strPayload == "false") digitalWrite(LED_pin, LOW);</code><br>
+<code>    if (strPayload == "on" || strPayload == "1" || strPayload == "true") digitalWrite(LED_pin, HIGH);</code><br>
+<code>  }  </code><br>
+<code>  Serial.print (strTopic);</code><br>
+<code>  Serial.print (" ");</code><br>
+<code>  Serial.println (strPayload);</code><br>
+<code>  Serial.println ("-------");</code><br>
+<code>  Serial.println ("");  </code><br>
+<code>}</code><br>
+<code>void setup() {</code><br>
+<code>  Serial.begin(9600);</code><br>
+<code>  Serial.println("Start...");</code><br>
+<code>  //стартуем сетевое подключение</code><br>
+<code>  Ethernet.begin(mac, ip);</code><br>
+<code>  Serial.print("IP: ");</code><br>
+<code>  Serial.println(Ethernet.localIP());</code><br>
+<code>  //Инициализируем порты ввода-вывода, прописываем начальные значения</code><br>
+<code>  pinMode(LED_pin, OUTPUT);</code><br>
+<code>  digitalWrite(LED_pin, LOW); //при светодиод отключен</code><br>
+<code>}</code><br>
+<code>void loop() {</code><br>
+<code>  //Если соединение MQTT неактивно, то пытаемся установить его и опубликовать/подписаться</code><br>
+<code>  if (!client.connected()) {</code><br>
+<code>    Serial.print("Connect to MQTT-boker...  ");</code><br>
+<code>    //Подключаемся и публикуемся/подписываемся</code><br>
+<code>    if (client.connect("example1")) {</code><br>
+<code>      Serial.println("success");</code><br>
+<code>      //Значение с датчиков</code><br>
+<code>      if (DHT.read22(DHT22_PIN)==DHTLIB_OK) {</code><br>
+<code>        dtostrf(DHT.humidity, 5, 2, buff);</code><br>
+<code>        client.publish("example1/hum", buff);</code><br>
+<code>        dtostrf(DHT.temperature, 5, 2, buff);</code><br>
+<code>        client.publish("example1/temp", buff);</code><br>
+<code>      }</code><br>
+<code>      //Подписываемся на интервал опроса</code><br>
+<code>      client.subscribe("example1/send_interval");</code><br>
+<code>      //Подписываемся на переменную управления светодиодом</code><br>
+<code>      client.subscribe("example1/led");</code><br>
+<code>    } else {</code><br>
+<code>      //Если не подключились, ждем 10 секунд и пытаемся снова</code><br>
+<code>      Serial.print("Failed, rc=");</code><br>
+<code>      Serial.print(client.state());</code><br>
+<code>      Serial.println(" try again in 10 seconds");</code><br>
+<code>      delay (10000);</code><br>
+<code>    }</code><br>
+<code>  //Если соединение активно, то отправляем данные на сервер с заданным интервалом времени</code><br>
+<code>  } else {</code><br>
+<code>    if(millis() &gt; (last_time + send_interval*1000)) {</code><br>
+<code>      last_time = millis();</code><br>
+<code>      if (DHT.read22(DHT22_PIN)==DHTLIB_OK) {</code><br>
+<code>        dtostrf(DHT.humidity, 5, 2, buff);</code><br>
+<code>        client.publish("example1/hum", buff);</code><br>
+<code>        dtostrf(DHT.temperature, 5, 2, buff);</code><br>
+<code>        client.publish("example1/temp", buff);</code><br>
+<code>      }</code><br>
+<code>    }</code><br>
+<code>  }</code><br>
+<code>  //Проверка входящих соединений по подписке</code><br>
+<code>  client.loop();</code><br>
+<code>}</code></p>
+<p>Результат работы со стороны брокера (данные температуры и влажности обновляются с установленным временным интервалом):</p>
+<p><a href="wp-content\uploads\MQTT-server3.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-server3.jpg" width="701" height="155"></a></p>
+<p>Результат работы со стороны клиента (входящие данные по подписке выводятся для отладки в консоль):</p>
+<p><a href="wp-content\uploads\MQTT-server4.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-server4.jpg" width="400" height="580"></a></p>
+<h3><span id="_ioBroker__MQTT-2">Работа ioBroker в качестве MQTT-клиента</span></h3>
+<p>Чтобы экземпляр драйвера MQTT заработал как клиент/подписчик &#8211; нужно в настройках выбрать соответствующий тип. При этом набор настроек немного поменяется:</p>
+<p><a href="wp-content\uploads\MQTT-client1.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-client1.jpg" width="400" height="445"></a></p>
+<ul>
+<li><strong>Настройки соединения</strong> &#8211; указывается URL и порт брокера (если необходимо шифровать трафик, то указывается SSL) &#8211; настройки для подключения к брокеру,</li>
+<li><strong>Настройки аутентификации</strong> &#8211; имя пользователя и пароль, если брокер требует аутентификацию (уместно использовать SSL-шифрование, чтобы не передавать пароль в открытом виде),</li>
+<li><strong>Patterns</strong> &#8211; маска для переменных, на которые клиент подписывается (переменные брокера), значения перечисляются через запятую, для указания множества используется символ # (решетка),</li>
+<li><strong>Маска для собственных значений</strong> &#8211; фильтр переменных, которые необходимо публиковать (переменные клиента), значения перечисляются через запятую, для указания множества используется символ * (звездочка),</li>
+<li><strong>Отсылать только изменения</strong> &#8211; клиент будет публиковать только переменные, которые изменили значение (согласно маски),</li>
+<li><strong>Выдавать собственные значения при старте</strong> &#8211; если эту опцию отметить, то будут <span id="result_box" class="" lang="ru"><span title="Publish all states at start - Publish all states (defined by state mask) every time by connection establishment to announce own available states and their values. ">публиковаться все состояния (согласно маски) каждый раз, когда устанавливается соединение, чтобы объявить доступные собственные переменные и их значения,</span></span></li>
+<li><strong>Префикс для всех значений</strong> &#8211; если указано значение, то оно будет добавляться как префикс к каждому публикуемому топику, к примеру, если указать <code>client1/</code>, то все публикуемые топики будут примерно следующего содержания: <code>client1/javascript/0/cubietruck</code>,</li>
+<li><strong>Вывод лога для каждого изменения</strong> &#8211; в лог-файле будет отображаться отладочная информация по каждому изменению,</li>
+<li><strong>Посылать не только команды, но и состояния (ack=true)</strong> &#8211; если данная опция не отмечена, то брокеру отправляются только переменные/команды с ack=false, если опцию отметить, то будут отправляться все данные, независимо от ack=true или ack=false,</li>
+<li><strong>Максимальная длина топика</strong> &#8211; максимальное кол-во символов для описания топика, включая служебные.</li>
+</ul>
+<p>Примеры для задания маски подписки на переменные (patterns). Рассмотрим топики:</p>
+<ul>
+<li>&#8220;Sport&#8221;</li>
+<li>&#8220;Sport/Tennis&#8221;</li>
+<li>&#8220;Sport/Basketball&#8221;</li>
+<li>&#8220;Sport/Swimming&#8221;</li>
+<li>&#8220;Sport/Tennis/Finals&#8221;</li>
+<li>&#8220;Sport/Basketball/Finals&#8221;</li>
+<li>&#8220;Sport/Swimming/Finals&#8221;</li>
+</ul>
+<p>Если необходимо подписаться на определенное множество топиков, можно использовать символы # (решетка) или + (знак плюс).</p>
+<ul>
+<li>&#8220;Sport/Tennis/#&#8221; (подписка только на &#8220;Sport/Tennis&#8221; и &#8220;Sport/Tennis/Finals&#8221;)</li>
+<li>&#8220;Sport/Tennis/+&#8221; (подписка только на  &#8220;Sport/Tennis/Finals&#8221;, но не &#8220;Sport/Tennis&#8221;)</li>
+</ul>
+<p>Для JMS топиков, если нужно подписаться на все топики &#8220;Finals&#8221;, можно использовать символы # (решетка) или + (знак плюс)</p>
+<ul>
+<li>&#8220;Sport/#/Finals&#8221;</li>
+<li>&#8220;Sport/+/Finals&#8221;</li>
+</ul>
+<p>Для MQTT топиков, если нужно подписаться на все топики &#8220;Finals&#8221;, можно использовать символ + (знак плюс)</p>
+<ul>
+<li>&#8220;Sport/+/Finals&#8221;</li>
+</ul>
+<p>В качестве примера рассмотрим обмен данными между двумя системами ioBroker.</p>
+<p>Есть работающая система ioBroker на плате BananaPi (IP-адрес 192.168.69.51), на ней запущен MQTT-драйвер в режиме сервер/брокер из примера выше. К серверу подключается клиент, который публикует данные с датчика DHT22 &#8211; температуру и влажность, а так же подписывается на переменные интервал передачи показаний и состояние светодиода (включить/отключить) &#8211; так же из примера выше.</p>
+<p>Вторая работающая система ioBroker на плате Cubietruck, на ней запустим MQTT-драйвер в режиме клиент/подписчик. Он подпишется на переменные температура и влажность брокера (который в свою очередь получает от другого клиента) и будет публиковать все переменные скрипта &#8211; <a href="index-116.htm?page_id=4268&amp;lang=ru#_Li-polLi-ion">состояние АКБ</a> платы (только изменения).</p>
+<p>Настройки клиента будут примерно следующие:</p>
+<p><a href="wp-content\uploads\MQTT-client2.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-client2.jpg" width="400" height="445"></a></p>
+<p>Тип соединения &#8211; клиент/подписчик, указывается IP-адрес брокера и порт (по-умолчанию 1883). Шифрование трафика и аутентификация не нужны. Маска для подписки (Patterns) &#8211; <code>mqtt/0/example1/hum,mqtt/0/example1/temp</code> &#8211; клиент подписывается только на температуру и влажность (значения через запятую без пробелов). Маска данных для публикации &#8211; <code>javascript.0.cubietruck.battery.*</code> &#8211; публикуются все переменные скрипта <code>cubietruck</code> в группе <code>battery</code> драйвера <code>javascript.0</code>.</p>
+<p>Отсылать только изменения &#8211; отправляем переменные состояния АКБ (нет смысла отправлять, если значение не изменилось). Выдавать собственные значения при старте &#8211; при старте драйвера, клиент сразу опубликует все переменные согласно маске &#8211; даже если они нулевые или пустые, чтобы создать переменные в брокере. Посылать данные с ack=false &#8211; переменные работы АКБ обновляются драйвером javascript, поэтому они всегда ack=false.</p>
+<p>Результат работы на стороне клиента (данные температуры и влажности другого клиента &#8211; см. пример выше):</p>
+<p><a href="wp-content\uploads\MQTT-client3.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-client3.jpg" width="701" height="183"></a></p>
+<p>Результат работы со стороны брокера (данные состояния АКБ клиента):</p>
+<p><a href="wp-content\uploads\MQTT-client4.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-client4.jpg" width="700" height="203"></a></p>
+<h2><span id="_8211__MQTT_8211_ModBus_RTU">Применение &#8211; шлюз протоколов MQTT &#8211; ModBus RTU</span></h2>
+<p>Драйвер MQTT можно использовать как шлюз различных протоколов, чтобы подключить новые устройства в систему ioBroker или любую другую. Универсальной базой для разработки подобных решений являются платы arduino. В сети много примеров, библиотек и наработок. Огромное сообщество работает с этими контроллерами и в систему интегрированы множество устройств и оборудования. Для примера, рассмотрим распространенный промышленный протокол ModBus. В системе ioBroker имеется драйвер для работы с ним &#8211; версии ModBus TCP (по сети ethernet). Множество датчиков, контроллеров и исполнительных устройств работают физически по сети RS-485/232 и протоколу ModBus RTU. Чтобы интегрировать их можно применить шлюз MQTT &#8211; ModBus RTU на базе платформы arduino. Рассмотрим пример.</p>
+<p><span style="text-decoration: underline;"><strong>Имеется датчик температуры и влажности</strong></span> (для теста на базе платы arduino pro mini и сенсора DHT22), который выдает данные по ModBUS RTU:</p>
+<ul>
+<li>Порт UART (можно с помощью микросхемы MAX485 преобразовать в интерфейс RS-485) работает на скорости 9600 с параметрами 8E1 (1 start bit, 8 data bits, 1 Even parity bit, 1 stop bit)</li>
+<li>Адрес ModBus &#8211; 10</li>
+<li>температура &#8211; адрес 0 значение, умноженное на 10 (read function 3)</li>
+<li>влажность &#8211; адрес 1 значение, умноженное на 10 (read function 3)</li>
+<li>PWM LED &#8211; адрес 2 значение 0&#8230;1023 для проверки функции записи (write function 6)</li>
+</ul>
+<p>Схема соединения:</p>
+<figure style="width: 401px" class="wp-caption alignnone"><a href="wp-content\uploads\MQTT-example-modbus1.jpg"><img src="wp-content\uploads\MQTT-example-modbus1.jpg" width="401" height="280"></a><figcaption class="wp-caption-text">by Fritzing</figcaption></figure>
+<p>Код для контроллера arduino pro mini получается следующий:</p>
+<p><code>#include &lt;dht.h&gt; //https://github.com/RobTillaart/Arduino/tree/master/libraries/DHTlib</code><br>
+<code>#include &lt;SimpleModbusSlave.h&gt; //https://code.google.com/archive/p/simple-modbus/</code><br>
+<code>#include &lt;MsTimer2.h&gt; //https://github.com/PaulStoffregen/MsTimer2</code><br>
+<code>//регистры modbus</code><br>
+<code>enum {</code><br>
+<code>  TEMP,</code><br>
+<code>   HUM,</code><br>
+<code>   PWM,</code><br>
+<code>   TEST,</code><br>
+<code>   HOLDING_REGS_SIZE</code><br>
+<code> };</code><br>
+<code>#define ID_MODBUS 10 //адрес modbus slave устройства</code><br>
+<code>unsigned int holdingRegs[HOLDING_REGS_SIZE]; //массив регистров modbus</code><br>
+<code>//датчик температуры и влажности DHT22</code><br>
+<code>dht DHT;</code><br>
+<code>#define DHT22_PIN 2</code><br>
+<code>#define LED 9 //светодиод подключен на PWM-пин 9</code><br>
+<code>void setup() {</code><br>
+<code>   //конфигурируем modbus</code><br>
+<code>   modbus_configure(&amp;Serial, 9600, SERIAL_8E1, ID_MODBUS, 0, HOLDING_REGS_SIZE, holdingRegs);</code><br>
+<code>   holdingRegs[TEST] = -157; //для теста отрицательных значений</code><br>
+<code>   //инициализируем таймер 2 секунды обновления данных в регистрах температуры и влажности</code><br>
+<code>   MsTimer2::set(2000, read_sensors);</code><br>
+<code>   MsTimer2::start(); //запускаем таймер</code><br>
+<code>   pinMode(LED, OUTPUT); //инициализация порта светодиода</code><br>
+<code>}</code><br>
+<code>//функция, запускаемая по таймеру каждые 2 секунды</code><br>
+<code>void read_sensors() {</code><br>
+<code>   if (DHT.read22(DHT22_PIN)==DHTLIB_OK) { //если данные с датчика DHT22 удалось прочитать</code><br>
+<code>     //записываем в регистр влажности целочисленное значение</code><br>
+<code>     holdingRegs[HUM] = 10 * DHT.humidity;</code><br>
+<code>     //записываем в регистр температуры целочисленное значение</code><br>
+<code>     holdingRegs[TEMP]= 10 * DHT.temperature;</code><br>
+<code>   } else {</code><br>
+<code>     //если не удалось прочитать данные с датчика DHT22, записываем в регистры нули</code><br>
+<code>     holdingRegs[HUM] = 0;</code><br>
+<code>     holdingRegs[TEMP] = 0;</code><br>
+<code>   }</code><br>
+<code>}</code><br>
+<code>void loop() {</code><br>
+<code>   modbus_update(); //обновляем данные modbus</code><br>
+<code>   //данные из регистра управления светодиодом передаем в ШИМ (битовый сдвиг на 2 разряда)</code><br>
+<code>   analogWrite(LED, holdingRegs[PWM]&gt;&gt;2);</code><br>
+<code>}</code></p>
+<p>Для проверки работы кода и схемы, можно полключиться к порту serial платы (к примеру, с помощью USB-UART преобразователя) и специальной программой опросить только что изготовленный датчик температуры и влажности с интерфейсом ModBus RTU. Для опрос можно использовать, к примеру, <a href="http://qmodbus.sourceforge.net/">qmodbus</a> или любую другую программу.</p>
+<p>Настройки:</p>
+<ul>
+<li>порт (выбрать из списка к какому порту подключен serial платы ардуино);</li>
+<li>скорость и прочие параметры &#8211; 9600 8E1;</li>
+<li>slave id: 10, чтение: функция №3 read holding registers, начальный адрес: 0, число регистров: 3,</li>
+<li>slave id: 10, запись: функция №6 write single register, начальный адрес: 2,</li>
+</ul>
+<p>Ответ в программе при чтении должен быть примерно следующий:</p>
+<p><a href="wp-content\uploads\MQTT-example-modbus2.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-modbus2.jpg" width="401" height="242"></a></p>
+<p>Ответ в программе при записи:</p>
+<p><a href="wp-content\uploads\MQTT-example-modbus3.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-modbus3.jpg" width="400" height="241"></a></p>
+<p><span style="text-decoration: underline;"><strong>Теперь настроем сам шлюз и подключим его в iobroker</strong></span></p>
+<p>Шлюз будет на базе платформы arduino MEGA 2560 с ethernet shield &#8211; клиент MQTT, брокер &#8211; экземпляр драйвера mqtt.0 системы ioBroker. Выбор именно MEGA 2560 обусловлен тем, что на этой плате более одного UART-порта, соответственно нулевой Serial0 (pin_0 (RX) и зшт_1 (TX)) или просто Serial &#8211; используем для вывода отладочных сообщений, а Serial1 (pin_19 (RX) и pin_18 (TX)) &#8211; для работы с slave-устройством по ModBus.</p>
+<ul>
+<li>клиент &#8211; плата для разработки <a href="https://www.arduino.cc/en/Main/ArduinoBoardMega2560">arduino MEGA 2560</a> + <a href="https://store.arduino.cc/product/A000072">ethernet shield</a> на базе чипа W5100;</li>
+<li>для работы с платой ethernet используется стандартная <a href="https://www.arduino.cc/en/Reference/Ethernet">библиотека</a>, для работы с MQTT библиотека <a href="https://github.com/knolleary/pubsubclient">Pubsubclient</a>;</li>
+<li>для опроса по modbus используется библиотека <a href="https://code.google.com/archive/p/simple-modbus/">SimpleModbus</a> версии master;</li>
+<li>опрос по порту UART (просто соединить RX порт master, TX порт slave и соответственно TX порт master, RX порт slave), порт управления передачей не используется (он для RS-485);</li>
+<li>параметры порта: скорость 9600, 8Е1;</li>
+<li>адрес slave-устройства 10, функция чтения №3 (read holding registers), функция записи №6 (write single register);</li>
+<li>брокер &#8211; система ioBroker драйвер mqtt.</li>
+</ul>
+<p>Формат топиков обмена данными:</p>
+<ul>
+<li><code>modbusgateway/send_interval</code> &#8211; клиент подписан на изменение интервала отправки показаний температуры и влажности (значение int в секундах)</li>
+<li><code>modbusgateway/temp</code> &#8211; клиент публикует с заданным интервалом значение температуры с датчика DHT22 (тип float),</li>
+<li><code>modbusgateway/hum</code> -клиент публикует с заданным интервалом значение влажности с датчика DHT22 (тип float),</li>
+<li><code>modbusgateway/led</code> -клиент подписан на изменение состояния светодиода (ШИМ управление, значения 0&#8230;1024).</li>
+</ul>
+<p>Схема соединений получится примерно такая:</p>
+<figure style="width: 699px" class="wp-caption alignnone"><a href="wp-content\uploads\MQTT-example-modbus6.jpg"><img class="" src="wp-content\uploads\MQTT-example-modbus6.jpg" width="699" height="250"></a><figcaption class="wp-caption-text">By Fritzing</figcaption></figure>
+<p>Для теста slave-устройство запитаем от master-устройства. Master в свою очередь, будет работать от USB-порта, по которому ведется отладка (Serial0).</p>
+<p>Настройки драйвера будут следующие:</p>
+<p><a href="wp-content\uploads\MQTT-server2.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-server2.jpg" width="400" height="432"></a></p>
+<p>Подключение по TCP (WebSocket не нужен), порт по-умолчанию 1883. Клиент внутри локальной сети, поэтому шифровать трафик и проводить аутентификацию пользователя нет необходимости. Отсылать будем только изменения, так как клиент подписан на интервал отправки показаний и состояние светодиода, получать информацию только об обновлении (без изменения значения) переменной нет смысла. Публиковать состояния при подписке &#8211; отметим эту опцию, так как при первом подключении (или подключении после обрыва соединения) клиента он должен знать состояния переменных, на которые он подписан (какой текущий интервал отправки и должен ли быть включен светодиод). Настройку отсылать переменные с ack=true или false тоже стоит отметить, так как переменную (на которую подписан клиент) может изменить любой драйвер/скрипт/VIS и все изменения надо отправлять клиенту.</p>
+<p>Полный код для платы arduino MEGA 2560 будет выглядеть так:</p>
+<p><code>//Подключаем библиотеки</code><br>
+<code>#include &lt;SPI.h&gt;</code><br>
+<code>#include &lt;Ethernet.h&gt;</code><br>
+<code>#include &lt;PubSubClient.h&gt;       //https://github.com/knolleary/pubsubclient</code><br>
+<code>#include &lt;SimpleModbusMaster.h&gt; //https://code.google.com/archive/p/simple-modbus/</code><br>
+<code>//Настройки сети</code><br>
+<code>byte mac[] = {  0xAB, 0xBC, 0xCD, 0xDE, 0xEF, 0x31 };</code><br>
+<code>byte ip[] = { 192, 168, 69, 31 }; //IP-адрес платы arduino</code><br>
+<code>byte mqttserver[] = { 192, 168, 69, 51 }; //IP-адрес сервера ioBroker</code><br>
+<code>//Объекты/переменные/функции ethernet и MQTT</code><br>
+<code>EthernetClient ethClient;</code><br>
+<code>void callback(char* topic, byte* payload, unsigned int length);</code><br>
+<code>PubSubClient client(mqttserver, 1883, callback, ethClient);</code><br>
+<code>//Переменные временного интервала и буфер для отправки данных по MQTT</code><br>
+<code>unsigned int send_interval = 10; //интервал отправки показаний на сервер по-умолчанию 10 секунд</code><br>
+<code>unsigned long last_time = 0; //текущее время для таймера</code><br>
+<code>char buff[20];</code><br>
+<code>//Параметры порта Serial1 (19 (RX) and 18 (TX))</code><br>
+<code>#define baud 9600       //скорость порта</code><br>
+<code>#define timeout 1000    //интервал времени ожидания ответа /(мс)</code><br>
+<code>#define polling 200     //интервал опроса (мс)</code><br>
+<code>#define retry_count 10  //кол-во повторов при неудачном опросе</code><br>
+<code>#define TxEnablePin 0   //пин управления передачей для RS485 (в UART не используется = 0)</code><br>
+<code>// Общая сумма доступной памяти на master устройстве для хранения данных</code><br>
+<code>// Из слейва запрашиваем 4 регистра, в массиве regs должно быть не меньше 4х ячеек</code><br>
+<code>#define TOTAL_NO_OF_REGISTERS 4</code><br>
+<code>//Массив регистров для работы с modbus (хранение, чтение, запись)</code><br>
+<code>unsigned int regs[TOTAL_NO_OF_REGISTERS];</code><br>
+<code>//Определение пакетов mmodbus</code><br>
+<code>enum {</code><br>
+<code>  TEMP,</code><br>
+<code>  HUM,</code><br>
+<code>  PWM,</code><br>
+<code>  TEST,</code><br>
+<code>  TOTAL_NO_OF_PACKETS //всегда последней записью</code><br>
+<code>};</code><br>
+<code>//Создание массива пакетов modbus</code><br>
+<code>Packet packets[TOTAL_NO_OF_PACKETS];</code></p>
+<p><code>//Функция обработки входящих соединений - прием данных по подписке</code><br>
+<code>void callback(char* topic, byte* payload, unsigned int length) {</code><br>
+<code>  Serial.println ("");</code><br>
+<code>  Serial.println ("-------");</code><br>
+<code>  Serial.println ("New callback of MQTT-broker");</code><br>
+<code>  //преобразуем тему(topic) и значение (payload) в строку</code><br>
+<code>  payload[length] = '\0';</code><br>
+<code>  String strTopic = String(topic);</code><br>
+<code>  String strPayload = String((char*)payload);</code><br>
+<code>  //Исследуем что "прилетело" от сервера по подписке:</code><br>
+<code>  //Изменение интервала опроса</code><br>
+<code>  if (strTopic == "modbusgateway/send_interval") {</code><br>
+<code>    int tmp = strPayload.toInt();</code><br>
+<code>    if (tmp == 0) {</code><br>
+<code>      send_interval = 10;</code><br>
+<code>    } else {</code><br>
+<code>      send_interval = strPayload.toInt();</code><br>
+<code>    }</code><br>
+<code>  }</code><br>
+<code>  //Управление светодиодом значение int от 0 до 1023</code><br>
+<code>  if (strTopic == "modbusgateway/led") {</code><br>
+<code>    int tmp = strPayload.toInt();</code><br>
+<code>    if (tmp &gt;= 0 &amp;&amp; tmp &lt;=1023) {</code><br>
+<code>      regs[2] = tmp;</code><br>
+<code>    }</code><br>
+<code>  }  </code><br>
+<code>  Serial.print (strTopic);</code><br>
+<code>  Serial.print (" ");</code><br>
+<code>  Serial.println (strPayload);</code><br>
+<code>  Serial.println ("-------");</code><br>
+<code>  Serial.println ("");  </code><br>
+<code>}</code></p>
+<p><code>void setup() {</code><br>
+<code>  Serial.begin(9600);</code><br>
+<code>  Serial.println("Start...");</code><br>
+<code>  //стартуем сетевое подключение</code><br>
+<code>  Ethernet.begin(mac, ip);</code><br>
+<code>  Serial.print("IP: ");</code><br>
+<code>  Serial.println(Ethernet.localIP());</code><br>
+<code>  //Инициализируем все пакеты modbus</code><br>
+<code>  modbus_construct(&amp;packets[TEMP], 10, READ_HOLDING_REGISTERS, 0, 1, 0); //температура</code><br>
+<code>  modbus_construct(&amp;packets[HUM], 10, READ_HOLDING_REGISTERS, 1, 1, 1); //влажность</code><br>
+<code>  modbus_construct(&amp;packets[PWM], 10, PRESET_SINGLE_REGISTER, 2, 1, 2); //данные ШИМ для светодиода</code><br>
+<code>  modbus_construct(&amp;packets[TEST], 10, READ_HOLDING_REGISTERS, 3, 1, 3); //тест</code><br>
+<code>  //Конфигурируем соединение modbus (порт serial1, скорость и пр.)</code><br>
+<code>  modbus_configure(&amp;Serial1, baud, SERIAL_8E1, timeout, polling, retry_count, TxEnablePin, packets, TOTAL_NO_OF_PACKETS, regs);</code><br>
+<code>}</code></p>
+<p><code>void loop() {</code><br>
+<code>  //Обоновляем данные в регистрах modbus</code><br>
+<code>  modbus_update();</code><br>
+<code>  //Если соединение MQTT неактивно, то пытаемся установить его и опубликовать/подписаться</code><br>
+<code>  if (!client.connected()) {</code><br>
+<code>    Serial.print("Connect to MQTT-boker...  ");</code><br>
+<code>    //Подключаемся и публикуемся/подписываемся</code><br>
+<code>    if (client.connect("modbusgateway")) {</code><br>
+<code>      Serial.println("success");</code><br>
+<code>      //Значение с датчиков температуры и влажности</code><br>
+<code>      dtostrf((float)regs[0]/10, 5, 1, buff);</code><br>
+<code>      client.publish("modbusgateway/temp", buff);</code><br>
+<code>      dtostrf((float)regs[1]/10, 5, 1, buff);</code><br>
+<code>      client.publish("modbusgateway/hum", buff);</code><br>
+<code>      //Подписываемся на интервал опроса</code><br>
+<code>      client.subscribe("modbusgateway/send_interval");</code><br>
+<code>      //Подписываемся на переменную управления светодиодом</code><br>
+<code>      client.subscribe("modbusgateway/led");</code><br>
+<code>    } else {</code><br>
+<code>      //Если не подключились, пытаемся снова</code><br>
+<code>      Serial.print("Failed, rc=");</code><br>
+<code>      Serial.print(client.state());</code><br>
+<code>      Serial.println(" try again");</code><br>
+<code>      delay(10000);</code><br>
+<code>    }</code><br>
+<code>  //Если соединение активно, то отправляем данные на сервер с заданным интервалом времени</code><br>
+<code>  } else {</code><br>
+<code>    if(millis() &gt; (last_time + send_interval*1000)) {</code><br>
+<code>      last_time = millis();</code><br>
+<code>      //Значение с датчиков температуры и влажности</code><br>
+<code>      dtostrf((float)regs[0]/10, 5, 1, buff);</code><br>
+<code>      client.publish("modbusgateway/temp", buff);</code><br>
+<code>      dtostrf((float)regs[1]/10, 5, 1, buff);</code><br>
+<code>      client.publish("modbusgateway/hum", buff);</code><br>
+<code>    }</code><br>
+<code>  }</code><br>
+<code>  //Проверка входящих соединений по подписке</code><br>
+<code>  client.loop();</code><br>
+<code>}</code></p>
+<p>Это решение можно использовать как прототип (пример) сети ModBus в вашей системе автоматизации. Данные от slave передаются с нужным интервалом в ioBroker.</p>
+<p><a href="wp-content\uploads\MQTT-example-modbus4.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-modbus4.jpg" width="700" height="138"></a></p>
+<p>Клиент MQTT подписан на переменные и перенаправляет нужные в slave-устройство по сети ModBus.</p>
+<p><a href="wp-content\uploads\MQTT-example-modbus5.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-modbus5.jpg" width="400" height="580"></a></p>
+<h2><span id="_8211">Применение &#8211; подключение мобильных клиентов</span></h2>
+<p>В последнее время протокол MQTT получил большое распространение ввиду простоты, экономии трафика и хорошей проработке библиотек под разные платформы. Существует множество программ для работы с MQTT на мобильных устройствах, к примеру <a href="https://play.google.com/store/apps/details?id=com.thn.iotmqttdashboard&hl=ru">IoT MQTT Dashboard</a>. С помощью этой программы можно подключиться к MQTT-брокеру в локальной сети или в сети интернет. Рассмотрим пример &#8211; в роли брокера будет выступать система ioBroker, к которой по MQTT будет подключаться клиент &#8211; приложение IoT MQTT Dashboard.</p>
+<p>В данном примере будем управлять светом с помощью контроллера <a href="http://www.ab-log.ru/smart-house/ethernet/megad-328">MegaD-328</a>, который подключен к ioBroker с помощью драйвера <a href="index-125.htm?page_id=4052&amp;lang=ru">MegaD</a>. Управляет непосредственно реле (MegaD порт <strong>P7</strong>) света в холле специальный скрипт, который подписывается на состояние порта-кнопки <strong>P0</strong> и состояние MQTT-переменной <strong>mqtt.0.remotectrl.light.hall</strong>, которую будет публиковать мобильный клиент. При этом скрипт переключает состояние порта, привязанного к реле (порт P7), т.е. инвертирует его. Получается, что при каждом нажатии на кнопку, электрически подключенную к порту <strong>P0</strong> (вылавливается состояние <strong>true</strong>) и при каждой публикации переменной <strong>mqtt.0.remotectrl.light.hall </strong>значением так же <strong>true</strong>, порт <strong>P7</strong> будет включать или выключать свет.</p>
+<p>Текст скрипта будет примерно такой:</p>
+<p><code>//Управление освещением в зале с помощью кнопки порт p0 контроллера MegaD драйвер экземпляр megad.0</code><br>
+<code> on({id: 'megad.0.p0_P0', change: 'any'}, function (obj) {</code><br>
+<code>   if (obj.newState.val !== '' || typeof obj.newState.val !== "undefined"){</code><br>
+<code>     if (obj.newState.val === true) {</code><br>
+<code>       if (getState('megad.0.p7_P7').val === true) {</code><br>
+<code>         setState('megad.0.p7_P7', false);</code><br>
+<code>       } else {</code><br>
+<code>         setState('megad.0.p7_P7', true);</code><br>
+<code>       }</code><br>
+<code>     }</code><br>
+<code>   }</code><br>
+<code> });</code><br>
+<code> //Управление освещением в зале удаленно по MQTT топик "mqtt.0.remotectrl.light.hall"</code><br>
+<code> on({id: 'mqtt.0.remotectrl.light.hall', change: 'any'}, function (obj) {</code><br>
+<code>  if (obj.newState.val !== '' || typeof obj.newState.val !== "undefined"){</code><br>
+<code>    if (obj.newState.val === true) {</code><br>
+<code>      if (getState('megad.0.p7_P7').val === true) {</code><br>
+<code>        setState('megad.0.p7_P7', false);</code><br>
+<code>      } else {</code><br>
+<code>        setState('megad.0.p7_P7', true);</code><br>
+<code>      }</code><br>
+<code>    }</code><br>
+<code>  }</code><br>
+<code> });<br>
+</code></p>
+<p>Подключение кнопки и лампочки к контроллеру MegaD:</p>
+<p><a href="wp-content\uploads\MQTT-example-mobile1.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-mobile1.jpg" width="401" height="581"></a></p>
+<p>Настройки драйвера MQTT:</p>
+<p><a href="wp-content\uploads\MQTT-example-mobile2.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-mobile2.jpg" width="400" height="432"></a></p>
+<p>Мобильный клиент будет публиковать данные в переменную <strong>mqtt.0.remotectrl.light.hall</strong> и подпишется на реальное состояние порта MegaD &#8211; <strong>megad.0.p7_P7</strong>. Настройки публикации и подписки:</p>
+<p><a href="wp-content\uploads\MQTT-example-mobile3.png"><img class="alignnone" src="wp-content\uploads\MQTT-example-mobile3.png" width="300" height="512"> </a><a href="wp-content\uploads\MQTT-example-mobile4.png"><img class="alignnone" src="wp-content\uploads\MQTT-example-mobile4.png" width="300" height="512"></a></p>
+<p>В итоге для одного канала управления светом получится окно управления (публикация) и окно подписки &#8211; реальное состояние реле света (для обратной связи):</p>
+<p><a href="wp-content\uploads\MQTT-example-mobile6.png"><img class="alignnone" src="wp-content\uploads\MQTT-example-mobile5.png" width="300" height="512"> <img class="alignnone" src="wp-content\uploads\MQTT-example-mobile6.png" width="300" height="512"></a></p>
+<h2><span id="_8211-2">Применение &#8211; работа с облачными серверами</span></h2>
+<p>Описанный выше пример имеет ряд недостатков. Во-первых, не всегда мобильный клиент может находиться в одной локальной сети с сервером ioBroker, во-вторых, даже если осуществить проброс портов в интернет и защитить соединение, не всегда сам сервер ioBroker может принять входящие подключения (находится за NAT, к которому нет доступа для настройки). В глобальной сети много различных сервисов, которые поддерживают MQTT &#8211; платных и бесплатных, к примеру отправка погодных данных, геолокации и пр. Некоторые сервисы могут выступать в качестве брокера протокола MQTT и их можно использовать как шлюз (мост) для вывода данных из ioBroker в глобальную сеть или для получения данных в ioBroker.</p>
+<p>В качестве примера рассмотрим работу связки:</p>
+<ul>
+<li>сервер/брокер &#8211; сервис <a href="https://www.cloudmqtt.com/">cloudmqtt.com</a> (есть бесплатный тариф),</li>
+<li>клиент/подписчик &#8211; система ioBroker с выходом в сеть интернет, публикует данные температуры и влажности (см. <a href="index-141.htm?page_id=4643&amp;lang=ru#_ioBroker__MQTT">пример выше</a>), публикует реальное состояние портов <strong>P7-P13</strong> (реле MegaD драйвера <strong>megad.0</strong> &#8211; управление освещением), подписка на переменные удаленного управления светом (экземпляр драйвера <strong>mqtt.0</strong>),</li>
+<li>клиент/подписчик &#8211; приложение <a href="https://play.google.com/store/apps/details?id=com.thn.iotmqttdashboard&hl=ru">IoT MQTT Dashboard</a> для удаленной работы &#8211; подписка на данные сенсора температуры и влажности, подписка на реальное состояние портов <strong>P7-P13</strong> (реле MegaD драйвера <strong>megad.0</strong>), публикация переменных удаленного управления светом (экземпляр драйвера <strong>mqtt.0</strong>).</li>
+</ul>
+<p>В итоге получается следующая структура:</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud1.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud1.jpg" width="701" height="350"></a></p>
+<p>Связка драйвер <strong>mqtt.1</strong> (брокер) &#8211; Arduino UNO + Ethernet + DHT22 (клиент) как в <a href="index-141.htm?page_id=4643&amp;lang=ru#_ioBroker__MQTT">примере выше</a> с несколькими изменениями. Настройки экземпляра драйвера <strong>mqtt.1</strong>:</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud2.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud2.jpg" width="400" height="413"></a></p>
+<p>Код для платформы arduino:</p>
+<p><code>//Подключаем библиотеки</code><br>
+<code>#include &lt;SPI.h&gt;</code><br>
+<code>#include &lt;Ethernet.h&gt;</code><br>
+<code>#include &lt;PubSubClient.h&gt; //https://github.com/knolleary/pubsubclient</code><br>
+<code>#include &lt;dht.h&gt;          //https://github.com/RobTillaart/Arduino/tree/master/libraries/DHTlib</code><br>
+<code>//Настройки сети</code><br>
+<code>byte mac[] = {  0xAB, 0xBC, 0xCD, 0xDE, 0xEF, 0x31 };</code><br>
+<code>byte ip[] = { 192, 168, 69, 31 }; //IP-адрес платы arduino</code><br>
+<code>byte mqttserver[] = { 192, 168, 69, 51 }; //IP-адрес сервера ioBroker</code><br>
+<code>EthernetClient ethClient;</code><br>
+<code>void callback(char* topic, byte* payload, unsigned int length);</code><br>
+<code>PubSubClient client(mqttserver, 1884, callback, ethClient);</code><br>
+<code>//Глобальные переменные</code><br>
+<code>unsigned int send_interval = 10; //интервал отправки показаний на сервер по-умолчанию 10 секунд</code><br>
+<code>unsigned long last_time = 0; //текущее время для таймера</code><br>
+<code>dht DHT;</code><br>
+<code>#define DHT22_PIN 8</code><br>
+<code>char buff[20];</code></p>
+<p><code>//Функция обработки входящих соединений - прием данных по подписке</code><br>
+<code>void callback(char* topic, byte* payload, unsigned int length) {</code><br>
+<code>  Serial.println ("");</code><br>
+<code>  Serial.println ("-------");</code><br>
+<code>  Serial.println ("New callback of MQTT-broker");</code><br>
+<code>  //преобразуем тему(topic) и значение (payload) в строку</code><br>
+<code>  payload[length] = '\0';</code><br>
+<code>  String strTopic = String(topic);</code><br>
+<code>  String strPayload = String((char*)payload);</code><br>
+<code>  //Исследуем что "прилетело" от сервера по подписке:</code><br>
+<code>  //Изменение интервала опроса</code><br>
+<code>  if (strTopic == "example2/send_interval") {</code><br>
+<code>    int tmp = strPayload.toInt();</code><br>
+<code>    if (tmp == 0) {</code><br>
+<code>      send_interval = 10;</code><br>
+<code>    } else {</code><br>
+<code>      send_interval = strPayload.toInt();</code><br>
+<code>    }</code><br>
+<code>  }</code><br>
+<code>  Serial.print (strTopic);</code><br>
+<code>  Serial.print (" ");</code><br>
+<code>  Serial.println (strPayload);</code><br>
+<code>  Serial.println ("-------");</code><br>
+<code>  Serial.println ("");  </code><br>
+<code>}</code><br>
+<code>void setup() {</code><br>
+<code>  Serial.begin(9600);</code><br>
+<code>  Serial.println("Start...");</code><br>
+<code>  //стартуем сетевое подключение</code><br>
+<code>  Ethernet.begin(mac, ip);</code><br>
+<code>  Serial.print("IP: ");</code><br>
+<code>  Serial.println(Ethernet.localIP());</code><br>
+<code>  //Инициализируем порты ввода-вывода, прописываем начальные значения</code><br>
+<code>}</code><br>
+<code>void loop() {</code><br>
+<code>  //Если соединение MQTT неактивно, то пытаемся установить его и опубликовать/подписаться</code><br>
+<code>  if (!client.connected()) {</code><br>
+<code>    Serial.print("Connect to MQTT-boker...  ");</code><br>
+<code>    //Подключаемся и публикуемся/подписываемся</code><br>
+<code>    if (client.connect("example2")) {</code><br>
+<code>      Serial.println("success");</code><br>
+<code>      //Значение с датчиков</code><br>
+<code>      if (DHT.read22(DHT22_PIN)==DHTLIB_OK) {</code><br>
+<code>        dtostrf(DHT.humidity, 5, 2, buff);</code><br>
+<code>        client.publish("example2/hum", buff);</code><br>
+<code>        dtostrf(DHT.temperature, 5, 2, buff);</code><br>
+<code>        client.publish("example2/temp", buff);</code><br>
+<code>      }</code><br>
+<code>      //Подписываемся на интервал опроса</code><br>
+<code>      client.subscribe("example2/send_interval");</code><br>
+<code>    } else {</code><br>
+<code>      //Если не подключились, ждем 10 секунд и пытаемся снова</code><br>
+<code>      Serial.print("Failed, rc=");</code><br>
+<code>      Serial.print(client.state());</code><br>
+<code>      Serial.println(" try again in 10 seconds");</code><br>
+<code>      delay (10000);</code><br>
+<code>    }</code><br>
+<code>  //Если соединение активно, то отправляем данные на сервер с заданным интервалом времени</code><br>
+<code>  } else {</code><br>
+<code>    if(millis() &gt; (last_time + send_interval*1000)) {</code><br>
+<code>      last_time = millis();</code><br>
+<code>      if (DHT.read22(DHT22_PIN)==DHTLIB_OK) {</code><br>
+<code>        dtostrf(DHT.humidity, 5, 2, buff);</code><br>
+<code>        client.publish("example2/hum", buff);</code><br>
+<code>        dtostrf(DHT.temperature, 5, 2, buff);</code><br>
+<code>        client.publish("example2/temp", buff);</code><br>
+<code>      }</code><br>
+<code>    }</code><br>
+<code>  }</code><br>
+<code>  //Проверка входящих соединений по подписке</code><br>
+<code>  client.loop();</code><br>
+<code>}</code></p>
+<p>Результат работы &#8211; объекты драйвера <strong>mqtt.1</strong>:</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud3.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud3.jpg" width="700" height="128"></a></p>
+<p>Теперь настроим публикацию/подписку данных в облако. Для начала регистрируемся на сайте <a href="https://www.cloudmqtt.com/">cloudmqtt.com</a>, подбираем нужный тариф, создаем instance, получаем настройки:</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud4.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud4.jpg" width="400" height="337"></a></p>
+<p>Для большей безопасности лучше создать отдельного пользователя, предположим что это будет пользователь <strong>iobroker</strong> с паролем <strong>1234</strong>. Дадим разрешения пользователю на запись/чтение в любой топик:</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud5.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud5.jpg" width="401" height="154"></a></p>
+<p>Далее настроим экземпляр драйвера mqtt.0 для подключения как клиент/подписчик к облачному брокеру и список публикаций/подписок:</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud6.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud6.jpg" width="400" height="434"></a></p>
+<ul>
+<li>тип соединения &#8211; клиент/подписчик,</li>
+<li>настройки соединения &#8211; указываем URL выданный в панели управления <a href="https://www.cloudmqtt.com/">cloudmqtt.com</a> порт будем использовать <strong>22809</strong>, который работает с <strong>SSL</strong>,</li>
+<li>в настройках аутентификации указываем имя пользователя и пароль,</li>
+<li>patterns &#8211; наш клиент ioBroker будет подписан на все топики, что есть в облаке, поэтому указываем здесь символ решетка (<strong>#</strong>), можно использовать маску и подписаться выборочно,</li>
+<li>маска для собственных значений &#8211; клиент будет публиковать на сервер значения температуры/влажности и состояния всех портов megaD (порты с реле <strong>P7-P13</strong>),в этом поле через запятую указываем необходимые переменные: <strong>mqtt.1.example2.hum,mqtt.1.example2.temp,megad.0.p7_P7,megad.0.p8_P8,megad.0.p9_P9,megad.0.p10_P10,megad.0.p11_P11,megad.0.p12_P12,megad.0.p13_P13</strong>,</li>
+<li>отсылать только изменения &#8211; ставим галочку, публиковать будем только изменения,</li>
+<li>выдавать собственные значения при старте &#8211; так же указываем для создания топиков,</li>
+<li>посылать не только команды, но и состояния (ack=true) &#8211; необходимо отметить эту настройку, так как данные температуры/влажности обновляются драйвером mqtt (ack=true).</li>
+</ul>
+<p>Настройки сохраняем, убеждаемся, что соединение установилось (можно на панели управления <a href="https://www.cloudmqtt.com/">cloudmqtt.com</a> посмотреть лог сервера). Через некоторое время появятся данные (в панели ссылка <strong>WebsocketUI</strong>):</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud7.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud7.jpg" width="400" height="377"></a></p>
+<p>В итоге остается только настроить мобильный клиент, к примеру <a href="https://play.google.com/store/apps/details?id=com.thn.iotmqttdashboard&hl=ru">IoT MQTT Dashboard</a>. Создаем новое подключение:</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud8.png"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud8.png" width="302" height="515"></a></p>
+<p>Создаем топики для публикации (на примере освещения зала &#8211; порт <strong>P7</strong> MegaD):</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud9.png"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud9.png" width="300" height="512"></a></p>
+<p>Создаем топики подписок (температура, влажность, освещение зала порт <strong>P7</strong> MegaD):</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud10.png"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud10.png" width="250" height="427"> </a><a href="wp-content\uploads\MQTT-example-cloud11.png"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud11.png" width="250" height="427"> </a><a href="wp-content\uploads\MQTT-example-cloud12.png"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud12.png" width="250" height="427"></a></p>
+<p>В итоге dashboard может выглядеть примерно так:</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud13.png"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud13.png" width="250" height="427"> </a><a href="wp-content\uploads\MQTT-example-cloud14.png"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud14.png" width="250" height="427"></a></p>
+<p>После создания публикаций на мобильном устройстве, в экземпляре драйвера <strong>mqtt.0</strong> системы ioBroker должны появиться переменные управления светом, которые следует использовать в скрипте управления освещением (см. <a href="index-141.htm?page_id=4643&amp;lang=ru#_8211">пример выше</a>):</p>
+<p><a href="wp-content\uploads\MQTT-example-cloud15.jpg"><img class="alignnone" src="wp-content\uploads\MQTT-example-cloud15.jpg" width="702" height="158"></a></p>
+<p>Поздравляем! Теперь вы сможете управления системой ioBroker и получать от нее данные через облачный сервис!</p>
+				
+<footer class="post-data">
+	
+	<div class="entry-meta">
+			</div><!-- .entry-meta -->
+	</footer><!-- .post-data -->
+			</div><!-- .post-entry -->
+	</article><!-- #post-## -->
+
+				
+			
+		</main><!-- #main -->
+
+			<div id="widgets" class="widget-area right-sidebar" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+		<div id="text-17" class="widget-wrapper widget_text">			<div class="textwidget"><div class="adaptermenueclass">
+<!-- Page-list plugin v.5.1 wordpress.org/plugins/page-list/ -->
+<ul class="page-list ">
+<li class="page_item page-item-4086 page_item_has_children"><a href="index-126.htm?page_id=4086&lang=ru">Визуализация</a>
+<ul class='children'>
+	<li class="page_item page-item-4034"><a href="index-127.htm?page_id=4034&lang=ru">Драйвер Flot</a></li>
+	<li class="page_item page-item-4810"><a href="index-435.htm?page_id=4810&lang=ru">Драйвер Mobile</a></li>
+</ul>
+</li>
+<li class="page_item page-item-5040 page_item_has_children"><a href="index-143.htm?page_id=5040&lang=ru">Группа драйверов VIS</a>
+<ul class='children'>
+	<li class="page_item page-item-6489"><a href="index-145.htm?page_id=6489&lang=ru">Виджеты ioBroker.vis-players</a></li>
+	<li class="page_item page-item-5032"><a href="index-144.htm?page_id=5032&lang=ru">Мобильное приложение ioBroker.vis</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4271 page_item_has_children"><a href="index-133.htm?page_id=4271&lang=ru">Мультимедиа</a>
+<ul class='children'>
+	<li class="page_item page-item-6526"><a href="index-436.htm?page_id=6526&lang=ru">Драйвер Kodi</a></li>
+	<li class="page_item page-item-6099"><a href="index-135.htm?page_id=6099&lang=ru">Драйвер mpd</a></li>
+	<li class="page_item page-item-4262"><a href="index-134.htm?page_id=4262&lang=ru">Драйвер sayit</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4082 page_item_has_children"><a href="index-124.htm?page_id=4082&lang=ru">Оборудование</a>
+<ul class='children'>
+	<li class="page_item page-item-3415"><a href="index-399.htm?page_id=3415&lang=ru">RFLink</a></li>
+	<li class="page_item page-item-4052"><a href="index-125.htm?page_id=4052&lang=ru">Драйвер MegaD-328</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4069 page_item_has_children"><a href="index-122.htm?page_id=4069&lang=ru">Общие</a>
+<ul class='children'>
+	<li class="page_item page-item-3800"><a href="index-123.htm?page_id=3800&lang=ru">Драйвер Admin</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4091 page_item_has_children"><a href="index-131.htm?page_id=4091&lang=ru">Сервисные приложения</a>
+<ul class='children'>
+	<li class="page_item page-item-3374"><a href="index-132.htm?page_id=3374&lang=ru">Драйвер Geofency</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4488 page_item_has_children current_page_ancestor current_page_parent"><a href="index-139.htm?page_id=4488&lang=ru">Сетевые</a>
+<ul class='children'>
+	<li class="page_item page-item-6663"><a href="index-142.htm?page_id=6663&lang=ru">Драйвер Email</a></li>
+	<li class="page_item page-item-4643 current_page_item"><a href="index-141.htm?page_id=4643&lang=ru">Драйвер MQTT</a></li>
+	<li class="page_item page-item-4492"><a href="index-140.htm?page_id=4492&lang=ru">Драйвер Telegram</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4457 page_item_has_children"><a href="index-136.htm?page_id=4457&lang=ru">Скрипты и логика</a>
+<ul class='children'>
+	<li class="page_item page-item-6703"><a href="index-137.htm?page_id=6703&lang=ru">Драйвер Javascript</a></li>
+	<li class="page_item page-item-4459"><a href="index-138.htm?page_id=4459&lang=ru">Драйвер Text2Command</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4075 page_item_has_children"><a href="index-128.htm?page_id=4075&lang=ru">Хранилище</a>
+<ul class='children'>
+	<li class="page_item page-item-3636"><a href="index-129.htm?page_id=3636&lang=ru">Драйвер History</a></li>
+	<li class="page_item page-item-4044"><a href="index-130.htm?page_id=4044&lang=ru">Драйвер SQL</a></li>
+</ul>
+</li>
+
+</ul></div></div>
+		</div>
+			</div><!-- end of #widgets -->
+	</div><!-- #content -->
+
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+
+<footer id="footer" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div id="footer-wrapper">
+
+		<div id="footer-widgets-container">
+					</div><!-- #footer-widgets-container-->
+
+		<div id="menu-social-container">
+			<nav id="footer-menu-container">
+				<ul id="menu-2016_seitenfuss_ru" class="footer-menu"><li id="menu-item-2708" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2708"><a href="index-158.htm?page_id=2692&#038;lang=ru">Контакт</a></li>
+<li id="menu-item-2707" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2707"><a href="index-159.htm?page_id=2693&#038;lang=ru">Правовая информация</a></li>
+<li id="menu-item-2706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2706"><a href="index-160.htm?page_id=2694&#038;lang=ru">Пользовательское соглашение</a></li>
+<li id="menu-item-2705" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2705"><a href="index-161.htm?page_id=2695&#038;lang=ru">Карта сайта</a></li>
+<li id="menu-item-2704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2704"><a href="index-162.htm?page_id=2696&#038;lang=ru">Спасибо</a></li>
+</ul>			</nav><!-- #footer-menu -->
+			<div id="social-icons-container">
+				<ul class="social-icons"></ul><!-- .social-icons -->			</div><!-- #social-icons-container-->
+		</div><!-- #menu-social-container -->
+
+		
+		<div id="footer-base">
+			<div class="copyright">
+				&copy; 2019 <a href="index-2.htm?lang=ru" title="ioBroker">ioBroker</a>			</div><!-- .copyright -->
+
+			<div class="powered">
+				<a href="http://cyberchimps.com/responsive-II/">Чутко II</a> работает на <a href="http://wordpress.org/">WordPress</a>			</div><!-- end .powered -->
+
+			<div class="scroll-top">
+				<a href="#scroll-top" title="прокрутка наверх">&#8679;</a>
+			</div><!-- .scroll-top -->
+		</div><!-- #footer-base -->
+	</div><!-- #footer-wrapper -->
+	</footer><!-- #footer -->
+<div id="cookie-law-info-bar"><span>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.<a data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button" style="display:inline-block; ">Akzeptieren</a> <a href='..\index-1.htm?page_id=2305&#038;lang=de' id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link" style="display:inline-block;">mehr Infos</a></span></div><div id="cookie-law-info-again" style="display:none;"><span id="cookie_hdr_showagain">Privacy & Cookies Policy</span></div><div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  cli_cookiebar_settings='{"animate_speed_hide":"500","animate_speed_show":"500","background":"#fff","border":"#444","border_on":false,"button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"button_2_hidebar":true,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":true,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":false,"show_once":"10000","logging_on":false,"as_popup":false,"popup_overlay":true,"bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"}';
+  /* ]]> */
+</script><div class="scroll-back-to-top-wrapper">
+	<span class="scroll-back-to-top-inner">
+					<i class="fa fa-2x fa-arrow-circle-up"></i>
+			</span>
+</div><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435, \u0447\u0442\u043e \u0432\u044b \u043d\u0435 \u0440\u043e\u0431\u043e\u0442."}}};
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435, \u0447\u0442\u043e \u0432\u044b \u043d\u0435 \u0440\u043e\u0431\u043e\u0442."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\contact-form-7\includes\js\scripts.js?ver=4.9.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\scroll-back-to-top\assets\js\scroll-back-to-top.js'></script>
+<script type='text/javascript' src='wp-content\plugins\table-of-contents-plus\front.min.js?ver=1509'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\js\responsive-scripts.min.js?ver=1.2.5'></script>
+<script type='text/javascript' src='wp-includes\js\wp-embed.min.js?ver=4.7.5'></script>
+</body>
+</html>

@@ -1,0 +1,914 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="ru-RU">
+<![endif]-->
+<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="ru-RU">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ru-RU"><!--<![endif]-->
+	<head>
+				<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"> 
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.iobroker.net/docu/xmlrpc.php">
+		
+		<title>Консольные команды &#8211; ioBroker</title>
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Feed" href="index-4.rss?feed=rss2&#038;lang=ru">
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Comments Feed" href="index-5.rss?feed=comments-rss2&#038;lang=ru">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.iobroker.net\/docu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css' href='wp-content\plugins\crayon-syntax-highlighter\css\min\crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='crayon-theme-classic-css' href='wp-content\plugins\crayon-syntax-highlighter\themes\classic\classic.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='crayon-font-monaco-css' href='wp-content\plugins\crayon-syntax-highlighter\fonts\monaco.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content\plugins\contact-form-7\includes\css\styles.css?ver=4.9.2' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-public.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-gdpr-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-gdpr.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='dedo-css-css' href='wp-content\plugins\delightful-downloads\assets\css\delightful-downloads.min.css?ver=1.6.6' type='text/css' media='all'>
+<link rel='stylesheet' id='mbpro-font-awesome-css' href='wp-content\plugins\maxbuttons\assets\libraries\font-awesome\css\font-awesome.min.css?ver=6.28' type='text/css' media='all'>
+<link rel='stylesheet' id='page-list-style-css' href='wp-content\plugins\page-list\css\page-list.css?ver=5.1' type='text/css' media='all'>
+<link rel='stylesheet' id='pc_google_analytics-frontend-css' href='http://www.iobroker.net/docu/wp-content/plugins/pc-google-analytics/assets/css/frontend.css?ver=1.0.0' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-css' href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' type='text/css' media='screen'>
+<link rel='stylesheet' id='toc-screen-css' href='wp-content\plugins\table-of-contents-plus\screen.min.css?ver=1509' type='text/css' media='all'>
+<link rel='stylesheet' id='parent-style-css' href='wp-content\themes\responsive-mobile\style.css?ver=4.7.5' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-style-css' href='wp-content\themes\responsive-mobile\css\style.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-child-style-css' href='wp-content\themes\responsive-mobile_child\style.css?ver=1.0' type='text/css' media='all'>
+<link rel='stylesheet' id='recent-posts-widget-with-thumbnails-public-style-css' href='wp-content\plugins\recent-posts-widget-with-thumbnails\public.css?ver=6.5.0' type='text/css' media='all'>
+<link rel='stylesheet' id='cleverness_todo_list_frontend-css' href='wp-content\plugins\cleverness-to-do-list\css\cleverness-to-do-list-frontend.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='jquery.ui.theme-css' href='wp-content\plugins\cleverness-to-do-list\css\jquery-ui-fresh.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='tablepress-default-css' href='wp-content\tablepress-combined.min.css?ver=128' type='text/css' media='all'>
+<link rel='stylesheet' id='bootstrap-css' href='wp-content\themes\responsive-mobile\libraries\bootstrap\css\bootstrap.min.css?ver=4.7.5' type='text/css' media='all'>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"\u041d\u0430\u0436\u043c\u0438\u0442\u0435 %s \u0434\u043b\u044f \u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, %s \u0434\u043b\u044f \u0432\u0441\u0442\u0430\u0432\u043a\u0438","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\crayon-syntax-highlighter\js\min\crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[]};
+var log_object = {"ajax_url":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\cookie-law-info\public\js\cookie-law-info-public.js?ver=1.7.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mb_ajax = {"ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\maxbuttons\js\min\front.js?ver=6.28'></script>
+<script type='text/javascript' src='wp-content\plugins\pc-google-analytics\assets\js\frontend.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\libraries\bootstrap\js\bootstrap.min.js?ver=4.7.5'></script>
+<link rel='https://api.w.org/' href='index.json?rest_route=/'>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.xml?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes\wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.7.5">
+<link rel="canonical" href="index-401.htm?page_id=6905&#038;lang=ru">
+<link rel='shortlink' href='http://www.iobroker.net/docu/?p=6905'>
+<link rel="alternate" type="application/json+oembed" href="index-364.json?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D6905%26lang%3Dru">
+<link rel="alternate" type="text/xml+oembed" href="index-363.xml?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D6905%26lang%3Dru&#038;format=xml">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-86900958-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+
+<style>
+.scroll-back-to-top-wrapper {
+    position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #777777;
+	color: #eeeeee;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-back-to-top-wrapper:hover {
+	background-color: #888888;
+  color: #eeeeee;
+}
+.scroll-back-to-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-back-to-top-wrapper i.fa {
+	line-height: inherit;
+}
+.scroll-back-to-top-wrapper .fa-lg {
+	vertical-align: 0;
+}
+</style><!-- Analytics by WP-Statistics v12.6 - https://wp-statistics.com/ -->
+<link rel="alternate" href="index-98.htm?page_id=3971&#038;lang=de" hreflang="de">
+<link rel="alternate" href="index-400.htm?page_id=6936&#038;lang=en" hreflang="en">
+<link rel="alternate" href="index-401.htm?page_id=6905&#038;lang=ru" hreflang="ru">
+		<script type="text/javascript">
+			var cli_flush_cache=1;
+		</script>
+				<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+.site-content .content-area{
+	/*background: #6592c9;*/
+}		</style>
+	<style type="text/css">
+.paypal-donations { text-align: center !important }
+</style>
+	</head>
+
+<body class="page-template-default page page-id-6905 page-child parent-pageid-2678 group-blog default" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="container" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Перейти к содержимому</a>
+	<a class="skip-link screen-reader-text" href="#main-navigation">Перейти к главному меню</a>
+	<div id="top-menu-container" class="container-full-width">
+		<nav id="top-menu" class="container" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+			<ul id="menu-2016_top_menue" class="top-menu"><li id="menu-item-2203-de" class="lang-item lang-item-4 lang-item-de lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-de"><a href="index-98.htm?page_id=3971&#038;lang=de" hreflang="de-DE" lang="de-DE">Deutsch</a></li>
+<li id="menu-item-2203-en" class="lang-item lang-item-7 lang-item-en menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-en"><a href="index-400.htm?page_id=6936&#038;lang=en" hreflang="en-GB" lang="en-GB">English</a></li>
+<li id="menu-item-2203-ru" class="lang-item lang-item-20 lang-item-ru current-lang menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-ru"><a href="index-401.htm?page_id=6905&#038;lang=ru" hreflang="ru-RU" lang="ru-RU">Русский</a></li>
+</ul>		</nav>
+	</div><!-- top menu container -->
+        <div id="header_section">
+	<header id="header" class="container-full-width site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+				<div class="container">
+			<div class="header-row">
+				<div id="site-branding">
+							<div id="logo">
+			<a href="index-2.htm?lang=ru" rel="home" itemprop="url" title="ioBroker">
+				<img src="wp-content\uploads\ioBroker_logo_lang-e1456684383484.png" alt="ioBroker" itemprop="image">
+			</a>
+		</div>
+					</div>
+				<div id="secondary-header">
+					
+	<div id="top-widget" class="top-widget" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+			<div id="search-2" class="responsive-mobile-top-widget widget_search"><form role="search" method="get" class="search-form" action="http://www.iobroker.net/docu/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			<input type="hidden" name="lang" value="ru"></form></div>
+			</div><!-- end of #top-widget -->
+				</div>
+			</div>
+		</div>
+
+			</header><!-- #header -->
+
+	<div id="main-menu-container" class="container-full-width">
+		<div id="main-menu" class="container">
+			<nav id="main-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<div id="mobile-current-item">Меню</div>
+				<button id="mobile-nav-button"><span class="accessibile-label">Мобильное меню переключения</span></button>
+				<div class="main-nav"><ul id="menu-2016_kopfzeile_ru" class="menu"><li id="menu-item-2686" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2686"><a href="index-111.htm?page_id=2649&#038;lang=ru">Новости</a></li>
+<li id="menu-item-2922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2922"><a href="index-112.htm?page_id=267&#038;lang=ru">Введение</a></li>
+<li id="menu-item-2635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2635"><a href="index-113.htm?page_id=2630&#038;lang=ru">Установка</a>
+<ul class="sub-menu">
+	<li id="menu-item-3313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3313"><a href="index-113.htm?page_id=2630&#038;lang=ru">Установка</a></li>
+	<li id="menu-item-3494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3494"><a href="index-114.htm?page_id=3489&#038;lang=ru">Raspberry (JESSIE) – быстрый старт</a></li>
+	<li id="menu-item-5122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5122"><a href="index-115.htm?page_id=5114&#038;lang=ru">Pine64 (JESSIE) быстрый старт</a></li>
+	<li id="menu-item-4276" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4276"><a href="index-116.htm?page_id=4268&#038;lang=ru">Установка на Armbian</a></li>
+	<li id="menu-item-3312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3312"><a href="index-117.htm?page_id=3303&#038;lang=ru">Обновление драйверов и контроллера</a></li>
+	<li id="menu-item-4917" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4917"><a href="index-118.htm?page_id=4915&#038;lang=ru">Видео</a></li>
+	<li id="menu-item-5533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5533"><a href="index-119.htm?page_id=5506&#038;lang=ru">Как устанавливать драйвера, работающие с serial портом или похожие драйвера</a></li>
+	<li id="menu-item-5648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5648"><a href="index-120.htm?page_id=5637&#038;lang=ru">Быстрая установка на Debian</a></li>
+</ul>
+</li>
+<li id="menu-item-2636" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2636"><a href="index-121.htm?page_id=2628&#038;lang=ru">Драйвера</a>
+<ul class="sub-menu">
+	<li id="menu-item-4074" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4074"><a href="index-122.htm?page_id=4069&#038;lang=ru">Общие</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3885" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3885"><a href="index-123.htm?page_id=3800&#038;lang=ru">Драйвер Admin</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4089" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4089"><a href="index-124.htm?page_id=4082&#038;lang=ru">Оборудование</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4100"><a href="index-125.htm?page_id=4052&#038;lang=ru">Драйвер MegaD-328</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4167"><a href="index-126.htm?page_id=4086&#038;lang=ru">Визуализация</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="index-127.htm?page_id=4034&#038;lang=ru">Драйвер Flot</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4090" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4090"><a href="index-128.htm?page_id=4075&#038;lang=ru">Хранилище</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3886"><a title="History (рус)" href="index-129.htm?page_id=3636&#038;lang=ru">Драйвер History</a></li>
+		<li id="menu-item-4065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4065"><a href="index-130.htm?page_id=4044&#038;lang=ru">Драйвер SQL</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4101"><a href="index-131.htm?page_id=4091&#038;lang=ru">Сервисные приложения</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4068" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4068"><a href="index-132.htm?page_id=3374&#038;lang=ru">Драйвер Geofency</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4274"><a href="index-133.htm?page_id=4271&#038;lang=ru">Мультимедиа</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4275"><a href="index-134.htm?page_id=4262&#038;lang=ru">Драйвер sayit</a></li>
+		<li id="menu-item-6544" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6544"><a href="index-135.htm?page_id=6099&#038;lang=ru">Драйвер mpd</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4461"><a href="index-136.htm?page_id=4457&#038;lang=ru">Скрипты и логика</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6821" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6821"><a href="index-137.htm?page_id=6703&#038;lang=ru">Драйвер Javascript</a></li>
+		<li id="menu-item-4462" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4462"><a href="index-138.htm?page_id=4459&#038;lang=ru">Драйвер Text2Command</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4498"><a href="index-139.htm?page_id=4488&#038;lang=ru">Сетевые</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4497"><a href="index-140.htm?page_id=4492&#038;lang=ru">Драйвер Telegram</a></li>
+		<li id="menu-item-4823" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4823"><a href="index-141.htm?page_id=4643&#038;lang=ru">Драйвер MQTT</a></li>
+		<li id="menu-item-6665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6665"><a href="index-142.htm?page_id=6663&#038;lang=ru">Драйвер Email</a></li>
+	</ul>
+</li>
+	<li id="menu-item-5045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5045"><a href="index-143.htm?page_id=5040&#038;lang=ru">Группа драйверов VIS</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5046" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5046"><a href="index-144.htm?page_id=5032&#038;lang=ru">Мобильное приложение ioBroker.vis</a></li>
+		<li id="menu-item-6552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6552"><a href="index-145.htm?page_id=6489&#038;lang=ru">Виджеты ioBroker.vis-players</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-2687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2687"><a href="index-146.htm?page_id=2651&#038;lang=ru">Скачать</a>
+<ul class="sub-menu">
+	<li id="menu-item-4839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4839"><a href="index-147.htm?page_id=2968&#038;lang=ru">Файлы для установки</a></li>
+</ul>
+</li>
+<li id="menu-item-2688" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-2688"><a href="index-148.htm?page_id=2678&#038;lang=ru">Форум / Поддержка</a>
+<ul class="sub-menu">
+	<li id="menu-item-3008" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3008"><a href="http://forum.iobroker.net">Форум</a></li>
+	<li id="menu-item-3148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3148"><a href="index-149.htm?page_id=3141&#038;lang=de">Советы и решения</a></li>
+	<li id="menu-item-3010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3010"><a href="index-150.htm?page_id=2991&#038;lang=ru">Часто задаваемые вопросы / FAQ</a></li>
+	<li id="menu-item-5571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5571"><a href="index-151.htm?page_id=5567&#038;lang=ru">Настройка Let&#8217;s Encrypt сертификатов</a></li>
+</ul>
+</li>
+<li id="menu-item-2689" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2689"><a href="index-152.htm?page_id=2653&#038;lang=ru">Разработка</a></li>
+</ul></div>			</nav><!-- #site-navigation -->
+		</div><!-- #main-menu -->
+	</div><!-- #main-menu-container -->
+	<div id="sub-menu-container" class="container-full-width">
+		<div id="sub-menu" class="container">
+			<nav id="sub-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						</nav><!-- #site-navigation -->
+		</div><!-- #sub-menu -->
+	</div><!-- #sub-menu-container -->
+        </div>
+	<div id="wrapper" class="site-content container-full-width">
+
+	<div id="content" class="content-area">
+			<main id="main" class="site-main" role="main">
+
+				<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#"><span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-2.htm?lang=ru">Главная</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-420.htm?page_id=2521&lang=ru">русский</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-148.htm?page_id=2678&lang=ru">Форум / Поддержка</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb-current">Консольные команды</span></div>
+				
+					
+<article id="post-6905" class="post-6905 page type-page status-publish hentry">
+		
+	
+<header class="entry-header">
+	<h1 class="entry-title post-title">Консольные команды</h1>
+	</header><!-- .entry-header -->
+
+	<div class="post-entry">
+		<p><div id="toc_container" class="no_bullets"><ul class="toc_list"><li><a href="#npm_install_iorbokeradapterName"><span class="toc_number toc_depth_1">1</span> npm install iorboker.adapterName</a></li><li><a href="#iobroker_start"><span class="toc_number toc_depth_1">2</span> iobroker start</a></li><li><a href="#iobroker_stop"><span class="toc_number toc_depth_1">3</span> iobroker stop</a></li><li><a href="#iobroker_restart"><span class="toc_number toc_depth_1">4</span> iobroker restart</a></li><li><a href="#iobroker_isrun"><span class="toc_number toc_depth_1">5</span> iobroker isrun</a></li><li><a href="#iobroker_start_adapterNameinstance"><span class="toc_number toc_depth_1">6</span> iobroker start adapterName.instance</a></li><li><a href="#iobroker_stop_adapterNameinstance"><span class="toc_number toc_depth_1">7</span> iobroker stop adapterName.instance</a></li><li><a href="#iobroker_restart_adapterNameinstance"><span class="toc_number toc_depth_1">8</span> iobroker restart adapterName.instance</a></li><li><a href="#iobroker_add_adapterName"><span class="toc_number toc_depth_1">9</span> iobroker add adapterName</a></li><li><a href="#iobroker_install_adapterName"><span class="toc_number toc_depth_1">10</span> iobroker install adapterName</a></li><li><a href="#iobroker_upload_adapterName"><span class="toc_number toc_depth_1">11</span> iobroker upload adapterName</a></li><li><a href="#iobroker_setup"><span class="toc_number toc_depth_1">12</span> iobroker setup</a></li><li><a href="#iobroker_setup_custom"><span class="toc_number toc_depth_1">13</span> iobroker setup custom</a></li><li><a href="#iobroker_del_adapterName"><span class="toc_number toc_depth_1">14</span> iobroker del adapterName</a></li><li><a href="#iobroker_del_adapterNameinstance"><span class="toc_number toc_depth_1">15</span> iobroker del adapterName.instance</a></li><li><a href="#iobroker_update_repository_url"><span class="toc_number toc_depth_1">16</span> iobroker update [repository url]</a></li><li><a href="#iobroker_upgrade"><span class="toc_number toc_depth_1">17</span> iobroker upgrade</a></li><li><a href="#iobroker_upgrade_self"><span class="toc_number toc_depth_1">18</span> iobroker upgrade self</a></li><li><a href="#iobroker_upgrade_adapterName"><span class="toc_number toc_depth_1">19</span> iobroker upgrade adapterName</a></li><li><a href="#iobroker_object_get"><span class="toc_number toc_depth_1">20</span> iobroker object get</a></li><li><a href="#iobroker_object_chmod"><span class="toc_number toc_depth_1">21</span> iobroker object chmod</a></li><li><a href="#iobroker_object_chown"><span class="toc_number toc_depth_1">22</span> iobroker object chown</a></li><li><a href="#iobroker_object_list"><span class="toc_number toc_depth_1">23</span> iobroker object list</a></li><li><a href="#iobroker_set"><span class="toc_number toc_depth_1">24</span> iobroker set</a></li><li><a href="#iobroker_state_get"><span class="toc_number toc_depth_1">25</span> iobroker state get</a></li><li><a href="#iobroker_state_getplain"><span class="toc_number toc_depth_1">26</span> iobroker state getplain</a></li><li><a href="#iobroker_state_set"><span class="toc_number toc_depth_1">27</span> iobroker state set</a></li><li><a href="#iobroker_state_del"><span class="toc_number toc_depth_1">28</span> iobroker state del</a></li><li><a href="#iobroker_message"><span class="toc_number toc_depth_1">29</span> iobroker message</a></li><li><a href="#iobroker_clean"><span class="toc_number toc_depth_1">30</span> iobroker clean</a></li><li><a href="#iobroker_backup"><span class="toc_number toc_depth_1">31</span> iobroker backup</a></li><li><a href="#iobroker_restore"><span class="toc_number toc_depth_1">32</span> iobroker restore</a></li><li><a href="#iobroker_host"><span class="toc_number toc_depth_1">33</span> iobroker host</a></li><li><a href="#iobroker_host_set"><span class="toc_number toc_depth_1">34</span> iobroker host set</a></li><li><a href="#iobroker_host_remove"><span class="toc_number toc_depth_1">35</span> iobroker host remove</a></li><li><a href="#iobroker_list"><span class="toc_number toc_depth_1">36</span> iobroker list</a></li><li><a href="#iobroker_adduser"><span class="toc_number toc_depth_1">37</span> iobroker adduser</a></li><li><a href="#iobroker_deluser"><span class="toc_number toc_depth_1">38</span> iobroker deluser</a></li><li><a href="#iobroker_passwd"><span class="toc_number toc_depth_1">39</span> iobroker passwd</a></li><li><a href="#iobroker_chmod"><span class="toc_number toc_depth_1">40</span> iobroker chmod</a></li><li><a href="#iobroker_chown"><span class="toc_number toc_depth_1">41</span> iobroker chown</a></li><li><a href="#iobroker_file_read"><span class="toc_number toc_depth_1">42</span> iobroker file read</a></li><li><a href="#iobroker_file_write"><span class="toc_number toc_depth_1">43</span> iobroker file write</a></li></ul></div>
+<br>
+Существует возможность произвести некоторые операции типа запуска, остановки или обновления данных через командную строку (windows или linux). Ниже приведено их описание.
+<p>Примечание: все команды, которые запускаются вместе с  <code>iobroker,</code> могут вызываться из любой папки, в которой доступна команда iobroker. <code>npm install</code> команда должна вызываться из корневой папки ioBroker.</p>
+<p><strong>Примечание:</strong> существует следующий параметр <code>--timeout 5000</code>, который может быть использован с любой командой. Он устанавливает время ожидания в миллисекундах для подключения к базе данных.</p>
+<h2><span id="npm_install_iorbokeradapterName"><a id="user-content-npm-install-iorbokeradaptername" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#npm-install-iorbokeradaptername"></a>npm install iorboker.adapterName</span></h2>
+<p>Эта команда должна вызываться из корневой папки ioBroker (Обычно <code>/opt/iobroker</code> or <code>C:\Program Files\ioBroker</code>). Она использует пакетный менеджер npm для установки или обновления указанного драйвера или js-controller. И всегда работает, даже если существуют проблемы с &#8220;admin&#8221; или &#8220;js-controller&#8221;.</p>
+<p>Примеры использования:</p>
+<ul>
+<li><code>npm install iobroker.admin</code> &#8211; обновить или установить драйвер &#8220;admin&#8221;</li>
+<li><code>npm install iobroker.js-controller</code> &#8211; обновить или установить сам js-controller</li>
+<li><code>npm install https://github.com/husky-koglhof/ioBroker.hmm/tarball/master/</code> &#8211; установить драйвер напрямую с GitHub или какого-либо другого места. Он должен быть пакетом либо ZIP либо GZ, и обязательно содержать package.json.</li>
+</ul>
+<p>Если драйвер был установлен, после вызова <code>npm install ..</code> должна быть произведена перезагрузка указанного драйвера или всего js-controller для того, чтобы изменения вступили в силу.</p>
+<p>Это можно осуществить с помощью <code>iobroker restart adapterName</code> или же просто <code>iobroker restart</code>. Для более подробной информации, перейдите <a href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#restart">сюда</a>.</p>
+<p><strong><em>Примечание:</em></strong> таким образом могут быть установлены только пакеты с именем <strong>ioBroker.zzz</strong>.</p>
+<h2><span id="iobroker_start"><a id="user-content-iobroker-start" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-start"></a>iobroker start</span></h2>
+<p>Запускает iobroker как службу. Если ioBroker уже был запущен, то вы получите следующее предупреждение:</p>
+<p><code>Служба контроллера ioBroker уже запущена. PID: xx</code></p>
+<p><strong><em>Примечание для Windows:</em></strong> обычно ioBroker в системе Windows запускается в качестве сервиса. Эта команда запустит второй экземпляр драйвера ioBroker, что приведет к конфликту. Используйте <code>serviceIoBroker.bat start</code> из папки ioBroker вместо команды <code>iobroker start</code>. Для запуска сервиса вам необходимо обладать правами администратора.</p>
+<h2><span id="iobroker_stop"><a id="user-content-iobroker-stop" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-stop"></a>iobroker stop</span></h2>
+<p>Останавливает iobroker, если он запущен как служба. Если ioBroker не запущен, тогда вы получите следующее предупреждение:</p>
+<p><code>Служба контроллера ioBroker не запущена<br>
+</code></p>
+<p><strong><em>Примечание для Windows:</em></strong> обычно ioBroker в системе Windows запускается в качестве сервиса. Эта команда не произведет никакого эффекта. Вызовите <code>serviceIoBroker.bat stop</code> из папки ioBroker вместо команды <code>iobroker stop</code>. Для остановки сервиса вам необходимо обладать правами администратора.</p>
+<h2><span id="iobroker_restart"><a id="user-content-iobroker-restart" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-restart"></a>iobroker restart</span></h2>
+<p>Просто команды запуска и остановки вместе. Смотрите выше.</p>
+<h2><span id="iobroker_isrun"><a id="user-content-iobroker-isrun" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-isrun"></a>iobroker isrun</span></h2>
+<p>Возвращает фактический статус ioBroker. Запущен он или нет. Если ioBroker не запущен, тогда возвращенным кодом является 100.</p>
+<h2><span id="iobroker_start_adapterNameinstance"><a id="user-content-iobroker-start-adapternameinstance" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-start-adapternameinstance"></a>iobroker start adapterName.instance</span></h2>
+<p>Вы можете запустить указанный драйвер из командной строки. Он будет автоматически активирован и запущен.</p>
+<p>Если до этого драйвер уже был запущен, тогда будет произведен его перезапуск.</p>
+<p>Контроль за тем, что экземпляр драйвера теперь активирован, может быть произведен из &#8220;admin&#8221;.</p>
+<p>Применение:</p>
+<ul>
+<li><code>iobroker start email.0</code> &#8211; активирует и запускает экземпляр драйвера ioBroker.email.</li>
+</ul>
+<p>Примечание: вы можете произвести вызов <code>iobroker start all</code> для запуска всех неактивных экземпляров драйверов, например, после восстановления системы.</p>
+<h2><span id="iobroker_stop_adapterNameinstance"><a id="user-content-iobroker-stop-adapternameinstance" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-stop-adapternameinstance"></a>iobroker stop adapterName.instance</span></h2>
+<p>Вы можете остановить указанный драйвер из командной строки. Он будет дезактивирован и остановлен. А в последствии не будет автоматически перезапущен.</p>
+<p>Контроль за тем, что экземпляр драйвера теперь дезактивирован, может быть произведен из &#8220;admin&#8221;.</p>
+<p>Применение:</p>
+<ul>
+<li><code>iobroker stop email.0</code> &#8211; дезактивирует и останавливает экземпляр драйвера ioBroker.email.</li>
+</ul>
+<h2><span id="iobroker_restart_adapterNameinstance"><a id="user-content-iobroker-restart-adapternameinstance" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-restart-adapternameinstance"></a>iobroker restart adapterName.instance</span></h2>
+<p>Просто перезапускает указанный драйвер. Если он был не активен, то данная команда его активирует.</p>
+<h2><span id="iobroker_add_adapterName"><a id="user-content-iobroker-add-adaptername" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-add-adaptername"></a>iobroker add adapterName</span></h2>
+<p>Полный вариант команды &#8211; <code>iobroker add adapterName [--enabled] [--host \&lt;host\&gt;] [--port \&lt;port\&gt;]</code></p>
+<p>Устанавливает, если тот до этого не был установлен, и создает экземпляр указанного драйвера. В случае, если экземпляр драйвера уже существует, будет использован следующий номер экземпляра.</p>
+<p>Существуют следующие дополнительные параметры:</p>
+<ul>
+<li>активен: Экземпляр драйвера будет автоматически активирован после создания, иначе предопределенное значение драйвера будет использовано для этого.</li>
+<li>хост: Имя хоста, в котором будет создан экземпляр драйвера. Вы можете получить список хостов с помощью команды <code>iobroker list hosts</code>.(Еще пока не внедрено)</li>
+<li>порт: если у драйвера имеются настройки native.port, он будет изменен на желаемое значение после установки.</li>
+</ul>
+<p>Применение:</p>
+<ul>
+<li><code>iobroker add dwd</code> &#8211; Установить и создать экземпляр драйвера dwd.</li>
+<li><code>iobroker add admin --enabled --port 80</code> &#8211; Создать второй (обычно) экземпляр драйвера admin на порту 80 и активировать его.</li>
+</ul>
+<p>В случае, если данная команда не работает, вы всегда можете вызвать команду <code>npm install iobroker.adapterName</code>, для принудительного запуска обновлений или установки. В подобном случае не будет создано ни одного экземпляра драйвера, и вам потребуется совершить еще один раз вызов команды <code>iobroker add iobroker.adapterName</code> после этого.</p>
+<h2><span id="iobroker_install_adapterName"><a id="user-content-iobroker-install-adaptername" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-install-adaptername"></a>iobroker install adapterName</span></h2>
+<p>Только устанавливает драйвер в ioBroker и не создает никакого экземпляра. В случае, если драйвер уже установлен, вы получите следующее предупреждение:</p>
+<p><code>Драйвер "admin" уже установлен. Используйте "upgrade" для установки более новой версии.</code></p>
+<h2><span id="iobroker_upload_adapterName"><a id="user-content-iobroker-upload-adaptername" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-upload-adaptername"></a>iobroker upload adapterName</span></h2>
+<p>Загрузите веб страницы из папок &#8220;www&#8221; и &#8220;admin&#8221; в драйвер в  хранилище файлов ioBroker. Обычно используется разработчиками, чтобы увидеть, что произошли изменения на странице настройки или на страницах &#8220;www&#8221;. Вы не можете изменять файлы напрямую в &#8220;iobroker/iobroker-data/adapter/file&#8221;. Для разработчиков в файле конфигурации (<em>iobroker-data/iobroker.json</em>) objects.noFileCache расположен флажок, чтобы дезактивировать кэш файла. При установке этого флажка в настройках (разумеется, требуется новый запуск после изменения файла конфигурации) изменения в папке данных iobroker станут видимыми в интернете без команды <code>iobroker upload adapterName</code>.</p>
+<p>Примечание: вы можете воспользоваться вызовом <code>iobroker upload all,</code>чтобы загрузить все драйвера, например, после восстановления системы.</p>
+<h2><span id="iobroker_setup"><a id="user-content-iobroker-setup" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-setup"></a>iobroker setup</span></h2>
+<p>Эту команду необходимо запускать в том случае, если ioBroker был установлен не с помощью npm или установочной программы windows (например, просто скопирован с сайта GitHub и не был распакован). Она создает файл конфигурации по умолчанию и подготавливает папки данных.</p>
+<p>Вы можете произвести вызов данной команды с помощью параметра &#8220;first&#8221;, чтобы убедиться, что ничего не будет переписано, если конфигурация уже существует.</p>
+<p>Применениe: <code>iobroker setup first</code> &#8211; создает файлы конфигурации, если они до этого еще не были созданы.</p>
+<h2><span id="iobroker_setup_custom"><a id="user-content-iobroker-setup-custom" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-setup-custom"></a>iobroker setup custom</span></h2>
+<p>Для активации конфигураций с межсерверными настройками (экспериментальными), следует произвести вызов данной команды. Должны появиться ответы на следующие вопросы:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa8dbbab49563314967" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+
+Type of objects DB [file, couch, redis], default [file]: 
+Host of objects DB(file), default[127.0.0.1]: enter IP address of the main system
+Port of objects DB(file), default[9001]: 
+Type of states DB [file, redis], default [file]: 
+Host of states DB (file), default[ip]: 
+Port of states DB (file), default[9000]: 
+</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa8dbbab49563314967-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab49563314967-2">2</div><div class="crayon-num" data-line="crayon-5cefa8dbbab49563314967-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab49563314967-4">4</div><div class="crayon-num" data-line="crayon-5cefa8dbbab49563314967-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab49563314967-6">6</div><div class="crayon-num" data-line="crayon-5cefa8dbbab49563314967-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab49563314967-8">8</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa8dbbab49563314967-1">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab49563314967-2"><span class="crayon-e">Type </span><span class="crayon-e">of </span><span class="crayon-e">objects </span><span class="crayon-i">DB</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-v">file</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">couch</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">redis</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-st">default</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-v">file</span><span class="crayon-sy">]</span><span class="crayon-o">:</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5cefa8dbbab49563314967-3"><span class="crayon-e">Host </span><span class="crayon-e">of </span><span class="crayon-e">objects </span><span class="crayon-e">DB</span><span class="crayon-sy">(</span><span class="crayon-v">file</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-st">default</span><span class="crayon-sy">[</span><span class="crayon-cn">127.0.0.1</span><span class="crayon-sy">]</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-e">enter </span><span class="crayon-e">IP </span><span class="crayon-e">address </span><span class="crayon-e">of </span><span class="crayon-e">the </span><span class="crayon-e">main </span><span class="crayon-e">system</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab49563314967-4"><span class="crayon-e">Port </span><span class="crayon-e">of </span><span class="crayon-e">objects </span><span class="crayon-e">DB</span><span class="crayon-sy">(</span><span class="crayon-v">file</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-st">default</span><span class="crayon-sy">[</span><span class="crayon-cn">9001</span><span class="crayon-sy">]</span><span class="crayon-o">:</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5cefa8dbbab49563314967-5"><span class="crayon-e">Type </span><span class="crayon-e">of </span><span class="crayon-e">states </span><span class="crayon-i">DB</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-v">file</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">redis</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-st">default</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-v">file</span><span class="crayon-sy">]</span><span class="crayon-o">:</span><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab49563314967-6"><span class="crayon-e">Host </span><span class="crayon-e">of </span><span class="crayon-e">states </span><span class="crayon-e">DB</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">file</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-st">default</span><span class="crayon-sy">[</span><span class="crayon-v">ip</span><span class="crayon-sy">]</span><span class="crayon-o">:</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5cefa8dbbab49563314967-7"><span class="crayon-e">Port </span><span class="crayon-e">of </span><span class="crayon-e">states </span><span class="crayon-e">DB</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">file</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-st">default</span><span class="crayon-sy">[</span><span class="crayon-cn">9000</span><span class="crayon-sy">]</span><span class="crayon-o">:</span><span class="crayon-h"> </span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab49563314967-8">&nbsp;</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0025 seconds] -->
+<p>Вы можете просто нажать ENTER, чтобы увидеть значение по умолчанию в [].</p>
+<p><strong>Примечание:</strong> в настоящий момент поддерживается только <em>файловый</em> тип базы данных. Вам следует быть специалистом, если вы меняете порты.</p>
+<p><strong>Примечание:</strong> Проверьте параметры брандмауэра на основном хосте для определенных портов (9000/9001).</p>
+<h2><span id="iobroker_del_adapterName"><a id="user-content-iobroker-del-adaptername" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-del-adaptername"></a>iobroker del adapterName</span></h2>
+<p>Полностью удаляет все экземпляры и статусы этого драйвера из ioBroker и удаляет его с диска.</p>
+<p>Вы не можете возобновить настройки экземпляра драйвера после удаления.</p>
+<p>Применение: <code>iobroker del dwd</code> &#8211; удаляет все экземпляры и код драйвера dwd из ioBroker.</p>
+<h2><span id="iobroker_del_adapterNameinstance"><a id="user-content-iobroker-del-adapternameinstance" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-del-adapternameinstance"></a>iobroker del adapterName.instance</span></h2>
+<p>Удаляет все указанные экземпляры этого драйвера из ioBroker и <strong>не</strong> удаляет его с диска.</p>
+<p>Вы не можете возобновить настройки экземпляра драйвера после удаления.</p>
+<p>Применение: <code>iobroker del dwd.0</code> &#8211; удаляет экземпляр 0 адаптера dwd из ioBroker.</p>
+<h2><span id="iobroker_update_repository_url"><a id="user-content-iobroker-update-repository-url" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-update-repository-url"></a>iobroker update [repository url]</span></h2>
+<p>Полный вариант команды: <code>iobroker update \[repository url\]</code></p>
+<p>Прочтите информацию из сконфигурированного репозитория ioBroker. В случае, если <code>\repository url\</code> установлен, информация будет доступна к прочтению из этого репозитория.</p>
+<p>Применение:</p>
+<ul>
+<li><code>iobroker update</code> &#8211; Показывает список доступной версии из сконфигурированного (обычно локального) репозитория.</li>
+<li><code>iobroker update https://raw.githubusercontent.com/ioBroker/ioBroker.js-controller/master/conf/sources-dist.json</code> &#8211; Показывает доступную версию из он-лайн репозитория.</li>
+</ul>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa8dbbab56790803121" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&amp;gt;./iobroker.js update
+Невозможно получить версию "virtual".
+Невозможно получить версию "geofency".
+загрузка произведена
+Драйвер    "zwave"         : 0.1.0
+Драйвер    "yr"            : 0.1.2    , установлен 0.1.2
+Драйвер    "web"           : 0.2.6    , установлен 0.2.6
+Драйвер    "vis"           : 0.2.9    , установлен 0.2.9
+Драйвер    "virtual"
+Драйвер    "sonos"         : 0.1.5    , установлен 0.1.4 [Возможно обновление]
+Драйвер    "rickshaw"      : 0.2.1    , установлен 0.2.1
+Драйвер    "pushover"      : 0.1.0
+Драйвер    "onkyo"         : 0.0.4
+Драйвер    "telnet"        : 0.0.0
+Драйвер    "socketio"      : 0.2.3    , установлен 0.2.3
+Драйвер    "simple-api"    : 0.0.3    , установлен 0.0.3
+Драйвер    "sayit"         : 0.3.0    , установлен 0.3.0
+Драйвер    "ping"          : 0.1.3    , установлен 0.1.3
+Драйвер    "node-red"      : 0.1.5    , установлен 0.1.5
+Драйвер    "mqtt"          : 0.1.6    , установлен 0.1.5 [Возможно обновление]
+Драйвер    "mobile"        : 0.0.2
+Драйвер    "legacy"        : 0.1.12
+Драйвер    "knx"           : 0.0.1
+Контроллер "js-controller" : 0.5.14   , установлен 0.5.14
+Драйвер    "javascript"    : 0.2.3    , установлен 0.2.3
+Драйвер    "ical"          : 0.0.2    , установлен 0.0.1 [Возможно обновление]
+Драйвер    "hmm"           : 0.0.15   , установлен 0.0.16
+Драйвер    "hue"           : 0.2.0    , установлен 0.2.0
+Драйвер    "hm-rpc"        : 0.3.5    , установлен 0.3.4 [Возможно обновление]
+Драйвер    "hm-rega"       : 0.1.17   , установлен 0.1.17
+Драйвер    "history"       : 0.1.3    , установлен 0.1.3
+Драйвер    "highcharts"    : 0.0.0
+Драйвер    "graphite"      : 0.1.0
+Драйвер    "geofency"
+Драйвер    "example"       : 0.1.1    , установлен 0.1.1
+Драйвер    "email"         : 0.1.0
+Драйвер    "dwd"           : 0.1.7    , установлен 0.1.7
+Драйвер    "cul"           : 0.0.2    , установлен 0.0.3
+Драйвер    "b-control-em"  : 0.1.1
+Драйвер    "artnet"        : 0.0.3
+Драйвер    "admin"         : 0.3.21   , установлен 0.3.20 [Возможно обновление]
+</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-2">2</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-4">4</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-6">6</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-8">8</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-10">10</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-12">12</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-14">14</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-16">16</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-18">18</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-20">20</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-22">22</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-24">24</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-26">26</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-28">28</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-30">30</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-32">32</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-34">34</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-36">36</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-38">38</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-40">40</div><div class="crayon-num" data-line="crayon-5cefa8dbbab56790803121-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab56790803121-42">42</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-1"><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-sy">.</span><span class="crayon-o">/</span><span class="crayon-v">iobroker</span><span class="crayon-sy">.</span><span class="crayon-e">js </span><span class="crayon-i">update</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-2">Невозможно<span class="crayon-h"> </span>получить<span class="crayon-h"> </span>версию<span class="crayon-h"> </span><span class="crayon-s">"virtual"</span><span class="crayon-sy">.</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-3">Невозможно<span class="crayon-h"> </span>получить<span class="crayon-h"> </span>версию<span class="crayon-h"> </span><span class="crayon-s">"geofency"</span><span class="crayon-sy">.</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-4">загрузка<span class="crayon-h"> </span>произведена</div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-5">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"zwave"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.0</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-6">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"yr"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.2</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.1.2</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-7">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"web"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.2.6</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.2.6</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-8">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"vis"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.2.9</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.2.9</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-9">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"virtual"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-10">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"sonos"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.5</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.1.4</span><span class="crayon-h"> </span><span class="crayon-sy">[</span>Возможно<span class="crayon-h"> </span>обновление<span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-11">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"rickshaw"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.2.1</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.2.1</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-12">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pushover"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.0</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-13">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"onkyo"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.0.4</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-14">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"telnet"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.0.0</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-15">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"socketio"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.2.3</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.2.3</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-16">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"simple-api"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.0.3</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.0.3</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-17">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"sayit"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.3.0</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.3.0</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-18">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"ping"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.3</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.1.3</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-19">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"node-red"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.5</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.1.5</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-20">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"mqtt"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.6</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.1.5</span><span class="crayon-h"> </span><span class="crayon-sy">[</span>Возможно<span class="crayon-h"> </span>обновление<span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-21">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"mobile"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.0.2</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-22">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"legacy"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.12</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-23">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"knx"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.0.1</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-24">Контроллер<span class="crayon-h"> </span><span class="crayon-s">"js-controller"</span><span class="crayon-h"> </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.5.14</span><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.5.14</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-25">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"javascript"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.2.3</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.2.3</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-26">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"ical"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.0.2</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.0.1</span><span class="crayon-h"> </span><span class="crayon-sy">[</span>Возможно<span class="crayon-h"> </span>обновление<span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-27">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"hmm"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.0.15</span><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.0.16</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-28">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"hue"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.2.0</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.2.0</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-29">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"hm-rpc"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.3.5</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.3.4</span><span class="crayon-h"> </span><span class="crayon-sy">[</span>Возможно<span class="crayon-h"> </span>обновление<span class="crayon-sy">]</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-30">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"hm-rega"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.17</span><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.1.17</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-31">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"history"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.3</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.1.3</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-32">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"highcharts"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.0.0</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-33">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"graphite"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.0</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-34">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"geofency"</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-35">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"example"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.1</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.1.1</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-36">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"email"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.0</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-37">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"dwd"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.7</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.1.7</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-38">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"cul"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.0.2</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.0.3</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-39">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"b-control-em"</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.1.1</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-40">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"artnet"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.0.3</span></div><div class="crayon-line" id="crayon-5cefa8dbbab56790803121-41">Драйвер<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"admin"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0.3.21</span><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-sy">,</span><span class="crayon-h"> </span>установлен<span class="crayon-h"> </span><span class="crayon-cn">0.3.20</span><span class="crayon-h"> </span><span class="crayon-sy">[</span>Возможно<span class="crayon-h"> </span>обновление<span class="crayon-sy">]</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab56790803121-42">&nbsp;</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0134 seconds] -->
+<p>Эта команда не изменяет ничего, просто обновляет внутреннюю информацию о доступной версии драйвера и показывает ее.</p>
+<p>Для того, чтобы показать только доступные для обновления драйвера, используйте фильтр &#8220;&#8211;возможно обновление&#8221;.</p>
+<h2><span id="iobroker_upgrade"><a id="user-content-iobroker-upgrade" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-upgrade"></a>iobroker upgrade</span></h2>
+<p>Полная версия команды: <code>iobroker upgrade \[repository url\]</code></p>
+<p>Обновляет все драйвера (не js-controller), если для них доступны новые версии в указанном репозитории. В случае, если не указан адрес репозитория, будет использован сконфигурированный репозиторий.</p>
+<p>Применение:</p>
+<ul>
+<li><code>iobroker upgrade</code> &#8211; обновляет все драйвера.</li>
+<li><code>iobroker upgrade https://raw.githubusercontent.com/ioBroker/ioBroker.js-controller/master/conf/sources-dist.json</code> &#8211; обновляет все драйвера из он-лайн репозитория.</li>
+</ul>
+<h2><span id="iobroker_upgrade_self"><a id="user-content-iobroker-upgrade-self" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-upgrade-self"></a>iobroker upgrade self</span></h2>
+<p>Полная версия команды: <code>iobroker upgrade self \[repository url\]</code></p>
+<p>Эта команда обновляет ioBroker.js-controller до версии, которая может быть обнаружена в репозитории.</p>
+<p><strong>Примечание:</strong> Если в указанном или сконфигурированном репозитории находится более ранняя версия, то он будет понижен до этой версии.</p>
+<ul>
+<li><code>iobroker upgrade self</code> &#8211; обновляет js-controller до версии в сконфигурированном репозитории.</li>
+<li><code>iobroker upgrade self https://raw.githubusercontent.com/ioBroker/ioBroker.js-controller/master/conf/sources-dist.json</code> &#8211; обновляет js-controller до версии в он-лайн репозитории.</li>
+</ul>
+<h2><span id="iobroker_upgrade_adapterName"><a id="user-content-iobroker-upgrade-adaptername" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-upgrade-adaptername"></a>iobroker upgrade adapterName</span></h2>
+<p>Полная версия команды: <code>iobroker upgrade adapterName \[repository url\]</code></p>
+<p>Эта команда обновляет указанный драйвер до версии, которая находится в репозитории.</p>
+<p><strong>Примечание:</strong> Если в указанном или сконфигурированном репозитории находится более ранняя версия, то он будет понижен до этой версии.</p>
+<ul>
+<li><code>iobroker upgrade email</code> &#8211; обновляет драйвер ioBroker.email до версии в сконфигурированном репозитории.</li>
+<li><code>iobroker upgrade email https://raw.githubusercontent.com/ioBroker/ioBroker.js-controller/master/conf/sources-dist.json</code> &#8211; обновляет драйвер ioBroker.email до версии в он-лайн репозитории.</li>
+</ul>
+<h2><span id="iobroker_object_get"><a id="user-content-iobroker-object-get" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-object-get"></a>iobroker object get</span></h2>
+<p>Полная версия команды: <code>iobroker get objectId</code></p>
+<p>Считывает из командной строки описание объекта: C:\pWork&gt;iobroker object get system.adapter.admin.0.uptime</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa8dbbab5f123052613" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&amp;gt;./iobroker object get system.adapter.admin.0.uptime
+{
+  "_id":"system.adapter.admin.0.uptime",
+  "type":"state",
+  "common":{"name":"admin.0.uptime","type":"number","role":"indicator.state","unit":"seconds"},
+  "native":{}
+}
+</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa8dbbab5f123052613-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab5f123052613-2">2</div><div class="crayon-num" data-line="crayon-5cefa8dbbab5f123052613-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab5f123052613-4">4</div><div class="crayon-num" data-line="crayon-5cefa8dbbab5f123052613-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab5f123052613-6">6</div><div class="crayon-num" data-line="crayon-5cefa8dbbab5f123052613-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab5f123052613-8">8</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa8dbbab5f123052613-1"><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-sy">.</span><span class="crayon-o">/</span><span class="crayon-e">iobroker </span><span class="crayon-t">object</span><span class="crayon-h"> </span><span class="crayon-e">get </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0.uptime</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab5f123052613-2"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5cefa8dbbab5f123052613-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"_id"</span><span class="crayon-o">:</span><span class="crayon-s">"system.adapter.admin.0.uptime"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab5f123052613-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"type"</span><span class="crayon-o">:</span><span class="crayon-s">"state"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa8dbbab5f123052613-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"common"</span><span class="crayon-o">:</span><span class="crayon-sy">{</span><span class="crayon-s">"name"</span><span class="crayon-o">:</span><span class="crayon-s">"admin.0.uptime"</span><span class="crayon-sy">,</span><span class="crayon-s">"type"</span><span class="crayon-o">:</span><span class="crayon-s">"number"</span><span class="crayon-sy">,</span><span class="crayon-s">"role"</span><span class="crayon-o">:</span><span class="crayon-s">"indicator.state"</span><span class="crayon-sy">,</span><span class="crayon-s">"unit"</span><span class="crayon-o">:</span><span class="crayon-s">"seconds"</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab5f123052613-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"native"</span><span class="crayon-o">:</span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5cefa8dbbab5f123052613-7"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab5f123052613-8">&nbsp;</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0012 seconds] -->
+<p><strong>Примечание:</strong> Обычно результат не форматируется, но вы можете использовать флажок &#8220;&#8211;pretty&#8221;, чтобы их отформатировать.</p>
+<h2><span id="iobroker_object_chmod"><a id="user-content-iobroker-object-chmod" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-object-chmod"></a>iobroker object chmod</span></h2>
+<p>Формат: <code>iobroker object chmod &lt;object-mode&gt; [state-mode] &lt;id&gt;</code></p>
+<p>ID может быть шаблоном &#8216;<em>&#8216;. &#8216;</em>&#8216; может находиться только в конце шаблона.</p>
+<h2><span id="iobroker_object_chown"><a id="user-content-iobroker-object-chown" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-object-chown"></a>iobroker object chown</span></h2>
+<p>Формат: <code>iobroker object chown &lt;user&gt; &lt;group&gt; &lt;id&gt;</code></p>
+<p>ID может быть шаблоном &#8216;<em>&#8216;. &#8216;</em>&#8216; может находиться только в конце шаблона.</p>
+<h2><span id="iobroker_object_list"><a id="user-content-iobroker-object-list" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-object-list"></a>iobroker object list</span></h2>
+<p>Формат: <code>iobroker object list &lt;id&gt;</code></p>
+<p>Выводит список разрешений объектов, как например:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa8dbbab64312747426" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&amp;gt;iobroker object list system.adapter.admin.*
+
+ObjectAC | StateAC | Пользователь     |     Группа    | ID
+---------+---------+--------------+--------------+--------------
+rw-r--r-- rw-r--r--          admin  администратор system.adapter.admin.0.uptime
+rw-r--r-- rw-r--r--          admin  администратор system.adapter.admin.0.memRss
+rw-r--r-- rw-r--r--          admin  администратор system.adapter.admin.0.memHeapTotal
+rw-r--r-- rw-r--r--          admin  администратор system.adapter.admin.0.memHeapUsed
+rw-r--r-- rw-r--r--          admin  администратор system.adapter.admin.0.connected
+rw-r--r-- rw-r--r--          admin  администратор system.adapter.admin.0.alive
+rw-r--r--                    admin  администратор system.adapter.admin.0
+</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa8dbbab64312747426-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab64312747426-2">2</div><div class="crayon-num" data-line="crayon-5cefa8dbbab64312747426-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab64312747426-4">4</div><div class="crayon-num" data-line="crayon-5cefa8dbbab64312747426-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab64312747426-6">6</div><div class="crayon-num" data-line="crayon-5cefa8dbbab64312747426-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab64312747426-8">8</div><div class="crayon-num" data-line="crayon-5cefa8dbbab64312747426-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab64312747426-10">10</div><div class="crayon-num" data-line="crayon-5cefa8dbbab64312747426-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab64312747426-12">12</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa8dbbab64312747426-1"><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-e">iobroker </span><span class="crayon-t">object</span><span class="crayon-h"> </span><span class="crayon-e">list </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-o">*</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab64312747426-2">&nbsp;</div><div class="crayon-line" id="crayon-5cefa8dbbab64312747426-3"><span class="crayon-v">ObjectAC</span><span class="crayon-h"> </span><span class="crayon-o">|</span><span class="crayon-h"> </span><span class="crayon-v">StateAC</span><span class="crayon-h"> </span><span class="crayon-o">|</span><span class="crayon-h"> </span>Пользователь<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">|</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span>Группа<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">|</span><span class="crayon-h"> </span><span class="crayon-v">ID</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab64312747426-4"><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">-</span><span class="crayon-o">+</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">-</span><span class="crayon-o">+</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">+</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">+</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span><span class="crayon-o">--</span></div><div class="crayon-line" id="crayon-5cefa8dbbab64312747426-5"><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h"> </span><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">admin</span><span class="crayon-h">&nbsp;&nbsp;</span>администратор<span class="crayon-h"> </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0.uptime</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab64312747426-6"><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h"> </span><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">admin</span><span class="crayon-h">&nbsp;&nbsp;</span>администратор<span class="crayon-h"> </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0.memRss</span></div><div class="crayon-line" id="crayon-5cefa8dbbab64312747426-7"><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h"> </span><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">admin</span><span class="crayon-h">&nbsp;&nbsp;</span>администратор<span class="crayon-h"> </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0.memHeapTotal</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab64312747426-8"><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h"> </span><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">admin</span><span class="crayon-h">&nbsp;&nbsp;</span>администратор<span class="crayon-h"> </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0.memHeapUsed</span></div><div class="crayon-line" id="crayon-5cefa8dbbab64312747426-9"><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h"> </span><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">admin</span><span class="crayon-h">&nbsp;&nbsp;</span>администратор<span class="crayon-h"> </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0.connected</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab64312747426-10"><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h"> </span><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">admin</span><span class="crayon-h">&nbsp;&nbsp;</span>администратор<span class="crayon-h"> </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0.alive</span></div><div class="crayon-line" id="crayon-5cefa8dbbab64312747426-11"><span class="crayon-v">rw</span><span class="crayon-o">-</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-v">r</span><span class="crayon-o">--</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">admin</span><span class="crayon-h">&nbsp;&nbsp;</span>администратор<span class="crayon-h"> </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab64312747426-12">&nbsp;</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0054 seconds] -->
+<p>ID может быть шаблоном &#8216;<em>&#8216;. &#8216;</em>&#8216; может находиться только в конце шаблона.</p>
+<h2><span id="iobroker_set"><a id="user-content-iobroker-set" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-set"></a>iobroker set</span></h2>
+<p>Полная версия команды: <code>iobroker set &lt;instance&gt; [--port value] [--enabled true|false] [--ip address] [--auth true|false] [--ssl true|false]</code> Используется для модификации настроек экземпляра драйвера из командной строки. Могут быть модифицированы следующие настройки:</p>
+<ul>
+<li>порт &#8211; изменяет порт, к которому привязан экземпляр драйвера</li>
+<li>активирован &#8211; активирует/дезактивирует экземпляр драйвера (Может быть произведено с помощью <code>iobroker start|stop &lt;instance&gt;</code>too)</li>
+<li>ip &#8211; изменяет привязанный ip адрес</li>
+<li>auth &#8211; активирует или дезактивирует аутентификацию</li>
+<li>ssl &#8211; включает или выключает протокол SSL</li>
+</ul>
+<h2><span id="iobroker_state_get"><a id="user-content-iobroker-state-get" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-state-get"></a>iobroker state get</span></h2>
+<p>Полная версия команды: <code>iobroker state get stateId</code></p>
+<p>Читает значение JSON состояния:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa8dbbab69295233381" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&amp;gt;./iobroker state get system.adapter.admin.0.uptime
+{"val":496,"ack":true,"ts":1425925626,"from":"system.adapter.admin.0","lc":1425925626}
+</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa8dbbab69295233381-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab69295233381-2">2</div><div class="crayon-num" data-line="crayon-5cefa8dbbab69295233381-3">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa8dbbab69295233381-1"><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-sy">.</span><span class="crayon-o">/</span><span class="crayon-e">iobroker </span><span class="crayon-e">state </span><span class="crayon-e">get </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0.uptime</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab69295233381-2"><span class="crayon-sy">{</span><span class="crayon-s">"val"</span><span class="crayon-o">:</span><span class="crayon-cn">496</span><span class="crayon-sy">,</span><span class="crayon-s">"ack"</span><span class="crayon-o">:</span><span class="crayon-t">true</span><span class="crayon-sy">,</span><span class="crayon-s">"ts"</span><span class="crayon-o">:</span><span class="crayon-cn">1425925626</span><span class="crayon-sy">,</span><span class="crayon-s">"from"</span><span class="crayon-o">:</span><span class="crayon-s">"system.adapter.admin.0"</span><span class="crayon-sy">,</span><span class="crayon-s">"lc"</span><span class="crayon-o">:</span><span class="crayon-cn">1425925626</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5cefa8dbbab69295233381-3">&nbsp;</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p>Вы можете использовать флажок &#8220;&#8211;pretty&#8221; для форматирования результата.</p>
+<h2><span id="iobroker_state_getplain"><a id="user-content-iobroker-state-getplain" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-state-getplain"></a>iobroker state getplain</span></h2>
+<p>Полная версия команды: <code>iobroker state getplain stateId</code></p>
+<p>Читает простое значение статуса как перечень аттрибутов:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa8dbbab6d361511385" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&amp;gt;./iobroker state getplain system.adapter.admin.0.uptime
+571
+true
+system.adapter.admin.0
+1425925701
+1425925701
+</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa8dbbab6d361511385-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab6d361511385-2">2</div><div class="crayon-num" data-line="crayon-5cefa8dbbab6d361511385-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab6d361511385-4">4</div><div class="crayon-num" data-line="crayon-5cefa8dbbab6d361511385-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab6d361511385-6">6</div><div class="crayon-num" data-line="crayon-5cefa8dbbab6d361511385-7">7</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa8dbbab6d361511385-1"><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-sy">.</span><span class="crayon-o">/</span><span class="crayon-e">iobroker </span><span class="crayon-e">state </span><span class="crayon-e">getplain </span><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0.uptime</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab6d361511385-2"><span class="crayon-cn">571</span></div><div class="crayon-line" id="crayon-5cefa8dbbab6d361511385-3"><span class="crayon-t">true</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab6d361511385-4"><span class="crayon-v">system</span><span class="crayon-sy">.</span><span class="crayon-v">adapter</span><span class="crayon-sy">.</span><span class="crayon-v">admin</span><span class="crayon-sy">.</span><span class="crayon-cn">0</span></div><div class="crayon-line" id="crayon-5cefa8dbbab6d361511385-5"><span class="crayon-cn">1425925701</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab6d361511385-6"><span class="crayon-cn">1425925701</span></div><div class="crayon-line" id="crayon-5cefa8dbbab6d361511385-7">&nbsp;</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p></p>
+<h2><span id="iobroker_state_set"><a id="user-content-iobroker-state-set" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-state-set"></a>iobroker state set</span></h2>
+<p>Полная версия команды: <code>iobroker state set stateId newValue ack</code></p>
+<p>Установите значение состояния. &#8220;подтверждение по умолчанию = false.</p>
+<p><code>&gt;iobroker state set sayit.0.tts.text "Текст сказать"</code></p>
+<p><code>&gt;iobroker state set adapter.0.states.temperature 28.5 true</code></p>
+<p>В случае, если ID неправильный, сообщение об ошибке не появляется.</p>
+<h2><span id="iobroker_state_del"><a id="user-content-iobroker-state-del" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-state-del"></a>iobroker state del</span></h2>
+<p>Полная версия команды: <code>iobroker state del stateId</code></p>
+<p>Удалить статус.</p>
+<h2><span id="iobroker_message"><a id="user-content-iobroker-message" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-message"></a>iobroker message</span></h2>
+<p>Полная версия команды: <code>iobroker message adapter.instance command message</code></p>
+<p>Посылается сообщение на указанный экземпляр драйвера или все экземпляры драйвера, когда экземпляр драйвера не указан.</p>
+<h2><span id="iobroker_clean"><a id="user-content-iobroker-clean" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-clean"></a>iobroker clean</span></h2>
+<p>Стирает все настройки ioBroker. <strong>Вы не можете возобновить настройки после вызова данной команды.</strong></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa8dbbab71824604346" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&amp;gt;iobroker очистить да
+Удалено 205 объектов.
+Повторный запуск ioBroker...
+</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa8dbbab71824604346-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab71824604346-2">2</div><div class="crayon-num" data-line="crayon-5cefa8dbbab71824604346-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab71824604346-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa8dbbab71824604346-1"><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-i">iobroker</span><span class="crayon-h"> </span>очистить<span class="crayon-h"> </span>да</div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab71824604346-2">Удалено<span class="crayon-h"> </span><span class="crayon-cn">205</span><span class="crayon-h"> </span>объектов<span class="crayon-sy">.</span></div><div class="crayon-line" id="crayon-5cefa8dbbab71824604346-3">Повторный<span class="crayon-h"> </span>запуск<span class="crayon-h"> </span><span class="crayon-v">ioBroker</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab71824604346-4">&nbsp;</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0009 seconds] -->
+<p></p>
+<h2><span id="iobroker_backup"><a id="user-content-iobroker-backup" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-backup"></a>iobroker backup</span></h2>
+<p>Создает резервную копию ioBroker в файле zip. Резервные файлы будут созданы в папке <em>backups</em> и будут иметь следующие имена: <code>2015_02_10-17_49_45_backupIoBroker.tar.gz</code> с текущими временем и датой.</p>
+<p><strong>Примечание:</strong> еще не закончено</p>
+<h2><span id="iobroker_restore"><a id="user-content-iobroker-restore" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-restore"></a>iobroker restore</span></h2>
+<p>Полная версия команды: <code>iobroker restore &lt;backup name or path&gt;</code> В случае, если некоторые резервные копии были созданы с помощью команды <code>iobroker backup</code>, они могут быть восстановлены. Если вы можете восстановить их без параметров, вы получите список доступных резервных копий.</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa8dbbab75043297736" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+/&amp;gt;восстановление iobroker
+Пожалуйста, укажите одно из имен резервных копий:
+   2015_07_18-12_20_28_backupIoBroker.tar.gz or 2015_07_18-12_20_28 or 0
+   2015_07_17-21_54_01_backupIoBroker.tar.gz or 2015_07_17-21_54_01 or 1
+</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa8dbbab75043297736-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab75043297736-2">2</div><div class="crayon-num" data-line="crayon-5cefa8dbbab75043297736-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa8dbbab75043297736-4">4</div><div class="crayon-num" data-line="crayon-5cefa8dbbab75043297736-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa8dbbab75043297736-1"><span class="crayon-o">/</span><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span>восстановление<span class="crayon-h"> </span><span class="crayon-i">iobroker</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab75043297736-2">Пожалуйста<span class="crayon-sy">,</span><span class="crayon-h"> </span>укажите<span class="crayon-h"> </span>одно<span class="crayon-h"> </span>из<span class="crayon-h"> </span>имен<span class="crayon-h"> </span>резервных<span class="crayon-h"> </span>копий<span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5cefa8dbbab75043297736-3"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-cn">2015_07_18</span><span class="crayon-o">-</span><span class="crayon-cn">12_20_28_backupIoBroker.tar.gz</span><span class="crayon-h"> </span><span class="crayon-st">or</span><span class="crayon-h"> </span><span class="crayon-cn">2015_07_18</span><span class="crayon-o">-</span><span class="crayon-cn">12_20_28</span><span class="crayon-h"> </span><span class="crayon-st">or</span><span class="crayon-h"> </span><span class="crayon-cn">0</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa8dbbab75043297736-4"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-cn">2015_07_17</span><span class="crayon-o">-</span><span class="crayon-cn">21_54_01_backupIoBroker.tar.gz</span><span class="crayon-h"> </span><span class="crayon-st">or</span><span class="crayon-h"> </span><span class="crayon-cn">2015_07_17</span><span class="crayon-o">-</span><span class="crayon-cn">21_54_01</span><span class="crayon-h"> </span><span class="crayon-st">or</span><span class="crayon-h"> </span><span class="crayon-cn">1</span></div><div class="crayon-line" id="crayon-5cefa8dbbab75043297736-5">&nbsp;</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0015 seconds] -->
+<p>Вы можете вызвать <code>iobroker restore 0</code> для использования последнего файла резервного копирования или какого-либо другого индекса. Следующие команды будут выполнять ту же функцию, что и в предоставленном примере:</p>
+<ul>
+<li>iobroker restore 0</li>
+<li>iobroker 2015_07_18-12_20_28</li>
+<li>iobroker 2015_07_17-21_54_01_backupIoBroker.tar.gz</li>
+<li>iobroker /opt/iobroker/backups/2015_07_17-21_54_01_backupIoBroker.tar.gz</li>
+</ul>
+<p>Все драйвера будут восстановлены как неактивные, за исключением &#8220;admin&#8221;. Для активации всех драйверов одновременно, вы можете вызвать команду &#8220;iobroker start all&#8221;. Если некоторые драйвера не загружены, вы можете вызвать команду &#8220;iobroker upload all&#8221; для загрузки всех файлов драйверов одновременно.</p>
+<h2><span id="iobroker_host"><a id="user-content-iobroker-host" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-host"></a>iobroker host</span></h2>
+<p>Измените имя хоста в объектах.</p>
+<p>Иногда перемещая данные iobroker из одной системы в другую, требуется изменить имя хоста. Данная операция может быть произведена с помощью этой команды.</p>
+<p>Прежде, чем сделать это, вы должны остановить ioBroker.</p>
+<p>Для того, чтобы изменить определенное имя хоста в базе данных на текущее имя хоста, напишите <code>iobroker host oldHostName</code>.</p>
+<p>Для изменения любого имени хоста (должна существовать только одна единственная система хоста, не для межсерверных настроек) напишите <code>iobroker host this</code>.</p>
+<h2><span id="iobroker_host_set"><a id="user-content-iobroker-host-set" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-host-set"></a>iobroker host set</span></h2>
+<p>Вы можете изменить имя хоста на какое-либо определенное (не на имя компьютера). Для этого вам следует написать: <code>iobroker host set newHostName</code> , чтобы переименовать действующее имя компьютера или предидущее указанное имя хоста.</p>
+<h2><span id="iobroker_host_remove"><a id="user-content-iobroker-host-remove" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-host-remove"></a>iobroker host remove</span></h2>
+<p>Для удаления хоста, просто напишите <code>iobroker host remove hostNameToRemove</code>. Пожалуйста, будьте осторожны с этим.</p>
+<h2><span id="iobroker_list"><a id="user-content-iobroker-list" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-list"></a>iobroker list</span></h2>
+<p>С помощью данной команда возможно показать различные типы объектов и статусов в ioBroker. Примеры:</p>
+<ul>
+<li><code>iobroker list objects hm-rega.0</code> &#8211; показать все объекты эземпляра драйвера hm-rega.0</li>
+<li><code>iobroker list states hm-rega.0</code> &#8211; показать все статусы экземпляра драйвера hm-rega.0</li>
+<li><code>iobroker list files vis.0</code> &#8211; показать все файлы экземпляра драйвера vis.0</li>
+<li><code>iobroker list instances</code> &#8211; показать все экземпляры</li>
+<li><code>iobroker list adapters</code> &#8211; показать все драйверы</li>
+<li><code>iobroker list users</code> &#8211; показать всех пользователей</li>
+<li><code>iobroker list groups</code> &#8211; показать все группы</li>
+<li><code>iobroker list enums</code> &#8211; показать все enum</li>
+<li><code>iobroker list hosts</code> &#8211; показать все хосты</li>
+</ul>
+<p>Возможно использовать сокращения для типов:</p>
+<ul>
+<li>o &#8211; объекты</li>
+<li>s &#8211; статусы</li>
+<li>u &#8211; пользователи</li>
+<li>e &#8211; категории</li>
+<li>g &#8211; группы</li>
+<li>i &#8211; экземпляры драйверов</li>
+<li>f &#8211; файлы</li>
+<li>h &#8211; хосты</li>
+</ul>
+<p>Например <code>iobroker l u</code> &#8211; показать перечень всех пользователей.</p>
+<p>С помощью &#8220;показать перечень экземпляров драйверов&#8221; вы можете использовать дополнительные фильтры:</p>
+<ul>
+<li>активированные &#8211; перечислить все активные экземпляры драйверов</li>
+<li>дезактивированные &#8211; перечислить все неактивные экземпляры драйверов</li>
+<li>порт &#8211; показать все экземпляры драйверов с портом</li>
+<li>ip &#8211; показать все экземпляры, которые могут быть привязаны к какому-либо IP</li>
+<li>ssl &#8211; показать все экземпляры, где может быть активирован SSL</li>
+</ul>
+<p>Применение: <code>iobroker list instances --enabled</code> перечислить все активные экземпляры драйверов</p>
+<p>или <code>iobroker l i --port</code> перечислить использованные порты.</p>
+<h2><span id="iobroker_adduser"><a id="user-content-iobroker-adduser" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-adduser"></a>iobroker adduser</span></h2>
+<p>Эта команда позволяет создавать нового пользователя (по умолчанию в группе &#8220;администратор&#8221;). Эта группа может быть определена в команде с параметром &#8220;<code>--ingroup</code>&#8220;. Если пароль не задан, то в нее следует зайти с командной строки. Например, создать пользователя &#8220;martin&#8221; в группе &#8220;пользователь&#8221;:</p>
+<p><code>iobroker adduser martin --group user</code></p>
+<p>Создать пользователя с паролем:</p>
+<p><code>iobroker adduser martin --group user --password 12345</code></p>
+<h2><span id="iobroker_deluser"><a id="user-content-iobroker-deluser" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-deluser"></a>iobroker deluser</span></h2>
+<p>Для удаления существующего пользователя, вызовите команду:</p>
+<p><code>iobroker deluser username</code></p>
+<p>Пользователь будет автоматически удален также изо всех груп. Пользователь &#8220;admin&#8221; не может быть удален.</p>
+<h2><span id="iobroker_passwd"><a id="user-content-iobroker-passwd" class="anchor" href="https://github.com/ioBroker/ioBroker/wiki/Console-commands#iobroker-passwd"></a>iobroker passwd</span></h2>
+<p>Дл изменения пароля существующего пользователя, вызовите команду:</p>
+<p><code>iobroker passwd username</code></p>
+<p>Вам будет предложено ввести пароль и повторить его.  Если не требуется никакого взаимодействия с командной строкой, наберите команду:</p>
+<p><code>iobroker passwd username --password newPassword</code></p>
+<h2><span id="iobroker_chmod">iobroker chmod</span></h2>
+<p>Изменить режимный код файла.</p>
+<h2><span id="iobroker_chown"><a id="iobroker_chown_468"></a>iobroker chown</span></h2>
+<p>Изменить владельца файла.</p>
+<h2><span id="iobroker_file_read"><a id="iobroker_file_read_471"></a>iobroker file read</span></h2>
+<p>Прочтите файл из базы данных и сохраните его в локальной файловой системе.<br>
+Применение:<br>
+<code>iobroker file read [storeFile]</code><br>
+storeFile является выборочной функцией, но может быть и путем к папке или же новому файлу.</p>
+<p>Пример:<br>
+<code>iobroker file read /vis.0/main/img/picture.png /opt/myfile.png</code></p>
+<p>&#8220;file&#8221; и &#8220;read&#8221; могут быть сокращеныо до &#8220;f r&#8221;.</p>
+<h2><span id="iobroker_file_write"><a id="iobroker_file_write_474"></a>iobroker file write</span></h2>
+<p>Впишите файл из локальной файловой системы в базу данных.<br>
+Применение:<br>
+<code>iobroker file write </code><br>
+storeFile может быть путем к папке в базе данных или же полным именем</p>
+<p>Пример:<br>
+<code>iobroker file write /opt/myfile.png /vis.0/main/img/picture.png</code></p>
+<p>&#8220;file&#8221; и &#8220;write&#8221; могут быть сокращены до &#8220;f w&#8221;.</p>
+				
+<footer class="post-data">
+	
+	<div class="entry-meta">
+			</div><!-- .entry-meta -->
+	</footer><!-- .post-data -->
+			</div><!-- .post-entry -->
+	</article><!-- #post-## -->
+
+					
+				
+			</main><!-- #main -->
+			
+<div id="widgets" class="widget-area default-sidebar" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+		<aside id="archives" class="widget-wrapper">
+			<h3 class="widget-title">В архиве</h3>
+			<ul>
+					<li><a href='index-428.htm?m=201902&#038;lang=ru'>February 2019</a></li>
+	<li><a href='index-429.htm?m=201812&#038;lang=ru'>December 2018</a></li>
+	<li><a href='index-430.htm?m=201711&#038;lang=ru'>November 2017</a></li>
+	<li><a href='index-431.htm?m=201609&#038;lang=ru'>September 2016</a></li>
+	<li><a href='index-432.htm?m=201606&#038;lang=ru'>June 2016</a></li>
+	<li><a href='index-433.htm?m=201605&#038;lang=ru'>May 2016</a></li>
+	<li><a href='index-434.htm?m=201603&#038;lang=ru'>March 2016</a></li>
+			</ul>
+		</aside>
+
+		</div><!-- #default-sidebar -->
+	</div><!-- #primary -->
+
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+
+<footer id="footer" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div id="footer-wrapper">
+
+		<div id="footer-widgets-container">
+					</div><!-- #footer-widgets-container-->
+
+		<div id="menu-social-container">
+			<nav id="footer-menu-container">
+				<ul id="menu-2016_seitenfuss_ru" class="footer-menu"><li id="menu-item-2708" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2708"><a href="index-158.htm?page_id=2692&#038;lang=ru">Контакт</a></li>
+<li id="menu-item-2707" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2707"><a href="index-159.htm?page_id=2693&#038;lang=ru">Правовая информация</a></li>
+<li id="menu-item-2706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2706"><a href="index-160.htm?page_id=2694&#038;lang=ru">Пользовательское соглашение</a></li>
+<li id="menu-item-2705" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2705"><a href="index-161.htm?page_id=2695&#038;lang=ru">Карта сайта</a></li>
+<li id="menu-item-2704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2704"><a href="index-162.htm?page_id=2696&#038;lang=ru">Спасибо</a></li>
+</ul>			</nav><!-- #footer-menu -->
+			<div id="social-icons-container">
+				<ul class="social-icons"></ul><!-- .social-icons -->			</div><!-- #social-icons-container-->
+		</div><!-- #menu-social-container -->
+
+		
+		<div id="footer-base">
+			<div class="copyright">
+				&copy; 2019 <a href="index-2.htm?lang=ru" title="ioBroker">ioBroker</a>			</div><!-- .copyright -->
+
+			<div class="powered">
+				<a href="http://cyberchimps.com/responsive-II/">Чутко II</a> работает на <a href="http://wordpress.org/">WordPress</a>			</div><!-- end .powered -->
+
+			<div class="scroll-top">
+				<a href="#scroll-top" title="прокрутка наверх">&#8679;</a>
+			</div><!-- .scroll-top -->
+		</div><!-- #footer-base -->
+	</div><!-- #footer-wrapper -->
+	</footer><!-- #footer -->
+<div id="cookie-law-info-bar"><span>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.<a data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button" style="display:inline-block; ">Akzeptieren</a> <a href='..\index-1.htm?page_id=2305&#038;lang=de' id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link" style="display:inline-block;">mehr Infos</a></span></div><div id="cookie-law-info-again" style="display:none;"><span id="cookie_hdr_showagain">Privacy & Cookies Policy</span></div><div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  cli_cookiebar_settings='{"animate_speed_hide":"500","animate_speed_show":"500","background":"#fff","border":"#444","border_on":false,"button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"button_2_hidebar":true,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":true,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":false,"show_once":"10000","logging_on":false,"as_popup":false,"popup_overlay":true,"bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"}';
+  /* ]]> */
+</script><div class="scroll-back-to-top-wrapper">
+	<span class="scroll-back-to-top-inner">
+					<i class="fa fa-2x fa-arrow-circle-up"></i>
+			</span>
+</div><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435, \u0447\u0442\u043e \u0432\u044b \u043d\u0435 \u0440\u043e\u0431\u043e\u0442."}}};
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435, \u0447\u0442\u043e \u0432\u044b \u043d\u0435 \u0440\u043e\u0431\u043e\u0442."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\contact-form-7\includes\js\scripts.js?ver=4.9.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\scroll-back-to-top\assets\js\scroll-back-to-top.js'></script>
+<script type='text/javascript' src='wp-content\plugins\table-of-contents-plus\front.min.js?ver=1509'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\js\responsive-scripts.min.js?ver=1.2.5'></script>
+<script type='text/javascript' src='wp-includes\js\wp-embed.min.js?ver=4.7.5'></script>
+</body>
+</html>

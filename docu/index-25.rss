@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Allgemein &#8211; ioBroker</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;cat=1&#038;lang=de" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Sun, 26 May 2019 12:07:21 +0000</lastBuildDate>
+	<language>de-DE</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>5 neue Images im Downloadbereich verfügbar</title>
+		<link>http://www.iobroker.net/docu/?p=8945&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8945&#038;lang=de#respond</comments>
+		<pubDate>Thu, 21 Feb 2019 16:22:52 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8945</guid>
+		<description><![CDATA[Im Downloadbereich befinden sich ab sofort neue minimal Images für ioBroker. Raspberry Pi2/3 Tinkerboard Orange Pi plus 2e Rock64 Odroid C2 &#160; In diesen Images ist nur der Admin und der Discovery-Adapter vorinstalliert, so dass diese Images als Grundlage für jeden dienen<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8945&#038;lang=de">Weiterlesen <span class="screen-reader-text"><b>5 neue Images im Downloadbereich verfügbar</b></span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Im <a href="http://www.iobroker.net/docu/?page_id=2563&amp;lang=de">Downloadbereich</a> befinden sich ab sofort neue minimal Images für ioBroker.</p>
+<ul>
+<li>Raspberry Pi2/3</li>
+<li>Tinkerboard</li>
+<li>Orange Pi plus 2e</li>
+<li>Rock64</li>
+<li>Odroid C2</li>
+</ul>
+<p>&nbsp;</p>
+<p>In diesen Images ist nur der Admin und der Discovery-Adapter vorinstalliert, so dass diese Images als Grundlage für jeden dienen können.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8945</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>[Ankündigung] Umstellung des Forums am 09.02.2019 ab 18:00</title>
+		<link>http://www.iobroker.net/docu/?p=8883&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8883&#038;lang=de#respond</comments>
+		<pubDate>Sat, 09 Feb 2019 15:20:44 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8883</guid>
+		<description><![CDATA[Hallo liebe Forum-Nutzer, Die Forum-Umstellung wird am Samstag den 9.2.2019 ab ca. 18:00 stattfinden. Die Passwörter Eurer Benutzer werden nicht übernommen. Aus diesem Grund nutzt bitte nach der Umstellung die &#8220;Passwort vergessen&#8221;-Funktion. Bitte überprüft daher noch vor der Umstellung, dass ihr eine<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8883&#038;lang=de">Weiterlesen <span class="screen-reader-text"><b><span style="color: #ff0000;">[Ankündigung] Umstellung des Forums am 09.02.2019 ab 18:00</span></b></span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<dl class="codebox">
+<dd>Hallo liebe Forum-Nutzer,</p>
+<p>Die Forum-Umstellung wird am Samstag den 9.2.2019 ab ca. 18:00 stattfinden. Die Passwörter Eurer Benutzer werden <strong class="text-strong">nicht </strong>übernommen. Aus diesem Grund nutzt bitte nach der Umstellung die &#8220;Passwort vergessen&#8221;-Funktion.</p>
+<p><strong class="text-strong">Bitte überprüft daher noch vor der Umstellung, dass ihr eine aktuelle E-Mail Adresse in eurem Profil hinterlegt habt!</strong></p>
+<p>Weitere Informationen haben wir unter <a class="postlink" href="https://forum.iobroker.net/viewtopic.php?t=21406">viewtopic.php?t=21406</a> zusammengefasst und werden diesen Thread aktuell halten. Bitte nutzt diesen auch bei Fragen.</p>
+<p>Euer ioBroker Team</dd>
+</dl>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8883</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>[Ankündigung] Wartungsarbeiten Free-Cloud und Webseite am 06.01.2019</title>
+		<link>http://www.iobroker.net/docu/?p=8592&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8592&#038;lang=de#comments</comments>
+		<pubDate>Sun, 06 Jan 2019 15:18:09 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8592</guid>
+		<description><![CDATA[Am 06.01.2019 finden ab 21:00 Uhr Wartungsarbeiten auf der Free-Cloud statt. Dauer ca. 1 Stunde. Weitere Infos und Diskussionen dazu im Forum : Link &#160; Euer ioBroker-Team]]></description>
+				<content:encoded><![CDATA[<p>Am 06.01.2019 finden ab 21:00 Uhr Wartungsarbeiten auf der Free-Cloud statt. Dauer ca. 1 Stunde.</p>
+<p>Weitere Infos und Diskussionen dazu im Forum : <a href="https://forum.iobroker.net/viewtopic.php?f=8&amp;t=20510" target="_blank" rel="noopener noreferrer">Link</a></p>
+<p>&nbsp;</p>
+<p>Euer ioBroker-Team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8592</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>* Neue Weihnachtsaktion bei ioBroker.iot bis 06.01.2019 </title>
+		<link>http://www.iobroker.net/docu/?p=8484&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8484&#038;lang=de#respond</comments>
+		<pubDate>Sun, 23 Dec 2018 10:21:10 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8484</guid>
+		<description><![CDATA[In diesem Jahr gibt es wieder eine Sonderaktion für Smart-Assistants (Alexa, IFTTT, google home). Nähere Informationen im Forum unter https://forum.iobroker.net/viewtopic.php?f=8&#38;t=19849]]></description>
+				<content:encoded><![CDATA[<p>In diesem Jahr gibt es wieder eine Sonderaktion für Smart-Assistants (Alexa, IFTTT, google home).</p>
+<p>Nähere Informationen im Forum unter <a href="https://forum.iobroker.net/viewtopic.php?f=8&amp;t=19849">https://forum.iobroker.net/viewtopic.php?f=8&amp;t=19849</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8484</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title> * Wartungsarbeiten an der pro-cloud am 22.12. 22:00 Uhr </title>
+		<link>http://www.iobroker.net/docu/?p=8457&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8457&#038;lang=de#respond</comments>
+		<pubDate>Wed, 19 Dec 2018 14:26:39 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8457</guid>
+		<description><![CDATA[Am Samstag den 22. 12. 2018 um 22.00 Uhr werden Wartungsarbeiten an der pro Cloud durchgeführt. Dieses wird maximal eine Stunde dauern, wenn alle klappt deutlich kürzer. Eure Systeme werden sich anschließend automatisch wieder neu verbinden. Zu diesem Zeitpunkt werden<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8457&#038;lang=de">Weiterlesen <span class="screen-reader-text"><b> * Wartungsarbeiten an der pro-cloud am 22.12. 22:00 Uhr </b></span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Am Samstag den 22. 12. 2018 um 22.00 Uhr werden Wartungsarbeiten an der pro Cloud durchgeführt.<br />
+Dieses wird maximal eine Stunde dauern, wenn alle klappt deutlich kürzer.</p>
+<p>Eure Systeme werden sich anschließend automatisch wieder neu verbinden.</p>
+<p>Zu diesem Zeitpunkt werden die pro Dienste, worunter auch Alexa zählt, nicht verfügbar sein.</p>
+<p>Wir bitten um Verständnis.</p>
+<p>Diese Arbeiten dienen dazu die Kontinuität unserer Pro-Dienste zu garantieren.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8457</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Wartungsarbeiten iobroker.pro am 08.12.2018</title>
+		<link>http://www.iobroker.net/docu/?p=8398&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8398&#038;lang=de#comments</comments>
+		<pubDate>Thu, 06 Dec 2018 09:39:55 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8398</guid>
+		<description><![CDATA[Hallo zusammen, am 08.12.2018 finden ab 22:00 Uhr Wartungsarbeiten an der Pro-Cloud (iobroker.pro) statt. Es kann daher zu Ausfällen, usw, kommen. Die Dauer der Wartungsarbeiten steht noch nicht gesichert fest &#8211; sobald ich da genauere Infos habe, werden ich sie<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8398&#038;lang=de">Weiterlesen <span class="screen-reader-text"><b>Wartungsarbeiten iobroker.pro am 08.12.2018</b></span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Hallo zusammen,</p>
+<p>am 08.12.2018 finden ab 22:00 Uhr Wartungsarbeiten an der Pro-Cloud (iobroker.pro) statt.<br />
+Es kann daher zu Ausfällen, usw, kommen.</p>
+<p>Die Dauer der Wartungsarbeiten steht noch nicht gesichert fest &#8211; sobald ich da genauere Infos habe, werden ich sie hier posten.</p>
+<p>Euer ioBroker-Team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8398</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>200 Adapter verfügbar</title>
+		<link>http://www.iobroker.net/docu/?p=8169&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8169&#038;lang=de#respond</comments>
+		<pubDate>Mon, 04 Jun 2018 11:10:21 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8169</guid>
+		<description><![CDATA[In der offiziellen Adapterliste werden mittlerweile 200 Adapter aufgeführt. Einige sind noch nicht in dem stable Repository enthalten. Daher kann die Anzahl verfügbarer Adapter bei Usern die das stable (default) Repository nutzen niedriger sein.]]></description>
+				<content:encoded><![CDATA[<p>In der offiziellen <a href="http://download.iobroker.net/list.html">Adapterliste</a> werden mittlerweile 200 Adapter aufgeführt.</p>
+<p>Einige sind noch nicht in dem stable Repository enthalten. Daher kann die Anzahl verfügbarer Adapter bei Usern die das stable (default) Repository nutzen niedriger sein.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8169</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Aktuelles Image für Rock64 verfügbar</title>
+		<link>http://www.iobroker.net/docu/?p=8084&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8084&#038;lang=de#respond</comments>
+		<pubDate>Fri, 20 Apr 2018 18:01:10 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8084</guid>
+		<description><![CDATA[Im Downloadbereich befindet sich ein neues Image für den Rock64 mit ioBroker. Das Image hat wieder ein funftionierendes NAND-SATA_Install, das leider beim letzten Image defekt war. Diese Funktion wurde kurzfristig vom armbian Team (Danke Igor!) repariert. Erkauft musste diese schnelle Reaktion durch ein<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8084&#038;lang=de">Weiterlesen <span class="screen-reader-text">Aktuelles Image für Rock64 verfügbar</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Im <a href="http://www.iobroker.net/docu/?page_id=2563&amp;lang=de">Downloadbereich</a> befindet sich ein neues Image für den Rock64 mit ioBroker.</p>
+<p>Das Image hat wieder ein funftionierendes NAND-SATA_Install, das leider beim letzten Image defekt war. Diese Funktion wurde kurzfristig vom armbian Team (Danke Igor!) repariert.</p>
+<p>Erkauft musste diese schnelle Reaktion durch ein &#8220;nightly build&#8221; werden, was bedeutet, dass es zu kleinen Bugs kommen könnte. Bitte immer aktuell halten.</p>
+<p>Der Cloud-Adapter liegt in Version 1.5.0 vor, was für alle Cloudzugriffe Mindestanforderung ist.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8084</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Aktuelles Homematic All-In-One Image für Raspberry 2, 3 und 3B+ mit piVCCU verfügbar</title>
+		<link>http://www.iobroker.net/docu/?p=8081&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8081&#038;lang=de#respond</comments>
+		<pubDate>Fri, 20 Apr 2018 17:57:09 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8081</guid>
+		<description><![CDATA[Im Downloadbereich befindet sich ein neues Homematic All-In-One Image für den RaspberryPi2/3 mit ioBroker und piVCCU. Um diese Funktion zu nutzen wird ein Homematic-Funkmodul für den Raspberry Pi benötigt. Das Image wurde auf einem Raspberry Pi3 erstellt und erfolgreich auch auf einem Raspberry Pi3 B+ getestet<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8081&#038;lang=de">Weiterlesen <span class="screen-reader-text">Aktuelles Homematic All-In-One Image für Raspberry 2, 3 und 3B+ mit piVCCU verfügbar</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Im <a href="http://www.iobroker.net/docu/?page_id=2563&amp;lang=de">Downloadbereich</a> befindet sich ein neues Homematic All-In-One Image für den RaspberryPi2/3 mit ioBroker und piVCCU. Um diese Funktion zu nutzen wird ein Homematic-Funkmodul für den Raspberry Pi benötigt.</p>
+<p>Das Image wurde auf einem Raspberry Pi3 erstellt und erfolgreich auch auf einem Raspberry Pi3 B+ getestet</p>
+<p>Das Image enthält zwar den js-controller v1.4.1, das Standard-repository ist jedoch weiterhin auf default (=stable) eingestellt.</p>
+<p>Der Cloud-Adapter liegt in Version 1.5.0 vor, was jetzt für alle Cloudzugriffe Mindestanforderung ist.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8081</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Upgrade Cloud iobroker.pro rückgängig gemacht</title>
+		<link>http://www.iobroker.net/docu/?p=8055&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8055&#038;lang=de#respond</comments>
+		<pubDate>Sun, 15 Apr 2018 12:43:20 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8055</guid>
+		<description><![CDATA[Lieber Benutzer, leider hat es nicht geklappt die Cloud auf die neueste Version zu bringen. ioBroker.Pro hat noch admin und App Funktionalität und das wurde nicht ausgiebig getestet. Nach der Euphorie, dass iobroker.net-cloud ohne große Probleme upgedated wurde, dachte ich<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8055&#038;lang=de">Weiterlesen <span class="screen-reader-text">Upgrade Cloud iobroker.pro rückgängig gemacht</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Lieber Benutzer,<br />
+leider hat es nicht geklappt die Cloud auf die neueste Version zu bringen.<br />
+ioBroker.Pro hat noch admin und App Funktionalität und das wurde nicht ausgiebig getestet.</p>
+<p>Nach der Euphorie, dass iobroker.net-cloud ohne große Probleme upgedated wurde, dachte ich dass pro auch einfach gehen wird. Aber .pro hat doch mehr Eigenschaften.</p>
+<p>Ich bitte um Entschuldigung für die Unannehmlichkeiten und verspreche in der Zukunft mit blue/green Deployment die migration zu machen.</p>
+<p>Danke an alle Helfer, die die Cloud geprüft haben und anderen Leuten geholfen haben.</p>
+<p>MfG,<br />
+Bluefox</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8055</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

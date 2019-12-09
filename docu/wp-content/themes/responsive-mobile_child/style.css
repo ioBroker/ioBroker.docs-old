@@ -1,0 +1,109 @@
+/*
+ Theme Name: Responsive Mobile Child ioBroker
+ Theme URI:
+ Description: Theme fuer die neue ioBroker Seite 2016
+ Author: mctom
+ Author URI: http://www.iobroker.net
+ Template: responsive-mobile
+ Version: 1.0
+ Tags: Theme Name Child Theme
+*/
+
+/*
+You can start adding your own styles here. Use !important to overwrite styles if needed. */
+
+
+
+.menu-2016_adapter_uebersicht_deutsch-container {
+  background-color: #333333;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 160%;
+}
+
+
+#menu-2016_adapter_uebersicht_deutsch li a {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+#menu-2016_adapter_uebersicht_deutsch li a:hover {
+  color: #999999;;
+  text-decoration: none;
+}
+
+
+#menu-2016_adapter_uebersicht_deutsch ul li {
+  font-size: 14px;
+  line-height: 100%;
+}
+
+
+.adaptermenueclass {
+  background-color: #333333;
+  padding: 10px;
+  font-size: 16px;
+
+}
+
+.adaptermenueclass li a {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+.adaptermenueclass li a:hover {
+  color: #999999;;
+  text-decoration: none;
+}
+
+.adaptermenueclass ul ul li a {
+ 	color: #eeeeee;
+  	text-decoration: none;
+	font-size: 14px;
+	padding-left: 20px;
+  }
+
+.adaptermenueclass ul ul li a:hover {
+ 	color: #eeeeee;
+  	text-decoration: none;
+	font-size: 14px;
+	padding-left: 20px;
+  }
+
+h4, .h4 {
+  font-size: 20px !important;
+  margin-top: 1em !important; 	
+}
+
+h5, .h5 {
+  font-size: 16px !important;
+  text-decoration: underline !important;
+  margin-top: 1em !important;
+}
+
+p {
+  margin-top: 1em !important;
+}
+
+h2, .h2 {
+  margin-top: 2em !important;
+}
+
+h3, .h3 {
+  margin-top: 1.5em !important;
+}
+
+h6, .h6 {
+  margin-top: 1em !important;
+}
+
+.front-page .content-area {
+  background: #3399CC;
+}
+
+a {
+  color: #1C588B;
+}
+
+
+

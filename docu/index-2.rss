@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ioBroker</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;lang=en" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Sun, 26 May 2019 12:07:21 +0000</lastBuildDate>
+	<language>en-GB</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>5 new minimal images at the download area</title>
+		<link>http://www.iobroker.net/docu/?p=8947&#038;lang=en</link>
+		<comments>http://www.iobroker.net/docu/?p=8947&#038;lang=en#respond</comments>
+		<pubDate>Thu, 21 Feb 2019 16:25:40 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8947</guid>
+		<description><![CDATA[In the download area 5 new minimal images for ioBroker are available from now on.. Raspberry Pi2/3 Tinkerboard Orange Pi plus 2e Rock64 Odroid C2 All these images comprise only the admin and the discovery adapter, so these images are an optimal basis for everyone]]></description>
+				<content:encoded><![CDATA[<p><strong></strong>In the <a href="http://www.iobroker.net/docu/?page_id=2563&amp;lang=de">download area</a> 5 new minimal images for ioBroker are available from now on..</p>
+<ul>
+<li>Raspberry Pi2/3</li>
+<li>Tinkerboard</li>
+<li>Orange Pi plus 2e</li>
+<li>Rock64</li>
+<li>Odroid C2</li>
+</ul>
+<p>All these images comprise only the admin and the discovery adapter, so these images are an optimal basis for everyone</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8947</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>[Announcement] Forum Changeover on Feb. 9th 2019 starting at 18:00 CET</title>
+		<link>http://www.iobroker.net/docu/?p=8885&#038;lang=en</link>
+		<comments>http://www.iobroker.net/docu/?p=8885&#038;lang=en#respond</comments>
+		<pubDate>Sat, 09 Feb 2019 15:22:43 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8885</guid>
+		<description><![CDATA[Hello dear forum users, The forum changeover will take place on Saturday the 9th of February starting about 18:00. Your users&#8217; passwords are not inherited. For this reason please use the password forgot function after conversion. Please check before the changeover that<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8885&#038;lang=en">Read more <span class="screen-reader-text"><b><span style="color: #ff0000;">[Announcement] Forum Changeover on Feb. 9th 2019 starting at 18:00 CET</span></b></span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Hello dear forum users,</p>
+<p>The forum changeover will take place on Saturday the 9th of February starting about 18:00. Your users&#8217; passwords are <strong class="text-strong">not</strong> inherited. For this reason please use the password forgot function after conversion.</p>
+<p><strong class="text-strong">Please check before the changeover that you have a current e-mail address in your profile! </strong></p>
+<p>For more information, we have summarized at <a class="postlink" href="https://forum.iobroker.net/viewtopic.php?t=21406">viewtopic.php?t=21406</a> and will keep this thread up to date. Please use this also with questions.</p>
+<p>Your ioBroker team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8885</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>[Announcement] Maintenance work Free-Cloud and website on 06.01.2019</title>
+		<link>http://www.iobroker.net/docu/?p=8595&#038;lang=en</link>
+		<comments>http://www.iobroker.net/docu/?p=8595&#038;lang=en#respond</comments>
+		<pubDate>Sun, 06 Jan 2019 15:23:18 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8595</guid>
+		<description><![CDATA[On 06.01.2019, maintenance work will take place at 9 pm on the Free-Cloud. Duration approx. 1 hour. Further information and discussions in the forum: Link Your ioBroker team]]></description>
+				<content:encoded><![CDATA[<p>On 06.01.2019, maintenance work will take place at 9 pm on the Free-Cloud. Duration approx. 1 hour.</p>
+<p>Further information and discussions in the forum: <a href="https://forum.iobroker.net/viewtopic.php?f=8&amp;t=20510" target="_blank" rel="noopener noreferrer">Link</a></p>
+<p>Your ioBroker team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8595</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>* Special Offer at Christmas with ioBroker.iot until 06.01.2019 </title>
+		<link>http://www.iobroker.net/docu/?p=8494&#038;lang=en</link>
+		<comments>http://www.iobroker.net/docu/?p=8494&#038;lang=en#respond</comments>
+		<pubDate>Sun, 23 Dec 2018 10:38:43 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8494</guid>
+		<description><![CDATA[There is a special offer at Christmas for Smart Assistants (Alexa, IFTTT, Google Home). for further informatins refer to the posts in the german forum: https://forum.iobroker.net/viewtopic.php?f=8&#38;t=19849]]></description>
+				<content:encoded><![CDATA[<p>There is a special offer at Christmas for Smart Assistants (Alexa, IFTTT, Google Home).</p>
+<p>for further informatins refer to the posts in the german forum: https://forum.iobroker.net/viewtopic.php?f=8&amp;t=19849</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8494</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title> * Maintenance of the pro cloud December 22nd 2018 at 10pm </title>
+		<link>http://www.iobroker.net/docu/?p=8459&#038;lang=en</link>
+		<comments>http://www.iobroker.net/docu/?p=8459&#038;lang=en#respond</comments>
+		<pubDate>Wed, 19 Dec 2018 14:32:08 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8459</guid>
+		<description><![CDATA[On Saturday Dec. 22nd maintenance of the pro cloud will be performed. The maintenance will last 1 hour maximum. If all works perfectly the downtime will be shorter. Your systems will reconnect automatically at end of work. All services, incl.<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8459&#038;lang=en">Read more <span class="screen-reader-text"><b> * Maintenance of the pro cloud December 22nd 2018 at 10pm </b></span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>On Saturday Dec. 22nd maintenance of the pro cloud will be performed.</p>
+<p>The maintenance will last 1 hour maximum. If all works perfectly the downtime will be shorter.</p>
+<p>Your systems will reconnect automatically at end of work.</p>
+<p>All services, incl. Alexa, won&#8217;t be accessible ath this time.</p>
+<p>We apologize for any inconvenience.</p>
+<p>The maintanance will ensure the quality of our services in future.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8459</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Maintenance work iobroker.pro on 08.12.2018</title>
+		<link>http://www.iobroker.net/docu/?p=8400&#038;lang=en</link>
+		<comments>http://www.iobroker.net/docu/?p=8400&#038;lang=en#respond</comments>
+		<pubDate>Thu, 06 Dec 2018 09:42:24 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8400</guid>
+		<description><![CDATA[Hello everybody, On 08.12.2018 there will be maintenance work on the Pro-Cloud (iobroker.pro) from 22:00. It can therefore come to failures, etc .. The duration of the maintenance work is not certain yet &#8211; as soon as I have more<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8400&#038;lang=en">Read more <span class="screen-reader-text"><b>Maintenance work iobroker.pro on 08.12.2018</b></span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Hello everybody,</p>
+<p>On 08.12.2018 there will be maintenance work on the Pro-Cloud (iobroker.pro) from 22:00.<br />
+It can therefore come to failures, etc ..</p>
+<p>The duration of the maintenance work is not certain yet &#8211; as soon as I have more detailed information, I will post it here.</p>
+<p>Your ioBroker team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8400</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Maintenance work on ioBroker.pro at 12.01 from 22:00 (10pm)</title>
+		<link>http://www.iobroker.net/docu/?p=7833&#038;lang=en</link>
+		<comments>http://www.iobroker.net/docu/?p=7833&#038;lang=en#respond</comments>
+		<pubDate>Wed, 10 Jan 2018 19:47:23 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7833</guid>
+		<description><![CDATA[Please note that technical work will be carried out on the ioBroker.pro server on this Friday, 12:01 from 22:00 (10pm) to 08:00 (08:00am) the next day and the page will not be available. This also applies to Alexa, etc.]]></description>
+				<content:encoded><![CDATA[<p>Please note that technical work will be carried out on the ioBroker.pro server on this Friday, 12:01 from 22:00 (10pm) to 08:00 (08:00am) the next day and the page will not be available.<br />
+This also applies to Alexa, etc.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=7833</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>New Image available for Tinkerboard</title>
+		<link>http://www.iobroker.net/docu/?p=7774&#038;lang=en</link>
+		<comments>http://www.iobroker.net/docu/?p=7774&#038;lang=en#respond</comments>
+		<pubDate>Thu, 14 Dec 2017 20:04:54 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7774</guid>
+		<description><![CDATA[A new ioBroker image for Asus Tinkerboard is available at the download area . The image comprises the most impotant adapters for homematic user. In addition there is a very extensive demo project for vis within this image. This can be invoked by  &#60;IP&#62;:8082/vis/index.html?Demo The image is based on armbian.<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=7774&#038;lang=en">Read more <span class="screen-reader-text">New Image available for Tinkerboard</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>A new ioBroker image for Asus Tinkerboard is available at the <a href="http://www.iobroker.net/docu/?page_id=2563&amp;lang=de" target="_blank" rel="noopener noreferrer">download area</a> .</p>
+<p>The image comprises the most impotant adapters for homematic user.</p>
+<p>In addition there is a very extensive demo project for vis within this image. This can be invoked by  <code>&lt;IP&gt;:8082/vis/index.html?Demo</code></p>
+<p>The image is based on armbian. With the configuration tool <code>sudo armbian-config</code> it can easily be transferred to USB devices.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=7774</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>New Image available for Cubieboard 3 (Cubietruck)</title>
+		<link>http://www.iobroker.net/docu/?p=7751&#038;lang=en</link>
+		<comments>http://www.iobroker.net/docu/?p=7751&#038;lang=en#respond</comments>
+		<pubDate>Tue, 12 Dec 2017 15:59:38 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7751</guid>
+		<description><![CDATA[A new ioBroker image for Cubieboard 3 is available at the download area . The image comprises the most impotant adapters for homematic user. In addition there is a very extensive demo project for vis within this image. This can be invoked by  &#60;IP&#62;:8082/vis/index.html?Demo The image is based on armbian. With<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=7751&#038;lang=en">Read more <span class="screen-reader-text">New Image available for Cubieboard 3 (Cubietruck)</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>A new ioBroker image for Cubieboard 3 is available at the <a href="http://www.iobroker.net/docu/?page_id=2563&amp;lang=de" target="_blank" rel="noopener noreferrer">download area</a> .</p>
+<p>The image comprises the most impotant adapters for homematic user.</p>
+<p>In addition there is a very extensive demo project for vis within this image. This can be invoked by  <code>&lt;IP&gt;:8082/vis/index.html?Demo</code></p>
+<p>The image is based on armbian. With the configuration tool <code>sudo armbian-config</code> it can easily be transferred to NAND or USB devices.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=7751</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>New Image available for Rock64</title>
+		<link>http://www.iobroker.net/docu/?p=7736&#038;lang=en</link>
+		<comments>http://www.iobroker.net/docu/?p=7736&#038;lang=en#respond</comments>
+		<pubDate>Mon, 11 Dec 2017 19:31:14 +0000</pubDate>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+				<category><![CDATA[News]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7736</guid>
+		<description><![CDATA[A new ioBroker image for Rock64 is available at the download area . The image comprises the most impotant adapters for homematic user. In addition there is a very extensive demo project for vis within this image. This can be invoked by  &#60;IP&#62;:8082/vis/index.html?Demo &#160; The image is based on armbian. With<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=7736&#038;lang=en">Read more <span class="screen-reader-text">New Image available for Rock64</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>A new ioBroker image for Rock64 is available at the <a href="http://www.iobroker.net/docu/?page_id=2563&amp;lang=de" target="_blank" rel="noopener noreferrer">download area</a> .</p>
+<p>The image comprises the most impotant adapters for homematic user.</p>
+<p>In addition there is a very extensive demo project for vis within this image. This can be invoked by  <code>&lt;IP&gt;:8082/vis/index.html?Demo</code></p>
+<p>&nbsp;</p>
+<p>The image is based on armbian. With the configuration tool <code>sudo armbian-config</code> it can easily be transferred to eMMC or USB devices.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=7736</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

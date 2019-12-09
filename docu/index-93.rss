@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Windows Install для 32х битных систем.</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;p=3108&#038;lang=ru" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu/?p=3108&#038;lang=ru</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Mon, 07 Jan 2019 20:35:17 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>By: Bluefox</title>
+		<link>http://www.iobroker.net/docu/?p=3108&#038;lang=ru#comment-11</link>
+		<dc:creator><![CDATA[Bluefox]]></dc:creator>
+		<pubDate>Mon, 14 Mar 2016 08:43:47 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/?p=3108#comment-11</guid>
+		<description><![CDATA[Если, по каким то причинам, загрузки не происходит, то можно воспользоваться прямой ссылкой: http://download.iobroker.net/ioBrokerInstaller.0.7.0.exe]]></description>
+		<content:encoded><![CDATA[<p>Если, по каким то причинам, загрузки не происходит, то можно воспользоваться прямой ссылкой: <a href="http://download.iobroker.net/ioBrokerInstaller.0.7.0.exe" rel="nofollow">http://download.iobroker.net/ioBrokerInstaller.0.7.0.exe</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Дмитрий</title>
+		<link>http://www.iobroker.net/docu/?p=3108&#038;lang=ru#comment-10</link>
+		<dc:creator><![CDATA[Дмитрий]]></dc:creator>
+		<pubDate>Mon, 14 Mar 2016 07:27:22 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/?p=3108#comment-10</guid>
+		<description><![CDATA[Не возможно скачать. Поправьте.]]></description>
+		<content:encoded><![CDATA[<p>Не возможно скачать. Поправьте.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,1082 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="de-DE">
+<![endif]-->
+<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="de-DE">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="de-DE"><!--<![endif]-->
+	<head>
+				<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"> 
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.iobroker.net/docu/xmlrpc.php">
+		
+		<title>ioBroker Visualisation &#8211; ioBroker</title>
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Feed" href="index.rss?feed=rss2&#038;lang=de">
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Kommentar-Feed" href="index-1.rss?feed=comments-rss2&#038;lang=de">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.iobroker.net\/docu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css' href='wp-content\plugins\crayon-syntax-highlighter\css\min\crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='crayon-theme-classic-css' href='wp-content\plugins\crayon-syntax-highlighter\themes\classic\classic.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='crayon-font-monaco-css' href='wp-content\plugins\crayon-syntax-highlighter\fonts\monaco.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content\plugins\contact-form-7\includes\css\styles.css?ver=4.9.2' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-public.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-gdpr-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-gdpr.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='dedo-css-css' href='wp-content\plugins\delightful-downloads\assets\css\delightful-downloads.min.css?ver=1.6.6' type='text/css' media='all'>
+<link rel='stylesheet' id='mbpro-font-awesome-css' href='wp-content\plugins\maxbuttons\assets\libraries\font-awesome\css\font-awesome.min.css?ver=6.28' type='text/css' media='all'>
+<link rel='stylesheet' id='page-list-style-css' href='wp-content\plugins\page-list\css\page-list.css?ver=5.1' type='text/css' media='all'>
+<link rel='stylesheet' id='pc_google_analytics-frontend-css' href='http://www.iobroker.net/docu/wp-content/plugins/pc-google-analytics/assets/css/frontend.css?ver=1.0.0' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-css' href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' type='text/css' media='screen'>
+<link rel='stylesheet' id='toc-screen-css' href='wp-content\plugins\table-of-contents-plus\screen.min.css?ver=1509' type='text/css' media='all'>
+<link rel='stylesheet' id='parent-style-css' href='wp-content\themes\responsive-mobile\style.css?ver=4.7.5' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-style-css' href='wp-content\themes\responsive-mobile\css\style.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-child-style-css' href='wp-content\themes\responsive-mobile_child\style.css?ver=1.0' type='text/css' media='all'>
+<link rel='stylesheet' id='recent-posts-widget-with-thumbnails-public-style-css' href='wp-content\plugins\recent-posts-widget-with-thumbnails\public.css?ver=6.5.0' type='text/css' media='all'>
+<link rel='stylesheet' id='cleverness_todo_list_frontend-css' href='wp-content\plugins\cleverness-to-do-list\css\cleverness-to-do-list-frontend.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='jquery.ui.theme-css' href='wp-content\plugins\cleverness-to-do-list\css\jquery-ui-fresh.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='tablepress-default-css' href='wp-content\tablepress-combined.min.css?ver=128' type='text/css' media='all'>
+<link rel='stylesheet' id='bootstrap-css' href='wp-content\themes\responsive-mobile\libraries\bootstrap\css\bootstrap.min.css?ver=4.7.5' type='text/css' media='all'>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Dr\u00fccken Sie %s zum Kopieren, %s zum Einf\u00fcgen","minimize":"Klicken um Code aufzuklappen"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\crayon-syntax-highlighter\js\min\crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[]};
+var log_object = {"ajax_url":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\cookie-law-info\public\js\cookie-law-info-public.js?ver=1.7.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mb_ajax = {"ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\maxbuttons\js\min\front.js?ver=6.28'></script>
+<script type='text/javascript' src='wp-content\plugins\pc-google-analytics\assets\js\frontend.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\libraries\bootstrap\js\bootstrap.min.js?ver=4.7.5'></script>
+<link rel='https://api.w.org/' href='index.json?rest_route=/'>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.xml?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes\wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.7.5">
+<link rel="canonical" href="index-194.htm?page_id=2754&#038;lang=de">
+<link rel='shortlink' href='http://www.iobroker.net/docu/?p=2754'>
+<link rel="alternate" type="application/json+oembed" href="index-170.json?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D2754%26lang%3Dde">
+<link rel="alternate" type="text/xml+oembed" href="index-169.xml?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D2754%26lang%3Dde&#038;format=xml">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-86900958-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+
+<style>
+.scroll-back-to-top-wrapper {
+    position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #777777;
+	color: #eeeeee;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-back-to-top-wrapper:hover {
+	background-color: #888888;
+  color: #eeeeee;
+}
+.scroll-back-to-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-back-to-top-wrapper i.fa {
+	line-height: inherit;
+}
+.scroll-back-to-top-wrapper .fa-lg {
+	vertical-align: 0;
+}
+</style><!-- Analytics by WP-Statistics v12.6 - https://wp-statistics.com/ -->
+		<script type="text/javascript">
+			var cli_flush_cache=1;
+		</script>
+				<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+.site-content .content-area{
+	/*background: #6592c9;*/
+}		</style>
+	<style type="text/css">
+.paypal-donations { text-align: center !important }
+</style>
+	</head>
+
+<body class="page-template page-template-page-templates page-template-content-sidebar-page_adaptermenue page-template-page-templatescontent-sidebar-page_adaptermenue-php page page-id-2754 page-child parent-pageid-2412 group-blog content-sidebar-page_adaptermenue" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="container" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Springe zum Inhalt</a>
+	<a class="skip-link screen-reader-text" href="#main-navigation">Zum Hauptmenü springen</a>
+	<div id="top-menu-container" class="container-full-width">
+		<nav id="top-menu" class="container" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+			<ul id="menu-2016_top_menue" class="top-menu"><li id="menu-item-2203-de" class="lang-item lang-item-4 lang-item-de lang-item-first current-lang menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-de"><a href="index-194.htm?page_id=2754&#038;lang=de" hreflang="de-DE" lang="de-DE">Deutsch</a></li>
+<li id="menu-item-2203-en" class="lang-item lang-item-7 lang-item-en no-translation menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-en"><a href="index-1.htm?lang=en" hreflang="en-GB" lang="en-GB">English</a></li>
+<li id="menu-item-2203-ru" class="lang-item lang-item-20 lang-item-ru no-translation menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-ru"><a href="index-2.htm?lang=ru" hreflang="ru-RU" lang="ru-RU">Русский</a></li>
+</ul>		</nav>
+	</div><!-- top menu container -->
+        <div id="header_section">
+	<header id="header" class="container-full-width site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+				<div class="container">
+			<div class="header-row">
+				<div id="site-branding">
+							<div id="logo">
+			<a href="index.htm?lang=de" rel="home" itemprop="url" title="ioBroker">
+				<img src="wp-content\uploads\ioBroker_logo_lang-e1456684383484.png" alt="ioBroker" itemprop="image">
+			</a>
+		</div>
+					</div>
+				<div id="secondary-header">
+					
+	<div id="top-widget" class="top-widget" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+			<div id="search-2" class="responsive-mobile-top-widget widget_search"><form role="search" method="get" class="search-form" action="http://www.iobroker.net/docu/">
+				<label>
+					<span class="screen-reader-text">Suche nach:</span>
+					<input type="search" class="search-field" placeholder="Suche&#160;&hellip;" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Suche">
+			<input type="hidden" name="lang" value="de"></form></div>
+			</div><!-- end of #top-widget -->
+				</div>
+			</div>
+		</div>
+
+			</header><!-- #header -->
+
+	<div id="main-menu-container" class="container-full-width">
+		<div id="main-menu" class="container">
+			<nav id="main-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<div id="mobile-current-item">Menü</div>
+				<button id="mobile-nav-button"><span class="accessibile-label">Mobile-Menü ein-/ausschalten</span></button>
+				<div class="main-nav"><ul id="menu-2016_kopfzeile_de" class="menu"><li id="menu-item-2204" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2204"><a href="..\index.htm">Startseite</a></li>
+<li id="menu-item-7199" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7199"><a href="http://www.iobrokers.de/">Shop</a></li>
+<li id="menu-item-2278" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2278"><a href="index-3.htm?page_id=2258&#038;lang=de">Aktuelles</a></li>
+<li id="menu-item-2626" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2626"><a href="index-4.htm?page_id=2375&#038;lang=de">Einleitung</a>
+<ul class="sub-menu">
+	<li id="menu-item-6381" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6381"><a href="index-4.htm?page_id=2375&#038;lang=de">für alle</a></li>
+	<li id="menu-item-6380" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6380"><a href="index-5.htm?page_id=6317&#038;lang=de">für Einsteiger</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6451" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6451"><a href="index-6.htm?page_id=6335&#038;lang=de">Server aufsetzen</a></li>
+		<li id="menu-item-6450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6450"><a href="index-7.htm?page_id=5063&#038;lang=de">erste Adapter</a></li>
+		<li id="menu-item-6449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6449"><a href="index-8.htm?page_id=6365&#038;lang=de">erste Visualisierung</a></li>
+		<li id="menu-item-6826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6826"><a href="index-9.htm?page_id=6548&#038;lang=de">Daten loggen</a></li>
+		<li id="menu-item-6825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6825"><a href="index-10.htm?page_id=6562&#038;lang=de">erster Chart</a></li>
+	</ul>
+</li>
+	<li id="menu-item-2289" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2289"><a href="index-11.htm?page_id=2281&#038;lang=de">für Entwickler</a></li>
+</ul>
+</li>
+<li id="menu-item-2290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2290"><a href="index-12.htm?page_id=2279&#038;lang=de">Installation / Start</a>
+<ul class="sub-menu">
+	<li id="menu-item-2395" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2395"><a href="index-13.htm?page_id=2387&#038;lang=de">Videos</a></li>
+	<li id="menu-item-3336" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3336"><a href="index-14.htm?page_id=3334&#038;lang=de">Plattformen / Betriebssystem</a>
+	<ul class="sub-menu">
+		<li id="menu-item-8383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8383"><a href="index-15.htm?page_id=8323&#038;lang=de">Linux Schnellstart (auch für Raspberry Pi 2/3)</a></li>
+		<li id="menu-item-8382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8382"><a href="index-16.htm?page_id=8327&#038;lang=de">Schnellstart für Raspberry Pi 1</a></li>
+		<li id="menu-item-8429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8429"><a href="index-17.htm?page_id=8390&#038;lang=de">Windows</a></li>
+		<li id="menu-item-2300" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2300"><a href="index-18.htm?page_id=2293&#038;lang=de">OS X</a></li>
+		<li id="menu-item-3337" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3337"><a href="index-19.htm?page_id=2563&#038;lang=de">Downloads für die Installation</a></li>
+		<li id="menu-item-5362" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5362"><a href="index-20.htm?page_id=5358&#038;lang=de">Einrichtung und Installation von ioBroker in VirtualBox</a></li>
+		<li id="menu-item-6767" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6767"><a href="index-21.htm?page_id=6764&#038;lang=de">ioBroker mit Cloud auf QNAP-453a</a></li>
+	</ul>
+</li>
+	<li id="menu-item-2358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2358"><a href="index-22.htm?page_id=2354&#038;lang=de">Erster Start von ioBroker</a></li>
+	<li id="menu-item-8530" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8530"><a href="index-23.htm?page_id=8511&#038;lang=de">Grundlagen zur Verwendung von Adaptern</a></li>
+	<li id="menu-item-3070" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3070"><a href="index-24.htm?page_id=3068&#038;lang=de">Multihost Modus</a></li>
+	<li id="menu-item-5890" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5890"><a href="index-25.htm?page_id=5859&#038;lang=de">Alexa mit ioBroker (Schnellstart)</a></li>
+	<li id="menu-item-3964" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3964"><a href="index-26.htm?page_id=3928&#038;lang=de">ioBroker läuft nicht mehr</a></li>
+	<li id="menu-item-5532" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5532"><a href="index-27.htm?page_id=5510&#038;lang=de">Wie das Packet serialport oder ähnlich zu installieren</a></li>
+</ul>
+</li>
+<li id="menu-item-2248" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-2248"><a href="index-28.htm?page_id=2236&#038;lang=de">Adapter</a>
+<ul class="sub-menu">
+	<li id="menu-item-2249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2249"><a href="index-29.htm?page_id=2238&#038;lang=de">Allgemein</a></li>
+	<li id="menu-item-2429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2429"><a href="index-30.htm?page_id=2407&#038;lang=de">Aufbewahrung</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6988"><a href="index-31.htm?page_id=5197&#038;lang=de">Howto – MariaDB auf der Synology DiskStation als Datenbank für Flot</a></li>
+	</ul>
+</li>
+	<li id="menu-item-2430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2430"><a href="index-32.htm?page_id=2405&#038;lang=de">Hardware</a></li>
+	<li id="menu-item-2425" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2425"><a href="index-33.htm?page_id=2417&#038;lang=de">Kommunikation</a></li>
+	<li id="menu-item-2424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2424"><a href="index-34.htm?page_id=2419&#038;lang=de">Medien</a></li>
+	<li id="menu-item-2426" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2426"><a href="index-35.htm?page_id=2415&#038;lang=de">Skripte und Logik</a></li>
+	<li id="menu-item-2427" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-2427"><a href="index-36.htm?page_id=2412&#038;lang=de">ioBroker.vis</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5035" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5035"><a href="index-37.htm?page_id=5026&#038;lang=de">ioBroker.vis App</a></li>
+	</ul>
+</li>
+	<li id="menu-item-2431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2431"><a href="index-38.htm?page_id=2403&#038;lang=de">Visualisierung</a></li>
+	<li id="menu-item-2423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2423"><a href="index-39.htm?page_id=2421&#038;lang=de">Wartung</a></li>
+	<li id="menu-item-2432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2432"><a href="index-40.htm?page_id=2401&#038;lang=de">Wetter</a></li>
+	<li id="menu-item-2428" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2428"><a href="index-41.htm?page_id=2410&#038;lang=de">Zeitplanung</a></li>
+</ul>
+</li>
+<li id="menu-item-2805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2805"><a href="index-42.htm?page_id=2786&#038;lang=de">Scripte</a>
+<ul class="sub-menu">
+	<li id="menu-item-5401" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5401"><a href="index-43.htm?page_id=5385&#038;lang=de">Einführung Programmieren mit Javascript</a></li>
+	<li id="menu-item-3757" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3757"><a href="index-44.htm?page_id=3526&#038;lang=de">Counter</a></li>
+	<li id="menu-item-3758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3758"><a href="index-45.htm?page_id=3585&#038;lang=de">Heizung / Lüftung</a></li>
+	<li id="menu-item-3759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3759"><a href="index-46.htm?page_id=3587&#038;lang=de">Info / Status</a></li>
+	<li id="menu-item-3755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3755"><a href="index-47.htm?page_id=3589&#038;lang=de">Mediensteuerung</a></li>
+	<li id="menu-item-3754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3754"><a href="index-48.htm?page_id=3593&#038;lang=de">Steuern / Regeln</a></li>
+	<li id="menu-item-3756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3756"><a href="index-49.htm?page_id=3591&#038;lang=de">Zeitsteuerung</a></li>
+</ul>
+</li>
+<li id="menu-item-2288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2288"><a href="index-50.htm?page_id=2283&#038;lang=de">Downloads</a>
+<ul class="sub-menu">
+	<li id="menu-item-2806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2806"><a href="index-19.htm?page_id=2563&#038;lang=de">Downloads für die Installation</a></li>
+	<li id="menu-item-5146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5146"><a href="index-42.htm?page_id=2786&#038;lang=de">Scripte</a></li>
+</ul>
+</li>
+<li id="menu-item-2287" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2287"><a href="index-51.htm?page_id=2285&#038;lang=de">Forum / Support</a>
+<ul class="sub-menu">
+	<li id="menu-item-2379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2379"><a href="http://forum.iobroker.net">Forum</a></li>
+	<li id="menu-item-7324" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7324"><a href="index-52.htm?page_id=7322&#038;lang=de">Glossar</a></li>
+	<li id="menu-item-2396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2396"><a href="index-53.htm?page_id=2380&#038;lang=de">FAQ</a></li>
+	<li id="menu-item-8440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8440"><a href="index-54.htm?page_id=8438&#038;lang=de">Troubleshooting (in Arbeit)</a></li>
+	<li id="menu-item-2394" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2394"><a href="index-55.htm?page_id=2392&#038;lang=de">Tipps und Tricks</a></li>
+</ul>
+</li>
+</ul></div>			</nav><!-- #site-navigation -->
+		</div><!-- #main-menu -->
+	</div><!-- #main-menu-container -->
+	<div id="sub-menu-container" class="container-full-width">
+		<div id="sub-menu" class="container">
+			<nav id="sub-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						</nav><!-- #site-navigation -->
+		</div><!-- #sub-menu -->
+	</div><!-- #sub-menu-container -->
+        </div>
+	<div id="wrapper" class="site-content container-full-width">
+
+	<div id="content" class="content-area">
+		<main id="main" class="site-main content-sidebar" role="main">
+
+			
+				<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#"><span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index.htm?lang=de">Home</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-163.htm?page_id=2364&lang=de">Deutsch</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-28.htm?page_id=2236&lang=de">Adapter</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-36.htm?page_id=2412&lang=de">Adapter Kategorie VIS</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb-current">ioBroker Visualisation</span></div>
+								
+					
+<article id="post-2754" class="post-2754 page type-page status-publish has-post-thumbnail hentry">
+		
+	
+<header class="entry-header">
+	
+	</header><!-- .entry-header -->
+		<div class="page-feature-image">
+			<img width="90" height="90" src="wp-content\uploads\vis-1-e1485454102166.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">		</div>
+		
+	<div class="post-entry">
+		<h1 style="text-align: justify;"><span id="Adapter_VIS"><a href="https://github.com/ioBroker/ioBroker.vis"><img class="alignnone" style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>Adapter VIS</span></h1>
+<p style="text-align: justify;">VIS ist das Visualisierungstool von ioBroker. Hier besteht die Möglichkeit eigene Bedienoberflächen anzulegen. Diese können mit Hilfe von sogenannten Widgets frei gestaltet werden.<br>
+Einige Beispiele für die Möglichkeiten von VIS sind auf der <a href="https://iobroker.net:8080/" target="_blank" rel="noopener noreferrer">VIS-Demoseite</a> zusammengefasst.</p>
+<p style="text-align: justify;"><div id="toc_container" class="no_bullets"><ul class="toc_list"><li><a href="#Adapter_VIS"><span class="toc_number toc_depth_1">1</span> Adapter VIS</a><ul><li><a href="#Steckbrief"><span class="toc_number toc_depth_2">1.1</span> Steckbrief</a></li></ul></li><li><a href="#Konfiguration"><span class="toc_number toc_depth_1">2</span> Konfiguration</a></li><li><a href="#Bedienung"><span class="toc_number toc_depth_1">3</span> Bedienung</a><ul><li><a href="#Die_Reiter_im_Kopfbereich"><span class="toc_number toc_depth_2">3.1</span> Die Reiter im Kopfbereich</a><ul><li><a href="#Views_1"><span class="toc_number toc_depth_3">3.1.1</span> Views (1)</a></li><li><a href="#Widgets_2"><span class="toc_number toc_depth_3">3.1.2</span> Widgets (2)</a></li><li><a href="#Tools_3"><span class="toc_number toc_depth_3">3.1.3</span> Tools (3)</a></li><li><a href="#Setup_4"><span class="toc_number toc_depth_3">3.1.4</span> Setup (4)</a></li><li><a href="#Hilfe_5"><span class="toc_number toc_depth_3">3.1.5</span> Hilfe (5)</a></li><li><a href="#Undo-Button_6"><span class="toc_number toc_depth_3">3.1.6</span> Undo-Button (6)</a></li></ul></li><li><a href="#Die_Widget-Sidebar_14"><span class="toc_number toc_depth_2">3.2</span> Die Widget-Sidebar (14)</a></li><li><a href="#Die_Arbeitsflaeche_16"><span class="toc_number toc_depth_2">3.3</span> Die Arbeitsfläche (16)</a></li><li><a href="#Die_Eigenschaften-Sidebar_15"><span class="toc_number toc_depth_2">3.4</span> Die Eigenschaften-Sidebar (15)</a><ul><li><a href="#View"><span class="toc_number toc_depth_3">3.4.1</span> View</a></li><li><a href="#Widget"><span class="toc_number toc_depth_3">3.4.2</span> Widget</a></li><li><a href="#CSS"><span class="toc_number toc_depth_3">3.4.3</span> CSS</a></li><li><a href="#Skripte"><span class="toc_number toc_depth_3">3.4.4</span> Skripte</a></li></ul></li></ul></li></ul></div>
+
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_001.jpg"><img class="aligncenter wp-image-5963" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_001.jpg" width="800" height="423" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_001.jpg 1923w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_001-150x79.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_001-300x159.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_001-1024x542.jpg 1024w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_001-100x53.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_001-200x106.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_001-450x238.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_001-600x317.jpg 600w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_001-900x476.jpg 900w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<table width="100%">
+<tbody>
+<tr>
+<td style="width: 50%;">
+<h2><span id="Steckbrief">Steckbrief</span></h2>
+</td>
+<td style="width: 50%;"></td>
+</tr>
+<tr>
+<td style="width: 50%;"><strong>aktuelle Version</strong></td>
+<td style="width: 50%;"><img src="http://download.iobroker.de/img/vis.svg" alt="Admin Version"></td>
+</tr>
+<tr>
+<td style="width: 50%;"><strong>Voraussetzungen</strong></td>
+<td style="width: 50%;"> -/-</td>
+</tr>
+<tr>
+<td style="width: 50%;"><strong>Entwickler</strong></td>
+<td style="width: 50%;">bluefox</td>
+</tr>
+<tr>
+<td style="width: 50%;"><strong>Stichworte</strong></td>
+<td style="width: 50%;">Visualisierung</td>
+</tr>
+<tr>
+<td style="width: 50%;"><strong>Github</strong></td>
+<td style="width: 50%;"><a href="https://github.com/ioBroker/ioBroker.vis" target="_blank" rel="noopener noreferrer">Link</a></td>
+</tr>
+<tr>
+<td style="width: 50%;"><strong>Platform</strong></td>
+<td style="width: 50%;"> Javascript/Node.js</td>
+</tr>
+<tr>
+<td style="width: 50%;"><strong>License</strong></td>
+<td style="width: 50%;">CC BY-NC</td>
+</tr>
+</tbody>
+</table>
+<h2 style="text-align: justify;"></h2>
+<h1 style="text-align: justify;"><span id="Konfiguration">Konfiguration</span></h1>
+<p style="text-align: justify;">Eine Konfiguration des Adapters ist nicht nötig. Es kann nur eine VIS Instanz geben.</p>
+<hr>
+<h1 style="text-align: justify;"><span id="Bedienung">Bedienung</span></h1>
+<p style="text-align: justify;">Der Adapter wird über <code>&lt;IPdesServers&gt;:8082/vis/index.html</code> aufgerufen und damit die Visualisierung angezeigt. In einem <a href="?page_id=188&lang=de&preview_id=188&preview_nonce=d845a20ee2&preview=true#Projekt">Projekt</a> befinden sich mehrere Ansichten (<a href="?page_id=5785&lang=de#views">Views</a>). Auf jeder View sind wieder mehrere <a href="?page_id=5785&lang=de#widgets">Widgets</a> frei platzierbar, die zur Anzeige oder Bedienung dienen.<br>
+Zur Erstellung und Konfiguration einer Visualisierung muss man den <strong>Editor</strong> laden.<br>
+Der Editor wird über <code>&lt;IPdesServers&gt;:8082/vis/edit.html</code> oder über den Hyperlink im Reiter Instanzen des admin-Adapter aufgerufen. Nach Schließen des Editors über das Close-Window Icon ( (x) rechts oben) wird der zuletzt bearbeitete View in der Funktionsansicht dargestellt. Dieser kann jederzeit aufgerufen werden mit <code>&lt;IPdesServers&gt;:8082/vis/index.html#ViewName</code><br>
+Der Editor teilt sich in verschiedene Bereiche auf.<br>
+<a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items.jpg"><img class="aligncenter wp-image-5964" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items.jpg" width="800" height="423" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items.jpg 1923w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-150x79.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-300x159.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-1024x542.jpg 1024w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-100x53.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-200x106.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-450x238.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-600x317.jpg 600w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-900x476.jpg 900w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<h2 style="text-align: justify;"><span id="Die_Reiter_im_Kopfbereich">Die Reiter im Kopfbereich</span></h2>
+<h3 style="text-align: justify;"><span id="Views_1"><a id="views"></a>Views (1)</span></h3>
+<p style="text-align: justify;">Ist dieser Reiter angewählt, kann man in dem darunterliegenden Pulldown-Menü den zu bearbeitenden View aus den existierenden auswählen. Nach Anklicken der Arbeitsfläche wechselt die Ansicht in der Eigenschaften-Sidebar auf der rechten Seite auf den Reiter Views und zeigt die Einstellungen für die View. In der Titelleiste werden die Werkzeuge für die Bearbeitung von Views angezeigt</p>
+<p style="text-align: justify;"><img class="wp-image-6827 size-full aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-1-e1487420558331.jpg" width="870" height="115" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-1-e1487420558331.jpg 870w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-1-e1487420558331-150x20.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-1-e1487420558331-300x40.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-1-e1487420558331-100x13.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-1-e1487420558331-200x26.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-1-e1487420558331-450x59.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_Items-1-e1487420558331-600x79.jpg 600w" sizes="(max-width: 870px) 100vw, 870px"></p>
+<h4 style="text-align: justify;">Pulldownmenü (7)<strong><br>
+</strong></h4>
+<p style="text-align: justify;">Hier kann man einen View zur Bearbeitung auswählen, bzw. der ausgewählte View wird hier angezeigt wenn man ihn über die Reiter über der Arbeitsfläche ausgewählt hat.</p>
+<h4 style="text-align: justify;">View hinzufügen (8)</h4>
+<p style="text-align: justify;">Mit diesem Button kann ein neuer View hinzugefügt werden.<br>
+<img class="size-full wp-image-5968 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename.jpg" alt="" width="557" height="135" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename.jpg 557w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-150x36.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-300x73.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-100x24.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-200x48.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-450x109.jpg 450w" sizes="(max-width: 557px) 100vw, 557px"><br>
+Im dem Fenster des ehemaligen Pulldownmenüs wird man aufgefordert einen neuen Namen einzugeben und anschließend den Vorgang über den Haken-Button abzuschließen oder mit dem ¢-Button abzubrechen.</p>
+<h4 style="text-align: justify;">View löschen (9)</h4>
+<p style="text-align: justify;">Über diesen Button kann man nach vorheriger Sicherheitsabfrage den ausgewählten View löschen.</p>
+<h4 style="text-align: justify;">View umbenennen (10)</h4>
+<p style="text-align: justify;">Durch Anklicken dieses Icons wird der bestehenden View umbenannt.<br>
+<img class="size-full wp-image-5968 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename.jpg" alt="" width="557" height="135" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename.jpg 557w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-150x36.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-300x73.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-100x24.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-200x48.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-450x109.jpg 450w" sizes="(max-width: 557px) 100vw, 557px"><br>
+Im dem Fenster des ehemaligen Pulldownmenüs wird man aufgefordert einen neuen Namen einzugeben und anschließend den Vorgang über den Haken-Button abzuschließen oder mit dem ¢-Button abzubrechen.</p>
+<h4 style="text-align: justify;">View kopieren (11)</h4>
+<p style="text-align: justify;">Durch Anklicken dieses Icons wird eine Kopie des bestehenden Views angelegt.<br>
+<img class="size-full wp-image-5968 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename.jpg" alt="" width="557" height="135" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename.jpg 557w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-150x36.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-300x73.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-100x24.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-200x48.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_rename-450x109.jpg 450w" sizes="(max-width: 557px) 100vw, 557px"><br>
+Im dem Fenster des ehemaligen Pulldownmenüs wird man aufgefordert einen neuen Namen einzugeben und anschließend den Vorgang über den Haken-Button abzuschließen oder mit dem ¢-Button abzubrechen.</p>
+<h4 style="text-align: justify;">View exportieren (12)</h4>
+<p style="text-align: justify;">Nach Anklicken dieses Buttons öffnet sich ein Fenster mit der Seitenbeschreibung des Views.<br>
+<img class=" wp-image-5970 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_export.jpg" alt="" width="800" height="594" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_export.jpg 809w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_export-150x111.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_export-300x223.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_export-100x74.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_export-200x149.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_export-450x334.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_export-600x446.jpg 600w" sizes="(max-width: 800px) 100vw, 800px"><br>
+Diese Seitenbeschreibung kann als Textfile zur Sicherung benutzt werden (bitte keinen Windows-Editor benutzen, sondern z.B. Notepad++ im UNIX Modus) oder zum Import in andere Installationen.</p>
+<h4 style="text-align: justify;">View importieren (13)</h4>
+<p style="text-align: justify;">Hier kann man einen View aus einer anderen Installation oder eine Sicherung im Textformat wieder einspielen. Es öffnet sich ein Fenster mit einem leeren Editorbereich.<br>
+<img class=" wp-image-5971 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_import.jpg" alt="" width="799" height="587" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_import.jpg 813w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_import-150x110.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_import-300x220.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_import-100x73.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_import-200x147.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_import-450x330.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Views_import-600x441.jpg 600w" sizes="(max-width: 799px) 100vw, 799px"><br>
+In dieses Fenster wird der Inhalt des Exports kopiert, unten links im Feld <em><strong>Viewname</strong></em> wird ein eindeutiger Name eingegeben und anschließend der dann aktive Button <em><strong>View importieren</strong></em> geklickt. Nach kurzer Zeit ist der neue View in der Installation vorhanden.</p>
+<h3 style="text-align: justify;"></h3>
+<h3 style="text-align: justify;"><span id="Widgets_2"><a id="widgets"></a>Widgets (2)</span></h3>
+<p style="text-align: justify;">Wird der Reiter Widgets aktiviert ändert sich die darunterliegende Werkzeugleiste. Nach Anklicken eines Widgets wechselt die Ansicht in der Eigenschaften-Sidebar auf der rechten Seite auf den Reiter Widget und zeigt die Einstellungen für das ausgewählte Widget.<br>
+Die Werkzeuge für die Bearbeitung von Widgets werden angezeigt</p>
+<h5 style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items.jpg"><img class="aligncenter wp-image-5974" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items.jpg" width="1000" height="65" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items.jpg 1349w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items-150x10.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items-300x20.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items-1024x67.jpg 1024w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items-100x7.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items-200x13.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items-450x29.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items-600x39.jpg 600w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_Items-900x59.jpg 900w" sizes="(max-width: 1000px) 100vw, 1000px"></a></h5>
+<h4 style="text-align: justify;">Pulldownmenü (1)<strong><br>
+</strong></h4>
+<p style="text-align: justify;">Hier kann man ein Widget zur Bearbeitung auswählen, bzw. das ausgewählte Widget wird hier angezeigt.</p>
+<h4 style="text-align: justify;">Widget löschen (2)</h4>
+<p style="text-align: justify;">Mit Klick auf dieses Icon wird das ausgewählte (Bei Mehrfachauswahl alle ausgewählten) Widget nach Rückfrage gelöscht</p>
+<h4 style="text-align: justify;">Widget kopieren (3)</h4>
+<p style="text-align: justify;">Nach dem Klick auf dieses icon ändert sich die Anzeige:<br>
+<img class="size-full wp-image-5976 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_copy.jpg" alt="" width="496" height="74" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_copy.jpg 496w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_copy-150x22.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_copy-300x45.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_copy-100x15.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_copy-200x30.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_copy-450x67.jpg 450w" sizes="(max-width: 496px) 100vw, 496px"><br>
+Im dem Fenster des ehemaligen Pulldownmenüs wird man aufgefordert den View einzugeben in den die Kopie des Widgets platziert werden soll und anschließend den Vorgang über den Haken-Button abzuschließen oder mit dem ¢-Button abzubrechen.</p>
+<h4 style="text-align: justify;">Widget-Informationen (4)</h4>
+<p style="text-align: justify;">Wenn man auf diesen Button klickt, öffnet sich ein Fenster mit Informationen zu den Widgets. Wenn vorhanden ist der Eintrag zu dem ausgewählten Widget an oberster Stelle.<br>
+<img class=" wp-image-5977 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_info.jpg" alt="" width="800" height="508" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_info.jpg 1145w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_info-150x95.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_info-300x190.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_info-1024x650.jpg 1024w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_info-100x63.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_info-200x127.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_info-450x286.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_info-600x381.jpg 600w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_info-900x571.jpg 900w" sizes="(max-width: 800px) 100vw, 800px"></p>
+<h4 style="text-align: justify;">Widgets ausrichten (5 &#8211; 14)</h4>
+<p style="text-align: justify;">Wenn man mit gedrückter Maustaste mehrere Widgets auswählt (oder mit Ctrl-Klick) kann man anschließend mit Hilfe dieser Icons Gruppen ausrichten (linksbündig, rechtsbündig, oben bündig, unten bündig, zentriert, mittig vertikal ausgerichtet). Außerdem kann man mehrere Widgets mit gleichem Abstand (horizontal und vertikal) positionieren, sowie mit den letzten beiden Icons die Größe von mehreren Widgets anpassen.<br>
+Wählt man ein Widget an, wechselt die Ansicht in der Eigenschaften-Sidebar auf der rechten Seite auf den Reiter Widget und zeigt die Einstellungen für dieses Widget.<br>
+Mit der möglichen Mehrfachauswahl kann man über die rechte Sidebar die Eigenschaften mehrerer Widgets gleichzeitig verändern.</p>
+<h5 style="text-align: justify;">linksbündig (5)</h5>
+<p style="text-align: justify;">Die ausgewählten Widgets werden an der linken Seite des am weitesten links liegenden Widgets vertikal ausgerichtet.</p>
+<h5 style="text-align: justify;">rechtsbündig (6)</h5>
+<p style="text-align: justify;">Die ausgewählten Widgets werden an der rechten Seite des am weitesten rechts liegenden Widgets vertikal ausgerichtet.</p>
+<h5 style="text-align: justify;">oben (7)</h5>
+<p style="text-align: justify;">Die ausgewählten Widgets werden an der oberen Kante des am weitesten oben liegenden Widgets horizontal ausgerichtet.</p>
+<h5 style="text-align: justify;">unten (8)</h5>
+<p style="text-align: justify;">Die ausgewählten Widgets werden an der unteren Kante des am weitesten unten liegenden Widgets horizontal ausgerichtet.</p>
+<h5 style="text-align: justify;">vertikal zentrieren (9)</h5>
+<p style="text-align: justify;">Die ausgewählten Widgets werden waagerecht so verschoben, dass sie vertikal zentriert ausgerichtet werden.</p>
+<h5 style="text-align: justify;">horizontal zentrieren (10)</h5>
+<p style="text-align: justify;">Die ausgewählten Widgets werden senkrecht so verschoben, dass sie horizontal zentriert ausgerichtet werden.</p>
+<h5 style="text-align: justify;">horizontaler Abstand (11)</h5>
+<p style="text-align: justify;">Die ausgewählten Widgets werden waagerecht so verschoben, dass sie horizontal zwischen den am weitesten links und rechts liegenden Widgets den gleichen Abstand haben.</p>
+<h5 style="text-align: justify;">vertikaler Abstand (12)</h5>
+<p style="text-align: justify;">Die ausgewählten Widgets werden senkrecht so verschoben, dass sie vertikal zwischen den am weitesten oben und unten liegenden Widgets den gleichen Abstand haben.</p>
+<h5 style="text-align: justify;">gleiche Breite (13)</h5>
+<p style="text-align: justify;">Die ausgewählten Widgets werden gemeinsam in der Breite verändert, dass alle Widgets die gleiche Breite haben. Bei mehreren unterschiedlichen Maßen kann man entsprechend oft klicken, und alle verfügbaren Maße werden nacheinander zur Verfügung gestellt.</p>
+<h5 style="text-align: justify;">gleiche Höhe (14)</h5>
+<p style="text-align: justify;">Die ausgewählten Widgets werden gemeinsam in der Höhe verändert, dass alle Widgets die gleiche Höhe haben. Bei mehreren unterschiedlichen Maßen kann man entsprechend oft klicken, und alle verfügbaren Maße werden nacheinander zur Verfügung gestellt.</p>
+<h4 style="text-align: justify;">Alle Widgets (15 &#8211; 16)</h4>
+<p style="text-align: justify;">Die beiden Widgets dienen der einfacheren Bearbeitung von Views. Das erste (15) sorgt dafür, dass die Werte der Widgets im Editor nicht aktualisiert werden, das zweite (16) verhindert das Verschieben von Widgets.</p>
+<h4 style="text-align: justify;">Widget exportieren (17)</h4>
+<p style="text-align: justify;">Ist ein Widget aktiviert, kann man mit diesem Button das Widget exportieren. Nach Anklicken dieses Buttons öffnet sich ein Fenster mit der Seitenbeschreibung des Widgets.<br>
+<img class=" wp-image-5999 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_export.jpg" alt="" width="798" height="590" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_export.jpg 810w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_export-150x111.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_export-300x222.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_export-100x74.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_export-200x148.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_export-450x333.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_export-600x444.jpg 600w" sizes="(max-width: 798px) 100vw, 798px"><br>
+Diese Seitenbeschreibung kann als Textfile zur Sicherung benutzt werden (bitte keinen Windows-Editor benutzen, sondern z.B. Notepad++ im UNIX Modus) oder zum Import in andere Installationen.</p>
+<h4 style="text-align: justify;">Widget importieren (18)</h4>
+<p style="text-align: justify;">Umgekehrt kann man hier z.B. nicht im Umfang von vis enthaltene Widgets, aus einer anderen Installation oder eine Sicherung im Textformat wieder einspielen. Es öffnet sich ein Fenster mit einem leeren Editorbereich.<br>
+<img class="size-full wp-image-6000 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_import.jpg" alt="" width="809" height="602" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_import.jpg 809w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_import-150x112.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_import-300x223.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_import-100x74.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_import-200x149.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_import-450x335.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Widgets_import-600x446.jpg 600w" sizes="(max-width: 809px) 100vw, 809px"><br>
+In dieses Fenster wird der Inhalt des Exports kopiert und anschließend der Button <em><strong>Widgets</strong><strong> importieren</strong></em> geklickt.</p>
+<h3 style="text-align: justify;"><span id="Tools_3">Tools (3)</span></h3>
+<p style="text-align: justify;">Wird der Reiter Tools aktiviert ändert sich die darunterliegende Werkzeugleiste<br>
+<a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items.jpg"><img class="aligncenter wp-image-6002" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items.jpg" width="950" height="67" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items.jpg 1297w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items-150x11.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items-300x21.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items-1024x73.jpg 1024w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items-100x7.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items-200x14.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items-450x32.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items-600x43.jpg 600w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Tools_Items-900x64.jpg 900w" sizes="(max-width: 950px) 100vw, 950px"></a><br>
+Die Werkzeuge für die Erleichterung der Bearbeitung von Views werden angezeigt</p>
+<h4 style="text-align: justify;">Auflösung (1)</h4>
+<p style="text-align: justify;">Hier werden viele voreingestellte Bildschirmauflösungen von Mobilgeräten angezeigt, aber auch ein Punkt &#8220;Vom Anwender definiert&#8221; bietet die Möglichkeit eigene Einstellungen vorzunehmen. Wählt man hier etwas aus, wird auf der Arbeitsfläche ein Rahmen eingezeichnet, der der gewählten Bildschirmauflösung entspricht.</p>
+<h4 style="text-align: justify;">Anzeige der aktuellen Auflösung (2)</h4>
+<p style="text-align: justify;">Um die aktuelle Auflösung bei einem &#8220;User defined&#8221; View angezeigt zu bekommen, kann man auf diesen Button klicken. Die Anzeige &#8220;user defined&#8221; wechselt auf die Anzeige der Größe in Breite (px) und Höhe (px). Die Werte können anschließend geändert werden.</p>
+<h4 style="text-align: justify;">Default (3)</h4>
+<p style="text-align: justify;">Wenn <em>default</em> angehakt ist, wird der aktive View zum Standardview gemacht und geladen, falls die VIS-Ansicht mit der oben eingestellten Auflösung geladen wird.</p>
+<p style="text-align: justify; padding-left: 30px;"><strong>Beispiel:</strong> Es wird die Anzeige<em> iPad Portrait</em> gewählt und in dem View<em> Start</em> das Kästchen <em>Default</em> angehakt. Angenommen, auf einem iPad wurde aus dem Projekt nun ein View mit Namen <em>Wetter</em> im Querformat geladen. Sollte das iPad nun ins Hochformat gedreht werden, wird automatisch der vorher für diese Auflösung (Hochformat) als Standard (<em>default</em>) festgelegte View <em>Start</em> angezeigt. So ist bei entsprechend beweglichen Geräten eine Steuerung durch Bewegung möglich (zum Beispiel &#8220;zurück zum Hauptmenü&#8221; oder <em>hoch</em> zeigt eine anderen View als <em>quer</em>).</p>
+<h4 style="text-align: justify;">immer rendern (4)</h4>
+<p style="text-align: justify;">Mit dieser Checkbox wird die Funktion aktiviert bei jedem Laden des Views die Seite neu zu berechnen.</p>
+<h4 style="text-align: justify;">Gitter (5 &#8211; 6)</h4>
+<p style="text-align: justify;">hier gibt es die Möglichkeiten <em>inaktiv</em>, <em>Elemente </em>und <em>Raster</em>. Wählt man Elemente, rasten die Widgets beim Bewegen mit der Maus an einem benachbarten Element ein. Bei Raster kann man noch ein Rastermaß (in px) angeben, in dem die Widgets dann einrasten.</p>
+<h4 style="text-align: justify;">Instanz ID  (7)</h4>
+<p style="text-align: justify;">Hier wird eine eindeutige ID angezeigt, die sich z.B. per VIS <a href="https://github.com/iobroker/ioBroker.vis/blob/master/README.md#control-interface" target="_blank" rel="noopener noreferrer">Control Command</a> mit einem Script ansprechen lässt.</p>
+<h4 style="text-align: justify;">Browser ID erzeugen (8)</h4>
+<p style="text-align: justify;">klickt man diesen Button an, wird eine neue ID im vorigen Feld erzeugt. Dadurch ist jeder Browser auf jedem Endgerät einzeln identifizierbar.</p>
+<h4 style="text-align: justify;">für alle Anwender (9)</h4>
+<p style="text-align: justify;">Wird diese Checkbox aktiviert steht dieser View allen Anwendern zur Verfügung. Wenn nicht, muss der Zugriff in der Eigenschaften-Sidebar für den View geregelt werden.</p>
+<h3 style="text-align: justify;"><span id="Setup_4">Setup (4)</span></h3>
+<p style="text-align: justify;">Der Reiter Setup verbirgt weitere Menüpunkte:</p>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Items.jpg"><img class="aligncenter wp-image-6005" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Items.jpg" width="800" height="274" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Items.jpg 911w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Items-150x51.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Items-300x103.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Items-100x34.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Items-200x68.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Items-450x154.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Items-600x205.jpg 600w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Items-900x308.jpg 900w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<h4 style="text-align: justify;">Thema (1)</h4>
+<p style="text-align: justify;">Hier wird das Farbschema für den Editor ausgewählt. Es stehen <em><strong>Light</strong></em>, <em><strong>Dark</strong></em>, <em><strong>Dark-Hive</strong></em> und <em><strong>redmond</strong></em> zur Verfügung.</p>
+<h4 style="text-align: justify;">Sprache (2)</h4>
+<p style="text-align: justify;">Die Bediensprache für den Editor kann hier festgelegt werden. Es stehen deutsch, englisch und russisch zur Verfügung. Die Sprache wird nur für aktuelles Browser-Fenster umgeschaltet. Um jetzt die Sprache dauerhaft zu ändern, sollte man das in <a href="http://post.php?post=5473">admin</a>=&gt;System config tun.</p>
+<h4 style="text-align: justify;">Projekt (3)</h4>
+<p style="text-align: justify;">Projekte sind Sammlungen von <a href="?page_id=1193&lang=de">Views</a>. Standardmäßig ist das Projekt <em>main</em> angelegt und wird über <code>&lt;IPdesServers&gt;:8082/vis/index.html#ViewName</code> aufgerufen. Die Dateien des Projektes befinden sich in der ioBroker-Installation im Order <code><em>ioBroker-Ordner</em>/iobroker-data/files/vis.0/main</code>.</p>
+<h6 style="text-align: justify;"><strong>Anwendung</strong></h6>
+<p style="text-align: justify;">Beim Laden eines Projektes werden alle <a href="?page_id=1193&lang=de">Views</a> dieses <a href="?page_id=188&lang=de&preview_id=188&preview_nonce=d845a20ee2&preview=true#Projekt">Projektes</a> mitgeladen. Mitunter ist das nicht sinnvoll und bremst das System. Daher kann man Views, die zusammengehören, in verschiedenen Projekten zusammenfassen.<br>
+Sinnvoll ist beispielsweise ein Trennung nach Endgeräten mit verschiedenen Bildschirmauflösungen. So kann man ein Projekt <em>Smartphone</em> anlegen und darin Views anlegen, die für Touch-Bedienung und vertikale Ausrichtung optimiert sind. Durch die bewusste Reduzierung der Widgets bleibt das Projekt klein im Datenvolumen und lädt daher auch von unterwegs (z.B. über VPN und Mobilfunk) schnell. Ein weiteres Projekt <em>Wandtablet</em>, das nur auf dem Tablet an der Wand zur Anzeige kommt, braucht keine Views aus dem Projekt <em>Smartphone </em>zu laden. Das Hauptprojekt <em>main</em> zur Anzeige aller Daten wird gängigerweise nur vom Desktop PC aus angezeigt und editiert. Hier spielen Datenvolumen und Rechengeschwindigkeit meist keine Rolle.<br>
+Sollen Views in mehreren Projekten verwendet werden, können sie mit dem Befehl <a href="?page_id=188&lang=de&preview_id=188&preview_nonce=d845a20ee2&preview=true#exportieren">exportieren</a>/<a href="?page_id=188&lang=de&preview_id=188&preview_nonce=d845a20ee2&preview=true#importieren">importieren</a> kopiert werden. Das Verlinken über Navigationswidgets von einem Projekt zum anderen ist nicht möglich.<br>
+<strong>Tipp</strong>: Es kann auch sinnvoll sein, ein Test-Projekt anzulegen, wenn mit CSS-Anweisungen experimentiert wird.</p>
+<h4 style="text-align: justify;">Projekt-Export/Import (4)</h4>
+<p style="text-align: justify;">Hier können komplette Projekte exportiert und importiert werden. Für den Export stehen die Funktionen normal und anonymisiert, in der private Daten entfernt werden, zur Verfügung. Die Vorbereitung des Exports dauert je nach Umfann ein wenig und wird anschließend als Zip-Datei im Format <em><strong>YYYY-MM-DD-ProjektName.zip </strong></em>zum Speichern angeboten.</p>
+<h4 style="text-align: justify;">neues Projekt&#8230; (5)</h4>
+<p style="text-align: justify;">Hier kann ein neues Projekt angelegt werden. Ein Fenster öffnet sich und fordert die Eingabe eines Projektnamens. Nach dem Bestätigen lädt der Editor das neue Projekt unter dieser Adresse: <code>&lt;IPdesServers&gt;:8082/vis/index.html?ProjektName#ViewName.</code> Die Dateien des neuen Projektes befinden sich in der ioBroker Installation unter <code><em>ioBroker-Ordner</em>/iobroker-data/files/vis.0/projektname</code>.<br>
+<strong>Tipp</strong>: Einen Projektordner kann man duplizieren und das Duplikat im VIS Editor bearbeiten <code>&lt;IPdesServers&gt;:8082/vis/edit.html?<em>ProjektName_duplikat</em>/#ViewName</code>.</p>
+<h4 style="text-align: justify;">Dateimanager&#8230; (6)</h4>
+<p style="text-align: justify;">Nach Auswahl dieses Menüpunkts können auf bequeme Weise Dateien in das ioBroker Dateisystem hinein oder herauskopiert werden, ohne dass weitere Zusatzprogramme benötigt werden. Der Dateimanager öffnet sich:</p>
+<figure id="attachment_6007" style="width: 799px" class="wp-caption aligncenter"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_filemanager.jpg"><img class="wp-image-6007" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_filemanager.jpg" width="799" height="805" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_filemanager.jpg 843w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_filemanager-150x151.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_filemanager-298x300.jpg 298w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_filemanager-100x101.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_filemanager-200x201.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_filemanager-300x302.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_filemanager-450x453.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_filemanager-600x604.jpg 600w" sizes="(max-width: 799px) 100vw, 799px"></a><figcaption class="wp-caption-text">*Die Bilder sind nur die Beispielbilder und sind von entsprechenden Firmen urheberrechtlich geschützt.</figcaption></figure>
+<p style="text-align: justify;">Das Verhalten ähnelt jedem Dateimanager. Über den blauen Button &#8220;Pfeil links&#8221; manövriert man eine Hierarchie-ebene höher, mit Klick auf einen Ordner in diesen hinein. Mit dem Icon &#8220;Ordner+&#8221; kann ein neuer Ordner erzeugt werden.<br>
+Hat man das gewünschte Verzeichnis erreicht, wählt man eine Datei an, kann man sie mit dem blauen Pfeil auf den Rechner herunterladen, klickt man den grünen Pfeil an, so öffnet sich die &#8220;Dropbox&#8221;.<br>
+<a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox.jpg"><img class="aligncenter wp-image-6008" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox.jpg" width="800" height="396" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox.jpg 1400w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox-150x74.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox-300x149.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox-1024x507.jpg 1024w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox-100x50.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox-200x99.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox-450x223.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox-600x297.jpg 600w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_Dropbox-900x446.jpg 900w" sizes="(max-width: 800px) 100vw, 800px"></a><br>
+Hier können Dateien einfach durch Drag &amp; Drop abgelegt werden und anschließend durch Klick auf den Button <em><strong>Upload</strong></em> auf den ioBroker Server geladen werden. Alternativ kann auch irgendwo in der Fläche geklickt werden, dann öffnet sich eine Dateiauswahl. Die Dateiliste leert sich und wenn keine weiteren Dateien hochgeladen werden sollen verlässt man die Dropbox über den Button <b><i>Schließen</i></b>.</p>
+<h4 style="text-align: justify;">Einstellungen&#8230; (7)</h4>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_settings.jpg"><img class="aligncenter wp-image-6010" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_settings.jpg" width="802" height="296" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_settings.jpg 807w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_settings-150x55.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_settings-300x111.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_settings-100x37.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_settings-200x74.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_settings-450x166.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_settings-600x222.jpg 600w" sizes="(max-width: 802px) 100vw, 802px"></a></p>
+<ul style="text-align: justify;">
+<li><em><strong>Neuladen falls keine Verbindung länger als:</strong></em> Der aktive View wird komplett neu geladen, wenn die Verbindung zwischen Frontend (Tablet) zum Server länger als die Voreingestellte Zeit unterbrochen war. Um dies zu verhindern kann diese Zeit auch auf <em><strong>nie</strong></em> gestellt werden.</li>
+<li><em><strong>Wiederverbindungsintervall:</strong></em> Die Zeit in der vom Frontend versucht werden soll den Server zu erreichen</li>
+<li><em><strong>Dunkles Reconnect-Screen:</strong></em> Üblicherweise ist die Seite weiß, wenn versucht wird den View neu zu laden. Damit dies in dunklen Räumen nicht stört, kann der Screen mit dieser Checkbox auf dunkel umgestellt werden.</li>
+<li><em><strong>Löschen aus RAM nicht aktive Views:</strong></em> Um den wertvollen Arbeitsspeicher am Frontend, der gerade bei günstigen Tablets meist nur 1GB beträgt, zu sparen könne Views, die länger nicht mehr benötigt wurden aus dem RAM entfernt werden. Bei erneutem Laden des entsprechenden Views dauert dies dann allerdings länger. Mit dieser Option wird die Zeit eingestellt die nicht benutzte Views im RAM gehalten werden sollen.</li>
+</ul>
+<h4 style="text-align: justify;">Objekt-Browser&#8230; (8)</h4>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser.jpg"><img class="aligncenter wp-image-6012" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser.jpg" width="801" height="231" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser.jpg 1400w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser-150x43.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser-300x87.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser-1024x295.jpg 1024w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser-100x29.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser-200x58.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser-450x130.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser-600x173.jpg 600w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Setup_objectbrowser-900x260.jpg 900w" sizes="(max-width: 801px) 100vw, 801px"></a><br>
+Hier kann nach einem Objekt gesucht werden. Dieses wird nach Anklicken des Buttons <em><strong>Auswählen</strong></em> in die Zwischenablage gelegt. Zum schnelleren Auffinden können die Filterfelder über den Spaltenköpfen verwendet werden.</p>
+<h3 style="text-align: justify;"><span id="Hilfe_5">Hilfe (5)</span></h3>
+<p style="text-align: justify;">Hier gibt es unter <em>Shortcuts</em> eine Übersicht der Tastenbefehle und unter <em>über das Projekt</em> eine kurze Info.</p>
+<h3 style="text-align: justify;"><span id="Undo-Button_6">Undo-Button (6)</span></h3>
+<p style="text-align: justify;">Mit diesem Button kann man die letzte(n) Aktion(en schrittweise) rückgängig machen.</p>
+<hr>
+<h2 style="text-align: justify;"><span id="Die_Widget-Sidebar_14">Die Widget-Sidebar (14)</span></h2>
+<p style="text-align: justify;">Sie dient der Auswahl von Widgets. Die Widgets werden als Icons dargestellt und können per drag und drop auf die Arbeitsfläche gezogen, oder mit dem Button <em>Einfügen</em> an Position 0,0 der Arbeitsfläche positioniert werden.<br>
+<a href="wp-content\uploads\2015\04\iobroker_vis_Editor_Widgets_sidebar.jpg"><img class=" size-full wp-image-1206 aligncenter" src="wp-content\uploads\2015\04\iobroker_vis_Editor_Widgets_sidebar.jpg" alt="iobroker_vis_Editor_Widgets_sidebar" width="198" height="548" srcset="wp-content\uploads\2015\04\iobroker_vis_Editor_Widgets_sidebar.jpg 198w, wp-content\uploads\2015\04\iobroker_vis_Editor_Widgets_sidebar-108x300.jpg 108w" sizes="(max-width: 198px) 100vw, 198px"></a><br>
+Das Feld unter dem Button <strong><em>Einfügen</em></strong> ist ein Filterfeld. Hier kann man einen Begriff eingeben um die Icons danach zu durchsuchen. Alle Icons die diesen Begriff enthalten werden angezeigt. Löscht man den letzten Filter (oder den *), erhält man eine Pulldownliste mit den möglichen Suchbegriffen.<br>
+Darunter befindet sich das Auswahlfeld für die Widgetsätze. Ein Satz besteht aus mehreren zusammengehörenden Widgets. Trotz gleicher Funktion kann es ein Widget für mehrere Widgetsätze geben. So wird eine einheitliche Bedienung und Optik sichergestellt. Der Stern (*) steht für alle Widgetsätze. Beim Filtern nach Begriffen werden automatisch immer alle Widgetsätze durchsucht. Sonst bietet das Pulldownmenü jedoch auch die verschiedenen Widgetsätze als Filter an.<br>
+<strong><span style="color: #ff0000;">Standardmäßig sind nur wenige Widgetsätze installiert!</span> </strong>Weitere Widgetsätze können als Adapter zusätzlich installiert werden und stehen nach einem Restart des .vis-Adapters hier zur Verfügung.</p>
+<hr>
+<h2 style="text-align: justify;"><span id="Die_Arbeitsflaeche_16">Die Arbeitsfläche (16)</span></h2>
+<p style="text-align: justify;">Hier werden die Widgets für den View positioniert. Dies kann mit der Maus oder den Pfeiltasten geschehen. Ist der Reiter Widgets aktiv, stehen auch einige Hilfen zur Ausrichtung zur Verfügung. In den Reitern über der Arbeitsfläche werden die bisher existierenden Views alphabetisch sortiert.  Sollten bereits sehr viele Views in diesem Projekt existieren muss ggf. mit den Pfeiltasten links und rechts gescrollt werden. Über diese Reiter können die zu bewarbeitenden Views genauso ausgewählt werden wie über das Pulldownmenü links oben.</p>
+<hr>
+<h2 style="text-align: justify;"><span id="Die_Eigenschaften-Sidebar_15">Die Eigenschaften-Sidebar (15)</span></h2>
+<h2 style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_groups.jpg"><img class="aligncenter wp-image-6049 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_groups.jpg" width="405" height="184" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_groups.jpg 405w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_groups-150x68.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_groups-300x136.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_groups-100x45.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_groups-200x91.jpg 200w" sizes="(max-width: 405px) 100vw, 405px"></a></h2>
+<p style="text-align: justify;">hier werden alle Einstellungen für die <em><strong>Views</strong></em> und die <em><strong>Widgets</strong></em> über die entsprechenden Reiter eingegeben.</p>
+<ul class="task-list" style="text-align: justify;">
+<li>Datenpunkt Zuordnung</li>
+<li>Widgetgröße</li>
+<li>Schriftgröße und Farbe</li>
+<li>Hintergrund</li>
+<li>Rahmen, Linienfarbe, -art, -stärke</li>
+</ul>
+<p style="text-align: justify;">Außerdem bieten die Reiter <em><strong>CSS</strong></em> und <em><strong>Skripte</strong></em> fortgeschrittenen Anwendern die Möglichkeit eigene Entwicklungen einzubinden.</p>
+<ul class="task-list" style="text-align: justify;">
+<li><em>global</em>: CSS Anweisungen gelten für alle Projekte</li>
+<li><em>Projekt</em>: CSS Anweisungen gelten nur für das aktuelle Projekt</li>
+</ul>
+<h3 style="text-align: justify;"><span id="View">View</span></h3>
+<p style="text-align: justify;">Unter diesem Reiter können die Eigenschaften für den ausgewählten View eingestellt werden. Wenn die Arbeitsfläche des Views angeklickt wird, wird dieser Reiter automatisch aktiviert.<br>
+<img class="size-full wp-image-6050 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_kpl.jpg" alt="" width="404" height="864" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_kpl.jpg 404w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_kpl-70x150.jpg 70w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_kpl-140x300.jpg 140w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_kpl-100x214.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_kpl-150x321.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_kpl-200x428.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_kpl-300x642.jpg 300w" sizes="(max-width: 404px) 100vw, 404px"></p>
+<h4 style="text-align: justify;">CSS Allgemein</h4>
+<h5 style="text-align: justify;">Kommentar</h5>
+<p style="text-align: justify;">In diesem Feld kann ein Kommentar zu dem angewählten View eingetragen werden.</p>
+<h5 style="text-align: justify;">CSS-Klasse</h5>
+<p style="text-align: justify;">Diesem View kann eine bestimmte, bereits vorher definierte CSS-Klasse zugewiesen werden.</p>
+<h5 style="text-align: justify;">Anfangsfilter</h5>
+<p style="text-align: justify;">Dieser Filterwert wird beim ersten Öffnen der Seite gesetzt. Mehr über Filter im Kapitel Filter.</p>
+<p style="text-align: justify;">Auf der Seite gibt es z.B. &#8220;Licht&#8221; und &#8220;Rollos&#8221;. Wenn man für &#8220;Anfangsfilter&#8221; den Wert &#8220;Licht&#8221; auswählt, dann wird die Seite beim ersten Aufruf keine &#8220;Rollos&#8221; anzeigen.</p>
+<h5 style="text-align: justify;">Thema</h5>
+<p style="text-align: justify;">In diesem Pulldownmenü kann ein Thema ausgewählt werden, in dem der ausgewählte View dargestellt werden soll. Ein Thema beinhaltet einheitliche Farbgebung und Schriftarten. In dem Pulldownmenü stehen mehrere Themes zur Verfügung.<br>
+<a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_themes.jpg"><img class="aligncenter wp-image-6084 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_themes.jpg" width="385" height="377" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_themes.jpg 385w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_themes-150x147.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_themes-300x294.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_themes-100x98.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_themes-200x196.jpg 200w" sizes="(max-width: 385px) 100vw, 385px"></a></p>
+<h5 style="text-align: justify;">Nur für Gruppen</h5>
+<p style="text-align: justify;">Soll dieser View nicht für alle Anwender zu sehen sein, kann die Sichtbarkeit auf einzelne Gruppen, die in der Benutzersteuerung angelegt wurden beschränkt werden.<br>
+<img class="size-full wp-image-6085 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_usergroups.jpg" alt="" width="387" height="563" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_usergroups.jpg 387w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_usergroups-103x150.jpg 103w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_usergroups-206x300.jpg 206w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_usergroups-100x145.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_usergroups-150x218.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_usergroups-200x291.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_usergroups-300x436.jpg 300w" sizes="(max-width: 387px) 100vw, 387px"><br>
+Die entsprechenden Gruppen, die diesen View sehen sollen können über die entsprechende Checkboxen ausgewählt werden.</p>
+<h5 style="text-align: justify;">Falls Anwender nicht in der Gruppe</h5>
+<p style="text-align: justify;">Hier wird das Verhalten für den View festgelegt, falls ein Anwender nicht zu einer der aktivierten Gruppen gehört.<br>
+<img class="size-full wp-image-6086 aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_no_user.jpg" alt="" width="401" height="182" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_no_user.jpg 401w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_no_user-150x68.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_no_user-300x136.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_no_user-100x45.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_no_user-200x91.jpg 200w" sizes="(max-width: 401px) 100vw, 401px"><br>
+Dann kann der View entweder vollständig verborgen werden, oder in der Auswahl zwar sichtbar, aber nicht anwählbar sein.</p>
+<h4 style="text-align: justify;">CSS Hintergrund</h4>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_CSS_background.jpg"><img class="aligncenter wp-image-6089 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_CSS_background.jpg" width="404" height="292" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_CSS_background.jpg 404w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_CSS_background-150x108.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_CSS_background-300x217.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_CSS_background-100x72.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_CSS_background-200x145.jpg 200w" sizes="(max-width: 404px) 100vw, 404px"></a></p>
+<h5 style="text-align: justify;">background</h5>
+<p style="text-align: justify;">Hier kann ein eigener Ausdruck eingegeben werden, um den gewünschten Hintergrund zu erzeugen. Wird hier nichts eingegeben, sondern in den darunterliegenden Feldern die Auswahl getroffen wird in diesem Feld automatisch die Zusammenfassung der unten eingegebenen Parameter aufgeführt.<br>
+Z.B. <code>rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box</code></p>
+<h5 style="text-align: justify;">-color</h5>
+<p style="text-align: justify;">hier kann eine Farbe für den Hintergrund  über den colorpicker oder über eine Angabe als RGB(a) eingegeben werden.<br>
+<img class="wp-image-6088 size-full aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931.jpg" width="612" height="385" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931.jpg 612w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-150x94.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-300x189.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-100x63.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-200x126.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-450x283.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-600x377.jpg 600w" sizes="(max-width: 612px) 100vw, 612px"></p>
+<h5 style="text-align: justify;">-image</h5>
+<p style="text-align: justify;">Für den Hintergrund kann auch ein Bild gewählt werden. Der Pfad dazu wird hier eingetragen ???</p>
+<h5 style="text-align: justify;">-repeat</h5>
+<p style="text-align: justify;">Dieser Parameter bestimmt, wie mit Hintergrundbildern verfahren werden soll, falls das Element größer als ein Hintergrundbild ist. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-repeat">mehr</a>)</p>
+<h5 style="text-align: justify;">-attachment</h5>
+<p style="text-align: justify;">Dieser Parameter bestimmt, wie sich die Hintergrundbilder verhalten sollen, wenn das Element oder sein Inhalt bewegt wird. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-attachment">mehr</a>)</p>
+<h5 style="text-align: justify;">-position</h5>
+<p style="text-align: justify;">Dieser Parameter bestimmt, an welcher Stelle sich die linken oberen Ecken der Hintergrundbilder befinden sollen. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-position">mehr</a>)</p>
+<h5 style="text-align: justify;">-size</h5>
+<p style="text-align: justify;">Dieser Parameter bestimmt, an welcher Stelle sich die linken oberen Ecken der Hintergrundbilder befinden sollen. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-size">mehr</a>)</p>
+<h5 style="text-align: justify;">-clip</h5>
+<p style="text-align: justify;">Dieser Parameter bestimmt, dass die Hintergrundeigenschaften nur für bestimmte Bereiche der Elementbox gelten. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-clip">mehr</a>)</p>
+<h5 style="text-align: justify;">-origin</h5>
+<p style="text-align: justify;">Dieser Parameter verschiebt Ursprung für das Koordinatensystem, welches der Positionierung der Hintergrundgrafiken zugrunde liegt, für jede einzelne Hintergrundgrafik. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-origin">mehr</a>)</p>
+<h4 style="text-align: justify;">CSS Font &amp; text</h4>
+<h5 style="text-align: justify;">color</h5>
+<p style="text-align: justify;">Mit der Eigenschaft <b>color</b> wird die Farbe der Schrift bzw. des Textvordergrundes festgelegt. (<a href="https://wiki.selfhtml.org/wiki/Color">mehr</a>)</p>
+<h5 style="text-align: justify;">text-shadow</h5>
+<p style="text-align: justify;">Die Eigenschaft <b>text-shadow</b> ermöglicht die Darstellung von Schatten unter Texten, ohne dabei Bilder zu verwenden. (<a href="https://wiki.selfhtml.org/wiki/Text-shadow">mehr</a>)</p>
+<h5 style="text-align: justify;">font-family</h5>
+<p style="text-align: justify;">Mithilfe der hier beschriebenen Eigenschaft <b>font-family</b> können Schriftarten anggeeben werden, ohne sich darum kümmern zu müssen, ob und wie die Schriftart beim Anwender angezeigt werden kann. Falls die angegebene Schriftart nicht angezeigt werden kann, bleibt die Angabe wirkungslos. (<a href="https://wiki.selfhtml.org/wiki/Font-family">mehr</a>)</p>
+<h5 style="text-align: justify;">font-style</h5>
+<p style="text-align: justify;">Als Schriftstil wird die Neigung der Schrift bezeichnet, welche mit der Eigenschaft <b>font-style</b> gesteuert können. (<a href="https://wiki.selfhtml.org/wiki/Font-style">mehr</a>)</p>
+<h5 style="text-align: justify;">font-variant</h5>
+<p style="text-align: justify;">Als besondere Schriftvariante stehen Kapitälchen (kleine Großbuchstaben) statt der kleinen Buchstaben zur Verfügung, einstellbar mit der Eigenschaft <b>font-variant</b>. (<a href="https://wiki.selfhtml.org/wiki/Font-variant">mehr</a>)</p>
+<h5 style="text-align: justify;">font-weight</h5>
+<p style="text-align: justify;">Mit der Eigenschaft <b>font-weight</b> kann die Strichstärke (fälschlicherweise Schriftgewicht genannt) bestimmt werden. Die Strichstärke bezeichnet die Dicke und Stärke einer Schrift. (<a href="https://wiki.selfhtml.org/wiki/Font-weight">mehr</a>)</p>
+<h5 style="text-align: justify;">font-size</h5>
+<p style="text-align: justify;">Die Eigenschaft <b>font-size</b> bestimmt den Schriftgrad, das heißt die Darstellungsgröße der Schrift. (<a href="https://wiki.selfhtml.org/wiki/Font-size">mehr</a>)</p>
+<h5 style="text-align: justify;">line-height</h5>
+<p style="text-align: justify;">Mit der Eigenschaft <b>line-height</b> kann die Höhe der Textzeile entweder relativ zur geltenden <code><a title="CSS/Eigenschaften/Schriftformatierung/font-size" href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Schriftformatierung/font-size">font-size</a></code>-Angabe oder als absolute Angabe definiert werden. (<a href="https://wiki.selfhtml.org/wiki/Line-height">mehr</a>)</p>
+<h5 style="text-align: justify;">letter-spacing</h5>
+<p style="text-align: justify;">Mit der Eigenschaft <b>letter-spacing</b> kann der Abstand zwischen den Buchstaben bzw. Zeichen im Text festgelegt werden. (<a href="https://wiki.selfhtml.org/wiki/Letter-spacing">mehr</a>)</p>
+<h5 style="text-align: justify;">word-spacing</h5>
+<p style="text-align: justify;">Mit der Eigenschaft <b>word-spacing</b> wird der Abstand zwischen Wörtern im Text bestimmt. (<a href="https://wiki.selfhtml.org/wiki/Word-spacing">mehr</a>)</p>
+<h3 style="text-align: justify;"><span id="Widget">Widget</span></h3>
+<p style="text-align: justify;">Um Datenpunkte anzeigen oder Aktionen durchführen zu können, muss der zu steuernde Datenpunkt dem Widget zugeordnet werden. Dieser Eintrag ist im Abschnitt <em>Allgemein</em> zu finden.</p>
+<p style="text-align: justify;">Unter dem Reiter Widget können die Eigenschaften eines Widgets sehr umfangreich eingestellt werden. (Ein Beispiel zu dem Umfang kann man nach Anklicken der Abbildung unten bekommen)</p>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_kpl.jpg"><img class="aligncenter wp-image-6130 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_groups_Items.jpg" width="405" height="441" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_groups_Items.jpg 405w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_groups_Items-138x150.jpg 138w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_groups_Items-276x300.jpg 276w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_groups_Items-100x109.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_groups_Items-150x163.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_groups_Items-200x218.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_groups_Items-300x327.jpg 300w" sizes="(max-width: 405px) 100vw, 405px"></a></p>
+<p style="text-align: justify;">Sobald ein Widget ausgewählt wurde ändert sich die Beschriftung des Reiters in die Kennung des ausgewählten Widgets.</p>
+<p style="text-align: justify;">Standardmäßig sind alle Gruppen zugeklappt und können nach vorhergehender Aktivierung der Checkbox aufgeklappt werden. Werden in den Gruppen keine Einstellungen vorgenommen gelten die Einstellungen des entsprechenden Views.</p>
+<h4 style="text-align: justify;">Generell (1)</h4>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_general.jpg"><img class="aligncenter wp-image-6132 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_general.jpg" width="405" height="157" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_general.jpg 405w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_general-150x58.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_general-300x116.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_general-100x39.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_general-200x78.jpg 200w" sizes="(max-width: 405px) 100vw, 405px"></a></p>
+<h5 style="text-align: justify;">Name:</h5>
+<p style="text-align: justify;">Hier kann ein eindeutiger Name für dieses Widget eingegeben werden</p>
+<h5 style="text-align: justify;">Kommentar:</h5>
+<p style="text-align: justify;">Hier kann eine kurze Beschreibung dazu eingegeben werden</p>
+<h5 style="text-align: justify;">CSS Klasse:</h5>
+<p style="text-align: justify;">Hier kann eine zuvor definierte CSS Klasse für das Widget ausgewählt werden.</p>
+<h5 style="text-align: justify;">Filterwort</h5>
+<p style="text-align: justify;">Wenn hier ein Filter eingegeben wird, werden bei der Zuordnung des Datenpunktes nur Datenpunkte angezeigt, die diesem Filter entsprechen.</p>
+<h5 style="text-align: justify;">Zeige in Views</h5>
+<p style="text-align: justify;">Hier kann ausgewählt werden, ob dieses Widget nur im aktuellen View, oder in mehreren erscheinen soll.</p>
+<h5 style="text-align: justify;">Inaktiv (locked)</h5>
+<p style="text-align: justify;">Ist diese Checkbox markiert, kann das Widget nicht bedient werden.</p>
+<h4 style="text-align: justify;">Sichtbarkeit (2)</h4>
+<p style="text-align: justify;">Die Sichtbarkeit eines Widgets kann von dem Zustand eines Datenpunktes abhängig gemacht werden. Der die Sichtbarkeit steuernde Datenpunkt kann auch ein anderer sein, als der, der mit dem Widget verknüpft ist.<br>
+<a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Sichtbarkeit.jpg"><img class="aligncenter wp-image-6136 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Sichtbarkeit.jpg" width="406" height="157" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Sichtbarkeit.jpg 406w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Sichtbarkeit-150x58.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Sichtbarkeit-300x116.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Sichtbarkeit-100x39.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Sichtbarkeit-200x77.jpg 200w" sizes="(max-width: 406px) 100vw, 406px"></a></p>
+<h5 style="text-align: justify;">Object ID</h5>
+<p style="text-align: justify;">Hier wird die ID des Datenpunkts eingegeben, der die Sichtbarkeit des ausgewählten widgets steuern soll. Der Datenpunkt kann über den Button gesucht werden.</p>
+<h5 style="text-align: justify;">Bedingung</h5>
+<p style="text-align: justify;">Das Widget wird sichtbar wenn die hier eingegebene Bedingung für den o.a. Datenpunkt&#8230;</p>
+<h5 style="text-align: justify;">Wert für die Bedingung</h5>
+<p style="text-align: justify;">&#8230;dem hier eingebenen Wert entspricht.</p>
+<h5 style="text-align: justify;">Nur für Gruppen</h5>
+<p style="text-align: justify;">Soll dieses Widget nicht für alle Anwender zu sehen sein, kann die Sichtbarkeit auf einzelne Gruppen, die in der Benutzersteuerung angelegt wurden beschränkt werden.<br>
+Die entsprechenden Gruppen, die diesen View sehen sollen können über die entsprechende Checkboxen ausgewählt werden.</p>
+<h5 style="text-align: justify;">Falls Anwender nicht in der Gruppe</h5>
+<p style="text-align: justify;">Hier wird das Verhalten für den View festgelegt, falls ein Anwender nicht zu einer der aktivierten Gruppen gehört.<br>
+Dann kann der View entweder vollständig verborgen werden, oder in der Auswahl zwar sichtbar, aber nicht anwählbar sein.</p>
+<h4 style="text-align: justify;">Allgemein (3)</h4>
+<p style="text-align: justify;">Der Abschnitt Allgemein ist für jedes Widget spezifisch und wird bei den einzelnen Widgets näher beschrieben.<br>
+In diesem Abschnitt wird der gewünschte Datenpunkt in dem Feld Object ID dem Widget zugeordnet. (Bitte nicht mit dem Feld Object-ID in dem Block <em>Sichtbarkeit</em> verwechseln!)<br>
+<strong>Die CSS Einstellungen</strong> des Widgets finden sich in den folgenden Menüpunkten und können den eigenen Wünschen angepasst werden:</p>
+<h4 style="text-align: justify;">CSS allgemein (4)<a href="wp-content\uploads\2015\05\004_CSS_allgemein.jpg"><br>
+</a><a href="wp-content\uploads\2015\05\005_CSS_Font_Text.jpg"><br>
+</a><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_CSS_allgemein.jpg"><img class="aligncenter wp-image-6141 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_CSS_allgemein.jpg" width="403" height="264" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_CSS_allgemein.jpg 403w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_CSS_allgemein-150x98.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_CSS_allgemein-300x197.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_CSS_allgemein-100x66.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_CSS_allgemein-200x131.jpg 200w" sizes="(max-width: 403px) 100vw, 403px"></a></h4>
+<h5 style="text-align: justify;">position</h5>
+<p>Elemente können durch Verwendung der Eigenschaft <b>position</b> aus dem normalen Elementfluss entfernt werden und an jede beliebige Stelle des Viewports positioniert werden. In diesem Pulldownmenü können die Optionen <em>nichts</em> (dann müssen unten left und top ausgefüllt werden), <em>relativ</em> oder <em>sticky</em> ausgewählt werden. <a href="https://wiki.selfhtml.org/wiki/Position">(mehr)</a></p>
+<h5 style="text-align: justify;">display</h5>
+<p>Mit der Eigenschaft <b>display</b> wird festgelegt, welche Art von Box ein Element erzeugt. Jedes Element kann Null oder mehr Boxen erzeugen. Diese Funktion steht nach Aktivierung von relativ bzw. sticky unter dem Punkt position zur Verfügung. Die möglichen Optionen sind <em>nichts</em> oder <em>inline-block. <a href="https://wiki.selfhtml.org/wiki/Display">(mehr)</a></em></p>
+<h5 style="text-align: justify;">left</h5>
+<p style="text-align: justify;">Abstand vom linken Rand des Views</p>
+<h5 style="text-align: justify;">top</h5>
+<p style="text-align: justify;">Abstand vom oberen Rand des Views</p>
+<h5 style="text-align: justify;">width</h5>
+<p style="text-align: justify;">Breite des Widgets</p>
+<h5 style="text-align: justify;">height</h5>
+<p style="text-align: justify;">Höhe des Widgets</p>
+<h5 style="text-align: justify;">z-index</h5>
+<p style="text-align: justify;">Angebe der Ebene, in der das Widget liegt (0= auf dem Hintergrund, positive Werte= weiter vorne, je höher der Wert)</p>
+<h5 style="text-align: justify;">overflow-x</h5>
+<p>Mit overflow-x lässt sich angeben, wie übergroßer Inhalt hinsichtlich der Breite des Elements behandelt wird.</p>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Overflow.jpg"><img class="aligncenter wp-image-6142 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Overflow.jpg" width="388" height="170" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Overflow.jpg 388w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Overflow-150x66.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Overflow-300x131.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Overflow-100x44.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Overflow-200x88.jpg 200w" sizes="(max-width: 388px) 100vw, 388px"></a></p>
+<ul>
+<li><strong>visible:</strong> Inhalte sind sichtbar</li>
+<li><strong>hidden:</strong> Inhalte sind unsichtbar</li>
+<li><strong>scroll:</strong> Inhalte sind per Scrollbalken erreichbar</li>
+<li><strong>auto:</strong> browserabhängig, die meisten Browser stellen Scrollbalken zur Verfügung</li>
+<li><strong>initial:</strong> Verhalten wirdauf Standardwerte zurückgesetzt</li>
+<li><strong>inherit:</strong> Verhalten wird vom Elternelement übernommen</li>
+</ul>
+<h5 style="text-align: justify;">overflow-y</h5>
+<p style="text-align: justify;">Mit overflow-y lässt sich angeben, wie übergroßer Inhalt hinsichtlich der Höhe des Elements behandelt wird.</p>
+<h5 style="text-align: justify;">opacity</h5>
+<p style="text-align: justify;">Dieser Wert gibt die (umgekehrte) Transparenz des Widgets an. Je höher der Wert, desto massiver wird das Widget angezeigt.</p>
+<h4 style="text-align: justify;">CSS Font &amp; Text (5)</h4>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Font_Textt.jpg"><img class="aligncenter wp-image-6139 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Font_Textt.jpg" width="406" height="267" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Font_Textt.jpg 406w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Font_Textt-150x99.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Font_Textt-300x197.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Font_Textt-100x66.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Font_Textt-200x132.jpg 200w" sizes="(max-width: 406px) 100vw, 406px"></a></p>
+<h5 style="text-align: justify;">color</h5>
+<p style="text-align: justify;">Mit der Eigenschaft <b>color</b> wird die Farbe der Schrift bzw. des Textvordergrundes festgelegt. (<a href="https://wiki.selfhtml.org/wiki/Color">mehr</a>)</p>
+<h5 style="text-align: justify;">text-align</h5>
+<p style="text-align: justify;">Die Eigenschaft <b>text-align</b> gibt die Orientierung des Textes innerhalb der Box an (rechtsbündig, zentriert, linksbündig&#8230;) (<a href="https://wiki.selfhtml.org/wiki/Text-align">mehr</a>)</p>
+<h5 style="text-align: justify;">text-shadow</h5>
+<p style="text-align: justify;">Die Eigenschaft <b>text-shadow</b> ermöglicht die Darstellung von Schatten unter Texten, ohne dabei Bilder zu verwenden. (<a href="https://wiki.selfhtml.org/wiki/Text-shadow">mehr</a>)</p>
+<h5 style="text-align: justify;">font-family</h5>
+<p style="text-align: justify;">Mithilfe der hier beschriebenen Eigenschaft <b>font-family</b> können Schriftarten anggeeben werden, ohne sich darum kümmern zu müssen, ob und wie die Schriftart beim Anwender angezeigt werden kann. Falls die angegebene Schriftart nicht angezeigt werden kann, bleibt die Angabe wirkungslos. (<a href="https://wiki.selfhtml.org/wiki/Font-family">mehr</a>)</p>
+<h5 style="text-align: justify;"></h5>
+<h5 style="text-align: justify;">font-style</h5>
+<p style="text-align: justify;">Als Schriftstil wird die Neigung der Schrift bezeichnet, welche mit der Eigenschaft <b>font-style</b> gesteuert können. (<a href="https://wiki.selfhtml.org/wiki/Font-style">mehr</a>)</p>
+<h5 style="text-align: justify;">font-variant</h5>
+<p style="text-align: justify;">Als besondere Schriftvariante stehen Kapitälchen (kleine Großbuchstaben) statt der kleinen Buchstaben zur Verfügung, einstellbar mit der Eigenschaft <b>font-variant</b>. (<a href="https://wiki.selfhtml.org/wiki/Font-variant">mehr</a>)</p>
+<h5 style="text-align: justify;">font-weight</h5>
+<p style="text-align: justify;">Mit der Eigenschaft <b>font-weight</b> kann die Strichstärke (fälschlicherweise Schriftgewicht genannt) bestimmt werden. Die Strichstärke bezeichnet die Dicke und Stärke einer Schrift. (<a href="https://wiki.selfhtml.org/wiki/Font-weight">mehr</a>)</p>
+<h5 style="text-align: justify;">font-size</h5>
+<p style="text-align: justify;">Die Eigenschaft <b>font-size</b> bestimmt den Schriftgrad, das heißt die Darstellungsgröße der Schrift. (<a href="https://wiki.selfhtml.org/wiki/Font-size">mehr</a>)</p>
+<h5 style="text-align: justify;">line-height</h5>
+<p style="text-align: justify;">Mit der Eigenschaft <b>line-height</b> kann die Höhe der Textzeile entweder relativ zur geltenden <code><a title="CSS/Eigenschaften/Schriftformatierung/font-size" href="https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/Schriftformatierung/font-size">font-size</a></code>-Angabe oder als absolute Angabe definiert werden. (<a href="https://wiki.selfhtml.org/wiki/Line-height">mehr</a>)</p>
+<h5 style="text-align: justify;">letter-spacing</h5>
+<p style="text-align: justify;">Mit der Eigenschaft <b>letter-spacing</b> kann der Abstand zwischen den Buchstaben bzw. Zeichen im Text festgelegt werden. (<a href="https://wiki.selfhtml.org/wiki/Letter-spacing">mehr</a>)</p>
+<h5 style="text-align: justify;">word-spacing</h5>
+<p style="text-align: justify;">Mit der Eigenschaft <b>word-spacing</b> wird der Abstand zwischen Wörtern im Text bestimmt. (<a href="https://wiki.selfhtml.org/wiki/Word-spacing">mehr</a>)</p>
+<h4 style="text-align: justify;">CSS Hintergrund (6)</h4>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Background.jpg"><img class="aligncenter wp-image-6143 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Background.jpg" width="407" height="218" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Background.jpg 407w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Background-150x80.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Background-300x161.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Background-100x54.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Background-200x107.jpg 200w" sizes="(max-width: 407px) 100vw, 407px"></a></p>
+<h5 style="text-align: justify;">background</h5>
+<p style="text-align: justify;">Hier kann ein eigener Ausdruck eingegeben werden, um den gewünschten Hintergrund zu erzeugen. Wird hier nichts eingegeben, sondern in den darunterliegenden Feldern die Auswahl getroffen wird in diesem Feld automatisch die Zusammenfassung der unten eingegebenen Parameter aufgeführt.<br>
+Z.B. <code>rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box</code></p>
+<h5 style="text-align: justify;">-color</h5>
+<p style="text-align: justify;">hier kann eine Farbe für den Hintergrund  über den colorpicker oder über eine Angabe als RGB(a) eingegeben werden.<br>
+<img class="wp-image-6088 size-full aligncenter" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931.jpg" width="612" height="385" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931.jpg 612w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-150x94.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-300x189.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-100x63.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-200x126.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-450x283.jpg 450w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Views_background-color-e1484594801931-600x377.jpg 600w" sizes="(max-width: 612px) 100vw, 612px"></p>
+<h5 style="text-align: justify;">-image</h5>
+<p style="text-align: justify;">Für den Hintergrund kann auch ein Bild gewählt werden. Der Pfad dazu wird hier eingetragen ???</p>
+<h5 style="text-align: justify;">-repeat</h5>
+<p style="text-align: justify;">Dieser Parameter bestimmt, wie mit Hintergrundbildern verfahren werden soll, falls das Element größer als ein Hintergrundbild ist. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-repeat">mehr</a>)</p>
+<h5 style="text-align: justify;">-attachment</h5>
+<p style="text-align: justify;">Dieser Parameter bestimmt, wie sich die Hintergrundbilder verhalten sollen, wenn das Element oder sein Inhalt bewegt wird. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-attachment">mehr</a>)</p>
+<h5 style="text-align: justify;">-position</h5>
+<p style="text-align: justify;">Dieser Parameter bestimmt, an welcher Stelle sich die linken oberen Ecken der Hintergrundbilder befinden sollen. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-position">mehr</a>)</p>
+<h5 style="text-align: justify;">-size</h5>
+<p style="text-align: justify;">Dieser Parameter bestimmt, an welcher Stelle sich die linken oberen Ecken der Hintergrundbilder befinden sollen. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-size">mehr</a>)</p>
+<h5 style="text-align: justify;">-clip</h5>
+<p style="text-align: justify;">Dieser Parameter bestimmt, dass die Hintergrundeigenschaften nur für bestimmte Bereiche der Elementbox gelten. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-clip">mehr</a>)</p>
+<h5 style="text-align: justify;">-origin</h5>
+<p style="text-align: justify;">Dieser Parameter verschiebt Ursprung für das Koordinatensystem, welches der Positionierung der Hintergrundgrafiken zugrunde liegt, für jede einzelne Hintergrundgrafik. (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/background-origin">mehr</a>)</p>
+<h4 style="text-align: justify;">CSS Border (7)</h4>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Border.jpg"><img class="aligncenter wp-image-6153 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Border.jpg" width="407" height="115" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Border.jpg 407w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Border-150x42.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Border-300x85.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Border-100x28.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Border-200x57.jpg 200w" sizes="(max-width: 407px) 100vw, 407px"></a></p>
+<h5 style="text-align: justify;">-width</h5>
+<p style="text-align: justify;">Dicke der Umrandung (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/border-width">mehr</a>)</p>
+<h5 style="text-align: justify;">-style</h5>
+<p style="text-align: justify;">Linienart der Umrandung (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/border-style">mehr</a>)</p>
+<h5 style="text-align: justify;">-color</h5>
+<p style="text-align: justify;">Farbe der Umrandung (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/border-color">mehr</a>)</p>
+<h5 style="text-align: justify;">-radius</h5>
+<p style="text-align: justify;">Eckenradius der Umrandung; kann höchstens die Hälfte der kürzeren Strecke des Widgets sein (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/border-radius">mehr</a>)</p>
+<h4 style="text-align: justify;">CSS Schatten und Abstand (8)</h4>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Schatten.jpg"><img class="aligncenter wp-image-6152 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Schatten.jpg" width="405" height="248" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Schatten.jpg 405w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Schatten-150x92.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Schatten-300x184.jpg 300w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Schatten-100x61.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Schatten-200x122.jpg 200w" sizes="(max-width: 405px) 100vw, 405px"></a></p>
+<h5 style="text-align: justify;">padding</h5>
+<p style="text-align: justify;">Versatz vom Rand der Widget-Box (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/padding">mehr</a>)</p>
+<h5 style="text-align: justify;">padding-left</h5>
+<p style="text-align: justify;">Versatz auf der linken Seite (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/padding-left">mehr</a>)</p>
+<h5 style="text-align: justify;">padding-top</h5>
+<p style="text-align: justify;">Versatz auf der oberen Seite (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/padding-top">mehr</a>)</p>
+<h5 style="text-align: justify;">padding-right</h5>
+<p style="text-align: justify;">Versatz auf der rechten Seite (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/padding-right">mehr</a>)</p>
+<h5 style="text-align: justify;">padding-bottom</h5>
+<p style="text-align: justify;">Versatz auf der unteren Seite (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/padding-bottom">mehr</a>)</p>
+<h5 style="text-align: justify;">box-shadow</h5>
+<p style="text-align: justify;">Farbe des Schattens der Widget-Box (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/box-shadow">mehr</a>)</p>
+<h5 style="text-align: justify;">margin-left</h5>
+<p style="text-align: justify;">Abstand zum nächsten Element auf der linken Seite (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/margin-left">mehr</a>)</p>
+<h5 style="text-align: justify;">margin-top</h5>
+<p style="text-align: justify;">Abstand zum nächsten Element auf der oberen Seite (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/margin-top">mehr</a>)</p>
+<h5 style="text-align: justify;">margin-right</h5>
+<p style="text-align: justify;">Abstand zum nächsten Element auf der rechten Seite (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/margin-right">mehr</a>)</p>
+<h5 style="text-align: justify;">margin-bottom</h5>
+<p style="text-align: justify;">Abstand zum nächsten Element auf der unteren Seite (<a href="https://wiki.selfhtml.org/wiki/Referenz:CSS/Eigenschaften/margin-bottom">mehr</a>)</p>
+<h4 style="text-align: justify;"></h4>
+<h4 style="text-align: justify;"></h4>
+<h4 style="text-align: justify;">Gesten (9)</h4>
+<p style="text-align: justify;">Damit kann man fast für jedes Widget eine Aktion mit Gesten (Maus oder Touch) aktivieren.<br>
+<a href="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Gesten.jpg"><img class="aligncenter wp-image-6146 size-full" src="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Gesten.jpg" width="407" height="1103" srcset="wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Gesten.jpg 407w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Gesten-55x150.jpg 55w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Gesten-111x300.jpg 111w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Gesten-378x1024.jpg 378w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Gesten-100x271.jpg 100w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Gesten-150x407.jpg 150w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Gesten-200x542.jpg 200w, wp-content\uploads\ioBroker_Adapter_Vis_Editor_Eigenschaften_Sidebar_Widgets_Gesten-300x813.jpg 300w" sizes="(max-width: 407px) 100vw, 407px"></a><br>
+Meist verwendete Option ist Swipe (Schieben). Um diese Option für z.B. Basic-HTML zu aktivieren sollte man ein Basic-Widget namens &#8220;<em>Gesture indicator</em>&#8221; verwenden. Im Feld &#8220;<em>Gestenindikator</em>&#8221; wird dieses Widget ausgewählt.<br>
+Danach muss man eine swiping Object ID definieren. Dieser Zustand wird geändert, wenn eine Swipe-Geste auf editierten Widget (nicht <em>Gesture indicator</em>) erkannt wird.</p>
+<ul>
+<li style="text-align: justify;"><em>Wert</em> ist ein Wert um wie viel der Zustand des Datenpunktes von dem ausgewählten Widget beim Swipen geändert wird.</li>
+<li style="text-align: justify;"><em>min/-max</em> sind die Grenzwerte die das Wert nicht überschreiben wird.</li>
+<li style="text-align: justify;"><em>delta</em> ist eine Pixelanzahl ab wann eine Bewegung als Swipe-Geste erkannt wird. D.h. die Maus muss sich um X Pixel bewegen um die Swipe Aktion auszulösen.</li>
+</ul>
+<p style="text-align: justify;">Andere Geste können ähnlich konfiguriert werden. Diese sind: Zoom mit zwei Finger; Swipe nach links, rechts, oben oder untern; Drehen; Drehen nach links oder rechts; Zoom In oder Zoom Out.</p>
+<h4 style="text-align: justify;">Signalbilder (10)</h4>
+<p style="text-align: justify;">Mit Hilfe des Abschnittes &#8220;Signalbilder&#8221; kann man z.B. bei batteriebetriebenen Sensoren oder Aktoren ein kleines, frei wählbares Piktogramm anzeigen lassen, wenn die Batterie zu Neige geht (und im Homematic-Umfeld auf der CCU eine entsprechende Servicemeldung kommen würde).<br>
+Pro Element sind bis zu drei Signalbilder möglich. So könnte man den Batteriestatus, den Sabotagekontakt und den UNREACH-Datenpunkt (= nicht erreichbar) eines Sensors oder Aktors abfragen.<br>
+<img class="aligncenter size-full wp-image-6200" src="wp-content\uploads\signalbilder_eric.png" alt="" width="338" height="423" srcset="wp-content\uploads\signalbilder_eric.png 338w, wp-content\uploads\signalbilder_eric-120x150.png 120w, wp-content\uploads\signalbilder_eric-240x300.png 240w, wp-content\uploads\signalbilder_eric-100x125.png 100w, wp-content\uploads\signalbilder_eric-150x188.png 150w, wp-content\uploads\signalbilder_eric-200x250.png 200w, wp-content\uploads\signalbilder_eric-300x375.png 300w" sizes="(max-width: 338px) 100vw, 338px"></p>
+<h5 style="text-align: justify;">Objekt ID</h5>
+<p style="text-align: justify;">Hier wird der den zu überwachenden Datenpunkt eingetragen &#8211; in diesem Beispiel den LOWBAT-Datenpunkt eines Homematic-Temperatur-Differenzsensors.</p>
+<h5 style="text-align: justify;">Bedingung</h5>
+<p style="text-align: justify;">Hier kann man aus den klassischen Vergleichsoperatoren (==, &lt;, &gt;, usw.) auswählen.</p>
+<h5 style="text-align: justify;">Wert für die Bedingung</h5>
+<p style="text-align: justify;">Hier wird der Vergleichswert für den Datenpunkt angegeben &#8211; im Beispiel wird der LOWBAT-Datenpunkt mit dem Wert &#8220;true&#8221; verglichen, was eine Batteriewarnung bedeutet.</p>
+<h5 style="text-align: justify;">Bild</h5>
+<p style="text-align: justify;">Ist die Vergleichsbedingung erfüllt, wird das hier angegebene Symbol angezeigt &#8211; im Beispiel eben ein Symbol, welches die leere Batterie darstellt.</p>
+<h5 style="text-align: justify;">Bildgröße in px</h5>
+<p style="text-align: justify;">Hier kann die Größe des anzuzeigenden Symbols festgelegt werden.</p>
+<h5 style="text-align: justify;">CSS Bildstyle</h5>
+<p style="text-align: justify;">Hier können separate CSS-Vorgaben für das Symbol eintragen werden.</p>
+<h5 style="text-align: justify;">Beschreibung</h5>
+<p style="text-align: justify;">Hier kann eine Beschreibung für die Aktion hinterlegt werden.</p>
+<h5 style="text-align: justify;">CSS Textstyle</h5>
+<p style="text-align: justify;">Hier können separate CSS-Vorgaben für den Text eingetragen werden.</p>
+<h5 style="text-align: justify;">Blinken</h5>
+<p style="text-align: justify;">Mit dieser Checkbox wird festgelegt, ob das Symbol blinkend angezeigt werden soll, oder nicht.</p>
+<h5 style="text-align: justify;">Horizontale</h5>
+<p style="text-align: justify;">Über diesen Schieberegler (oder Eingabefelder) kann horizontale Verschiebung des Symbols relativ zum Eckpunkt des eigentlichen Widgets definiert werden.</p>
+<h5 style="text-align: justify;">Vertikale</h5>
+<p style="text-align: justify;">Über diesen Schieberegler (oder Eingabefelder) kann horizontale Verschiebung des Symbols relativ zum Eckpunkt des eigentlichen Widgets definiert werden.</p>
+<h5 style="text-align: justify;">Nicht zeigen bei Editieren</h5>
+<p style="text-align: justify;">Ist diese Checkbox aktiv wird das Signalbild im Editor nicht angezeigt.<br>
+Als Beispiel hier die Heizungssteuerung eines Badezimmers.<img class="aligncenter size-full wp-image-6202" src="wp-content\uploads\signalbilder_demo_eric.png" alt="" width="245" height="178" srcset="wp-content\uploads\signalbilder_demo_eric.png 245w, wp-content\uploads\signalbilder_demo_eric-150x109.png 150w, wp-content\uploads\signalbilder_demo_eric-100x73.png 100w, wp-content\uploads\signalbilder_demo_eric-200x145.png 200w" sizes="(max-width: 245px) 100vw, 245px"><br>
+Das obere Batterie-Symbol gehört zum (Homematic) Raum-Thermostat und das untere zum (Homematic) Heizkörperventil. Sobald bei einem der beiden Geräte eine LOWBAT-Meldung kommt, wird an der jeweiligen Position das Batterie-Symbol angezeigt.</p>
+<h3 style="text-align: justify;"><span id="CSS">CSS</span></h3>
+<p style="text-align: justify;">In diesen Felder kann man die CSS Klassen definieren die für dieses Projekt oder für alle Projekte gelten werden. Um diese Option zu benutzen, muss man CSS kennen und können.</p>
+<ul class="task-list" style="text-align: justify;">
+<li>css-Parameter
+<ul class="task-list">
+<li><em>global</em>: CSS Anweisung gelten für alle Projekt.</li>
+<li><em>Projekt</em>: CSS Anweisung gelten nur für das aktuelle Projekt</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: justify;">Man braucht Globale CSS Klassen um z.B. die Ladeseite zu umstylen. Um dies durchzuführen sollte man wissen wie CSS funktioniert. Nähere Informationen<a href="https://wiki.selfhtml.org/wiki/CSS"> hier</a>.</p>
+<p style="text-align: justify;">Man sollte immer das Projekt CSS Feld benutzen damit sich diese Änderungen nicht auch in anderen Projekte auswirken.</p>
+<p style="text-align: justify;">Man kann damit sogar ein  eigenes jQuery Thema einfügen. (<a href="http://forum.iobroker.net/viewtopic.php?f=30&t=3549#p33050">hier</a>)</p>
+<p style="text-align: justify;">Die definierte CSS Klassen kann man dann für die Widgets im Feld &#8220;Generell / CSS Klasse&#8221; eintragen.</p>
+<p style="text-align: justify;">Z.B. wenn man im Feldd CSS/Projekt folgendes schreibt:</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa5441031c769586749" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Zeilennummern"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Unformatierte Code-Ansicht"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Zeilenumbruch umschalten"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Code aufklappen"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Code in einem neuen Fenster anzeigen"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+.myRedBox {
+     border: red solid 2px;
+     box-shadow: 0 0 10px 5px red;
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa5441031c769586749-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa5441031c769586749-2">2</div><div class="crayon-num" data-line="crayon-5cefa5441031c769586749-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa5441031c769586749-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa5441031c769586749-1"><span class="crayon-sy">.</span><span class="crayon-i">myRedBox</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa5441031c769586749-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-v">border</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-e">red </span><span class="crayon-i">solid</span><span class="crayon-h"> </span><span class="crayon-cn">2px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5cefa5441031c769586749-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-v">box</span><span class="crayon-o">-</span><span class="crayon-v">shadow</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-h"> </span><span class="crayon-cn">10px</span><span class="crayon-h"> </span><span class="crayon-cn">5px</span><span class="crayon-h"> </span><span class="crayon-v">red</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa5441031c769586749-4"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0009 seconds] -->
+<p></p>
+<p style="text-align: justify;">Wird ein roter Schatten um jedes Widget gemalt, wenn in dem Feld CSS Klasse &#8220;myRedBox&#8221; eingetragen wird.</p>
+<p style="text-align: justify;"><img class="alignnone wp-image-6217 size-full" src="wp-content\uploads\2017-01-18-22_45_54-Edit-vis.png" width="605" height="216" srcset="wp-content\uploads\2017-01-18-22_45_54-Edit-vis.png 605w, wp-content\uploads\2017-01-18-22_45_54-Edit-vis-150x54.png 150w, wp-content\uploads\2017-01-18-22_45_54-Edit-vis-300x107.png 300w, wp-content\uploads\2017-01-18-22_45_54-Edit-vis-100x36.png 100w, wp-content\uploads\2017-01-18-22_45_54-Edit-vis-200x71.png 200w, wp-content\uploads\2017-01-18-22_45_54-Edit-vis-450x161.png 450w, wp-content\uploads\2017-01-18-22_45_54-Edit-vis-600x214.png 600w" sizes="(max-width: 605px) 100vw, 605px"></p>
+<h3 style="text-align: justify;"></h3>
+<h3 style="text-align: justify;"><span id="Skripte">Skripte</span></h3>
+<p style="text-align: justify;">Hier kann das Standardverhalten von Widgets geändert werden. Bei dem Einsatz dieses Werkzeugs sollte der Anwender wirklich gut im CSS/Javascript/jQuery sein um es machen zu können. Dieses Skript wird zusammen mit dem View geladen.</p>
+<p style="text-align: justify;">z.B. beim Klick auf jedes Widget sollte ein Sound abgespielt werden:</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa5441032e635143976" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Zeilennummern"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Unformatierte Code-Ansicht"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Zeilenumbruch umschalten"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Code aufklappen"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Code in einem neuen Fenster anzeigen"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+setTimeout(function () {
+    $('.vis-widget').click(function () {
+       var audio = new Audio('http://download.iobroker.net/usedForVisDocumentationBell.mp3');
+       audio.play(); 
+    });
+}, 2000);</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa5441032e635143976-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa5441032e635143976-2">2</div><div class="crayon-num" data-line="crayon-5cefa5441032e635143976-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa5441032e635143976-4">4</div><div class="crayon-num" data-line="crayon-5cefa5441032e635143976-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa5441032e635143976-6">6</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa5441032e635143976-1"><span class="crayon-e">setTimeout</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa5441032e635143976-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">'.vis-widget'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5cefa5441032e635143976-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">audio</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">Audio</span><span class="crayon-sy">(</span><span class="crayon-s">'http://download.iobroker.net/usedForVisDocumentationBell.mp3'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa5441032e635143976-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-v">audio</span><span class="crayon-sy">.</span><span class="crayon-e">play</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5cefa5441032e635143976-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa5441032e635143976-6"><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">2000</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0012 seconds] -->
+<p></p>
+				
+<footer class="post-data">
+	
+	<div class="entry-meta">
+			</div><!-- .entry-meta -->
+	</footer><!-- .post-data -->
+			</div><!-- .post-entry -->
+	</article><!-- #post-## -->
+
+				
+			
+		</main><!-- #main -->
+
+			<div id="widgets" class="widget-area right-sidebar" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+		<div id="text-11" class="widget-wrapper widget_text">			<div class="textwidget"><div class="adaptermenueclass">
+<!-- Page-list plugin v.5.1 wordpress.org/plugins/page-list/ -->
+<ul class="page-list ">
+<li class="page_item page-item-2412 page_item_has_children current_page_ancestor current_page_parent"><a href="index-36.htm?page_id=2412&lang=de">Adapter Kategorie VIS</a>
+<ul class='children'>
+	<li class="page_item page-item-6846"><a href="index-290.htm?page_id=6846&lang=de">Adapter_vis_widgets</a></li>
+	<li class="page_item page-item-3467"><a href="index-297.htm?page_id=3467&lang=de">Icons addictive flavour png</a></li>
+	<li class="page_item page-item-3565"><a href="index-292.htm?page_id=3565&lang=de">Icons material png</a></li>
+	<li class="page_item page-item-3569"><a href="index-293.htm?page_id=3569&lang=de">Icons material svg</a></li>
+	<li class="page_item page-item-3573"><a href="index-295.htm?page_id=3573&lang=de">Icons mfd png</a></li>
+	<li class="page_item page-item-3571"><a href="index-294.htm?page_id=3571&lang=de">Icons mfd svg</a></li>
+	<li class="page_item page-item-3606"><a href="index-291.htm?page_id=3606&lang=de">Icons open icon library png</a></li>
+	<li class="page_item page-item-3607"><a href="index-289.htm?page_id=3607&lang=de">Icons ultimate png</a></li>
+	<li class="page_item page-item-2754 current_page_item"><a href="index-194.htm?page_id=2754&lang=de">ioBroker Visualisation</a></li>
+	<li class="page_item page-item-5026"><a href="index-37.htm?page_id=5026&lang=de">ioBroker.vis App</a></li>
+	<li class="page_item page-item-2765"><a href="index-296.htm?page_id=2765&lang=de">vis-timeandweather</a></li>
+	<li class="page_item page-item-1048"><a href="index-288.htm?page_id=1048&lang=de">Widgets Grundfunktionen</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2238 page_item_has_children"><a href="index-29.htm?page_id=2238&lang=de">Allgemein</a>
+<ul class='children'>
+	<li class="page_item page-item-5473 page_item_has_children"><a href="index-241.htm?page_id=5473&lang=de">Adapter Admin</a>
+	<ul class='children'>
+		<li class="page_item page-item-5379"><a href="index-235.htm?page_id=5379&lang=de">Admin &#8211; Reiter Adapter</a></li>
+		<li class="page_item page-item-5755"><a href="index-248.htm?page_id=5755&lang=de">Admin &#8211; Reiter Aufzählungen</a></li>
+		<li class="page_item page-item-5746"><a href="index-246.htm?page_id=5746&lang=de">Admin &#8211; Reiter Benutzer</a></li>
+		<li class="page_item page-item-5579"><a href="index-245.htm?page_id=5579&lang=de">Admin &#8211; Reiter Ereignisse</a></li>
+		<li class="page_item page-item-5549"><a href="index-247.htm?page_id=5549&lang=de">Admin &#8211; Reiter Gruppen</a></li>
+		<li class="page_item page-item-5590"><a href="index-249.htm?page_id=5590&lang=de">Admin &#8211; Reiter Hosts</a></li>
+		<li class="page_item page-item-5474"><a href="index-242.htm?page_id=5474&lang=de">Admin &#8211; Reiter Instanzen</a></li>
+		<li class="page_item page-item-5604"><a href="index-250.htm?page_id=5604&lang=de">Admin &#8211; Reiter Log</a></li>
+		<li class="page_item page-item-5495"><a href="index-243.htm?page_id=5495&lang=de">Admin &#8211; Reiter Objekte</a></li>
+		<li class="page_item page-item-5526"><a href="index-244.htm?page_id=5526&lang=de">Admin &#8211; Reiter Zustände</a></li>
+		<li class="page_item page-item-6227"><a href="index-234.htm?page_id=6227&lang=de">Admin &#8211; Systemeinstellungen</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-3362"><a href="index-251.htm?page_id=3362&lang=de">Adapter HomeKit</a></li>
+	<li class="page_item page-item-4654"><a href="index-252.htm?page_id=4654&lang=de">Adapter Tankerkönig / Spritpreis</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2407 page_item_has_children"><a href="index-30.htm?page_id=2407&lang=de">Aufbewahrung</a>
+<ul class='children'>
+	<li class="page_item page-item-144"><a href="index-191.htm?page_id=144&lang=de">Adapter History</a></li>
+	<li class="page_item page-item-3608"><a href="index-253.htm?page_id=3608&lang=de">Adapter InfluxDB</a></li>
+	<li class="page_item page-item-3772"><a href="index-254.htm?page_id=3772&lang=de">Adapter SQL</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2405 page_item_has_children"><a href="index-32.htm?page_id=2405&lang=de">Hardware</a>
+<ul class='children'>
+	<li class="page_item page-item-2818"><a href="index-267.htm?page_id=2818&lang=de">ArtNet</a></li>
+	<li class="page_item page-item-115"><a href="index-261.htm?page_id=115&lang=de">B-Control Energy Manager</a></li>
+	<li class="page_item page-item-969"><a href="index-265.htm?page_id=969&lang=de">CUL</a></li>
+	<li class="page_item page-item-2847"><a href="index-260.htm?page_id=2847&lang=de">Fritzbox</a></li>
+	<li class="page_item page-item-2825"><a href="index-193.htm?page_id=2825&lang=de">HomeMatic ReGaHSS</a></li>
+	<li class="page_item page-item-2829"><a href="index-192.htm?page_id=2829&lang=de">HomeMatic RPC</a></li>
+	<li class="page_item page-item-150"><a href="index-262.htm?page_id=150&lang=de">Homematic-Manager (hmm)</a></li>
+	<li class="page_item page-item-4933"><a href="index-259.htm?page_id=4933&lang=de">Homepilot</a></li>
+	<li class="page_item page-item-158"><a href="index-264.htm?page_id=158&lang=de">KNX</a></li>
+	<li class="page_item page-item-2007"><a href="index-266.htm?page_id=2007&lang=de">Logitech Harmony</a></li>
+	<li class="page_item page-item-3781"><a href="index-256.htm?page_id=3781&lang=de">MegaD-328 (deutsch)</a></li>
+	<li class="page_item page-item-3784"><a href="index-257.htm?page_id=3784&lang=de">Miele</a></li>
+	<li class="page_item page-item-3788"><a href="index-258.htm?page_id=3788&lang=de">Modbus</a></li>
+	<li class="page_item page-item-152"><a href="index-263.htm?page_id=152&lang=de">Philips Hue</a></li>
+	<li class="page_item page-item-5416"><a href="index-269.htm?page_id=5416&lang=de">RFLink</a></li>
+	<li class="page_item page-item-6876"><a href="index-255.htm?page_id=6876&lang=de">Siemens SIMATIC S7</a></li>
+	<li class="page_item page-item-4250"><a href="index-268.htm?page_id=4250&lang=de">Wolf</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2417 page_item_has_children"><a href="index-33.htm?page_id=2417&lang=de">Kommunikation</a>
+<ul class='children'>
+	<li class="page_item page-item-172"><a href="index-271.htm?page_id=172&lang=de">Adapter Ping</a></li>
+	<li class="page_item page-item-174"><a href="index-273.htm?page_id=174&lang=de">Adapter Pushover</a></li>
+	<li class="page_item page-item-5285"><a href="index-272.htm?page_id=5285&lang=de">Adapter Pushsafer</a></li>
+	<li class="page_item page-item-180"><a href="index-274.htm?page_id=180&lang=de">Adapter socketio</a></li>
+	<li class="page_item page-item-5945"><a href="index-275.htm?page_id=5945&lang=de">Adapter Web</a></li>
+	<li class="page_item page-item-134"><a href="index-270.htm?page_id=134&lang=de">eMail</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2419 page_item_has_children"><a href="index-34.htm?page_id=2419&lang=de">Medien</a>
+<ul class='children'>
+	<li class="page_item page-item-182"><a href="index-277.htm?page_id=182&lang=de">Adapter SONOS</a></li>
+	<li class="page_item page-item-3026"><a href="index-278.htm?page_id=3026&lang=de">chromecast</a></li>
+	<li class="page_item page-item-178"><a href="index-276.htm?page_id=178&lang=de">Sayit</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2415 page_item_has_children"><a href="index-35.htm?page_id=2415&lang=de">Skripte und Logik</a>
+<ul class='children'>
+	<li class="page_item page-item-6818"><a href="index-282.htm?page_id=6818&lang=de">Javascript Engine</a></li>
+	<li class="page_item page-item-5319"><a href="index-279.htm?page_id=5319&lang=de">Javascript Script mit Blockly</a></li>
+	<li class="page_item page-item-4284"><a href="index-280.htm?page_id=4284&lang=de">node-red</a></li>
+	<li class="page_item page-item-1950"><a href="index-281.htm?page_id=1950&lang=de">Szenen-Adapter</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2403 page_item_has_children"><a href="index-38.htm?page_id=2403&lang=de">Visualisierung</a>
+<ul class='children'>
+	<li class="page_item page-item-198"><a href="index-195.htm?page_id=198&lang=de">Adapter Flot</a></li>
+	<li class="page_item page-item-3786"><a href="index-284.htm?page_id=3786&lang=de">Adapter Mobile</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2421 page_item_has_children"><a href="index-39.htm?page_id=2421&lang=de">Wartung</a>
+<ul class='children'>
+	<li class="page_item page-item-3349"><a href="index-283.htm?page_id=3349&lang=de">Adapter Geofency</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2401 page_item_has_children"><a href="index-40.htm?page_id=2401&lang=de">Wetter</a>
+<ul class='children'>
+	<li class="page_item page-item-4690"><a href="index-287.htm?page_id=4690&lang=de">Adapter Solarwetter</a></li>
+	<li class="page_item page-item-2760"><a href="index-286.htm?page_id=2760&lang=de">DWD (Deutscher Wetter Dienst)</a></li>
+	<li class="page_item page-item-194"><a href="index-285.htm?page_id=194&lang=de">yr</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2410 page_item_has_children"><a href="index-41.htm?page_id=2410&lang=de">Zeitplanung</a>
+<ul class='children'>
+	<li class="page_item page-item-3822"><a href="index-299.htm?page_id=3822&lang=de">Feiertage</a></li>
+	<li class="page_item page-item-154"><a href="index-298.htm?page_id=154&lang=de">iCal</a></li>
+	<li class="page_item page-item-3833"><a href="index-300.htm?page_id=3833&lang=de">tvspielfilm</a></li>
+</ul>
+</li>
+
+</ul></div></div>
+		</div>
+			</div><!-- end of #widgets -->
+	</div><!-- #content -->
+
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+
+<footer id="footer" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div id="footer-wrapper">
+
+		<div id="footer-widgets-container">
+					</div><!-- #footer-widgets-container-->
+
+		<div id="menu-social-container">
+			<nav id="footer-menu-container">
+				<ul id="menu-2016_seitenfuss_de" class="footer-menu"><li id="menu-item-2210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2210"><a href="index-61.htm?page_id=2208&#038;lang=de">Kontakt</a></li>
+<li id="menu-item-2227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2227"><a href="index-62.htm?page_id=2223&#038;lang=de">Impressum</a></li>
+<li id="menu-item-2307" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2307"><a href="index-63.htm?page_id=2305&#038;lang=de">Datenschutzerklärung</a></li>
+<li id="menu-item-2314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2314"><a href="index-64.htm?page_id=2303&#038;lang=de">Sitemap</a></li>
+<li id="menu-item-2486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2486"><a href="index-65.htm?page_id=2484&#038;lang=de">Danke</a></li>
+</ul>			</nav><!-- #footer-menu -->
+			<div id="social-icons-container">
+				<ul class="social-icons"></ul><!-- .social-icons -->			</div><!-- #social-icons-container-->
+		</div><!-- #menu-social-container -->
+
+		
+		<div id="footer-base">
+			<div class="copyright">
+				&copy; 2019 <a href="index.htm?lang=de" title="ioBroker">ioBroker</a>			</div><!-- .copyright -->
+
+			<div class="powered">
+				<a href="http://cyberchimps.com/responsive-II/">Reaktionsschnelle II</a> angetrieben <a href="http://wordpress.org/">WordPress</a>			</div><!-- end .powered -->
+
+			<div class="scroll-top">
+				<a href="#scroll-top" title="Nach oben scrollen">↑</a>
+			</div><!-- .scroll-top -->
+		</div><!-- #footer-base -->
+	</div><!-- #footer-wrapper -->
+	</footer><!-- #footer -->
+<div id="cookie-law-info-bar"><span>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.<a data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button" style="display:inline-block; ">Akzeptieren</a> <a href='..\index-1.htm?page_id=2305&#038;lang=de' id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link" style="display:inline-block;">mehr Infos</a></span></div><div id="cookie-law-info-again" style="display:none;"><span id="cookie_hdr_showagain">Privacy & Cookies Policy</span></div><div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  cli_cookiebar_settings='{"animate_speed_hide":"500","animate_speed_show":"500","background":"#fff","border":"#444","border_on":false,"button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"button_2_hidebar":true,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":true,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":false,"show_once":"10000","logging_on":false,"as_popup":false,"popup_overlay":true,"bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"}';
+  /* ]]> */
+</script><div class="scroll-back-to-top-wrapper">
+	<span class="scroll-back-to-top-inner">
+					<i class="fa fa-2x fa-arrow-circle-up"></i>
+			</span>
+</div><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Bitte best\u00e4tige, dass du keine Maschine bist."}}};
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Bitte best\u00e4tige, dass du keine Maschine bist."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\contact-form-7\includes\js\scripts.js?ver=4.9.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\scroll-back-to-top\assets\js\scroll-back-to-top.js'></script>
+<script type='text/javascript' src='wp-content\plugins\table-of-contents-plus\front.min.js?ver=1509'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\js\responsive-scripts.min.js?ver=1.2.5'></script>
+<script type='text/javascript' src='wp-includes\js\wp-embed.min.js?ver=4.7.5'></script>
+</body>
+</html>

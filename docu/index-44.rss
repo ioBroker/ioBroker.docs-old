@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Kommentare zu: Homematic All-In-One Image für  Orange Pi+2e mit piVCCU verfügbar</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;p=7761&#038;lang=de" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu/?p=7761&#038;lang=de</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Mon, 07 Jan 2019 20:35:17 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>Von: Homoran</title>
+		<link>http://www.iobroker.net/docu/?p=7761&#038;lang=de#comment-445</link>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+		<pubDate>Fri, 06 Jul 2018 09:31:45 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7761#comment-445</guid>
+		<description><![CDATA[Bitte im Forum besprechen, mit Foto von deiner Platine - und ja, es ist mein OPi+ 2e]]></description>
+		<content:encoded><![CDATA[<p>Bitte im Forum besprechen, mit Foto von deiner Platine &#8211; und ja, es ist mein OPi+ 2e</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: Sprite01</title>
+		<link>http://www.iobroker.net/docu/?p=7761&#038;lang=de#comment-444</link>
+		<dc:creator><![CDATA[Sprite01]]></dc:creator>
+		<pubDate>Fri, 06 Jul 2018 09:04:13 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7761#comment-444</guid>
+		<description><![CDATA[Ist das in der ReadMe angezeigte Bild wirklich ein Orange Pi+2e ?
+Mein Layout sieht anders als das im Bild dargestellte aus,
+von daher bin ich mir unsicher ob die dargestellte Bestückungsvariante des Funkmoduls 
+nun auch für das Orange Pi+2e passt.]]></description>
+		<content:encoded><![CDATA[<p>Ist das in der ReadMe angezeigte Bild wirklich ein Orange Pi+2e ?<br />
+Mein Layout sieht anders als das im Bild dargestellte aus,<br />
+von daher bin ich mir unsicher ob die dargestellte Bestückungsvariante des Funkmoduls<br />
+nun auch für das Orange Pi+2e passt.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Kommentare zu: Aktuelles Image für Raspberry 2, 3 und 3B+ verfügbar</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;p=8045&#038;lang=de" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu/?p=8045&#038;lang=de</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Mon, 07 Jan 2019 20:35:17 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>Von: Dominic</title>
+		<link>http://www.iobroker.net/docu/?p=8045&#038;lang=de#comment-421</link>
+		<dc:creator><![CDATA[Dominic]]></dc:creator>
+		<pubDate>Thu, 03 May 2018 19:42:51 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8045#comment-421</guid>
+		<description><![CDATA[OK, das erklärts natürlich :)...
+Danke für die Info...]]></description>
+		<content:encoded><![CDATA[<p>OK, das erklärts natürlich :)&#8230;<br />
+Danke für die Info&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: Homoran</title>
+		<link>http://www.iobroker.net/docu/?p=8045&#038;lang=de#comment-420</link>
+		<dc:creator><![CDATA[Homoran]]></dc:creator>
+		<pubDate>Mon, 30 Apr 2018 13:35:05 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8045#comment-420</guid>
+		<description><![CDATA[Das Swapping wurde nach kontroverser Diskussion im Forum nicht abgeschaltet, sondern dem User überlassen dies zu tun.]]></description>
+		<content:encoded><![CDATA[<p>Das Swapping wurde nach kontroverser Diskussion im Forum nicht abgeschaltet, sondern dem User überlassen dies zu tun.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: Dominic</title>
+		<link>http://www.iobroker.net/docu/?p=8045&#038;lang=de#comment-419</link>
+		<dc:creator><![CDATA[Dominic]]></dc:creator>
+		<pubDate>Mon, 30 Apr 2018 12:00:09 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8045#comment-419</guid>
+		<description><![CDATA[Freut mich, wieder ein Update zu sehen...
+Werde dann mal im Urlaub alles neu aufsetzen...
+Das einzige was mir auffällt, das Swapping wurde noch nicht überarbeitet, oder?
+Sollte ja in zukünftigen Images voreingestellt sein...
+Aber auch von mir vielen Dank für die Arbeit :)...]]></description>
+		<content:encoded><![CDATA[<p>Freut mich, wieder ein Update zu sehen&#8230;<br />
+Werde dann mal im Urlaub alles neu aufsetzen&#8230;<br />
+Das einzige was mir auffällt, das Swapping wurde noch nicht überarbeitet, oder?<br />
+Sollte ja in zukünftigen Images voreingestellt sein&#8230;<br />
+Aber auch von mir vielen Dank für die Arbeit :)&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>Von: Joerg Zdarsky</title>
+		<link>http://www.iobroker.net/docu/?p=8045&#038;lang=de#comment-416</link>
+		<dc:creator><![CDATA[Joerg Zdarsky]]></dc:creator>
+		<pubDate>Sun, 15 Apr 2018 10:14:28 +0000</pubDate>
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8045#comment-416</guid>
+		<description><![CDATA[Danke für die Mühe und die Updates der Images!]]></description>
+		<content:encoded><![CDATA[<p>Danke für die Mühe und die Updates der Images!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

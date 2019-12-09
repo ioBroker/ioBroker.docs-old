@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="de-DE">
+<![endif]-->
+<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="de-DE">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="de-DE"><!--<![endif]-->
+	<head>
+				<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"> 
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.iobroker.net/docu/xmlrpc.php">
+		
+		<title>Admin &#8211; Systemeinstellungen &#8211; ioBroker</title>
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Feed" href="index.rss?feed=rss2&#038;lang=de">
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Kommentar-Feed" href="index-1.rss?feed=comments-rss2&#038;lang=de">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.iobroker.net\/docu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css' href='wp-content\plugins\crayon-syntax-highlighter\css\min\crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='crayon-theme-classic-css' href='wp-content\plugins\crayon-syntax-highlighter\themes\classic\classic.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='crayon-font-monaco-css' href='wp-content\plugins\crayon-syntax-highlighter\fonts\monaco.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content\plugins\contact-form-7\includes\css\styles.css?ver=4.9.2' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-public.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-gdpr-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-gdpr.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='dedo-css-css' href='wp-content\plugins\delightful-downloads\assets\css\delightful-downloads.min.css?ver=1.6.6' type='text/css' media='all'>
+<link rel='stylesheet' id='mbpro-font-awesome-css' href='wp-content\plugins\maxbuttons\assets\libraries\font-awesome\css\font-awesome.min.css?ver=6.28' type='text/css' media='all'>
+<link rel='stylesheet' id='page-list-style-css' href='wp-content\plugins\page-list\css\page-list.css?ver=5.1' type='text/css' media='all'>
+<link rel='stylesheet' id='pc_google_analytics-frontend-css' href='http://www.iobroker.net/docu/wp-content/plugins/pc-google-analytics/assets/css/frontend.css?ver=1.0.0' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-css' href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' type='text/css' media='screen'>
+<link rel='stylesheet' id='toc-screen-css' href='wp-content\plugins\table-of-contents-plus\screen.min.css?ver=1509' type='text/css' media='all'>
+<link rel='stylesheet' id='parent-style-css' href='wp-content\themes\responsive-mobile\style.css?ver=4.7.5' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-style-css' href='wp-content\themes\responsive-mobile\css\style.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-child-style-css' href='wp-content\themes\responsive-mobile_child\style.css?ver=1.0' type='text/css' media='all'>
+<link rel='stylesheet' id='recent-posts-widget-with-thumbnails-public-style-css' href='wp-content\plugins\recent-posts-widget-with-thumbnails\public.css?ver=6.5.0' type='text/css' media='all'>
+<link rel='stylesheet' id='cleverness_todo_list_frontend-css' href='wp-content\plugins\cleverness-to-do-list\css\cleverness-to-do-list-frontend.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='jquery.ui.theme-css' href='wp-content\plugins\cleverness-to-do-list\css\jquery-ui-fresh.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='tablepress-default-css' href='wp-content\tablepress-combined.min.css?ver=128' type='text/css' media='all'>
+<link rel='stylesheet' id='bootstrap-css' href='wp-content\themes\responsive-mobile\libraries\bootstrap\css\bootstrap.min.css?ver=4.7.5' type='text/css' media='all'>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Dr\u00fccken Sie %s zum Kopieren, %s zum Einf\u00fcgen","minimize":"Klicken um Code aufzuklappen"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\crayon-syntax-highlighter\js\min\crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[]};
+var log_object = {"ajax_url":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\cookie-law-info\public\js\cookie-law-info-public.js?ver=1.7.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mb_ajax = {"ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\maxbuttons\js\min\front.js?ver=6.28'></script>
+<script type='text/javascript' src='wp-content\plugins\pc-google-analytics\assets\js\frontend.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\libraries\bootstrap\js\bootstrap.min.js?ver=4.7.5'></script>
+<link rel='https://api.w.org/' href='index.json?rest_route=/'>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.xml?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes\wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.7.5">
+<link rel="canonical" href="index-234.htm?page_id=6227&#038;lang=de">
+<link rel='shortlink' href='http://www.iobroker.net/docu/?p=6227'>
+<link rel="alternate" type="application/json+oembed" href="index-210.json?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D6227%26lang%3Dde">
+<link rel="alternate" type="text/xml+oembed" href="index-209.xml?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D6227%26lang%3Dde&#038;format=xml">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-86900958-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+
+<style>
+.scroll-back-to-top-wrapper {
+    position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #777777;
+	color: #eeeeee;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-back-to-top-wrapper:hover {
+	background-color: #888888;
+  color: #eeeeee;
+}
+.scroll-back-to-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-back-to-top-wrapper i.fa {
+	line-height: inherit;
+}
+.scroll-back-to-top-wrapper .fa-lg {
+	vertical-align: 0;
+}
+</style><!-- Analytics by WP-Statistics v12.6 - https://wp-statistics.com/ -->
+		<script type="text/javascript">
+			var cli_flush_cache=1;
+		</script>
+				<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+.site-content .content-area{
+	/*background: #6592c9;*/
+}		</style>
+	<style type="text/css">
+.paypal-donations { text-align: center !important }
+</style>
+	</head>
+
+<body class="page-template-default page page-id-6227 page-child parent-pageid-5473 group-blog default" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="container" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Springe zum Inhalt</a>
+	<a class="skip-link screen-reader-text" href="#main-navigation">Zum Hauptmenü springen</a>
+	<div id="top-menu-container" class="container-full-width">
+		<nav id="top-menu" class="container" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+			<ul id="menu-2016_top_menue" class="top-menu"><li id="menu-item-2203-de" class="lang-item lang-item-4 lang-item-de lang-item-first current-lang menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-de"><a href="index-234.htm?page_id=6227&#038;lang=de" hreflang="de-DE" lang="de-DE">Deutsch</a></li>
+<li id="menu-item-2203-en" class="lang-item lang-item-7 lang-item-en no-translation menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-en"><a href="index-1.htm?lang=en" hreflang="en-GB" lang="en-GB">English</a></li>
+<li id="menu-item-2203-ru" class="lang-item lang-item-20 lang-item-ru no-translation menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-ru"><a href="index-2.htm?lang=ru" hreflang="ru-RU" lang="ru-RU">Русский</a></li>
+</ul>		</nav>
+	</div><!-- top menu container -->
+        <div id="header_section">
+	<header id="header" class="container-full-width site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+				<div class="container">
+			<div class="header-row">
+				<div id="site-branding">
+							<div id="logo">
+			<a href="index.htm?lang=de" rel="home" itemprop="url" title="ioBroker">
+				<img src="wp-content\uploads\ioBroker_logo_lang-e1456684383484.png" alt="ioBroker" itemprop="image">
+			</a>
+		</div>
+					</div>
+				<div id="secondary-header">
+					
+	<div id="top-widget" class="top-widget" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+			<div id="search-2" class="responsive-mobile-top-widget widget_search"><form role="search" method="get" class="search-form" action="http://www.iobroker.net/docu/">
+				<label>
+					<span class="screen-reader-text">Suche nach:</span>
+					<input type="search" class="search-field" placeholder="Suche&#160;&hellip;" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Suche">
+			<input type="hidden" name="lang" value="de"></form></div>
+			</div><!-- end of #top-widget -->
+				</div>
+			</div>
+		</div>
+
+			</header><!-- #header -->
+
+	<div id="main-menu-container" class="container-full-width">
+		<div id="main-menu" class="container">
+			<nav id="main-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<div id="mobile-current-item">Menü</div>
+				<button id="mobile-nav-button"><span class="accessibile-label">Mobile-Menü ein-/ausschalten</span></button>
+				<div class="main-nav"><ul id="menu-2016_kopfzeile_de" class="menu"><li id="menu-item-2204" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2204"><a href="..\index.htm">Startseite</a></li>
+<li id="menu-item-7199" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7199"><a href="http://www.iobrokers.de/">Shop</a></li>
+<li id="menu-item-2278" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2278"><a href="index-3.htm?page_id=2258&#038;lang=de">Aktuelles</a></li>
+<li id="menu-item-2626" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2626"><a href="index-4.htm?page_id=2375&#038;lang=de">Einleitung</a>
+<ul class="sub-menu">
+	<li id="menu-item-6381" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6381"><a href="index-4.htm?page_id=2375&#038;lang=de">für alle</a></li>
+	<li id="menu-item-6380" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6380"><a href="index-5.htm?page_id=6317&#038;lang=de">für Einsteiger</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6451" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6451"><a href="index-6.htm?page_id=6335&#038;lang=de">Server aufsetzen</a></li>
+		<li id="menu-item-6450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6450"><a href="index-7.htm?page_id=5063&#038;lang=de">erste Adapter</a></li>
+		<li id="menu-item-6449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6449"><a href="index-8.htm?page_id=6365&#038;lang=de">erste Visualisierung</a></li>
+		<li id="menu-item-6826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6826"><a href="index-9.htm?page_id=6548&#038;lang=de">Daten loggen</a></li>
+		<li id="menu-item-6825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6825"><a href="index-10.htm?page_id=6562&#038;lang=de">erster Chart</a></li>
+	</ul>
+</li>
+	<li id="menu-item-2289" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2289"><a href="index-11.htm?page_id=2281&#038;lang=de">für Entwickler</a></li>
+</ul>
+</li>
+<li id="menu-item-2290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2290"><a href="index-12.htm?page_id=2279&#038;lang=de">Installation / Start</a>
+<ul class="sub-menu">
+	<li id="menu-item-2395" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2395"><a href="index-13.htm?page_id=2387&#038;lang=de">Videos</a></li>
+	<li id="menu-item-3336" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3336"><a href="index-14.htm?page_id=3334&#038;lang=de">Plattformen / Betriebssystem</a>
+	<ul class="sub-menu">
+		<li id="menu-item-8383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8383"><a href="index-15.htm?page_id=8323&#038;lang=de">Linux Schnellstart (auch für Raspberry Pi 2/3)</a></li>
+		<li id="menu-item-8382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8382"><a href="index-16.htm?page_id=8327&#038;lang=de">Schnellstart für Raspberry Pi 1</a></li>
+		<li id="menu-item-8429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8429"><a href="index-17.htm?page_id=8390&#038;lang=de">Windows</a></li>
+		<li id="menu-item-2300" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2300"><a href="index-18.htm?page_id=2293&#038;lang=de">OS X</a></li>
+		<li id="menu-item-3337" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3337"><a href="index-19.htm?page_id=2563&#038;lang=de">Downloads für die Installation</a></li>
+		<li id="menu-item-5362" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5362"><a href="index-20.htm?page_id=5358&#038;lang=de">Einrichtung und Installation von ioBroker in VirtualBox</a></li>
+		<li id="menu-item-6767" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6767"><a href="index-21.htm?page_id=6764&#038;lang=de">ioBroker mit Cloud auf QNAP-453a</a></li>
+	</ul>
+</li>
+	<li id="menu-item-2358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2358"><a href="index-22.htm?page_id=2354&#038;lang=de">Erster Start von ioBroker</a></li>
+	<li id="menu-item-8530" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8530"><a href="index-23.htm?page_id=8511&#038;lang=de">Grundlagen zur Verwendung von Adaptern</a></li>
+	<li id="menu-item-3070" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3070"><a href="index-24.htm?page_id=3068&#038;lang=de">Multihost Modus</a></li>
+	<li id="menu-item-5890" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5890"><a href="index-25.htm?page_id=5859&#038;lang=de">Alexa mit ioBroker (Schnellstart)</a></li>
+	<li id="menu-item-3964" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3964"><a href="index-26.htm?page_id=3928&#038;lang=de">ioBroker läuft nicht mehr</a></li>
+	<li id="menu-item-5532" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5532"><a href="index-27.htm?page_id=5510&#038;lang=de">Wie das Packet serialport oder ähnlich zu installieren</a></li>
+</ul>
+</li>
+<li id="menu-item-2248" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-2248"><a href="index-28.htm?page_id=2236&#038;lang=de">Adapter</a>
+<ul class="sub-menu">
+	<li id="menu-item-2249" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-2249"><a href="index-29.htm?page_id=2238&#038;lang=de">Allgemein</a></li>
+	<li id="menu-item-2429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2429"><a href="index-30.htm?page_id=2407&#038;lang=de">Aufbewahrung</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6988"><a href="index-31.htm?page_id=5197&#038;lang=de">Howto – MariaDB auf der Synology DiskStation als Datenbank für Flot</a></li>
+	</ul>
+</li>
+	<li id="menu-item-2430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2430"><a href="index-32.htm?page_id=2405&#038;lang=de">Hardware</a></li>
+	<li id="menu-item-2425" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2425"><a href="index-33.htm?page_id=2417&#038;lang=de">Kommunikation</a></li>
+	<li id="menu-item-2424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2424"><a href="index-34.htm?page_id=2419&#038;lang=de">Medien</a></li>
+	<li id="menu-item-2426" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2426"><a href="index-35.htm?page_id=2415&#038;lang=de">Skripte und Logik</a></li>
+	<li id="menu-item-2427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2427"><a href="index-36.htm?page_id=2412&#038;lang=de">ioBroker.vis</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5035" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5035"><a href="index-37.htm?page_id=5026&#038;lang=de">ioBroker.vis App</a></li>
+	</ul>
+</li>
+	<li id="menu-item-2431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2431"><a href="index-38.htm?page_id=2403&#038;lang=de">Visualisierung</a></li>
+	<li id="menu-item-2423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2423"><a href="index-39.htm?page_id=2421&#038;lang=de">Wartung</a></li>
+	<li id="menu-item-2432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2432"><a href="index-40.htm?page_id=2401&#038;lang=de">Wetter</a></li>
+	<li id="menu-item-2428" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2428"><a href="index-41.htm?page_id=2410&#038;lang=de">Zeitplanung</a></li>
+</ul>
+</li>
+<li id="menu-item-2805" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2805"><a href="index-42.htm?page_id=2786&#038;lang=de">Scripte</a>
+<ul class="sub-menu">
+	<li id="menu-item-5401" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5401"><a href="index-43.htm?page_id=5385&#038;lang=de">Einführung Programmieren mit Javascript</a></li>
+	<li id="menu-item-3757" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3757"><a href="index-44.htm?page_id=3526&#038;lang=de">Counter</a></li>
+	<li id="menu-item-3758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3758"><a href="index-45.htm?page_id=3585&#038;lang=de">Heizung / Lüftung</a></li>
+	<li id="menu-item-3759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3759"><a href="index-46.htm?page_id=3587&#038;lang=de">Info / Status</a></li>
+	<li id="menu-item-3755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3755"><a href="index-47.htm?page_id=3589&#038;lang=de">Mediensteuerung</a></li>
+	<li id="menu-item-3754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3754"><a href="index-48.htm?page_id=3593&#038;lang=de">Steuern / Regeln</a></li>
+	<li id="menu-item-3756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3756"><a href="index-49.htm?page_id=3591&#038;lang=de">Zeitsteuerung</a></li>
+</ul>
+</li>
+<li id="menu-item-2288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2288"><a href="index-50.htm?page_id=2283&#038;lang=de">Downloads</a>
+<ul class="sub-menu">
+	<li id="menu-item-2806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2806"><a href="index-19.htm?page_id=2563&#038;lang=de">Downloads für die Installation</a></li>
+	<li id="menu-item-5146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5146"><a href="index-42.htm?page_id=2786&#038;lang=de">Scripte</a></li>
+</ul>
+</li>
+<li id="menu-item-2287" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2287"><a href="index-51.htm?page_id=2285&#038;lang=de">Forum / Support</a>
+<ul class="sub-menu">
+	<li id="menu-item-2379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2379"><a href="http://forum.iobroker.net">Forum</a></li>
+	<li id="menu-item-7324" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7324"><a href="index-52.htm?page_id=7322&#038;lang=de">Glossar</a></li>
+	<li id="menu-item-2396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2396"><a href="index-53.htm?page_id=2380&#038;lang=de">FAQ</a></li>
+	<li id="menu-item-8440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8440"><a href="index-54.htm?page_id=8438&#038;lang=de">Troubleshooting (in Arbeit)</a></li>
+	<li id="menu-item-2394" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2394"><a href="index-55.htm?page_id=2392&#038;lang=de">Tipps und Tricks</a></li>
+</ul>
+</li>
+</ul></div>			</nav><!-- #site-navigation -->
+		</div><!-- #main-menu -->
+	</div><!-- #main-menu-container -->
+	<div id="sub-menu-container" class="container-full-width">
+		<div id="sub-menu" class="container">
+			<nav id="sub-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						</nav><!-- #site-navigation -->
+		</div><!-- #sub-menu -->
+	</div><!-- #sub-menu-container -->
+        </div>
+	<div id="wrapper" class="site-content container-full-width">
+
+	<div id="content" class="content-area">
+			<main id="main" class="site-main" role="main">
+
+				<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#"><span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index.htm?lang=de">Home</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-163.htm?page_id=2364&lang=de">Deutsch</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-28.htm?page_id=2236&lang=de">Adapter</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-29.htm?page_id=2238&lang=de">Allgemein</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-241.htm?page_id=5473&lang=de">Adapter Admin</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb-current">Admin &#8211; Systemeinstellungen</span></div>
+				
+					
+<article id="post-6227" class="post-6227 page type-page status-publish hentry">
+		
+	
+<header class="entry-header">
+	
+	</header><!-- .entry-header -->
+
+	<div class="post-entry">
+		<h1 style="text-align: justify;"><span id="Die_Systemeinstellungen">Die Systemeinstellungen</span></h1>
+<p style="text-align: justify;">Hier werden grundlegende Parameter für ioBroker eingestellt.</p>
+<p style="text-align: justify;"><div id="toc_container" class="no_bullets"><ul class="toc_list"><li><a href="#Die_Systemeinstellungen"><span class="toc_number toc_depth_1">1</span> Die Systemeinstellungen</a><ul><li><a href="#Haupteinstellungen"><span class="toc_number toc_depth_2">1.1</span> Haupteinstellungen</a><ul><li><a href="#Systemsprache"><span class="toc_number toc_depth_3">1.1.1</span> Systemsprache</a></li><li><a href="#Einheit_Temperatur"><span class="toc_number toc_depth_3">1.1.2</span> Einheit Temperatur</a></li><li><a href="#Waehrung"><span class="toc_number toc_depth_3">1.1.3</span> Währung</a></li><li><a href="#Datumsformat"><span class="toc_number toc_depth_3">1.1.4</span> Datumsformat</a></li><li><a href="#Trennzeichen"><span class="toc_number toc_depth_3">1.1.5</span> Trennzeichen</a></li><li><a href="#Default_Historyinstanz"><span class="toc_number toc_depth_3">1.1.6</span> Default Historyinstanz</a></li><li><a href="#Aktiver_Verwahrungsort"><span class="toc_number toc_depth_3">1.1.7</span> Aktiver Verwahrungsort</a></li></ul></li><li><a href="#Verwahrungsorte_oder_Repositories"><span class="toc_number toc_depth_2">1.2</span> Verwahrungsorte oder Repositories</a></li><li><a href="#Zertifikate"><span class="toc_number toc_depth_2">1.3</span> Zertifikate</a></li><li><a href="#Let8217s_Encrypt"><span class="toc_number toc_depth_2">1.4</span> Let&#8217;s Encrypt</a></li><li><a href="#Statistik"><span class="toc_number toc_depth_2">1.5</span> Statistik</a></li></ul></li></ul></div>
+
+<p style="text-align: justify;"><img class="aligncenter wp-image-3212" src="wp-content\uploads\Systemeinstellungen.jpg" alt="Admin Systemeinstellungen" width="600" height="357" srcset="wp-content\uploads\Systemeinstellungen.jpg 811w, wp-content\uploads\Systemeinstellungen-150x89.jpg 150w, wp-content\uploads\Systemeinstellungen-300x178.jpg 300w, wp-content\uploads\Systemeinstellungen-100x59.jpg 100w, wp-content\uploads\Systemeinstellungen-200x119.jpg 200w, wp-content\uploads\Systemeinstellungen-450x267.jpg 450w, wp-content\uploads\Systemeinstellungen-600x357.jpg 600w" sizes="(max-width: 600px) 100vw, 600px"></p>
+<h2 style="text-align: justify;"><span id="Haupteinstellungen">Haupteinstellungen</span></h2>
+<h3 style="padding-left: 30px; text-align: justify;"><span id="Systemsprache">Systemsprache</span></h3>
+<p style="padding-left: 30px; text-align: justify;">damit kann man zwischen Systemsprachen wählen: Deutsch, Englisch, Russisch</p>
+<h3 style="padding-left: 30px; text-align: justify;"><span id="Einheit_Temperatur">Einheit Temperatur</span></h3>
+<p style="padding-left: 30px; text-align: justify;">dieses Wert wird von manchen Adaptern verwendet. Möglich ist °C oder °F.</p>
+<h3 style="padding-left: 30px; text-align: justify;"><span id="Waehrung">Währung</span></h3>
+<p style="padding-left: 30px; text-align: justify;">Momentan benutzt das noch kein Adapter</p>
+<h3 style="padding-left: 30px; text-align: justify;"><span id="Datumsformat">Datumsformat</span></h3>
+<p style="padding-left: 30px; text-align: justify;">wählen Sie wie das Datum im admin und vis angezeigt sein sollte.</p>
+<h3 style="padding-left: 30px; text-align: justify;"><span id="Trennzeichen">Trennzeichen</span></h3>
+<p style="padding-left: 30px; text-align: justify;">Komma oder Punkt für Float-Werte</p>
+<h3 style="padding-left: 30px; text-align: justify;"><span id="Default_Historyinstanz">Default Historyinstanz</span></h3>
+<p style="padding-left: 30px; text-align: justify;">Diese SQL/History/InfluxDB Adapter Instanz wird benutzt defaultmäßig für flot und rickshaw (Charts).</p>
+<h3 style="padding-left: 30px; text-align: justify;"><span id="Aktiver_Verwahrungsort">Aktiver Verwahrungsort</span></h3>
+<p style="padding-left: 30px;">Hier wird über das Pulldownmenü das gewünschte Repository ausgewählt. In dem Pulldownmenü stehen die unter dem Reiter &#8220;Verwahrungsorte&#8221; aufgelisteten Repositories zur Verfügung</p>
+<p style="padding-left: 30px; text-align: justify;">
+<h2 style="text-align: justify;"><span id="Verwahrungsorte_oder_Repositories">Verwahrungsorte oder Repositories</span></h2>
+<p style="text-align: justify;"><a href="wp-content\uploads\ioBroker_Adapter_Admin_004b_Verwahrungsorte2.jpg"><img class="aligncenter wp-image-6467" src="wp-content\uploads\ioBroker_Adapter_Admin_004b_Verwahrungsorte2.jpg" width="800" height="483" srcset="wp-content\uploads\ioBroker_Adapter_Admin_004b_Verwahrungsorte2.jpg 818w, wp-content\uploads\ioBroker_Adapter_Admin_004b_Verwahrungsorte2-150x91.jpg 150w, wp-content\uploads\ioBroker_Adapter_Admin_004b_Verwahrungsorte2-300x181.jpg 300w, wp-content\uploads\ioBroker_Adapter_Admin_004b_Verwahrungsorte2-100x60.jpg 100w, wp-content\uploads\ioBroker_Adapter_Admin_004b_Verwahrungsorte2-200x121.jpg 200w, wp-content\uploads\ioBroker_Adapter_Admin_004b_Verwahrungsorte2-450x272.jpg 450w, wp-content\uploads\ioBroker_Adapter_Admin_004b_Verwahrungsorte2-600x362.jpg 600w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p style="text-align: justify;">ioBroker kann die Adapterliste von unterschiedlichen Quellen beziehen. Bei der Installation sind folgende Quellen eingetragen:</p>
+<ul style="text-align: justify;">
+<li><strong>default</strong> &#8211; http://download.iobroker.net/sources-dist.json &#8211; Wird täglich um 01:00 am Server generiert. Der Zugriff ist sehr schnell, die Versionsinformationenkönnen jedoch bis zu 24 Stunden alt sein.</li>
+<li><strong>online</strong> &#8211; https://raw.githubusercontent.com/ioBroker/ioBroker.js-controller/master/conf/sources-dist.json &#8211; Repository wird von einer online Quelle generiert.  Der Zugriff kann sehr lange dauern,  dies ist die aktuellste Quelle</li>
+<li><strong>sources &#8211; conf/sources-dist.json</strong> &#8211; Wird auch automatisch generiert und dauert auch sehr lange aber die Links können veraltet sein (es können manche Adapter fehlen)</li>
+</ul>
+<h2 style="text-align: justify;"><span id="Zertifikate">Zertifikate</span></h2>
+<p style="text-align: justify;"><img class="wp-image-6222 size-full aligncenter" src="wp-content\uploads\2017-01-19-09_33_54-ioBroker.admin_.png" width="806" height="477" srcset="wp-content\uploads\2017-01-19-09_33_54-ioBroker.admin_.png 806w, wp-content\uploads\2017-01-19-09_33_54-ioBroker.admin_-150x89.png 150w, wp-content\uploads\2017-01-19-09_33_54-ioBroker.admin_-300x178.png 300w, wp-content\uploads\2017-01-19-09_33_54-ioBroker.admin_-100x59.png 100w, wp-content\uploads\2017-01-19-09_33_54-ioBroker.admin_-200x118.png 200w, wp-content\uploads\2017-01-19-09_33_54-ioBroker.admin_-450x266.png 450w, wp-content\uploads\2017-01-19-09_33_54-ioBroker.admin_-600x355.png 600w" sizes="(max-width: 806px) 100vw, 806px"></p>
+<p style="text-align: justify;">Hier ist die zentrale Stelle für die Zertifikate, die für die SSL/HTTPS Kommunikation benutzt werden. Die Zertifikate werden von admin, web, simple-api, socketio benutzt. Defaultmäßig sind Standardzertifikate installiert. Damit kann man nichts verifizieren. Sie dienen nur der SSL-Kommunikation. Weil die Zertifikate offen liegen sollte man eigene (self-signed) Zertifikate benutzen, richtige Zertifikate kaufen oder auf Let&#8217;s Encrypt umsteigen. Die Kommunikation mit default Zertifikaten ist nicht sicher und falls jemand das Ziel hat den Traffic mitzulesen, könnte dies gemacht werden. Unbedingt eigene Zertifikate installieren. Z.b. unter <a href="http://guides.intertech.de/ssl_certificate_self.html">linux</a>.</p>
+<h2 style="text-align: justify;"><span id="Let8217s_Encrypt">Let&#8217;s Encrypt</span></h2>
+<p style="text-align: justify;"><img class="wp-image-6223 size-full aligncenter" src="wp-content\uploads\2017-01-19-09_40_07-ioBroker.admin_.png" width="803" height="475" srcset="wp-content\uploads\2017-01-19-09_40_07-ioBroker.admin_.png 803w, wp-content\uploads\2017-01-19-09_40_07-ioBroker.admin_-150x89.png 150w, wp-content\uploads\2017-01-19-09_40_07-ioBroker.admin_-300x177.png 300w, wp-content\uploads\2017-01-19-09_40_07-ioBroker.admin_-100x59.png 100w, wp-content\uploads\2017-01-19-09_40_07-ioBroker.admin_-200x118.png 200w, wp-content\uploads\2017-01-19-09_40_07-ioBroker.admin_-450x266.png 450w, wp-content\uploads\2017-01-19-09_40_07-ioBroker.admin_-600x355.png 600w" sizes="(max-width: 803px) 100vw, 803px"></p>
+<p style="text-align: justify;">Let’s Encrypt ist eine kostenlose, automatisierte und Open Source <em>certificate authority</em> der unabhängigen Internet Security Research Group (ISRG).</p>
+<p style="text-align: justify;">Nähere Informationen zu Let’s Encrypt gibt es <a href="https://letsencrypt.org/">hier</a>.</p>
+<p style="text-align: justify;">Einige Installationen benutzen Dynamic DNS o.ä. um über eine von dort vergebene Adresse, die eigene domain zu erreichen. IoBroker unterstützt die automatische Anforderung und Erneuerung von Zertifikaten bei der Let’s Encrypt Organisation.</p>
+<p style="text-align: justify;">Die Option die kostenlosen Zertifikate von Let’s Encrypt zu benutzen existiertin nahezu jedem Adapter, der einen Webserver starten kann und HTTPS unterstützt.</p>
+<p style="text-align: justify;">Wenn man die Option Zertifikate zu nutzen aktiviert, jedoch nicht das automatische Update, versucht die entsprechende Instanz mit gespeicherten Zertifikaten zu arbeiten.</p>
+<p style="text-align: justify;">Wenn die automatischen Updates aktiviert sind, versucht die Instanz Zertifikate bei Let’s Encrypt anzufordern und aktualisiert diese automatisch.</p>
+<p style="text-align: justify;">Die Zertifikate werden beim ersten Aufruf der entsprechenden Adresse zum ersten mal angefordert. D.h. wenn man z.B. &#8220;sub.domain.com&#8221; als Adresse konfiguriert und ruft anschließend <a href="https://sub.domain.com/">https://sub.domain.com</a> auf werden die Zertifikate erstmalig angefordert was ein wenig dauern kann bevor die Antwort kommt.</p>
+<p style="text-align: justify;">Die Ausgabe der Zertifikate ist eine komplexe Prozedur, aber wenn man die folgende Erkklärung befolgt sollte es leicht sein, die kostenlosen Zertifikate zu erhalten.</p>
+<p style="text-align: justify;"><strong>Vorgehensweise:</strong></p>
+<ol style="text-align: justify;">
+<li>Ein neues Konto mit der eingegebenen eMail-Adresse muss erstellt werden (Setup dazu in den Systemeinstellungen)</li>
+<li>Ein zufälliger Schlüssel als Passwort für das Konto wird erzeugt.</li>
+<li>Wenn das Konto angelegt wurde öffnet das System eine kleine Website auf Port 80 um die Adresse zu bestätigen.</li>
+<li>Let&#8217;s encrypt benutzt <strong>immer</strong> den Port <strong>80</strong> um die Adresse zu prüfen.</li>
+<li>Falls der Port 80 bereits von einem anderen Dienst benutzt wird, kommt Punkt 4 zum tragen &#8211; also dem anderen Dienst einen anderen Port zuweisen!</li>
+<li>Wenn der kleine Webserver gestartet ist wird die Anfrage nach den Zertifikaten für die angegebenen Adressen in den Systemeinstellungen an den Let&#8217;s encrypt Server gesendet.</li>
+<li>Der Let&#8217;s Encrypt Server sendet eine challenge phrase als Antwort auf die Anfrage zurück und versucht nach einer Weile diese challenge phrase unter der Adresse &#8220;http://yourdomain:80/.well-known/acme-challenge/&#8221; zu lesen.</li>
+<li>Wenn der Server diese challenge phrase von unsrere Seite zurückbekommt sendet der Let&#8217;s Encrypt Server die Zertifikate. Diese werden in dem Verzeichnis, das in den Systemeinstellungen eingetragen ist gespeichert.</li>
+</ol>
+<p style="text-align: justify;">Dieses klingt komplex, aber alles was man machen muss ist ein paar Checkboxen zu aktivieren und die eMail-Adresse und die Web-Adresse in den Systemeinstellungen einzutragen.</p>
+<p style="text-align: justify;">Die erhaltenen Zertifikate sind für etwa 90 Tage gültig. Nachdem diese Zertifikate das erste mal ausgestellt wurden wird eine weiterer Task gestartet, der die Gültigkeit automatisch verlängert.</p>
+<p style="text-align: justify;">Dieses Thema ist ziemlich komplex und tausende Dinge können schiefgehen. Wenn es damit nicht klappen sollte wird empfohlen den Cloud-Adapter für den Zugang von unterwegs zu benutzen.</p>
+<p style="text-align: justify;"><strong>Let&#8217;s Encrypt funktioniert nur mit einer node.js version&gt;=4.5</strong></p>
+<h2 style="text-align: justify;"><span id="Statistik">Statistik</span></h2>
+<p style="text-align: justify;"><img class="wp-image-6224 size-full aligncenter" src="wp-content\uploads\2017-01-19-09_48_46-ioBroker.admin_.png" width="804" height="476" srcset="wp-content\uploads\2017-01-19-09_48_46-ioBroker.admin_.png 804w, wp-content\uploads\2017-01-19-09_48_46-ioBroker.admin_-150x89.png 150w, wp-content\uploads\2017-01-19-09_48_46-ioBroker.admin_-300x178.png 300w, wp-content\uploads\2017-01-19-09_48_46-ioBroker.admin_-100x59.png 100w, wp-content\uploads\2017-01-19-09_48_46-ioBroker.admin_-200x118.png 200w, wp-content\uploads\2017-01-19-09_48_46-ioBroker.admin_-450x266.png 450w, wp-content\uploads\2017-01-19-09_48_46-ioBroker.admin_-600x355.png 600w" sizes="(max-width: 804px) 100vw, 804px"></p>
+<p style="text-align: justify;">ioBroker admin sendet an download.iobroker.net folgende Information:</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa6018afd0313361075" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Zeilennummern"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Unformatierte Code-Ansicht"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Zeilenumbruch umschalten"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Code aufklappen"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Code in einem neuen Fenster anzeigen"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+{
+  "uuid": "56cf0d20-XXXX-YYYY-BBBB-66eec47ZZZZZ",
+  "language": "de",
+  "hosts": [
+    {
+      "version": "0.15.1",
+      "platform": "Javascript/Node.js",
+      "type": "win32"
+    }
+  ],
+  "adapters": {
+    "admin": {
+      "version": "1.0.2",
+      "platform": "Javascript/Node.js"
+    },
+    "hm-rpc": {
+      "version": "1.1.2",
+      "platform": "Javascript/Node.js"
+    }
+  }
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa6018afd0313361075-2">2</div><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa6018afd0313361075-4">4</div><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa6018afd0313361075-6">6</div><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa6018afd0313361075-8">8</div><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa6018afd0313361075-10">10</div><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa6018afd0313361075-12">12</div><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa6018afd0313361075-14">14</div><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa6018afd0313361075-16">16</div><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa6018afd0313361075-18">18</div><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa6018afd0313361075-20">20</div><div class="crayon-num" data-line="crayon-5cefa6018afd0313361075-21">21</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa6018afd0313361075-1"><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa6018afd0313361075-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"uuid"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"56cf0d20-XXXX-YYYY-BBBB-66eec47ZZZZZ"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa6018afd0313361075-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"language"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"de"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa6018afd0313361075-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"hosts"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5cefa6018afd0313361075-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa6018afd0313361075-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"version"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"0.15.1"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa6018afd0313361075-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"platform"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"Javascript/Node.js"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa6018afd0313361075-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"type"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"win32"</span></div><div class="crayon-line" id="crayon-5cefa6018afd0313361075-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa6018afd0313361075-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa6018afd0313361075-11"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"adapters"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa6018afd0313361075-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"admin"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5cefa6018afd0313361075-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"version"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"1.0.2"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa6018afd0313361075-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"platform"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"Javascript/Node.js"</span></div><div class="crayon-line" id="crayon-5cefa6018afd0313361075-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa6018afd0313361075-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"hm-rpc"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5cefa6018afd0313361075-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"version"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"1.1.2"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa6018afd0313361075-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"platform"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"Javascript/Node.js"</span></div><div class="crayon-line" id="crayon-5cefa6018afd0313361075-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa6018afd0313361075-20"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5cefa6018afd0313361075-21"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0022 seconds] -->
+<p></p>
+<p style="text-align: justify;">Das kann deaktiviert werden indem man Statistik auf &#8220;<strong>nichts</strong>&#8221;  einstellt.</p>
+<p style="text-align: justify;">Die Entwickler bitten jedoch um diese Informationen:</p>
+<blockquote><p><em>Wir haben hart gearbeitet um dieses Projekt auf die Beine zu stellen. Als Gegenleistung bitten wir Sie uns die Statistik über die Benutzung an uns zu schicken.</em><br>
+<em>Keine private Information wird zu ioBroker.org gesendet. Jedes Mal wenn Adapterliste upgedated wird, wird die anonymisierte Statistik gesendet.</em></p></blockquote>
+<p>&nbsp;</p>
+				
+<footer class="post-data">
+	
+	<div class="entry-meta">
+			</div><!-- .entry-meta -->
+	</footer><!-- .post-data -->
+			</div><!-- .post-entry -->
+	</article><!-- #post-## -->
+
+					
+				
+			</main><!-- #main -->
+			
+<div id="widgets" class="widget-area default-sidebar" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+		<aside id="archives" class="widget-wrapper">
+			<h3 class="widget-title">Im Archiv</h3>
+			<ul>
+					<li><a href='index-172.htm?m=201902&#038;lang=de'>Februar 2019</a></li>
+	<li><a href='index-173.htm?m=201901&#038;lang=de'>Januar 2019</a></li>
+	<li><a href='index-174.htm?m=201812&#038;lang=de'>Dezember 2018</a></li>
+	<li><a href='index-175.htm?m=201806&#038;lang=de'>Juni 2018</a></li>
+	<li><a href='index-176.htm?m=201804&#038;lang=de'>April 2018</a></li>
+	<li><a href='index-177.htm?m=201803&#038;lang=de'>März 2018</a></li>
+	<li><a href='index-178.htm?m=201801&#038;lang=de'>Januar 2018</a></li>
+	<li><a href='index-179.htm?m=201712&#038;lang=de'>Dezember 2017</a></li>
+	<li><a href='index-180.htm?m=201711&#038;lang=de'>November 2017</a></li>
+	<li><a href='index-181.htm?m=201710&#038;lang=de'>Oktober 2017</a></li>
+	<li><a href='index-182.htm?m=201709&#038;lang=de'>September 2017</a></li>
+	<li><a href='index-183.htm?m=201708&#038;lang=de'>August 2017</a></li>
+	<li><a href='index-184.htm?m=201701&#038;lang=de'>Januar 2017</a></li>
+	<li><a href='index-185.htm?m=201609&#038;lang=de'>September 2016</a></li>
+	<li><a href='index-186.htm?m=201607&#038;lang=de'>Juli 2016</a></li>
+	<li><a href='index-187.htm?m=201605&#038;lang=de'>Mai 2016</a></li>
+	<li><a href='index-188.htm?m=201604&#038;lang=de'>April 2016</a></li>
+	<li><a href='index-189.htm?m=201603&#038;lang=de'>März 2016</a></li>
+	<li><a href='index-190.htm?m=201602&#038;lang=de'>Februar 2016</a></li>
+			</ul>
+		</aside>
+
+		</div><!-- #default-sidebar -->
+	</div><!-- #primary -->
+
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+
+<footer id="footer" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div id="footer-wrapper">
+
+		<div id="footer-widgets-container">
+					</div><!-- #footer-widgets-container-->
+
+		<div id="menu-social-container">
+			<nav id="footer-menu-container">
+				<ul id="menu-2016_seitenfuss_de" class="footer-menu"><li id="menu-item-2210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2210"><a href="index-61.htm?page_id=2208&#038;lang=de">Kontakt</a></li>
+<li id="menu-item-2227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2227"><a href="index-62.htm?page_id=2223&#038;lang=de">Impressum</a></li>
+<li id="menu-item-2307" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2307"><a href="index-63.htm?page_id=2305&#038;lang=de">Datenschutzerklärung</a></li>
+<li id="menu-item-2314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2314"><a href="index-64.htm?page_id=2303&#038;lang=de">Sitemap</a></li>
+<li id="menu-item-2486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2486"><a href="index-65.htm?page_id=2484&#038;lang=de">Danke</a></li>
+</ul>			</nav><!-- #footer-menu -->
+			<div id="social-icons-container">
+				<ul class="social-icons"></ul><!-- .social-icons -->			</div><!-- #social-icons-container-->
+		</div><!-- #menu-social-container -->
+
+		
+		<div id="footer-base">
+			<div class="copyright">
+				&copy; 2019 <a href="index.htm?lang=de" title="ioBroker">ioBroker</a>			</div><!-- .copyright -->
+
+			<div class="powered">
+				<a href="http://cyberchimps.com/responsive-II/">Reaktionsschnelle II</a> angetrieben <a href="http://wordpress.org/">WordPress</a>			</div><!-- end .powered -->
+
+			<div class="scroll-top">
+				<a href="#scroll-top" title="Nach oben scrollen">↑</a>
+			</div><!-- .scroll-top -->
+		</div><!-- #footer-base -->
+	</div><!-- #footer-wrapper -->
+	</footer><!-- #footer -->
+<div id="cookie-law-info-bar"><span>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.<a data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button" style="display:inline-block; ">Akzeptieren</a> <a href='..\index-1.htm?page_id=2305&#038;lang=de' id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link" style="display:inline-block;">mehr Infos</a></span></div><div id="cookie-law-info-again" style="display:none;"><span id="cookie_hdr_showagain">Privacy & Cookies Policy</span></div><div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  cli_cookiebar_settings='{"animate_speed_hide":"500","animate_speed_show":"500","background":"#fff","border":"#444","border_on":false,"button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"button_2_hidebar":true,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":true,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":false,"show_once":"10000","logging_on":false,"as_popup":false,"popup_overlay":true,"bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"}';
+  /* ]]> */
+</script><div class="scroll-back-to-top-wrapper">
+	<span class="scroll-back-to-top-inner">
+					<i class="fa fa-2x fa-arrow-circle-up"></i>
+			</span>
+</div><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Bitte best\u00e4tige, dass du keine Maschine bist."}}};
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Bitte best\u00e4tige, dass du keine Maschine bist."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\contact-form-7\includes\js\scripts.js?ver=4.9.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\scroll-back-to-top\assets\js\scroll-back-to-top.js'></script>
+<script type='text/javascript' src='wp-content\plugins\table-of-contents-plus\front.min.js?ver=1509'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\js\responsive-scripts.min.js?ver=1.2.5'></script>
+<script type='text/javascript' src='wp-includes\js\wp-embed.min.js?ver=4.7.5'></script>
+</body>
+</html>

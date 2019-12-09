@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Adapter &#8211; ioBroker</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;cat=160&#038;lang=de" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Sun, 26 May 2019 12:07:21 +0000</lastBuildDate>
+	<language>de-DE</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>Neues Layout bei Admin</title>
+		<link>http://www.iobroker.net/docu/?p=2882&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=2882&#038;lang=de#comments</comments>
+		<pubDate>Fri, 26 Feb 2016 23:18:06 +0000</pubDate>
+		<dc:creator><![CDATA[Bluefox]]></dc:creator>
+				<category><![CDATA[Adapter]]></category>
+		<category><![CDATA[Admin]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/?p=2882</guid>
+		<description><![CDATA[&#160; Admin-Adapter wurde überarbeitet und sieht jetzt so aus: Es wird bald für alle zur Verfügung stehen. Momentan aber nur für freiwillige.]]></description>
+				<content:encoded><![CDATA[<p>&nbsp;</p>
+<p>Admin-Adapter wurde überarbeitet und sieht jetzt so aus:<br />
+Es wird bald für alle zur Verfügung stehen. Momentan aber nur für freiwillige.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=2882</wfw:commentRss>
+		<slash:comments>7</slash:comments>
+		</item>
+	</channel>
+</rss>

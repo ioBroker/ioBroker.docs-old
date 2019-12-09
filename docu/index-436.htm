@@ -1,0 +1,1141 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="ru-RU">
+<![endif]-->
+<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="ru-RU">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ru-RU"><!--<![endif]-->
+	<head>
+				<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"> 
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.iobroker.net/docu/xmlrpc.php">
+		
+		<title>Драйвер Kodi &#8211; ioBroker</title>
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Feed" href="index-4.rss?feed=rss2&#038;lang=ru">
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Comments Feed" href="index-5.rss?feed=comments-rss2&#038;lang=ru">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.iobroker.net\/docu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css' href='wp-content\plugins\crayon-syntax-highlighter\css\min\crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='crayon-theme-classic-css' href='wp-content\plugins\crayon-syntax-highlighter\themes\classic\classic.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='crayon-font-monaco-css' href='wp-content\plugins\crayon-syntax-highlighter\fonts\monaco.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content\plugins\contact-form-7\includes\css\styles.css?ver=4.9.2' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-public.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-gdpr-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-gdpr.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='dedo-css-css' href='wp-content\plugins\delightful-downloads\assets\css\delightful-downloads.min.css?ver=1.6.6' type='text/css' media='all'>
+<link rel='stylesheet' id='mbpro-font-awesome-css' href='wp-content\plugins\maxbuttons\assets\libraries\font-awesome\css\font-awesome.min.css?ver=6.28' type='text/css' media='all'>
+<link rel='stylesheet' id='page-list-style-css' href='wp-content\plugins\page-list\css\page-list.css?ver=5.1' type='text/css' media='all'>
+<link rel='stylesheet' id='pc_google_analytics-frontend-css' href='http://www.iobroker.net/docu/wp-content/plugins/pc-google-analytics/assets/css/frontend.css?ver=1.0.0' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-css' href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' type='text/css' media='screen'>
+<link rel='stylesheet' id='toc-screen-css' href='wp-content\plugins\table-of-contents-plus\screen.min.css?ver=1509' type='text/css' media='all'>
+<link rel='stylesheet' id='parent-style-css' href='wp-content\themes\responsive-mobile\style.css?ver=4.7.5' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-style-css' href='wp-content\themes\responsive-mobile\css\style.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-child-style-css' href='wp-content\themes\responsive-mobile_child\style.css?ver=1.0' type='text/css' media='all'>
+<link rel='stylesheet' id='recent-posts-widget-with-thumbnails-public-style-css' href='wp-content\plugins\recent-posts-widget-with-thumbnails\public.css?ver=6.5.0' type='text/css' media='all'>
+<link rel='stylesheet' id='cleverness_todo_list_frontend-css' href='wp-content\plugins\cleverness-to-do-list\css\cleverness-to-do-list-frontend.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='jquery.ui.theme-css' href='wp-content\plugins\cleverness-to-do-list\css\jquery-ui-fresh.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='tablepress-default-css' href='wp-content\tablepress-combined.min.css?ver=128' type='text/css' media='all'>
+<link rel='stylesheet' id='bootstrap-css' href='wp-content\themes\responsive-mobile\libraries\bootstrap\css\bootstrap.min.css?ver=4.7.5' type='text/css' media='all'>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"\u041d\u0430\u0436\u043c\u0438\u0442\u0435 %s \u0434\u043b\u044f \u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, %s \u0434\u043b\u044f \u0432\u0441\u0442\u0430\u0432\u043a\u0438","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\crayon-syntax-highlighter\js\min\crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[]};
+var log_object = {"ajax_url":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\cookie-law-info\public\js\cookie-law-info-public.js?ver=1.7.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mb_ajax = {"ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\maxbuttons\js\min\front.js?ver=6.28'></script>
+<script type='text/javascript' src='wp-content\plugins\pc-google-analytics\assets\js\frontend.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\libraries\bootstrap\js\bootstrap.min.js?ver=4.7.5'></script>
+<link rel='https://api.w.org/' href='index.json?rest_route=/'>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.xml?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes\wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.7.5">
+<link rel="canonical" href="index-436.htm?page_id=6526&#038;lang=ru">
+<link rel='shortlink' href='http://www.iobroker.net/docu/?p=6526'>
+<link rel="alternate" type="application/json+oembed" href="index-389.json?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D6526%26lang%3Dru">
+<link rel="alternate" type="text/xml+oembed" href="index-388.xml?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D6526%26lang%3Dru&#038;format=xml">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-86900958-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+
+<style>
+.scroll-back-to-top-wrapper {
+    position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #777777;
+	color: #eeeeee;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-back-to-top-wrapper:hover {
+	background-color: #888888;
+  color: #eeeeee;
+}
+.scroll-back-to-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-back-to-top-wrapper i.fa {
+	line-height: inherit;
+}
+.scroll-back-to-top-wrapper .fa-lg {
+	vertical-align: 0;
+}
+</style><!-- Analytics by WP-Statistics v12.6 - https://wp-statistics.com/ -->
+		<script type="text/javascript">
+			var cli_flush_cache=1;
+		</script>
+				<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+.site-content .content-area{
+	/*background: #6592c9;*/
+}		</style>
+	<style type="text/css">
+.paypal-donations { text-align: center !important }
+</style>
+	</head>
+
+<body class="page-template page-template-page-templates page-template-content-sidebar-page_adaptermenue page-template-page-templatescontent-sidebar-page_adaptermenue-php page page-id-6526 page-child parent-pageid-4271 group-blog content-sidebar-page_adaptermenue" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="container" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Перейти к содержимому</a>
+	<a class="skip-link screen-reader-text" href="#main-navigation">Перейти к главному меню</a>
+	<div id="top-menu-container" class="container-full-width">
+		<nav id="top-menu" class="container" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+			<ul id="menu-2016_top_menue" class="top-menu"><li id="menu-item-2203-de" class="lang-item lang-item-4 lang-item-de lang-item-first no-translation menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-de"><a href="index.htm?lang=de" hreflang="de-DE" lang="de-DE">Deutsch</a></li>
+<li id="menu-item-2203-en" class="lang-item lang-item-7 lang-item-en no-translation menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-en"><a href="index-1.htm?lang=en" hreflang="en-GB" lang="en-GB">English</a></li>
+<li id="menu-item-2203-ru" class="lang-item lang-item-20 lang-item-ru current-lang menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-ru"><a href="index-436.htm?page_id=6526&#038;lang=ru" hreflang="ru-RU" lang="ru-RU">Русский</a></li>
+</ul>		</nav>
+	</div><!-- top menu container -->
+        <div id="header_section">
+	<header id="header" class="container-full-width site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+				<div class="container">
+			<div class="header-row">
+				<div id="site-branding">
+							<div id="logo">
+			<a href="index-2.htm?lang=ru" rel="home" itemprop="url" title="ioBroker">
+				<img src="wp-content\uploads\ioBroker_logo_lang-e1456684383484.png" alt="ioBroker" itemprop="image">
+			</a>
+		</div>
+					</div>
+				<div id="secondary-header">
+					
+	<div id="top-widget" class="top-widget" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+			<div id="search-2" class="responsive-mobile-top-widget widget_search"><form role="search" method="get" class="search-form" action="http://www.iobroker.net/docu/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			<input type="hidden" name="lang" value="ru"></form></div>
+			</div><!-- end of #top-widget -->
+				</div>
+			</div>
+		</div>
+
+			</header><!-- #header -->
+
+	<div id="main-menu-container" class="container-full-width">
+		<div id="main-menu" class="container">
+			<nav id="main-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<div id="mobile-current-item">Меню</div>
+				<button id="mobile-nav-button"><span class="accessibile-label">Мобильное меню переключения</span></button>
+				<div class="main-nav"><ul id="menu-2016_kopfzeile_ru" class="menu"><li id="menu-item-2686" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2686"><a href="index-111.htm?page_id=2649&#038;lang=ru">Новости</a></li>
+<li id="menu-item-2922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2922"><a href="index-112.htm?page_id=267&#038;lang=ru">Введение</a></li>
+<li id="menu-item-2635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2635"><a href="index-113.htm?page_id=2630&#038;lang=ru">Установка</a>
+<ul class="sub-menu">
+	<li id="menu-item-3313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3313"><a href="index-113.htm?page_id=2630&#038;lang=ru">Установка</a></li>
+	<li id="menu-item-3494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3494"><a href="index-114.htm?page_id=3489&#038;lang=ru">Raspberry (JESSIE) – быстрый старт</a></li>
+	<li id="menu-item-5122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5122"><a href="index-115.htm?page_id=5114&#038;lang=ru">Pine64 (JESSIE) быстрый старт</a></li>
+	<li id="menu-item-4276" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4276"><a href="index-116.htm?page_id=4268&#038;lang=ru">Установка на Armbian</a></li>
+	<li id="menu-item-3312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3312"><a href="index-117.htm?page_id=3303&#038;lang=ru">Обновление драйверов и контроллера</a></li>
+	<li id="menu-item-4917" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4917"><a href="index-118.htm?page_id=4915&#038;lang=ru">Видео</a></li>
+	<li id="menu-item-5533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5533"><a href="index-119.htm?page_id=5506&#038;lang=ru">Как устанавливать драйвера, работающие с serial портом или похожие драйвера</a></li>
+	<li id="menu-item-5648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5648"><a href="index-120.htm?page_id=5637&#038;lang=ru">Быстрая установка на Debian</a></li>
+</ul>
+</li>
+<li id="menu-item-2636" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-2636"><a href="index-121.htm?page_id=2628&#038;lang=ru">Драйвера</a>
+<ul class="sub-menu">
+	<li id="menu-item-4074" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4074"><a href="index-122.htm?page_id=4069&#038;lang=ru">Общие</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3885" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3885"><a href="index-123.htm?page_id=3800&#038;lang=ru">Драйвер Admin</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4089" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4089"><a href="index-124.htm?page_id=4082&#038;lang=ru">Оборудование</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4100"><a href="index-125.htm?page_id=4052&#038;lang=ru">Драйвер MegaD-328</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4167"><a href="index-126.htm?page_id=4086&#038;lang=ru">Визуализация</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="index-127.htm?page_id=4034&#038;lang=ru">Драйвер Flot</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4090" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4090"><a href="index-128.htm?page_id=4075&#038;lang=ru">Хранилище</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3886"><a title="History (рус)" href="index-129.htm?page_id=3636&#038;lang=ru">Драйвер History</a></li>
+		<li id="menu-item-4065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4065"><a href="index-130.htm?page_id=4044&#038;lang=ru">Драйвер SQL</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4101"><a href="index-131.htm?page_id=4091&#038;lang=ru">Сервисные приложения</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4068" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4068"><a href="index-132.htm?page_id=3374&#038;lang=ru">Драйвер Geofency</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4274" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-4274"><a href="index-133.htm?page_id=4271&#038;lang=ru">Мультимедиа</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4275"><a href="index-134.htm?page_id=4262&#038;lang=ru">Драйвер sayit</a></li>
+		<li id="menu-item-6544" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6544"><a href="index-135.htm?page_id=6099&#038;lang=ru">Драйвер mpd</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4461"><a href="index-136.htm?page_id=4457&#038;lang=ru">Скрипты и логика</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6821" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6821"><a href="index-137.htm?page_id=6703&#038;lang=ru">Драйвер Javascript</a></li>
+		<li id="menu-item-4462" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4462"><a href="index-138.htm?page_id=4459&#038;lang=ru">Драйвер Text2Command</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4498"><a href="index-139.htm?page_id=4488&#038;lang=ru">Сетевые</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4497"><a href="index-140.htm?page_id=4492&#038;lang=ru">Драйвер Telegram</a></li>
+		<li id="menu-item-4823" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4823"><a href="index-141.htm?page_id=4643&#038;lang=ru">Драйвер MQTT</a></li>
+		<li id="menu-item-6665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6665"><a href="index-142.htm?page_id=6663&#038;lang=ru">Драйвер Email</a></li>
+	</ul>
+</li>
+	<li id="menu-item-5045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5045"><a href="index-143.htm?page_id=5040&#038;lang=ru">Группа драйверов VIS</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5046" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5046"><a href="index-144.htm?page_id=5032&#038;lang=ru">Мобильное приложение ioBroker.vis</a></li>
+		<li id="menu-item-6552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6552"><a href="index-145.htm?page_id=6489&#038;lang=ru">Виджеты ioBroker.vis-players</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-2687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2687"><a href="index-146.htm?page_id=2651&#038;lang=ru">Скачать</a>
+<ul class="sub-menu">
+	<li id="menu-item-4839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4839"><a href="index-147.htm?page_id=2968&#038;lang=ru">Файлы для установки</a></li>
+</ul>
+</li>
+<li id="menu-item-2688" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2688"><a href="index-148.htm?page_id=2678&#038;lang=ru">Форум / Поддержка</a>
+<ul class="sub-menu">
+	<li id="menu-item-3008" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3008"><a href="http://forum.iobroker.net">Форум</a></li>
+	<li id="menu-item-3148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3148"><a href="index-149.htm?page_id=3141&#038;lang=de">Советы и решения</a></li>
+	<li id="menu-item-3010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3010"><a href="index-150.htm?page_id=2991&#038;lang=ru">Часто задаваемые вопросы / FAQ</a></li>
+	<li id="menu-item-5571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5571"><a href="index-151.htm?page_id=5567&#038;lang=ru">Настройка Let&#8217;s Encrypt сертификатов</a></li>
+</ul>
+</li>
+<li id="menu-item-2689" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2689"><a href="index-152.htm?page_id=2653&#038;lang=ru">Разработка</a></li>
+</ul></div>			</nav><!-- #site-navigation -->
+		</div><!-- #main-menu -->
+	</div><!-- #main-menu-container -->
+	<div id="sub-menu-container" class="container-full-width">
+		<div id="sub-menu" class="container">
+			<nav id="sub-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						</nav><!-- #site-navigation -->
+		</div><!-- #sub-menu -->
+	</div><!-- #sub-menu-container -->
+        </div>
+	<div id="wrapper" class="site-content container-full-width">
+
+	<div id="content" class="content-area">
+		<main id="main" class="site-main content-sidebar" role="main">
+
+			
+				<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#"><span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-2.htm?lang=ru">Главная</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-420.htm?page_id=2521&lang=ru">русский</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-121.htm?page_id=2628&lang=ru">Драйвера</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-133.htm?page_id=4271&lang=ru">Мультимедиа</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb-current">Драйвер Kodi</span></div>
+								
+					
+<article id="post-6526" class="post-6526 page type-page status-publish has-post-thumbnail hentry">
+		
+	
+<header class="entry-header">
+	<h1 class="entry-title post-title">Драйвер Kodi</h1>
+	</header><!-- .entry-header -->
+		<div class="page-feature-image">
+			<img width="120" height="120" src="wp-content\uploads\kodi.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\kodi-1.png 120w, wp-content\uploads\kodi-100x100.png 100w" sizes="(max-width: 120px) 100vw, 120px">		</div>
+		
+	<div class="post-entry">
+		<p><a href="https://github.com/instalator/iobroker.kodi"><img class="alignright" style="border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" width="149" height="149"></a><br>
+Драйвер используется для управления медиа проигрывателем kodi по протоколу JSON-RPC API.</p>
+<div id="toc_container" class="no_bullets"><ul class="toc_list"><li><a href="#i"><span class="toc_number toc_depth_1">1</span> Информация</a></li><li><a href="#i-2"><span class="toc_number toc_depth_1">2</span> Описание</a><ul><li><a href="#i-3"><span class="toc_number toc_depth_2">2.1</span> Поддерживаемые платформы</a></li></ul></li><li><a href="#_Kodi"><span class="toc_number toc_depth_1">3</span> Настройка Kodi</a></li><li><a href="#i-4"><span class="toc_number toc_depth_1">4</span> Настройка драйвера</a></li><li><a href="#i-5"><span class="toc_number toc_depth_1">5</span> Использование</a></li></ul></div>
+<h2><span id="i"><span id="i-2">Информация</span></span></h2>
+<table width="100%">
+<tbody>
+<tr>
+<td><strong>Актуальная версия<br>
+</strong></td>
+<td><a href="https://www.npmjs.com/package/iobroker.kodi"><img class="alignnone" src="https://img.shields.io/npm/v/iobroker.kodi.svg" width="80" height="20"></a></td>
+</tr>
+<tr>
+<td><strong>Необходимые условия</strong></td>
+<td>Установленный проигрователь kodi. <strong><em>Node JS версии 0.12+</em></strong></td>
+</tr>
+<tr>
+<td><strong>Разработчик</strong></td>
+<td>instalator</td>
+</tr>
+<tr>
+<td><strong>Ключевые слова<br>
+</strong></td>
+<td>управление, мультимедиа</td>
+</tr>
+<tr>
+<td><strong>Github</strong></td>
+<td><img class="alignnone size-full wp-image-2342" src="wp-content\uploads\icon_link.png" alt="icon_link" width="16" height="16"> <a href="https://github.com/instalator/iobroker.kodi" target="_blank">Ссылка</a></td>
+</tr>
+<tr>
+<td><strong>Платформа</strong></td>
+<td>Javascript/Node.js</td>
+</tr>
+<tr>
+<td><strong>Лицензия</strong></td>
+<td>MIT</td>
+</tr>
+</tbody>
+</table>
+<h2></h2>
+<h2><span id="i-2">Описание</span></h2>
+<p>Kodi — бесплатный кроссплатформенный медиаплеер и программное обеспечение для организации HTPC (<i><span lang="en" xml:lang="en">Home Theatre Personal Computer)</span></i> с открытым исходным кодом. Простыми словами это медиа-центр для воспроизведения видео, музыки, картинок, игр и многое другое из локальных, сетевых источников, а так же из сети интернет.</p>
+<p>Официальная документация Kodi JSON-RPC API находится <a href="http://kodi.wiki/view/JSON-RPC_API" target="_blank">здесь</a>, а полный список доступных команд (для протокола версии 6) можно посмотреть на этой <a href="http://kodi.wiki/view/JSON-RPC_API/v6" target="_blank">странице</a>.</p>
+<h3><span id="i-3">Поддерживаемые платформы</span></h3>
+<table style="height: 65px;" width="578">
+<tbody>
+<tr>
+<td style="width: 89px; text-align: center;"><img class="alignnone wp-image-6675" src="wp-content\uploads\DL_Icons_Windows-new.png" width="90" height="90" srcset="wp-content\uploads\DL_Icons_Windows-new.png 128w, wp-content\uploads\DL_Icons_Windows-new-100x100.png 100w" sizes="(max-width: 90px) 100vw, 90px"></td>
+<td style="width: 89px; text-align: center;"><img class="alignnone wp-image-6681" src="wp-content\uploads\DL_Icons_Linux-new.png" width="90" height="90" srcset="wp-content\uploads\DL_Icons_Linux-new.png 128w, wp-content\uploads\DL_Icons_Linux-new-100x100.png 100w" sizes="(max-width: 90px) 100vw, 90px"></td>
+<td style="width: 90px; text-align: center;"><img class="alignnone wp-image-6679" src="wp-content\uploads\DL_Icons_RaspberryPi-new.png" width="90" height="90" srcset="wp-content\uploads\DL_Icons_RaspberryPi-new.png 128w, wp-content\uploads\DL_Icons_RaspberryPi-new-100x100.png 100w" sizes="(max-width: 90px) 100vw, 90px"></td>
+<td style="width: 90px; text-align: center;"><img class="alignnone wp-image-6680" src="wp-content\uploads\DL_Icons_Android-new.png" width="90" height="90" srcset="wp-content\uploads\DL_Icons_Android-new.png 128w, wp-content\uploads\DL_Icons_Android-new-100x100.png 100w" sizes="(max-width: 90px) 100vw, 90px"></td>
+<td style="width: 90px; text-align: center;"><img class="alignnone wp-image-6678" src="wp-content\uploads\DL_Icons_Apple_iOS-new.png" width="90" height="90" srcset="wp-content\uploads\DL_Icons_Apple_iOS-new.png 128w, wp-content\uploads\DL_Icons_Apple_iOS-new-100x100.png 100w" sizes="(max-width: 90px) 100vw, 90px"></td>
+<td style="width: 90px; text-align: center;"><img class="alignnone wp-image-6677" src="wp-content\uploads\DL_Icons_Apple-new.png" width="90" height="90" srcset="wp-content\uploads\DL_Icons_Apple-new.png 128w, wp-content\uploads\DL_Icons_Apple-new-100x100.png 100w" sizes="(max-width: 90px) 100vw, 90px"></td>
+</tr>
+<tr>
+<td style="width: 89px; text-align: center;"><strong>Windows</strong></td>
+<td style="width: 89px; text-align: center;"><strong>Linux</strong></td>
+<td style="width: 90px; text-align: center;"><strong>Raspberry Pi</strong></td>
+<td style="width: 90px; text-align: center;"><strong>Android</strong></td>
+<td style="width: 90px; text-align: center;"><strong>iOS (jailbroken)</strong></td>
+<td style="width: 90px; text-align: center;"><strong>Mac OS X</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Скачать kodi для вашей платформы можно на официальном <a href="https://kodi.tv/download/" target="_blank">сайте</a>.</p>
+<h2><span id="_Kodi"><span id="i-2"></span>Настройка Kodi</span></h2>
+<p>После установки проигрывателя Kodi, его необходимо настроить для возможности управления проигрывателем через драйвер kodi.</p>
+<p>В меню <strong>Настройки</strong> &#8211; <strong>Службы</strong> &#8211;<strong> Удаленное управление</strong> активируем два чек бокса:<img class="aligncenter wp-image-6685 size-full" src="wp-content\uploads\kodi_jarvis.png" width="647" height="414" srcset="wp-content\uploads\kodi_jarvis.png 647w, wp-content\uploads\kodi_jarvis-150x96.png 150w, wp-content\uploads\kodi_jarvis-300x192.png 300w, wp-content\uploads\kodi_jarvis-100x64.png 100w, wp-content\uploads\kodi_jarvis-200x128.png 200w, wp-content\uploads\kodi_jarvis-450x288.png 450w, wp-content\uploads\kodi_jarvis-600x384.png 600w" sizes="(max-width: 647px) 100vw, 647px"><br>
+По умолчанию JSON-RPC API использует порт<strong> 9090</strong>, для того чтобы его изменить необходимо внести изменения в файл <a href="http://kodi.wiki/view/AdvancedSettings.xml">advancedsettings.xml</a>*.  добавив в него следующие настройки:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa9767860d402777096" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&lt;jsonrpc&gt;
+    &lt;compactoutput&gt;true&lt;/compactoutput&gt;
+    &lt;tcpport&gt;9999&lt;/tcpport&gt; //9999 это нужный вам порт
+&lt;/jsonrpc&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa9767860d402777096-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa9767860d402777096-2">2</div><div class="crayon-num" data-line="crayon-5cefa9767860d402777096-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa9767860d402777096-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa9767860d402777096-1"><span class="crayon-o">&lt;</span><span class="crayon-v">jsonrpc</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa9767860d402777096-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-v">compactoutput</span><span class="crayon-o">&gt;</span><span class="crayon-t">true</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">compactoutput</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5cefa9767860d402777096-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-v">tcpport</span><span class="crayon-o">&gt;</span><span class="crayon-cn">9999</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">tcpport</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-c">//9999 это нужный вам порт</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa9767860d402777096-4"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">jsonrpc</span><span class="crayon-o">&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p></p>
+<blockquote><p>* Изначально этого файла у вас нет и  его необходимо сначала создать.</p></blockquote>
+<p>Для возможности отображения картинок в IoBroker необходимо включить <strong>Удаленное управление по HTTP</strong>.<img class="aligncenter wp-image-6686 size-full" src="wp-content\uploads\kodi_jarvis2.png" width="646" height="412" srcset="wp-content\uploads\kodi_jarvis2.png 646w, wp-content\uploads\kodi_jarvis2-150x96.png 150w, wp-content\uploads\kodi_jarvis2-300x191.png 300w, wp-content\uploads\kodi_jarvis2-100x64.png 100w, wp-content\uploads\kodi_jarvis2-200x128.png 200w, wp-content\uploads\kodi_jarvis2-450x287.png 450w, wp-content\uploads\kodi_jarvis2-600x383.png 600w" sizes="(max-width: 646px) 100vw, 646px"></p>
+<p>В Kodi v17.0 &#8220;Krypton&#8221; эти настройки находятся на одном экране:<a href="wp-content\uploads\kodi_krypt.png"><br>
+<img class="aligncenter wp-image-6693 size-full" src="wp-content\uploads\kodi_krypt.png" width="647" height="412" srcset="wp-content\uploads\kodi_krypt.png 647w, wp-content\uploads\kodi_krypt-150x96.png 150w, wp-content\uploads\kodi_krypt-300x191.png 300w, wp-content\uploads\kodi_krypt-100x64.png 100w, wp-content\uploads\kodi_krypt-200x127.png 200w, wp-content\uploads\kodi_krypt-450x287.png 450w, wp-content\uploads\kodi_krypt-600x382.png 600w" sizes="(max-width: 647px) 100vw, 647px"></a></p>
+<p>&nbsp;</p>
+<h2><span id="i-4">Настройка драйвера</span></h2>
+<p>Окно настроек драйвера:</p>
+<p><img class="aligncenter size-full wp-image-6697" src="wp-content\uploads\kodi_set.png" alt="" width="837" height="528" srcset="wp-content\uploads\kodi_set.png 837w, wp-content\uploads\kodi_set-150x95.png 150w, wp-content\uploads\kodi_set-300x189.png 300w, wp-content\uploads\kodi_set-100x63.png 100w, wp-content\uploads\kodi_set-200x126.png 200w, wp-content\uploads\kodi_set-450x284.png 450w, wp-content\uploads\kodi_set-600x378.png 600w" sizes="(max-width: 837px) 100vw, 837px"></p>
+<p><strong>IP адрес KODI</strong>: IP Kodi в вашей сети</p>
+<p><strong>Порт jsonrpc</strong>: порт для JSON-RPC API (по-умолчанию kodi использует порт<strong> 9090</strong>)</p>
+<p><strong>Port Webserver KODI</strong>: порт подключения к веб серверу Kodi</p>
+<p><strong>Логин</strong>: логин для подключения к веб серверу Kodi</p>
+<p><strong>Пароль</strong>: пароль для подключения к веб серверу Kodi</p>
+<p>После нажатия кнопки сохранить, драйвер перезапускается с новыми параметрами и если драйвер настроен верно и установлено соединение с Kodi, то индикатор состояния (значок) слева от названия инстанции драйвера (kodi.0) будет <strong>зеленый</strong>. Если он <strong>желтый</strong> (kodi.1) то это означает, что драйвер запущен, но не установлено соединение с Kodi.</p>
+<p><img class="aligncenter size-full wp-image-6726" src="wp-content\uploads\kodi_set2.png" alt="" width="626" height="173" srcset="wp-content\uploads\kodi_set2.png 626w, wp-content\uploads\kodi_set2-150x41.png 150w, wp-content\uploads\kodi_set2-300x83.png 300w, wp-content\uploads\kodi_set2-100x28.png 100w, wp-content\uploads\kodi_set2-200x55.png 200w, wp-content\uploads\kodi_set2-450x124.png 450w, wp-content\uploads\kodi_set2-600x166.png 600w" sizes="(max-width: 626px) 100vw, 626px"></p>
+<h2><span id="i-5">Использование</span></h2>
+<table>
+<tbody>
+<tr style="height: 24px;">
+<td style="width: 135px; text-align: center; height: 24px;">Объект</td>
+<td style="width: 130px; text-align: center; height: 24px;">Назначение</td>
+<td style="width: 919px; text-align: center; height: 24px;">Описание</td>
+</tr>
+<tr style="height: 392px;">
+<td style="width: 135px; height: 392px;">youtube</td>
+<td style="width: 130px; height: 392px;">Для открытия видео с сайта youtube.</td>
+<td style="width: 919px; height: 392px;">При записи в этот объект ссылки на видео с сайта youtube, kodi останавливает текущее воспроизведение, и запускает на воспроизведение видео по ссылке:<br>
+<!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa9767861a451710238" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+https://www.youtube.com/watch?v=Bvmxr24D4TA</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa9767861a451710238-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa9767861a451710238-1"><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//www.youtube.com/watch?v=Bvmxr24D4TA</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0002 seconds] -->
+<br>
+Так же можно открывать плейлисты youtube видео:<br>
+<!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa97678620844395627" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+https://www.youtube.com/watch?v=lngFnEqFKj8&amp;list=PLClwfs4Slb6Fr4kAQnIoizVvi_cu19hQk</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa97678620844395627-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa97678620844395627-1"><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//www.youtube.com/watch?v=lngFnEqFKj8&amp;list=PLClwfs4Slb6Fr4kAQnIoizVvi_cu19hQk</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0002 seconds] -->
+<br>
+Можно так же передавать не полную ссылку, а только код видео:<br>
+<!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa97678624208590356" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+Bvmxr24D4TA</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa97678624208590356-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa97678624208590356-1"><span class="crayon-v">Bvmxr24D4TA</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0001 seconds] -->
+<br>
+или плейлиста:<br>
+<!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa97678628229224588" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+PLClwfs4Slb6Fr4kAQnIoizVvi_cu19hQk</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa97678628229224588-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa97678628229224588-1"><span class="crayon-v">PLClwfs4Slb6Fr4kAQnIoizVvi_cu19hQk</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0001 seconds] -->
+
+</td>
+</tr>
+<tr style="height: 752px;">
+<td style="width: 135px; height: 752px;"> ShowNotif</td>
+<td style="width: 130px; height: 752px;"> Отображение всплывающего сообщения на экране Kodi</td>
+<td style="height: 752px;"> <strong>Формат сообщения:</strong>
+<p>Полный формат:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa9767862d957323023" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+1;Заголовок;Текст сообщения;15000</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa9767862d957323023-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa9767862d957323023-1"><span class="crayon-cn">1</span><span class="crayon-sy">;</span>Заголовок<span class="crayon-sy">;</span>Текст<span class="crayon-h"> </span>сообщения<span class="crayon-sy">;</span><span class="crayon-cn">15000</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0004 seconds] -->
+<p>где 1 &#8211; это <strong>image</strong> (стандартная иконка), 15000 &#8211; <strong>displaytime</strong> (время отображения в миллисекундах).</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa97678631840529202" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+Заголовок;Текст сообщения;2;10000</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa97678631840529202-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa97678631840529202-1">Заголовок<span class="crayon-sy">;</span>Текст<span class="crayon-h"> </span>сообщения<span class="crayon-sy">;</span><span class="crayon-cn">2</span><span class="crayon-sy">;</span><span class="crayon-cn">10000</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0004 seconds] -->
+<p>где 2 &#8211; это <strong>image</strong>, 10000 &#8211; <strong>displaytime</strong> .</p>
+<p>Формат &#8211; Заголовок, текст, без картинки. Время отображения 5000 миллисекунд:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa97678635317191115" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+Заголовок;Текст сообщения</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa97678635317191115-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa97678635317191115-1">Заголовок<span class="crayon-sy">;</span>Текст<span class="crayon-h"> </span>сообщения</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0003 seconds] -->
+<p>Формат &#8211; простой текст, без заголовков и картинок:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa97678639960903034" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+Текст сообщения</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa97678639960903034-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa97678639960903034-1">Текст<span class="crayon-h"> </span>сообщения</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0002 seconds] -->
+<p><strong>image:</strong></p>
+<p>Стандартная иконка для отображения уровня сообщения:</p>
+<ul>
+<li>&#8216;info&#8217; &#8211; <strong>0</strong> (default),</li>
+<li>&#8216;warning&#8217; &#8211; <strong>1</strong>,</li>
+<li>&#8216;error&#8217; &#8211; <strong>2</strong>.</li>
+</ul>
+<p><strong>displaytime:</strong> Время отображения сообщения в милисекундах, минимум 1500 макс 30000 мс.</p>
+<p>Так же сообщения можно отправлять из драйвера javascript:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa9767863e233551013" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div><span class="crayon-language">JavaScript</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+sendTo("kodi.0", {
+    message:  'Возможно протечка воды ', 
+//Текст сообщения
+    title:    'ВНИМАНИЕ!!!',
+ //Заголовок сообщения
+    image: 'https://raw.githubusercontent.com/instalator/ioBroker.kodi/master/admin/kodi.png',
+ //Ссылка на иконку
+    delay: '7000' 
+//Время отображения сообщения миллисекундах (минимум 1500 макс 30000 мс)
+});</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa9767863e233551013-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa9767863e233551013-2">2</div><div class="crayon-num" data-line="crayon-5cefa9767863e233551013-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa9767863e233551013-4">4</div><div class="crayon-num" data-line="crayon-5cefa9767863e233551013-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa9767863e233551013-6">6</div><div class="crayon-num" data-line="crayon-5cefa9767863e233551013-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa9767863e233551013-8">8</div><div class="crayon-num" data-line="crayon-5cefa9767863e233551013-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa9767863e233551013-10">10</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa9767863e233551013-1"><span class="crayon-e">sendTo</span><span class="crayon-sy">(</span><span class="crayon-s">"kodi.0"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa9767863e233551013-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">message</span><span class="crayon-o">:</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">'Возможно протечка воды '</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5cefa9767863e233551013-3"><span class="crayon-c">//Текст сообщения</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa9767863e233551013-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'ВНИМАНИЕ!!!'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa9767863e233551013-5"><span class="crayon-h"> </span><span class="crayon-c">//Заголовок сообщения</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa9767863e233551013-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">image</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'https://raw.githubusercontent.com/instalator/ioBroker.kodi/master/admin/kodi.png'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa9767863e233551013-7"><span class="crayon-h"> </span><span class="crayon-c">//Ссылка на иконку</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa9767863e233551013-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">delay</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'7000'</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5cefa9767863e233551013-9"><span class="crayon-c">//Время отображения сообщения миллисекундах (минимум 1500 макс 30000 мс)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa9767863e233551013-10"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0012 seconds] -->
+<p><strong>Важно</strong>:<em> Если используется заголовок сообщения, то он должен всегда находится перед самим текстом сообщения (Внимание;Протечка воды), расположение остальных параметров не критично. </em></p></td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;">SwitchPVR</td>
+<td style="width: 130px; height: 24px;">Переключение PVR IPTV каналов по названию канала в плейлисте.</td>
+<td style="width: 919px; height: 24px;">При записи значения в объект, драйвер ищет в плейлисте (объект <strong>pvr.playlist_tv</strong>) совпадения и если находит то включает найденный канал из плейлиста. Поиск регистронезависимый и ищет все вхождения в строке названия канала.
+<p>Например: ТВ канал &#8211; <strong>Discovery Science</strong> найдет как по полному наименованию так и по <strong>discover</strong>, но если при поиске по ключевой фразе <strong>discover</strong> первым в списке окажется канал <strong>Discovery HD</strong>, то включится именно он.</p></td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;"> Open</td>
+<td style="width: 130px; height: 24px;"> Начинает воспроизведение файла по указанной ссылке</td>
+<td style="width: 919px; height: 24px;">Ссылка может быть как на локальный файл (путь до файла), так и URL на файл или поток в сети интернет.</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;">Position</td>
+<td style="width: 130px; height: 24px;"> Текущая позиция в плейлисте</td>
+<td style="width: 919px; height: 24px;"> В этот объект можно записать необходимый номер позиции(трека) текущего плейлиста и Kodi тут же перейдет к воспроизведению этого трека.</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;">Speed</td>
+<td style="width: 130px; height: 24px;"> Скорость воспроизведения</td>
+<td style="width: 919px; height: 24px;"> Фиксированные значения -32, -16, -8, -4, -2, -1, 0, 1, 2, 4, 8, 16, 32, а также increment и decrement</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;">Directory</td>
+<td style="width: 130px; height: 24px;"> Содержимое каталога</td>
+<td style="width: 919px; height: 24px;"> Сюда записывается путь до папки или диска, в ответ в этот статус записывается JSON объект со списком каталогов и файлов указанной папки или диска. Используется для навигации по каталогу. Пример реализации можно посмотреть в VIS виджете <strong>winamp browser</strong> из группы виджетов <a href="index-145.htm?page_id=6489&amp;lang=ru" target="_blank">ioBroker.vis-players</a></td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;">ActivateWindow</td>
+<td style="width: 130px; height: 24px;"> Активизирует в проигрывателе окно.</td>
+<td style="width: 919px; height: 24px;">Список названий вызываемых окон:
+<p>&#8220;home&#8221;, &#8220;programs&#8221;, &#8220;pictures&#8221;, &#8220;filemanager&#8221;, &#8220;files&#8221;, &#8220;settings&#8221;, &#8220;music&#8221;, &#8220;video&#8221;, &#8220;videos&#8221;, &#8220;tv&#8221;, &#8220;pvr&#8221;, &#8220;pvrguideinfo&#8221;, &#8220;pvrrecordinginfo&#8221;, &#8220;pvrtimersetting&#8221;, &#8220;pvrgroupmanager&#8221;, &#8220;pvrchannelmanager&#8221;, &#8220;pvrchannelmanager&#8221;, &#8220;pvrguidesearch&#8221;, &#8220;pvrchannelscan&#8221;, &#8220;pvrupdateprogress&#8221;, &#8220;pvrosdchannels&#8221;, &#8220;pvrosdguide&#8221;, &#8220;pvrosddirector&#8221;, &#8220;pvrosdcutter&#8221;, &#8220;pvrosdteletext&#8221;, &#8220;systeminfo&#8221;, &#8220;testpattern&#8221;, &#8220;screencalibration&#8221;, &#8220;guicalibration&#8221;, &#8220;picturessettings&#8221;, &#8220;programssettings&#8221;, &#8220;weathersettings&#8221;, &#8220;musicsettings&#8221;, &#8220;systemsettings&#8221;, &#8220;videossettings&#8221;, &#8220;networksettings&#8221;, &#8220;servicesettings&#8221;, &#8220;appearancesettings&#8221;, &#8220;pvrsettings&#8221;, &#8220;tvsettings&#8221;, &#8220;scripts&#8221;, &#8220;videofiles&#8221;, &#8220;videolibrary&#8221;, &#8220;videoplaylist&#8221;, &#8220;loginscreen&#8221;, &#8220;profiles&#8221;, &#8220;skinsettings&#8221;, &#8220;addonbrowser&#8221;, &#8220;yesnodialog&#8221;, &#8220;progressdialog&#8221;, &#8220;virtualkeyboard&#8221;, &#8220;volumebar&#8221;, &#8220;submenu&#8221;, &#8220;favourites&#8221;, &#8220;contextmenu&#8221;, &#8220;infodialog&#8221;, &#8220;numericinput&#8221;, &#8220;gamepadinput&#8221;, &#8220;shutdownmenu&#8221;, &#8220;mutebug&#8221;, &#8220;playercontrols&#8221;, &#8220;seekbar&#8221;, &#8220;musicosd&#8221;, &#8220;addonsettings&#8221;, &#8220;visualisationsettings&#8221;, &#8220;visualisationpresetlist&#8221;, &#8220;osdvideosettings&#8221;, &#8220;osdaudiosettings&#8221;, &#8220;videobookmarks&#8221;, &#8220;filebrowser&#8221;, &#8220;networksetup&#8221;, &#8220;mediasource&#8221;, &#8220;profilesettings&#8221;, &#8220;locksettings&#8221;, &#8220;contentsettings&#8221;, &#8220;songinformation&#8221;, &#8220;smartplaylisteditor&#8221;, &#8220;smartplaylistrule&#8221;, &#8220;busydialog&#8221;, &#8220;pictureinfo&#8221;, &#8220;accesspoints&#8221;, &#8220;fullscreeninfo&#8221;, &#8220;karaokeselector&#8221;, &#8220;karaokelargeselector&#8221;, &#8220;sliderdialog&#8221;, &#8220;addoninformation&#8221;, &#8220;musicplaylist&#8221;, &#8220;musicfiles&#8221;, &#8220;musiclibrary&#8221;, &#8220;musicplaylisteditor&#8221;, &#8220;teletext&#8221;, &#8220;selectdialog&#8221;, &#8220;musicinformation&#8221;, &#8220;okdialog&#8221;, &#8220;movieinformation&#8221;, &#8220;textviewer&#8221;, &#8220;fullscreenvideo&#8221;, &#8220;fullscreenlivetv&#8221;, &#8220;visualisation&#8221;, &#8220;slideshow&#8221;, &#8220;filestackingdialog&#8221;, &#8220;karaoke&#8221;, &#8220;weather&#8221;, &#8220;screensaver&#8221;, &#8220;videoosd&#8221;, &#8220;videomenu&#8221;, &#8220;videotimeseek&#8221;, &#8220;musicoverlay&#8221;, &#8220;videooverlay&#8221;, &#8220;startwindow&#8221;, &#8220;startup&#8221;, &#8220;peripherals&#8221;, &#8220;peripheralsettings&#8221;, &#8220;extendedprogressdialog&#8221;, &#8220;mediafilter&#8221;.</p></td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;">ExecuteAction</td>
+<td style="width: 130px; height: 24px;">Выполняет указанную команду</td>
+<td style="width: 919px; height: 24px;">Можно выполнить одно из следующих действий:
+<p>&#8220;left&#8221;, &#8220;right&#8221;, &#8220;up&#8221;, &#8220;down&#8221;, &#8220;pageup&#8221;, &#8220;pagedown&#8221;, &#8220;select&#8221;, &#8220;highlight&#8221;, &#8220;parentdir&#8221;, &#8220;parentfolder&#8221;, &#8220;back&#8221;, &#8220;previousmenu&#8221;, &#8220;info&#8221;, &#8220;pause&#8221;, &#8220;stop&#8221;, &#8220;skipnext&#8221;, &#8220;skipprevious&#8221;, &#8220;fullscreen&#8221;, &#8220;aspectratio&#8221;, &#8220;stepforward&#8221;, &#8220;stepback&#8221;, &#8220;bigstepforward&#8221;, &#8220;bigstepback&#8221;, &#8220;osd&#8221;, &#8220;showsubtitles&#8221;, &#8220;nextsubtitle&#8221;, &#8220;codecinfo&#8221;, &#8220;nextpicture&#8221;, &#8220;previouspicture&#8221;, &#8220;zoomout&#8221;, &#8220;zoomin&#8221;, &#8220;playlist&#8221;, &#8220;queue&#8221;, &#8220;zoomnormal&#8221;, &#8220;zoomlevel1&#8221;, &#8220;zoomlevel2&#8221;, &#8220;zoomlevel3&#8221;, &#8220;zoomlevel4&#8221;, &#8220;zoomlevel5&#8221;, &#8220;zoomlevel6&#8221;, &#8220;zoomlevel7&#8221;, &#8220;zoomlevel8&#8221;, &#8220;zoomlevel9&#8221;, &#8220;nextcalibration&#8221;, &#8220;resetcalibration&#8221;, &#8220;analogmove&#8221;, &#8220;rotate&#8221;, &#8220;rotateccw&#8221;, &#8220;close&#8221;, &#8220;subtitledelayminus&#8221;, &#8220;subtitledelay&#8221;, &#8220;subtitledelayplus&#8221;, &#8220;audiodelayminus&#8221;, &#8220;audiodelay&#8221;, &#8220;audiodelayplus&#8221;, &#8220;subtitleshiftup&#8221;, &#8220;subtitleshiftdown&#8221;, &#8220;subtitlealign&#8221;, &#8220;audionextlanguage&#8221;, &#8220;verticalshiftup&#8221;, &#8220;verticalshiftdown&#8221;, &#8220;nextresolution&#8221;, &#8220;audiotoggledigital&#8221;, &#8220;number0&#8221;, &#8220;number1&#8221;, &#8220;number2&#8221;, &#8220;number3&#8221;, &#8220;number4&#8221;, &#8220;number5&#8221;, &#8220;number6&#8221;, &#8220;number7&#8221;, &#8220;number8&#8221;, &#8220;number9&#8221;, &#8220;osdleft&#8221;, &#8220;osdright&#8221;, &#8220;osdup&#8221;, &#8220;osddown&#8221;, &#8220;osdselect&#8221;, &#8220;osdvalueplus&#8221;, &#8220;osdvalueminus&#8221;, &#8220;smallstepback&#8221;, &#8220;fastforward&#8221;, &#8220;rewind&#8221;, &#8220;play&#8221;, &#8220;playpause&#8221;, &#8220;delete&#8221;, &#8220;copy&#8221;, &#8220;move&#8221;, &#8220;mplayerosd&#8221;, &#8220;hidesubmenu&#8221;, &#8220;screenshot&#8221;, &#8220;rename&#8221;, &#8220;togglewatched&#8221;, &#8220;scanitem&#8221;, &#8220;reloadkeymaps&#8221;, &#8220;volumeup&#8221;, &#8220;volumedown&#8221;, &#8220;mute&#8221;, &#8220;backspace&#8221;, &#8220;scrollup&#8221;, &#8220;scrolldown&#8221;, &#8220;analogfastforward&#8221;, &#8220;analogrewind&#8221;, &#8220;moveitemup&#8221;, &#8220;moveitemdown&#8221;, &#8220;contextmenu&#8221;, &#8220;shift&#8221;, &#8220;symbols&#8221;, &#8220;cursorleft&#8221;, &#8220;cursorright&#8221;, &#8220;showtime&#8221;, &#8220;analogseekforward&#8221;, &#8220;analogseekback&#8221;, &#8220;showpreset&#8221;, &#8220;presetlist&#8221;, &#8220;nextpreset&#8221;, &#8220;previouspreset&#8221;, &#8220;lockpreset&#8221;, &#8220;randompreset&#8221;, &#8220;increasevisrating&#8221;, &#8220;decreasevisrating&#8221;, &#8220;showvideomenu&#8221;, &#8220;enter&#8221;, &#8220;increaserating&#8221;, &#8220;decreaserating&#8221;, &#8220;togglefullscreen&#8221;, &#8220;nextscene&#8221;, &#8220;previousscene&#8221;, &#8220;nextletter&#8221;, &#8220;prevletter&#8221;, &#8220;jumpsms2&#8221;, &#8220;jumpsms3&#8221;, &#8220;jumpsms4&#8221;, &#8220;jumpsms5&#8221;, &#8220;jumpsms6&#8221;, &#8220;jumpsms7&#8221;, &#8220;jumpsms8&#8221;, &#8220;jumpsms9&#8221;, &#8220;filter&#8221;, &#8220;filterclear&#8221;, &#8220;filtersms2&#8221;, &#8220;filtersms3&#8221;, &#8220;filtersms4&#8221;, &#8220;filtersms5&#8221;, &#8220;filtersms6&#8221;, &#8220;filtersms7&#8221;, &#8220;filtersms8&#8221;, &#8220;filtersms9&#8221;, &#8220;firstpage&#8221;, &#8220;lastpage&#8221;, &#8220;guiprofile&#8221;, &#8220;red&#8221;, &#8220;green&#8221;, &#8220;yellow&#8221;, &#8220;blue&#8221;, &#8220;increasepar&#8221;, &#8220;decreasepar&#8221;, &#8220;volampup&#8221;, &#8220;volampdown&#8221;, &#8220;channelup&#8221;, &#8220;channeldown&#8221;, &#8220;previouschannelgroup&#8221;, &#8220;nextchannelgroup&#8221;, &#8220;leftclick&#8221;, &#8220;rightclick&#8221;, &#8220;middleclick&#8221;, &#8220;doubleclick&#8221;, &#8220;wheelup&#8221;, &#8220;wheeldown&#8221;, &#8220;mousedrag&#8221;, &#8220;mousemove&#8221;, &#8220;noop&#8221;.</p></td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;">CleanAudioLibrary</td>
+<td style="width: 130px; height: 24px;">Очистка аудио библиотеки</td>
+<td style="width: 919px; height: 24px;"> При записи значения происходит очистка аудио библиотеки</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;">CleanVideoLibrary</td>
+<td style="width: 130px; height: 24px;">Очистка видео библиотеки</td>
+<td style="width: 919px; height: 24px;">При записи значения происходит очистка видео библиотеки</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;"> ScanAudioLibrary</td>
+<td style="width: 130px; height: 24px;"> Сканирование аудио библиотеки</td>
+<td style="width: 919px; height: 24px;">При записи значения начинается сканирование и обновление аудио библиотеки</td>
+</tr>
+<tr style="height: 24.3438px;">
+<td style="width: 135px; height: 24.3438px;"> ScanVideoLibrary</td>
+<td style="width: 130px; height: 24.3438px;"> Сканирование видео библиотеки</td>
+<td style="width: 919px; height: 24.3438px;"> При записи значения начинается сканирование и обновление видео библиотеки</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;"> add</td>
+<td style="width: 130px; height: 24px;"> Добавляет в текущий плейлист файлы из папок</td>
+<td style="width: 919px; height: 24px;"> Записываемое значение представляет собой путь до папки или файла. При добавлении папки в плейлист добавятся все файлы включая вложенные папки.</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;">clear</td>
+<td style="width: 130px; height: 24px;">Очистить текущий плейлист</td>
+<td style="width: 919px; height: 24px;"> Очищает текущий плейлист.</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 135px; height: 24px;"> Input.*</td>
+<td style="width: 130px; height: 24px;"> Навигация по GUI</td>
+<td style="width: 919px; height: 24px;">
+<ul>
+<li>Back &#8211; возврат на предыдущий экран в меню</li>
+<li>ContextMenu &#8211; вызывает контекстное меню (аналогично нажатию правой клавиши мыши)</li>
+<li>Down &#8211; навигация вниз</li>
+<li>ExecuteAction &#8211; аналогично оьбъекту ExecuteAction</li>
+<li>Home &#8211; На главный экран</li>
+<li>Info &#8211; вызывает окно информации</li>
+<li>Left &#8211; навигация влево</li>
+<li>Right -навигация вправо</li>
+<li>Select &#8211; выбор/подтверждение действия</li>
+<li>SendText &#8211; отправляет текст, например в окно поиска. (unicode)</li>
+<li>ShowCodec &#8211; отображает кодек воспроизводимого файла</li>
+<li>ShowOSD &#8211; отображает OSD</li>
+<li>Up &#8211; навигация вверх</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Таблица стандартных ролей для медиапроигрывателей и соответствующих им объектов:</strong></p>
+<table dir="ltr" style="width: 100%; height: 1766px;" border="1" cellspacing="0" cellpadding="0">
+<thead>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px; text-align: center;">Роль</td>
+<td style="width: 105px; height: 24px; text-align: center;">common.type</td>
+<td style="width: 366px; height: 24px; text-align: center;">Комментарий</td>
+<td style="width: 137px; height: 24px; text-align: center;">Объект Kodi</td>
+</tr>
+</thead>
+<colgroup>
+<col width="225">
+<col width="113">
+<col width="105">
+<col width="138">
+<col width="128">
+<col width="146">
+<col width="144"></colgroup>
+<tbody>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">button.stop</td>
+<td style="width: 105px; height: 24px;">boolean</td>
+<td style="width: 366px; height: 24px;">only write</td>
+<td style="width: 137px; height: 24px;">stop</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">button.play</td>
+<td style="width: 105px; height: 24px;">boolean</td>
+<td style="width: 366px; height: 24px;">only write</td>
+<td style="width: 137px; height: 24px;">play</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">button.next</td>
+<td style="width: 105px; height: 24px;">boolean</td>
+<td style="width: 366px; height: 24px;">only write</td>
+<td style="width: 137px; height: 24px;">next</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">button.prev</td>
+<td style="width: 105px; height: 24px;">boolean</td>
+<td style="width: 366px; height: 24px;">only write</td>
+<td style="width: 137px; height: 24px;">previous</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">button.pause</td>
+<td style="width: 105px; height: 24px;">boolean</td>
+<td style="width: 366px; height: 24px;">only write</td>
+<td style="width: 137px; height: 24px;">pause</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">level.volume</td>
+<td style="width: 105px; height: 24px;">number</td>
+<td style="width: 366px; height: 24px;">[0-100]</td>
+<td style="width: 137px; height: 24px;">volume</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.seek</td>
+<td style="width: 105px; height: 24px;">number</td>
+<td style="width: 366px; height: 24px;">%</td>
+<td style="width: 137px; height: 24px;">seek</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.mode.shuffle</td>
+<td style="width: 105px; height: 24px;">boolean</td>
+<td style="width: 366px; height: 24px;">read/write</td>
+<td style="width: 137px; height: 24px;">shuffle</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.mode.repeat</td>
+<td style="width: 105px; height: 24px;">boolean</td>
+<td style="width: 366px; height: 24px;">read/write</td>
+<td style="width: 137px; height: 24px;">repeat</td>
+</tr>
+<tr style="height: 15px;">
+<td style="width: 154px; height: 15px;">media.state</td>
+<td style="width: 105px; height: 15px;">string / boolean</td>
+<td style="width: 366px; height: 15px;">[play,stop,pause] or [true/false]</td>
+<td style="width: 137px; height: 15px;">state</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.artist</td>
+<td style="width: 105px; height: 24px;">string</td>
+<td style="width: 366px; height: 24px;"></td>
+<td style="width: 137px; height: 24px;">info.artist</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.album</td>
+<td style="width: 105px; height: 24px;">string</td>
+<td style="width: 366px; height: 24px;"></td>
+<td style="width: 137px; height: 24px;">info.album</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.title</td>
+<td style="width: 105px; height: 24px;"></td>
+<td style="width: 366px; height: 24px;"></td>
+<td style="width: 137px; height: 24px;">info.title</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.cover</td>
+<td style="width: 105px; height: 24px;">string  (URL)</td>
+<td style="width: 366px; height: 24px;"></td>
+<td style="width: 137px; height: 24px;">info.thumbnail</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 154px; height: 17px;">media.duration.text</td>
+<td style="width: 105px; height: 17px;">string (optional)</td>
+<td style="width: 366px; height: 17px;">e.g &#8220;2:35&#8221;</td>
+<td style="width: 137px; height: 17px;">playing_time_total</td>
+</tr>
+<tr style="height: 16px;">
+<td style="width: 154px; height: 16px;">media.elapsed.text</td>
+<td style="width: 105px; height: 16px;">string (optional)</td>
+<td style="width: 366px; height: 16px;">e.g &#8220;1:30&#8221;</td>
+<td style="width: 137px; height: 16px;">playing_time</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.mute</td>
+<td style="width: 105px; height: 24px;">boolean</td>
+<td style="width: 366px; height: 24px;">read/write</td>
+<td style="width: 137px; height: 24px;">mute</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.bitrate</td>
+<td style="width: 105px; height: 24px;">number</td>
+<td style="width: 366px; height: 24px;">kbps</td>
+<td style="width: 137px; height: 24px;">bitrate</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.genre</td>
+<td style="width: 105px; height: 24px;">string</td>
+<td style="width: 366px; height: 24px;">genre song</td>
+<td style="width: 137px; height: 24px;">info.genre</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.track</td>
+<td style="width: 105px; height: 24px;">number</td>
+<td style="width: 366px; height: 24px;">current play track id [0 &#8211; ~]</td>
+<td style="width: 137px; height: 24px;">position</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.playid</td>
+<td style="width: 105px; height: 24px;">number</td>
+<td style="width: 366px; height: 24px;">play track id</td>
+<td style="width: 137px; height: 24px;">playid</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.add</td>
+<td style="width: 105px; height: 24px;">string (path)</td>
+<td style="width: 366px; height: 24px;">add current playlist</td>
+<td style="width: 137px; height: 24px;">add</td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 154px; height: 24px;">media.clear</td>
+<td style="width: 105px; height: 24px;">boolean</td>
+<td style="width: 366px; height: 24px;">clear current playlist</td>
+<td style="width: 137px; height: 24px;">clear</td>
+</tr>
+<tr style="height: 230px;">
+<td style="width: 154px; height: 230px;">media.playlist</td>
+<td style="width: 105px; height: 230px;">string</td>
+<td style="width: 366px; height: 230px;">
+<!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa97678651551820270" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div><span class="crayon-language">JavaScript</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+[{
+     "artist": "",
+     "album": "",
+     "bitrate":0,
+     "title": "",
+     "file": "",
+     "genre": "",
+     "year": 0,
+     "len": "00:00",
+     "rating": "",
+     "cover": ""
+}]</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa97678651551820270-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678651551820270-2">2</div><div class="crayon-num" data-line="crayon-5cefa97678651551820270-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678651551820270-4">4</div><div class="crayon-num" data-line="crayon-5cefa97678651551820270-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678651551820270-6">6</div><div class="crayon-num" data-line="crayon-5cefa97678651551820270-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678651551820270-8">8</div><div class="crayon-num" data-line="crayon-5cefa97678651551820270-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678651551820270-10">10</div><div class="crayon-num" data-line="crayon-5cefa97678651551820270-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678651551820270-12">12</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa97678651551820270-1"><span class="crayon-sy">[</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678651551820270-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"artist"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678651551820270-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"album"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678651551820270-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"bitrate"</span><span class="crayon-o">:</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678651551820270-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"title"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678651551820270-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"file"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678651551820270-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"genre"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678651551820270-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"year"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678651551820270-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"len"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"00:00"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678651551820270-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"rating"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678651551820270-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"cover"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678651551820270-12"><span class="crayon-sy">}</span><span class="crayon-sy">]</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0012 seconds] -->
+
+</td>
+<td style="width: 137px; height: 230px;">playlist</td>
+</tr>
+<tr style="height: 416.438px;">
+<td style="width: 154px; height: 416.438px;">media.browser</td>
+<td style="width: 105px; height: 416.438px;">string</td>
+<td style="width: 366px; height: 416.438px;">
+<!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5cefa97678657052690021" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Включить/Отключить нумерацию строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Включить/Отключить подсветку кода"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Включить/Отключить перенос строк"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Показать код в новом окне"><div class="crayon-button-icon"></div></div><span class="crayon-language">JavaScript</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+"files": [
+  {
+     "fanart": "",
+     "file": "path",
+     "filetype": "directory or file",
+     "label": "",
+     "lastmodified": "",
+     "mimetype": "",
+     "size": 0,
+     "thumbnail": "",
+     "title": "",
+     "type": "",
+     "lastmodified": "2016-02-27 16:05:46",
+     "time": "time in sec",
+     "track": "number",
+     "date": "year",
+     "artist": "artist",
+     "album": "album",
+     "genre": "genre"
+   }
+]</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5cefa97678657052690021-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678657052690021-2">2</div><div class="crayon-num" data-line="crayon-5cefa97678657052690021-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678657052690021-4">4</div><div class="crayon-num" data-line="crayon-5cefa97678657052690021-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678657052690021-6">6</div><div class="crayon-num" data-line="crayon-5cefa97678657052690021-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678657052690021-8">8</div><div class="crayon-num" data-line="crayon-5cefa97678657052690021-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678657052690021-10">10</div><div class="crayon-num" data-line="crayon-5cefa97678657052690021-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678657052690021-12">12</div><div class="crayon-num" data-line="crayon-5cefa97678657052690021-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678657052690021-14">14</div><div class="crayon-num" data-line="crayon-5cefa97678657052690021-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678657052690021-16">16</div><div class="crayon-num" data-line="crayon-5cefa97678657052690021-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678657052690021-18">18</div><div class="crayon-num" data-line="crayon-5cefa97678657052690021-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5cefa97678657052690021-20">20</div><div class="crayon-num" data-line="crayon-5cefa97678657052690021-21">21</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5cefa97678657052690021-1"><span class="crayon-s">"files"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678657052690021-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5cefa97678657052690021-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"fanart"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678657052690021-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"file"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"path"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678657052690021-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"filetype"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"directory or file"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678657052690021-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"label"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678657052690021-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"lastmodified"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678657052690021-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"mimetype"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678657052690021-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"size"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678657052690021-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"thumbnail"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678657052690021-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"title"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678657052690021-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"type"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678657052690021-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"lastmodified"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"2016-02-27 16:05:46"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678657052690021-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"time"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"time in sec"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678657052690021-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"track"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"number"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678657052690021-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"date"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"year"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678657052690021-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"artist"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"artist"</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678657052690021-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"album"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"album"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5cefa97678657052690021-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-s">"genre"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"genre"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5cefa97678657052690021-20"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5cefa97678657052690021-21"><span class="crayon-sy">]</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0021 seconds] -->
+
+</td>
+<td style="width: 137px; height: 416.438px;">Directory</td>
+</tr>
+</tbody>
+</table>
+				
+<footer class="post-data">
+	
+	<div class="entry-meta">
+			</div><!-- .entry-meta -->
+	</footer><!-- .post-data -->
+			</div><!-- .post-entry -->
+	</article><!-- #post-## -->
+
+				
+			
+		</main><!-- #main -->
+
+			<div id="widgets" class="widget-area right-sidebar" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+		<div id="text-17" class="widget-wrapper widget_text">			<div class="textwidget"><div class="adaptermenueclass">
+<!-- Page-list plugin v.5.1 wordpress.org/plugins/page-list/ -->
+<ul class="page-list ">
+<li class="page_item page-item-4086 page_item_has_children"><a href="index-126.htm?page_id=4086&lang=ru">Визуализация</a>
+<ul class='children'>
+	<li class="page_item page-item-4034"><a href="index-127.htm?page_id=4034&lang=ru">Драйвер Flot</a></li>
+	<li class="page_item page-item-4810"><a href="index-435.htm?page_id=4810&lang=ru">Драйвер Mobile</a></li>
+</ul>
+</li>
+<li class="page_item page-item-5040 page_item_has_children"><a href="index-143.htm?page_id=5040&lang=ru">Группа драйверов VIS</a>
+<ul class='children'>
+	<li class="page_item page-item-6489"><a href="index-145.htm?page_id=6489&lang=ru">Виджеты ioBroker.vis-players</a></li>
+	<li class="page_item page-item-5032"><a href="index-144.htm?page_id=5032&lang=ru">Мобильное приложение ioBroker.vis</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4271 page_item_has_children current_page_ancestor current_page_parent"><a href="index-133.htm?page_id=4271&lang=ru">Мультимедиа</a>
+<ul class='children'>
+	<li class="page_item page-item-6526 current_page_item"><a href="index-436.htm?page_id=6526&lang=ru">Драйвер Kodi</a></li>
+	<li class="page_item page-item-6099"><a href="index-135.htm?page_id=6099&lang=ru">Драйвер mpd</a></li>
+	<li class="page_item page-item-4262"><a href="index-134.htm?page_id=4262&lang=ru">Драйвер sayit</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4082 page_item_has_children"><a href="index-124.htm?page_id=4082&lang=ru">Оборудование</a>
+<ul class='children'>
+	<li class="page_item page-item-3415"><a href="index-399.htm?page_id=3415&lang=ru">RFLink</a></li>
+	<li class="page_item page-item-4052"><a href="index-125.htm?page_id=4052&lang=ru">Драйвер MegaD-328</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4069 page_item_has_children"><a href="index-122.htm?page_id=4069&lang=ru">Общие</a>
+<ul class='children'>
+	<li class="page_item page-item-3800"><a href="index-123.htm?page_id=3800&lang=ru">Драйвер Admin</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4091 page_item_has_children"><a href="index-131.htm?page_id=4091&lang=ru">Сервисные приложения</a>
+<ul class='children'>
+	<li class="page_item page-item-3374"><a href="index-132.htm?page_id=3374&lang=ru">Драйвер Geofency</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4488 page_item_has_children"><a href="index-139.htm?page_id=4488&lang=ru">Сетевые</a>
+<ul class='children'>
+	<li class="page_item page-item-6663"><a href="index-142.htm?page_id=6663&lang=ru">Драйвер Email</a></li>
+	<li class="page_item page-item-4643"><a href="index-141.htm?page_id=4643&lang=ru">Драйвер MQTT</a></li>
+	<li class="page_item page-item-4492"><a href="index-140.htm?page_id=4492&lang=ru">Драйвер Telegram</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4457 page_item_has_children"><a href="index-136.htm?page_id=4457&lang=ru">Скрипты и логика</a>
+<ul class='children'>
+	<li class="page_item page-item-6703"><a href="index-137.htm?page_id=6703&lang=ru">Драйвер Javascript</a></li>
+	<li class="page_item page-item-4459"><a href="index-138.htm?page_id=4459&lang=ru">Драйвер Text2Command</a></li>
+</ul>
+</li>
+<li class="page_item page-item-4075 page_item_has_children"><a href="index-128.htm?page_id=4075&lang=ru">Хранилище</a>
+<ul class='children'>
+	<li class="page_item page-item-3636"><a href="index-129.htm?page_id=3636&lang=ru">Драйвер History</a></li>
+	<li class="page_item page-item-4044"><a href="index-130.htm?page_id=4044&lang=ru">Драйвер SQL</a></li>
+</ul>
+</li>
+
+</ul></div></div>
+		</div>
+			</div><!-- end of #widgets -->
+	</div><!-- #content -->
+
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+
+<footer id="footer" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div id="footer-wrapper">
+
+		<div id="footer-widgets-container">
+					</div><!-- #footer-widgets-container-->
+
+		<div id="menu-social-container">
+			<nav id="footer-menu-container">
+				<ul id="menu-2016_seitenfuss_ru" class="footer-menu"><li id="menu-item-2708" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2708"><a href="index-158.htm?page_id=2692&#038;lang=ru">Контакт</a></li>
+<li id="menu-item-2707" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2707"><a href="index-159.htm?page_id=2693&#038;lang=ru">Правовая информация</a></li>
+<li id="menu-item-2706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2706"><a href="index-160.htm?page_id=2694&#038;lang=ru">Пользовательское соглашение</a></li>
+<li id="menu-item-2705" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2705"><a href="index-161.htm?page_id=2695&#038;lang=ru">Карта сайта</a></li>
+<li id="menu-item-2704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2704"><a href="index-162.htm?page_id=2696&#038;lang=ru">Спасибо</a></li>
+</ul>			</nav><!-- #footer-menu -->
+			<div id="social-icons-container">
+				<ul class="social-icons"></ul><!-- .social-icons -->			</div><!-- #social-icons-container-->
+		</div><!-- #menu-social-container -->
+
+		
+		<div id="footer-base">
+			<div class="copyright">
+				&copy; 2019 <a href="index-2.htm?lang=ru" title="ioBroker">ioBroker</a>			</div><!-- .copyright -->
+
+			<div class="powered">
+				<a href="http://cyberchimps.com/responsive-II/">Чутко II</a> работает на <a href="http://wordpress.org/">WordPress</a>			</div><!-- end .powered -->
+
+			<div class="scroll-top">
+				<a href="#scroll-top" title="прокрутка наверх">&#8679;</a>
+			</div><!-- .scroll-top -->
+		</div><!-- #footer-base -->
+	</div><!-- #footer-wrapper -->
+	</footer><!-- #footer -->
+<div id="cookie-law-info-bar"><span>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.<a data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button" style="display:inline-block; ">Akzeptieren</a> <a href='..\index-1.htm?page_id=2305&#038;lang=de' id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link" style="display:inline-block;">mehr Infos</a></span></div><div id="cookie-law-info-again" style="display:none;"><span id="cookie_hdr_showagain">Privacy & Cookies Policy</span></div><div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  cli_cookiebar_settings='{"animate_speed_hide":"500","animate_speed_show":"500","background":"#fff","border":"#444","border_on":false,"button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"button_2_hidebar":true,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":true,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":false,"show_once":"10000","logging_on":false,"as_popup":false,"popup_overlay":true,"bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"}';
+  /* ]]> */
+</script><div class="scroll-back-to-top-wrapper">
+	<span class="scroll-back-to-top-inner">
+					<i class="fa fa-2x fa-arrow-circle-up"></i>
+			</span>
+</div><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435, \u0447\u0442\u043e \u0432\u044b \u043d\u0435 \u0440\u043e\u0431\u043e\u0442."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\contact-form-7\includes\js\scripts.js?ver=4.9.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\scroll-back-to-top\assets\js\scroll-back-to-top.js'></script>
+<script type='text/javascript' src='wp-content\plugins\table-of-contents-plus\front.min.js?ver=1509'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\js\responsive-scripts.min.js?ver=1.2.5'></script>
+<script type='text/javascript' src='wp-includes\js\wp-embed.min.js?ver=4.7.5'></script>
+</body>
+</html>

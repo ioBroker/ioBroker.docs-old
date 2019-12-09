@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>eric2905 &#8211; ioBroker</title>
+	<atom:link href="http://www.iobroker.net/docu/?feed=rss2&#038;author=40" rel="self" type="application/rss+xml" />
+	<link>http://www.iobroker.net/docu</link>
+	<description>Automate your life</description>
+	<lastBuildDate>Sun, 26 May 2019 12:07:21 +0000</lastBuildDate>
+	<language>de-DE</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.7.5</generator>
+	<item>
+		<title>[Ankündigung] Wartungsarbeiten Free-Cloud und Webseite am 06.01.2019</title>
+		<link>http://www.iobroker.net/docu/?p=8592&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8592&#038;lang=de#comments</comments>
+		<pubDate>Sun, 06 Jan 2019 15:18:09 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8592</guid>
+		<description><![CDATA[Am 06.01.2019 finden ab 21:00 Uhr Wartungsarbeiten auf der Free-Cloud statt. Dauer ca. 1 Stunde. Weitere Infos und Diskussionen dazu im Forum : Link &#160; Euer ioBroker-Team]]></description>
+				<content:encoded><![CDATA[<p>Am 06.01.2019 finden ab 21:00 Uhr Wartungsarbeiten auf der Free-Cloud statt. Dauer ca. 1 Stunde.</p>
+<p>Weitere Infos und Diskussionen dazu im Forum : <a href="https://forum.iobroker.net/viewtopic.php?f=8&amp;t=20510" target="_blank" rel="noopener noreferrer">Link</a></p>
+<p>&nbsp;</p>
+<p>Euer ioBroker-Team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8592</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Wartungsarbeiten iobroker.pro am 08.12.2018</title>
+		<link>http://www.iobroker.net/docu/?p=8398&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8398&#038;lang=de#comments</comments>
+		<pubDate>Thu, 06 Dec 2018 09:39:55 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8398</guid>
+		<description><![CDATA[Hallo zusammen, am 08.12.2018 finden ab 22:00 Uhr Wartungsarbeiten an der Pro-Cloud (iobroker.pro) statt. Es kann daher zu Ausfällen, usw, kommen. Die Dauer der Wartungsarbeiten steht noch nicht gesichert fest &#8211; sobald ich da genauere Infos habe, werden ich sie<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8398&#038;lang=de">Weiterlesen <span class="screen-reader-text"><b>Wartungsarbeiten iobroker.pro am 08.12.2018</b></span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Hallo zusammen,</p>
+<p>am 08.12.2018 finden ab 22:00 Uhr Wartungsarbeiten an der Pro-Cloud (iobroker.pro) statt.<br />
+Es kann daher zu Ausfällen, usw, kommen.</p>
+<p>Die Dauer der Wartungsarbeiten steht noch nicht gesichert fest &#8211; sobald ich da genauere Infos habe, werden ich sie hier posten.</p>
+<p>Euer ioBroker-Team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8398</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>[Update] Wartungsarbeiten Free-Cloud am 11.04.2018</title>
+		<link>http://www.iobroker.net/docu/?p=8033&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8033&#038;lang=de#respond</comments>
+		<pubDate>Thu, 12 Apr 2018 04:40:10 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8033</guid>
+		<description><![CDATA[Hallo zusammen, die Wartungsarbeiten vom 11.04.2018 wurden erfolgreich beendet. Von 5500 Anwendern auf der Free-Cloud haben aktuell 3100 die richtige Version vom Cloud-Adapter (&#62;= 2.5.0). Aber 2400 Anwender haben das Update noch nicht durchgeführt und haben somit derzeit keinen Zugriff<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8033&#038;lang=de">Weiterlesen <span class="screen-reader-text">[Update] Wartungsarbeiten Free-Cloud am 11.04.2018</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Hallo zusammen,</p>
+<p>die Wartungsarbeiten vom 11.04.2018 wurden erfolgreich beendet.</p>
+<p>Von 5500 Anwendern auf der Free-Cloud haben aktuell 3100 die richtige Version vom Cloud-Adapter (&gt;= 2.5.0).<br />
+Aber 2400 Anwender haben das Update noch nicht durchgeführt und haben somit derzeit keinen Zugriff auf Ihr System über die Free-Cloud.</p>
+<p>Bitte prüft immer erst die Version des Cloud-Adapters, wenn in dem Umfeld etwas nicht funktioniert, bevor ihr einen Thread öffnet <img src="http://emoji.tapatalk-cdn.com/emoji6.png" /></p>
+<p>Viele Grüße,<br />
+Euer ioBroker-Team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8033</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Wartungsarbeiten Free-Cloud am 11.04.2018</title>
+		<link>http://www.iobroker.net/docu/?p=8029&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8029&#038;lang=de#respond</comments>
+		<pubDate>Mon, 09 Apr 2018 04:45:11 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8029</guid>
+		<description><![CDATA[Hallo zusammen, am kommenden Mittwoch finden an der Free-Cloud Wartungsarbeiten statt. Am Mittwoch (11.04.2018) wird die Free-Cloud um 22:00 Uhr offline gehen. Es werden einige Dinge bereinigt und die SSL-Zertifikate werden getauscht. Die Downtime sollte max. 2 Stunden betragen. ACHTUNG<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8029&#038;lang=de">Weiterlesen <span class="screen-reader-text">Wartungsarbeiten Free-Cloud am 11.04.2018</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Hallo zusammen,</p>
+<p>am kommenden Mittwoch finden an der <strong class="text-strong">Free</strong>-Cloud Wartungsarbeiten statt.</p>
+<p>Am Mittwoch (11.04.2018) wird die Free-Cloud um 22:00 Uhr offline gehen.<br />
+Es werden einige Dinge bereinigt und die SSL-Zertifikate werden getauscht.<br />
+Die Downtime sollte max. 2 Stunden betragen.</p>
+<div class="" data-block="true" data-editor="e701t" data-offset-key="bk50e-0-0">
+<div class="_1mf _1mj" data-offset-key="bk50e-0-0"></div>
+<div class="_1mf _1mj" data-offset-key="bk50e-0-0"><span data-offset-key="bk50e-0-0">ACHTUNG</span></div>
+</div>
+<div class="" data-block="true" data-editor="e701t" data-offset-key="3fn88-0-0">
+<div class="_1mf _1mj" data-offset-key="3fn88-0-0"><span data-offset-key="3fn88-0-0">========</span></div>
+</div>
+<div class="" data-block="true" data-editor="e701t" data-offset-key="ae083-0-0">
+<div class="_1mf _1mj" data-offset-key="ae083-0-0"><span data-offset-key="ae083-0-0">Danach wird ein Zugriff nur noch über den Cloud-Adapter mit der Version 2.5.0 (oder höher) funktionieren. Diese Version liegt seit 22 Tagen zur Installation bereit.</span></div>
+</div>
+<div class="" data-block="true" data-editor="e701t" data-offset-key="asugp-0-0">
+<div class="_1mf _1mj" data-offset-key="asugp-0-0"><span data-offset-key="asugp-0-0">Bitte unbedingt updaten, falls nicht bereits geschehen.</span></div>
+<div class="_1mf _1mj" data-offset-key="asugp-0-0"></div>
+</div>
+<p>Sollte es an diesem Zeitplan Änderungen geben, werde ich es u.a. hier posten.</p>
+<p>Gruß,<br />
+Euer ioBroker-Team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8029</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Wartungsarbeiten Pro-Cloud am 08.04.2018</title>
+		<link>http://www.iobroker.net/docu/?p=8014&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=8014&#038;lang=de#comments</comments>
+		<pubDate>Thu, 05 Apr 2018 11:05:34 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=8014</guid>
+		<description><![CDATA[Hallo zusammen, am kommenden Wochenende finden an der Pro-Cloud Wartungsarbeiten statt. Am Sonntag (08.04.2018) wird die Pro -Cloud um 23:00 Uhr offline gehen. Die SSL-Zertifikate werden getauscht. Die Downtime sollte max. 15 Minuten betragen. Sollte es an diesem Zeitplan Änderungen<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=8014&#038;lang=de">Weiterlesen <span class="screen-reader-text">Wartungsarbeiten Pro-Cloud am 08.04.2018</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Hallo zusammen,</p>
+<p>am kommenden Wochenende finden an der Pro-Cloud Wartungsarbeiten statt.</p>
+<p>Am Sonntag (08.04.2018) wird die Pro -Cloud um 23:00 Uhr offline gehen.<br />
+Die SSL-Zertifikate werden getauscht.<br />
+Die Downtime sollte max. 15 Minuten betragen.</p>
+<p>Sollte es an diesem Zeitplan Änderungen geben, werde ich es u.a. hier posten.</p>
+<p>Gruß,<br />
+Euer ioBroker-Team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=8014</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Neuer Cloud-Adapter</title>
+		<link>http://www.iobroker.net/docu/?p=7985&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=7985&#038;lang=de#respond</comments>
+		<pubDate>Fri, 23 Mar 2018 02:44:21 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7985</guid>
+		<description><![CDATA[Hallo zusammen, hier eine wichtige Info! Es wurde eine neue Cloud-Adapter-Version vorbereitet Es ist wichtig, dass ALLE diese Version installiert haben, wenn der Cloud-Server das nächste mal neu gestartet wird (in einer Woche). Dies gilt sowohl für die Free- (iobroker.net)<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=7985&#038;lang=de">Weiterlesen <span class="screen-reader-text">Neuer Cloud-Adapter</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Hallo zusammen,</p>
+<p>hier eine wichtige Info!</p>
+<p><strong>Es wurde eine neue Cloud-Adapter-Version vorbereitet</strong></p>
+<p>Es ist wichtig, dass ALLE diese Version installiert haben, wenn der Cloud-Server das nächste mal neu gestartet wird (in einer Woche).</p>
+<p>Dies gilt sowohl für die Free- (iobroker.net) als auch für die Pro-Cloud (iobroker.pro), wobei die Pro-Cloud eine Woche nach der Free-Cloud dran sein wird.</p>
+<p><span style="text-decoration: underline;"><strong>Was ist geändert</strong></span></p>
+<p>Der neue Cloud-Adapter unterstützt jetzt Steuerungsbefehle vom Cloud-Server.</p>
+<p>Es gibt 3 Arten von Cloud-Befehlen:</p>
+<p><span style="text-decoration: underline;">1. &#8220;Redirect&#8221;</span><br />
+Da die Free-Cloud mit sehr vielen veralteten Clients belastet ist, kann der Cloud-Server jetzt die neue Clients auf einen neuen Port (10557) umleiten und die alten Clients bleiben auf dem alten Port (10555).<br />
+Die alten Clients werden den Server mit dem Port 10555 immer noch belasten. Aber es wird ein spezieller schneller Server sein, der nichts anderes macht als die Versionen zu prüfen. Damit kann man dem produktiven Cloud-Server ungefähr 30 Connections pro Sekunde (!) ersparen</p>
+<p>Auch zukünftige Umzuge und Load-Balancing wird damit möglich sein.</p>
+<p><span style="text-decoration: underline;">2. &#8220;Stop&#8221;</span><br />
+Der Cloud-Server kann jetzt zu Clients, die eine nicht passende Version des Cloud-Adapters nutzen, einen &#8220;stop&#8221;-Befehl senden. Damit werden die Clients angehalten und belasten den Server nicht mehr mit Anfragen.</p>
+<p>Der Client bleibt dann so lange disconnected, bis der upgedated wurde.</p>
+<p><span style="text-decoration: underline;">3. &#8220;Wait&#8221;</span><br />
+Beim Start bekommt der Cloud-Server SEHR viele gleichzeitige Verbindungsanfragen. Da die Datenbank nicht so viele Anfragen gleichzeitig verarbeiten kann, werden die Clients gebeten 60-90 Sekunden zu warten. Dadurch können 500 bis 1000 Clients gleichzeitig angebunden werden.<br />
+Somit kann der Server in Ruhe alle Anfragen verarbeiten, sonst gerät man schnell in einen &#8220;Schaukel-Effekt&#8221;.</p>
+<p>&#8220;Schaukel-Effekt&#8221;<br />
+Es werden viele Clients annähernd zeitglich angebunden und der Server wird langsamer. Die Clients verlieren die Verbindung und fangen sofort an wieder eine neue Verbindung, zusätzlich zur alten, aufzubauen. Damit verdoppelt sich die Anzahl an Verbindungen bis der Server gar nichts machen kann. Dieser Zustand kann bis zu 5 Stunden dauern.</p>
+<p>Da diese Befehle von älteren Cloud-Adaptern (&lt; 2.5.0) nicht unterstützt werden, wird es den Serverumzug geben (siehe 1. Redirect). In Zukunft wird dann alles einfacher sein.</p>
+<p>Mit diesen Maßnahmen möchten wir versuchen, die Stabilität der beiden Cloud-Varianten und auch die Managebarkeit zu steigern.</p>
+<p>Viele Grüße,<br />
+Euer ioBroker-Team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=7985</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Erneute Wartungsarbeiten am 03.03.2018 ab 22 Uhr</title>
+		<link>http://www.iobroker.net/docu/?p=7960&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=7960&#038;lang=de#respond</comments>
+		<pubDate>Sat, 03 Mar 2018 19:39:53 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7960</guid>
+		<description><![CDATA[Hallo zusammen, da bei dem Netzwerkausfall bei unserem alten Provider und dem Umzug auf den neuen Server doch mehr in Mitleidenschaft gezogen wurde, wie erwartet, müssen wir heute Abend nochmal ran. Daher wird das Forum heute ab 22 Uhr für<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=7960&#038;lang=de">Weiterlesen <span class="screen-reader-text">Erneute Wartungsarbeiten am 03.03.2018 ab 22 Uhr</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Hallo zusammen,</p>
+<p>da bei dem Netzwerkausfall bei unserem alten Provider und dem Umzug auf den neuen Server doch mehr in Mitleidenschaft gezogen wurde, wie erwartet, müssen wir heute Abend nochmal ran.</p>
+<p>Daher wird das Forum heute ab 22 Uhr für mind 2 Stunden nicht erreichbar sein!</p>
+<p>Wir hoffen, die aktuellen Probleme (Tag-Benutzung bei der Erstellung von Mails, &#8220;verschwundene&#8221; Postings durch Tags, Laufzeitverhalten beim erstellen von Posting, usw.) beheben können.</p>
+<p>Da das Forum weg sein wird, kann ich nur über die Facebook-Gruppe aktuelle Informationen weitergeben. Wer möchte, kann dort gerne reinschauen.</p>
+<p>Viele Grüße,<br />
+Euer ioBroker-Team</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=7960</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Wartungsarbeiten an ioBroker.pro 12.01 ab 22:00</title>
+		<link>http://www.iobroker.net/docu/?p=7830&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=7830&#038;lang=de#respond</comments>
+		<pubDate>Wed, 10 Jan 2018 19:44:46 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7830</guid>
+		<description><![CDATA[Bitte beachten, dass an diesem Freitag, den 12.01 von 22:00 bis 08:00 Uhr am nächsten Tag auf dem ioBroker.pro Server technische Arbeiten durchgeführt werden und die Seite nicht erreichbar sein wird. Dies betrifft auch Alexa, usw. Info im Forum findet<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=7830&#038;lang=de">Weiterlesen <span class="screen-reader-text">Wartungsarbeiten an ioBroker.pro 12.01 ab 22:00</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Bitte beachten, dass an diesem Freitag, den 12.01 von 22:00 bis 08:00 Uhr am nächsten Tag auf dem ioBroker.pro Server technische Arbeiten durchgeführt werden und die Seite nicht erreichbar sein wird.<br />
+Dies betrifft auch Alexa, usw.</p>
+<p>Info im Forum findet ihr <a href="http://forum.iobroker.net/viewtopic.php?f=8&amp;t=10515" target="_blank" rel="noopener noreferrer">hier</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=7830</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Automatisierung der Adapterliste</title>
+		<link>http://www.iobroker.net/docu/?p=7450&#038;lang=de</link>
+		<comments>http://www.iobroker.net/docu/?p=7450&#038;lang=de#respond</comments>
+		<pubDate>Sun, 22 Oct 2017 11:05:39 +0000</pubDate>
+		<dc:creator><![CDATA[eric2905]]></dc:creator>
+				<category><![CDATA[Allgemein]]></category>
+
+		<guid isPermaLink="false">http://www.iobroker.net/docu/?p=7450</guid>
+		<description><![CDATA[Die auf dieser Webseite bisher veröffentlichte Adapterliste wird ab jetzt nicht mehr gepflegt. Statt dessen wird eine Liste automatisch generiert und ist somit immer auf dem aktuellen Stand. Ferner enthält diese die aktuellen Versionsnummern aller Adapter auf Github, sowie in den Repositories<span class="ellipsis">&#8230;</span><div class="read-more"><a href="http://www.iobroker.net/docu/?p=7450&#038;lang=de">Weiterlesen <span class="screen-reader-text">Automatisierung der Adapterliste</span><span class="meta-nav"> &#8250;</span></a></div><!-- end of .read-more -->]]></description>
+				<content:encoded><![CDATA[<p>Die auf dieser Webseite bisher veröffentlichte Adapterliste wird ab jetzt nicht mehr gepflegt. Statt dessen wird eine Liste automatisch generiert und ist somit immer auf dem aktuellen Stand.<br />
+Ferner enthält diese die aktuellen Versionsnummern aller Adapter auf Github, sowie in den Repositories &#8220;Latest&#8221; und &#8220;Stable&#8221;.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.iobroker.net/docu/?feed=rss2&#038;p=7450</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

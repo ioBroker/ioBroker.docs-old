@@ -1,0 +1,629 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="ru-RU">
+<![endif]-->
+<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="ru-RU">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ru-RU"><!--<![endif]-->
+	<head>
+				<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"> 
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.iobroker.net/docu/xmlrpc.php">
+		
+		<title>Драйвер Text2Command &#8211; ioBroker</title>
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Feed" href="index-4.rss?feed=rss2&#038;lang=ru">
+<link rel="alternate" type="application/rss+xml" title="ioBroker &raquo; Comments Feed" href="index-5.rss?feed=comments-rss2&#038;lang=ru">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.iobroker.net\/docu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css' href='wp-content\plugins\crayon-syntax-highlighter\css\min\crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all'>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content\plugins\contact-form-7\includes\css\styles.css?ver=4.9.2' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-public.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-law-info-gdpr-css' href='wp-content\plugins\cookie-law-info\public\css\cookie-law-info-gdpr.css?ver=1.7.6' type='text/css' media='all'>
+<link rel='stylesheet' id='dedo-css-css' href='wp-content\plugins\delightful-downloads\assets\css\delightful-downloads.min.css?ver=1.6.6' type='text/css' media='all'>
+<link rel='stylesheet' id='mbpro-font-awesome-css' href='wp-content\plugins\maxbuttons\assets\libraries\font-awesome\css\font-awesome.min.css?ver=6.28' type='text/css' media='all'>
+<link rel='stylesheet' id='page-list-style-css' href='wp-content\plugins\page-list\css\page-list.css?ver=5.1' type='text/css' media='all'>
+<link rel='stylesheet' id='pc_google_analytics-frontend-css' href='http://www.iobroker.net/docu/wp-content/plugins/pc-google-analytics/assets/css/frontend.css?ver=1.0.0' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-css' href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' type='text/css' media='screen'>
+<link rel='stylesheet' id='toc-screen-css' href='wp-content\plugins\table-of-contents-plus\screen.min.css?ver=1509' type='text/css' media='all'>
+<link rel='stylesheet' id='parent-style-css' href='wp-content\themes\responsive-mobile\style.css?ver=4.7.5' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-style-css' href='wp-content\themes\responsive-mobile\css\style.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='responsive-mobile-child-style-css' href='wp-content\themes\responsive-mobile_child\style.css?ver=1.0' type='text/css' media='all'>
+<link rel='stylesheet' id='recent-posts-widget-with-thumbnails-public-style-css' href='wp-content\plugins\recent-posts-widget-with-thumbnails\public.css?ver=6.5.0' type='text/css' media='all'>
+<link rel='stylesheet' id='cleverness_todo_list_frontend-css' href='wp-content\plugins\cleverness-to-do-list\css\cleverness-to-do-list-frontend.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='jquery.ui.theme-css' href='wp-content\plugins\cleverness-to-do-list\css\jquery-ui-fresh.css?ver=3.4.2' type='text/css' media='all'>
+<link rel='stylesheet' id='tablepress-default-css' href='wp-content\tablepress-combined.min.css?ver=128' type='text/css' media='all'>
+<link rel='stylesheet' id='bootstrap-css' href='wp-content\themes\responsive-mobile\libraries\bootstrap\css\bootstrap.min.css?ver=4.7.5' type='text/css' media='all'>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"\u041d\u0430\u0436\u043c\u0438\u0442\u0435 %s \u0434\u043b\u044f \u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, %s \u0434\u043b\u044f \u0432\u0441\u0442\u0430\u0432\u043a\u0438","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\crayon-syntax-highlighter\js\min\crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[]};
+var log_object = {"ajax_url":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\cookie-law-info\public\js\cookie-law-info-public.js?ver=1.7.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mb_ajax = {"ajaxurl":"http:\/\/www.iobroker.net\/docu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\maxbuttons\js\min\front.js?ver=6.28'></script>
+<script type='text/javascript' src='wp-content\plugins\pc-google-analytics\assets\js\frontend.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\libraries\bootstrap\js\bootstrap.min.js?ver=4.7.5'></script>
+<link rel='https://api.w.org/' href='index.json?rest_route=/'>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.xml?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes\wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.7.5">
+<link rel="canonical" href="index-138.htm?page_id=4459&#038;lang=ru">
+<link rel='shortlink' href='http://www.iobroker.net/docu/?p=4459'>
+<link rel="alternate" type="application/json+oembed" href="index-136.json?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D4459%26lang%3Dru">
+<link rel="alternate" type="text/xml+oembed" href="index-135.xml?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Fwww.iobroker.net%2Fdocu%2F%3Fpage_id%3D4459%26lang%3Dru&#038;format=xml">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-86900958-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+
+<style>
+.scroll-back-to-top-wrapper {
+    position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #777777;
+	color: #eeeeee;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-back-to-top-wrapper:hover {
+	background-color: #888888;
+  color: #eeeeee;
+}
+.scroll-back-to-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-back-to-top-wrapper i.fa {
+	line-height: inherit;
+}
+.scroll-back-to-top-wrapper .fa-lg {
+	vertical-align: 0;
+}
+</style><!-- Analytics by WP-Statistics v12.6 - https://wp-statistics.com/ -->
+<link rel="alternate" href="index-80.htm?page_id=4711&#038;lang=en" hreflang="en">
+<link rel="alternate" href="index-138.htm?page_id=4459&#038;lang=ru" hreflang="ru">
+		<script type="text/javascript">
+			var cli_flush_cache=1;
+		</script>
+				<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+.site-content .content-area{
+	/*background: #6592c9;*/
+}		</style>
+	<style type="text/css">
+.paypal-donations { text-align: center !important }
+</style>
+	</head>
+
+<body class="page-template-default page page-id-4459 page-child parent-pageid-4457 group-blog default" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="container" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Перейти к содержимому</a>
+	<a class="skip-link screen-reader-text" href="#main-navigation">Перейти к главному меню</a>
+	<div id="top-menu-container" class="container-full-width">
+		<nav id="top-menu" class="container" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+			<ul id="menu-2016_top_menue" class="top-menu"><li id="menu-item-2203-de" class="lang-item lang-item-4 lang-item-de lang-item-first no-translation menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-de"><a href="index.htm?lang=de" hreflang="de-DE" lang="de-DE">Deutsch</a></li>
+<li id="menu-item-2203-en" class="lang-item lang-item-7 lang-item-en menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-en"><a href="index-80.htm?page_id=4711&#038;lang=en" hreflang="en-GB" lang="en-GB">English</a></li>
+<li id="menu-item-2203-ru" class="lang-item lang-item-20 lang-item-ru current-lang menu-item menu-item-type-custom menu-item-object-custom menu-item-2203-ru"><a href="index-138.htm?page_id=4459&#038;lang=ru" hreflang="ru-RU" lang="ru-RU">Русский</a></li>
+</ul>		</nav>
+	</div><!-- top menu container -->
+        <div id="header_section">
+	<header id="header" class="container-full-width site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+				<div class="container">
+			<div class="header-row">
+				<div id="site-branding">
+							<div id="logo">
+			<a href="index-2.htm?lang=ru" rel="home" itemprop="url" title="ioBroker">
+				<img src="wp-content\uploads\ioBroker_logo_lang-e1456684383484.png" alt="ioBroker" itemprop="image">
+			</a>
+		</div>
+					</div>
+				<div id="secondary-header">
+					
+	<div id="top-widget" class="top-widget" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+			<div id="search-2" class="responsive-mobile-top-widget widget_search"><form role="search" method="get" class="search-form" action="http://www.iobroker.net/docu/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			<input type="hidden" name="lang" value="ru"></form></div>
+			</div><!-- end of #top-widget -->
+				</div>
+			</div>
+		</div>
+
+			</header><!-- #header -->
+
+	<div id="main-menu-container" class="container-full-width">
+		<div id="main-menu" class="container">
+			<nav id="main-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<div id="mobile-current-item">Меню</div>
+				<button id="mobile-nav-button"><span class="accessibile-label">Мобильное меню переключения</span></button>
+				<div class="main-nav"><ul id="menu-2016_kopfzeile_ru" class="menu"><li id="menu-item-2686" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2686"><a href="index-111.htm?page_id=2649&#038;lang=ru">Новости</a></li>
+<li id="menu-item-2922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2922"><a href="index-112.htm?page_id=267&#038;lang=ru">Введение</a></li>
+<li id="menu-item-2635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2635"><a href="index-113.htm?page_id=2630&#038;lang=ru">Установка</a>
+<ul class="sub-menu">
+	<li id="menu-item-3313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3313"><a href="index-113.htm?page_id=2630&#038;lang=ru">Установка</a></li>
+	<li id="menu-item-3494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3494"><a href="index-114.htm?page_id=3489&#038;lang=ru">Raspberry (JESSIE) – быстрый старт</a></li>
+	<li id="menu-item-5122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5122"><a href="index-115.htm?page_id=5114&#038;lang=ru">Pine64 (JESSIE) быстрый старт</a></li>
+	<li id="menu-item-4276" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4276"><a href="index-116.htm?page_id=4268&#038;lang=ru">Установка на Armbian</a></li>
+	<li id="menu-item-3312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3312"><a href="index-117.htm?page_id=3303&#038;lang=ru">Обновление драйверов и контроллера</a></li>
+	<li id="menu-item-4917" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4917"><a href="index-118.htm?page_id=4915&#038;lang=ru">Видео</a></li>
+	<li id="menu-item-5533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5533"><a href="index-119.htm?page_id=5506&#038;lang=ru">Как устанавливать драйвера, работающие с serial портом или похожие драйвера</a></li>
+	<li id="menu-item-5648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5648"><a href="index-120.htm?page_id=5637&#038;lang=ru">Быстрая установка на Debian</a></li>
+</ul>
+</li>
+<li id="menu-item-2636" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-2636"><a href="index-121.htm?page_id=2628&#038;lang=ru">Драйвера</a>
+<ul class="sub-menu">
+	<li id="menu-item-4074" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4074"><a href="index-122.htm?page_id=4069&#038;lang=ru">Общие</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3885" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3885"><a href="index-123.htm?page_id=3800&#038;lang=ru">Драйвер Admin</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4089" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4089"><a href="index-124.htm?page_id=4082&#038;lang=ru">Оборудование</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4100"><a href="index-125.htm?page_id=4052&#038;lang=ru">Драйвер MegaD-328</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4167"><a href="index-126.htm?page_id=4086&#038;lang=ru">Визуализация</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4168"><a href="index-127.htm?page_id=4034&#038;lang=ru">Драйвер Flot</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4090" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4090"><a href="index-128.htm?page_id=4075&#038;lang=ru">Хранилище</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3886"><a title="History (рус)" href="index-129.htm?page_id=3636&#038;lang=ru">Драйвер History</a></li>
+		<li id="menu-item-4065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4065"><a href="index-130.htm?page_id=4044&#038;lang=ru">Драйвер SQL</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4101"><a href="index-131.htm?page_id=4091&#038;lang=ru">Сервисные приложения</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4068" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4068"><a href="index-132.htm?page_id=3374&#038;lang=ru">Драйвер Geofency</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4274"><a href="index-133.htm?page_id=4271&#038;lang=ru">Мультимедиа</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4275"><a href="index-134.htm?page_id=4262&#038;lang=ru">Драйвер sayit</a></li>
+		<li id="menu-item-6544" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6544"><a href="index-135.htm?page_id=6099&#038;lang=ru">Драйвер mpd</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4461" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-4461"><a href="index-136.htm?page_id=4457&#038;lang=ru">Скрипты и логика</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6821" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6821"><a href="index-137.htm?page_id=6703&#038;lang=ru">Драйвер Javascript</a></li>
+		<li id="menu-item-4462" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-4459 current_page_item menu-item-4462"><a href="index-138.htm?page_id=4459&#038;lang=ru">Драйвер Text2Command</a></li>
+	</ul>
+</li>
+	<li id="menu-item-4498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4498"><a href="index-139.htm?page_id=4488&#038;lang=ru">Сетевые</a>
+	<ul class="sub-menu">
+		<li id="menu-item-4497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4497"><a href="index-140.htm?page_id=4492&#038;lang=ru">Драйвер Telegram</a></li>
+		<li id="menu-item-4823" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4823"><a href="index-141.htm?page_id=4643&#038;lang=ru">Драйвер MQTT</a></li>
+		<li id="menu-item-6665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6665"><a href="index-142.htm?page_id=6663&#038;lang=ru">Драйвер Email</a></li>
+	</ul>
+</li>
+	<li id="menu-item-5045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5045"><a href="index-143.htm?page_id=5040&#038;lang=ru">Группа драйверов VIS</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5046" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5046"><a href="index-144.htm?page_id=5032&#038;lang=ru">Мобильное приложение ioBroker.vis</a></li>
+		<li id="menu-item-6552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6552"><a href="index-145.htm?page_id=6489&#038;lang=ru">Виджеты ioBroker.vis-players</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-2687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2687"><a href="index-146.htm?page_id=2651&#038;lang=ru">Скачать</a>
+<ul class="sub-menu">
+	<li id="menu-item-4839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4839"><a href="index-147.htm?page_id=2968&#038;lang=ru">Файлы для установки</a></li>
+</ul>
+</li>
+<li id="menu-item-2688" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2688"><a href="index-148.htm?page_id=2678&#038;lang=ru">Форум / Поддержка</a>
+<ul class="sub-menu">
+	<li id="menu-item-3008" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3008"><a href="http://forum.iobroker.net">Форум</a></li>
+	<li id="menu-item-3148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3148"><a href="index-149.htm?page_id=3141&#038;lang=de">Советы и решения</a></li>
+	<li id="menu-item-3010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3010"><a href="index-150.htm?page_id=2991&#038;lang=ru">Часто задаваемые вопросы / FAQ</a></li>
+	<li id="menu-item-5571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5571"><a href="index-151.htm?page_id=5567&#038;lang=ru">Настройка Let&#8217;s Encrypt сертификатов</a></li>
+</ul>
+</li>
+<li id="menu-item-2689" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2689"><a href="index-152.htm?page_id=2653&#038;lang=ru">Разработка</a></li>
+</ul></div>			</nav><!-- #site-navigation -->
+		</div><!-- #main-menu -->
+	</div><!-- #main-menu-container -->
+	<div id="sub-menu-container" class="container-full-width">
+		<div id="sub-menu" class="container">
+			<nav id="sub-navigation" class="site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						</nav><!-- #site-navigation -->
+		</div><!-- #sub-menu -->
+	</div><!-- #sub-menu-container -->
+        </div>
+	<div id="wrapper" class="site-content container-full-width">
+
+	<div id="content" class="content-area">
+			<main id="main" class="site-main" role="main">
+
+				<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#"><span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-2.htm?lang=ru">Главная</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-420.htm?page_id=2521&lang=ru">русский</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-121.htm?page_id=2628&lang=ru">Драйвера</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb" typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="index-136.htm?page_id=4457&lang=ru">Скрипты и логика</a></span> <span class="chevron">&#8250;</span> <span class="breadcrumb-current">Драйвер Text2Command</span></div>
+				
+					
+<article id="post-4459" class="post-4459 page type-page status-publish hentry">
+		
+	
+<header class="entry-header">
+	<h1 class="entry-title post-title">Драйвер Text2Command</h1>
+	</header><!-- .entry-header -->
+
+	<div class="post-entry">
+		<p><a href="https://github.com/ioBroker/ioBroker.text2command"><img class="alignright" style="border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" width="149" height="149"></a><br>
+<img class="alignnone" src="http://download.iobroker.net/img/logo-text2command.png" width="64" height="64"></p>
+<h2><span id="i">Описание</span></h2>
+<p>Драйвер <strong>text2command </strong>(Text to command) используется для анализа полученной текстовой информации и выполнения команд в соответствии с заранее определенным набором правил. Установка и настройка этого драйвера не требует наличия других драйверов в системе, однако используется он совместно с другими адаптерами, которые передают текстовые выражения, к примеру <a href="index-140.htm?page_id=4492&amp;lang=ru">telegram</a> или приложение для Android &#8211; iobroker.vis. Так же драйвер позволяет кроме выполнения различных команд, выдавать различные ответы в текстовом виде, можно использовать для драйвера <a href="index-134.htm?page_id=4262&amp;lang=ru">sayit</a> к примеру (подтверждение принятия команды или просто ответ на вопрос).<br>
+<div id="toc_container" class="no_bullets"><ul class="toc_list"><li><a href="#i"><span class="toc_number toc_depth_1">1</span> Описание</a></li><li><a href="#i-2"><span class="toc_number toc_depth_1">2</span> Информация</a></li><li><a href="#i-3"><span class="toc_number toc_depth_1">3</span> Установка</a></li><li><a href="#i-4"><span class="toc_number toc_depth_1">4</span> Настройка</a><ul><li><a href="#i-5"><span class="toc_number toc_depth_2">4.1</span> Описание главного окна</a></li><li><a href="#i-6"><span class="toc_number toc_depth_2">4.2</span> Синтаксис задания ключевых слов и текста подтверждения</a></li><li><a href="#i-7"><span class="toc_number toc_depth_2">4.3</span> Использование функций и категорий</a></li><li><a href="#i-8"><span class="toc_number toc_depth_2">4.4</span> Описание правил</a></li></ul></li><li><a href="#i-9"><span class="toc_number toc_depth_1">5</span> Работа с объектами экземпляра драйвера</a></li><li><a href="#i-10"><span class="toc_number toc_depth_1">6</span> Примеры</a></li></ul></div>
+
+<h2><span id="i-2">Информация</span></h2>
+<p>&nbsp;</p>
+<table width="100%">
+<tbody>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Актуальная версия<br>
+</strong></td>
+<td style="width: 50%; height: 20px;"><a href="https://www.npmjs.com/package/iobroker.text2command"><img class="alignnone" src="http://img.shields.io/npm/v/iobroker.text2command.svg" width="80" height="20"></a></td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Необходимые условия</strong></td>
+<td style="width: 50%; height: 20px;">/</td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Разработчик</strong></td>
+<td style="width: 50%; height: 20px;">Bluefox</td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Ключевые слова<br>
+</strong></td>
+<td style="width: 50%; height: 20px;">управление, команды, правила</td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Github</strong></td>
+<td style="width: 50%; height: 20px;"><img class="alignnone size-full wp-image-2342" src="wp-content\uploads\icon_link.png" alt="icon_link" width="16" height="16"> <a href="https://github.com/ioBroker/ioBroker.text2command" target="_blank">Ссылка</a></td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Платформа</strong></td>
+<td style="width: 50%; height: 20px;">Javascript/Node.js</td>
+</tr>
+<tr>
+<td style="width: 50%; height: 20px;"><strong>Лицензия</strong></td>
+<td style="width: 50%; height: 20px;">MIT</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="i-3"><span id="i-3">Установка</span></span></h2>
+<p>Установка осуществляется на вкладке <strong>Драйвера</strong> странички <a href="index-123.htm?page_id=3800&amp;lang=ru">администрирования</a> системы. В группе драйверов <b>Скрипты и логика</b> находим строчку с названием <strong>Text to command</strong> и нажимаем кнопку со значком плюса в этой строке справа.</p>
+<p><a href="wp-content\uploads\text2command-install1.jpg"><img class="alignnone" src="wp-content\uploads\text2command-install1.jpg" width="699" height="179"></a></p>
+<p>На экране появится всплывающее окно установки драйвера, в конце установки оно автоматически закроется.</p>
+<p><a href="wp-content\uploads\text2command-install2.jpg"><img class="alignnone" src="wp-content\uploads\text2command-install2.jpg" width="399" height="207"></a></p>
+<p>Если все прошло удачно, на вкладке <strong>Настройка драйверов</strong> появится строка <strong>text2command.0 </strong>с установленным экземпляром драйвера.</p>
+<p><a href="wp-content\uploads\text2command-install3.jpg"><img class="alignnone" src="wp-content\uploads\text2command-install3.jpg" width="702" height="55"></a></p>
+<p>По-умолчанию драйвер не запущен, чтобы его стартовать, нажимаем на кнопку <b>Неактивно. Нажать для старта</b> (красная с иконкой play).</p>
+<p><a href="wp-content\uploads\text2command-install4.jpg"><img class="alignnone" src="wp-content\uploads\text2command-install4.jpg" width="702" height="55"></a></p>
+<p>Теперь можно перейти к страничке редактирования правил, для этого нажимаем по кнопке <strong>Открыть приложение</strong> (там же, на вкладке <strong>Настройка драйверов</strong> в строке установленного экземпляра драйвера) либо настройкой админки добавляем вкладку <strong>Текст-&gt;Команды.0</strong>.</p>
+<h2><span id="i-4"><span id="i-3">Настройка</span></span></h2>
+<h3><span id="i-5">Описание главного окна</span></h3>
+<p><a href="wp-content\uploads\text2command-setting2.jpg"><img class="alignnone" src="wp-content\uploads\text2command-setting2.jpg" width="700" height="197"></a></p>
+<p>Как уже писалось выше, в главное окно настройки правил драйвера можно попасть щелкнув по соответствующей кнопке на вкладке <strong>Настройка драйверов</strong> в строке установленного экземпляра драйвера или добавить вкладку с помощью кнопки редактирования табов.</p>
+<p>Сверху слева &#8211; направо:</p>
+<ul>
+<li>кнопки управления правилами &#8211; создание, сохранение изменений, обновить список и смена ID;</li>
+<li>поле <strong>Фильтр</strong>, можно отфильтровать список правил по ключевому слову;</li>
+<li>поле <strong>Тестовая фраза</strong> и кнопки очистить поле, послать тестовую фразу в драйвер &#8211; пригодиться при отладке драйвера, можно вписать тестовую фразу (к примеру &#8220;Сколько сейчас времени&#8221;) и нажать на кнопку отправки в драйвер &#8211; наблюдать за работой (ответ в сплывающем сообщении);</li>
+<li>настройка <strong>Язык</strong> (выбор из списка) &#8211; основной язык, на котором будет происходить обмен командами и выдача ответов;</li>
+<li>настройка <strong>Ответ в ID</strong> &#8211; если в формате правила присутствует текст подтверждения, то он будет передан в переменную <strong>text2command..response </strong>и в переменную, указанную в данном поле (если заполнено) &#8211; можно передавать драйверу <strong>sayit</strong>, к примеру, для голосового подтверждения команды или ответа на вопрос.</li>
+</ul>
+<p>При срабатывании драйвера (появился текст на входе), программа проверяет совпадение по всем правилам сверху вниз. Необходимо учитывать, если галочка <strong>Прервать</strong> не установлена, то могут сработать несколько правил, более приоритетные необходимо поднимать вверх списка. Если галочка <strong>Прервать</strong> установлена на первом сработавшем правиле, то драйвер далее проверять правила не будет.</p>
+<h3><span id="i-6">Синтаксис задания ключевых слов и текста подтверждения</span></h3>
+<p>Синтаксис задания ключевых слов может включать в себя регулярные выражения, к примеру <code>/^light\son|^lamp\son/</code>. Стоит учитывать, что он чувствителен к регистру.</p>
+<p>Ключевые слова работают следующим образом:</p>
+<ul>
+<li>ключевые слова разделяются пробелом.</li>
+<li><strong>все</strong> ключевые слова должны присутствовать в предложении, чтобы вызвать правило. Например, ключевые слова: <code>включи свет</code> задействуют правило, если на входе будет текст <code>пожалуйста включи свет</code> или <code>включи свет в квартире</code> и не задействуют правило, если на входе будет текст <code>включи всё</code> или <code>зажги свет</code>.</li>
+<li>каждое ключевое слово может иметь <strong>много форм звучания</strong>, вариации ключевого слова должны быть разделены символом &#8220;/&#8221;. Например, ключевые слова: <code>включи/зажги/дай свет/света</code> задействуют правило, если на входе будет текст <code>включи свет</code> или <code>зажги пожалуйста свет</code> или <code>дай мне света</code>.</li>
+<li>ключевое слово может звучать во многих вариациях(падежи, множественное число, глагол/причастие, разговорное &#8230;), все они должны быть перечислены как варианты. Например, <code>окно/окна/окошко/окошки/форточка/фрамуга/воздух</code>.</li>
+<li>вариации ключевого слова могут быть описаны на разных языках, к примеру, ключевая фраза <code>температура/temp комнате/bedroom</code> задействует правило, если на входе будет фраза команды голосом <code>какая температура в комнате?</code> или команда через бот драйвера <a href="index-140.htm?page_id=4492&amp;lang=ru">telegram</a> <code>/temp_bedroom</code>.</li>
+</ul>
+<p>Текст для подтверждения может содержать конкретную фразу или варианты фраз, которые разделяются символом &#8220;/&#8221; (вариант выбирается рандомно). К примеру, текст подтверждения правила <strong>как тебя зовут</strong> можно составить в виде: <code>Меня зовут Катя/Катюша/Екатерина моё имя/My name is Ekaterina</code>.</p>
+<p>В тексте подтверждения возможно применение автоподстановки при работе с определенными правилами (к примеру запрос температуры). Используется следующий синтаксис:</p>
+<ul>
+<li>%s &#8211; вставка значения переменной (ID переменной задается в параметре правила),</li>
+<li>%u &#8211; вставка еденицы измерения переменной,</li>
+<li>%n &#8211; вставка имя переменной.</li>
+</ul>
+<h3><span id="i-7">Использование функций и категорий</span></h3>
+<p>Чтобы использовать правила <strong>Включить/отключить приборы</strong> или <strong>поднять/опустить ставни</strong> (см. ниже) нужно настроить категории функций и комнат. Группы категорий и сами категории создаются и настраиваются на вкладке <strong>Категории</strong> странички администрирования системы.</p>
+<p>Следующие функции могут быть использованы:</p>
+<p><strong>Свет &#8211; enum.functions.light</strong></p>
+<ul style="list-style-type: disc;">
+<li>диммирование (управление уровнем освещения) &#8211; роль &#8211; level.dimmer,</li>
+<li>дискретное управление (включить/выключить) &#8211; роль &#8211; switch.light,</li>
+</ul>
+<p><strong>Подсветка &#8211; enum.functions.backlight</strong></p>
+<ul>
+<li>диммирование (управление уровнем подсветки) &#8211; роль &#8211; level.backlight,</li>
+<li>дискретное управление (включить/выключить) &#8211; роль &#8211; switch.backlight,</li>
+</ul>
+<p><strong>Жалюзи/окна &#8211; enum.functions.blinds/shutter</strong></p>
+<ul>
+<li>аналоговое управление (уровень открытия) &#8211; роль &#8211; level.blind,</li>
+<li>дискретное управление (открыть/закрыть) &#8211; роль &#8211; switch.blind,</li>
+</ul>
+<p><strong>Шторы &#8211; enum.functions.curtain</strong></p>
+<ul>
+<li>аналоговое управление (уровень открытия) &#8211; роль &#8211; level.curtain,</li>
+<li>дискретное управление (открыть/закрыть) &#8211; роль &#8211; switch.curtain,</li>
+</ul>
+<p><strong>Отопление/подогрев &#8211; enum.functions.heating</strong></p>
+<ul>
+<li>аналоговое управление (температура) &#8211; роль &#8211; level.temperature,</li>
+<li>дискретное управление (включить/выключить) &#8211; роль &#8211; switch.temperature,</li>
+</ul>
+<p><strong>Музыка &#8211; enum.functions.music</strong></p>
+<ul>
+<li>воспроизведение &#8211; роль &#8211; button.play,</li>
+<li>стоп/пауза &#8211; роль &#8211; button.stop / button.pause,</li>
+</ul>
+<p><strong>Охрана &#8211; enum.functions.alarm/security</strong></p>
+<ul>
+<li>постановка/снятие с охраны &#8211; роль &#8211; switch.security,</li>
+</ul>
+<p><strong>Замок &#8211; enum.functions.lock</strong></p>
+<ul>
+<li>закрыть &#8211; роль &#8211; switch.lock,</li>
+<li>открыть &#8211; роль &#8211; switch.open,</li>
+</ul>
+<p>Следующие помещения могут быть задействованы:</p>
+<ul style="list-style-type: disc;">
+<li>зал</li>
+<li>спальня</li>
+<li>ванная</li>
+<li>кабинет</li>
+<li>детская</li>
+<li>гостевой туалет</li>
+<li>туалет</li>
+<li>коридор/прихожая</li>
+<li>кухня</li>
+<li>терраса/балкон</li>
+<li>столовая</li>
+<li>гараж</li>
+<li>лестница</li>
+<li>сад</li>
+<li>двор</li>
+<li>гостевая</li>
+<li>кладовка</li>
+<li>крыша</li>
+<li>сени</li>
+<li>прачечная</li>
+<li>котельная</li>
+<li>сарай</li>
+<li>теплица</li>
+</ul>
+<p>Например, что бы заработало правило &#8220;включи свет в зале&#8221;:</p>
+<ul>
+<li>state должен быть внесён в enum.rooms.зал;</li>
+<li>должен иметь роль switch.light</li>
+<li>должен быть логического типа (boolean)</li>
+</ul>
+<h3><span id="i-8">Описание правил</span></h3>
+<p>При добавлении нового правила, необходимо выбрать из списка основной функционал записи.</p>
+<p><a href="wp-content\uploads\text2command-setting1.jpg"><img class="alignnone" src="wp-content\uploads\text2command-setting1.jpg" width="701" height="153"></a></p>
+<p><span style="text-decoration: underline;"><strong>Правило Сколько время</strong></span></p>
+<p>Это простое правило, результатом работы которого является вывод текста с текущем временем системы, никаких параметров не задается, текст подтверждения не настраивается. Выводить текст можно в драйвер <strong>sayit</strong> (настроить <strong>Ответ в ID</strong>), можно использовать в скрипте для более сложного ответа или с элементами диалога. Ключевую фразу по-умолчанию <strong>сколько время</strong> можно расширить, добавим элементы разговорного языка, к примеру:</p>
+<p><a href="wp-content\uploads\text2command-rule1.jpg"><img class="alignnone" src="wp-content\uploads\text2command-rule1.jpg" width="700" height="99"></a></p>
+<p><span style="text-decoration: underline;"><strong>Правило Как тебя зовут</strong></span></p>
+<p>Это правило немного сложнее предыдущего, так как маска ответа может быть настроена, результатом работы является вывод текста о персонализации системы (имя электронного помошника). Выводить текст можно в драйвер <strong>sayit</strong> (настроить <strong>Ответ в ID</strong>), можно использовать в скрипте для более сложного ответа или с элементами диалога. Ключевую фразу по-умолчанию <strong>как тебя зовут</strong> можно расширить, добавим элементы разговорного языка, и вариантов ответа тоже можно прописать несколько, разделив их символом &#8220;/&#8221;, к примеру:</p>
+<p><a href="wp-content\uploads\text2command-rule2.jpg"><img class="alignnone" src="wp-content\uploads\text2command-rule2.jpg" width="700" height="99"></a></p>
+<p><span style="text-decoration: underline;"><strong>Правило Какая температура на улице</strong></span></p>
+<p>Результатом работы этого правила будет вывод текста с текущей температурой на улице. Появляется еще одна дополнительная настройка &#8211; <strong>Параметр</strong>, здесь необходимо выбрать переменную, в которой хранится текущая температура окружающего воздуха снаружи здания, т.е. уличную температуру. Это могут быть данные от локальной погодной станции (по MQTT/ModBUS) или настроенный погодный сервис, к примеру драйвера <strong>weatherunderground forecast </strong>(как в приведенном примере на скриншоте), <strong>yr.no</strong> или другие. Ключевые слова, как и синтаксис вывода можно настроить под себя, а для непосредственного вывода значения температуры используется автоподстановка &#8211; символы <strong>%s</strong> заменяются на числовое значение переменной (округляется до целого), а <strong>%u</strong> &#8211; единицы измерения (в данном случае градусы). К примеру:</p>
+<p><a href="wp-content\uploads\text2command-rule3.jpg"><img class="alignnone" src="wp-content\uploads\text2command-rule3.jpg" width="700" height="99"></a></p>
+<p><span style="text-decoration: underline;"><strong>Правило Какая температура в доме</strong></span></p>
+<p>Практически аналогичное правилу выше, с той лишь разнице, что для подстановки используется температура в помещении (доме, квартире, офисе&#8230;). Исходные данные может предоставить переменная погодной станции с датчиков внутри помещения или отдельные датчики, к примеру, системы отопления.</p>
+<p><span style="text-decoration: underline;"><strong>Правила Включить/Выключить приборы и Поднять/опустить ставни</strong></span></p>
+<p>Чтобы воспользоваться этими правилами, необходимо сначала настроить категории, а именно enum.rooms &#8211; помещения, к которым будут применяться правила и enum.functions &#8211; чем управлять (окно, отопление, свет и пр.). Эта настройка осуществляется на вкладке <strong>Категории</strong> странички администрирования системы и может выглядеть, к примеру, следующим образом:</p>
+<p><a href="wp-content\uploads\text2command-rule4.jpg"><img class="alignnone" src="wp-content\uploads\text2command-rule4.jpg" width="700" height="165"></a></p>
+<p>К каждой категории (комната и функция) нужно привязать соответствующие переменные. К примеру, переменная <strong>mqtt.0.arduinomega51.relay_light1</strong> (контроллер на основе платы arduino с ethernet-shield подключен по MQTT, реле света №1) управляет светом в зале, соответственно этой переменной надо сопоставить комнату &#8211; зал, функцию &#8211; свет. Сделать это можно на вкладке Категории или Объекты &#8211; найти переменную и заполнить соответствующие ячейки, выбрав из списка значения.</p>
+<figure style="width: 698px" class="wp-caption alignnone"><a href="wp-content\uploads\text2command-rule5.jpg"><img class="" src="wp-content\uploads\text2command-rule5.jpg" width="698" height="202"></a><figcaption class="wp-caption-text">Показано на примере переменной playing драйвера sayit</figcaption></figure>
+<p>Дискретное управление: примеры ключевой фразы <strong>включи свет в зале</strong> или <strong>открой окно на кухне</strong>.</p>
+<p>Если установлена галочка <strong>Ответить подтверждением</strong>, то ответ будет <strong>Включен/отключен %function% в %room%</strong>. Где <strong>%function%</strong> &#8211; это выполненная функция, а <strong>%room%</strong> &#8211; комната, где сработало правило.</p>
+<p>Аналоговое управление: примеры ключевой фразы <strong>включи свет в зале на 50</strong>% или <strong>открой шторы на кухне на 80%</strong>.</p>
+<p>Если установлена галочка <strong>Ответить подтверждением</strong>, то ответ будет <strong>Открыты %function% в %room% на &#8230;%</strong>. Где <strong>%function%</strong> &#8211; это выполненная функция, а <strong>%room%</strong> &#8211; комната, где сработало правило.</p>
+<p><span style="text-decoration: underline;"><strong>Правило Записать текст в переменную</strong></span></p>
+<p>Это правило позволяет определенной ключевой фразой отправить текстовую информацию в переменную системы. Разберем на примере.</p>
+<p>Муж занимается делами в гараже, жена на кухне готовит ужин. Имеется настроенный драйвер <strong>sayit.1 </strong>(отличный от sayit.0, через который будет выводиться текст подтверждения),  который выдает звук в гараж на устройство SONOS. Жена на кухне произносит ключевую фразу <strong>Позвать из гаража</strong> и затем сразу текст <strong>Андрей, ужин готов!</strong> (см. тестовую фразу на скриншоте)<strong>.</strong> Настройка будет следующая:</p>
+<p><a href="wp-content\uploads\text2command-rule6.jpg"><img class="alignnone" src="wp-content\uploads\text2command-rule6.jpg" width="700" height="97"></a></p>
+<ul>
+<li>Параметр первый &#8211; выбираем переменную, куда будет отправлен текст,</li>
+<li>Параметр второй &#8211; маска для отправки, в данном случае это просто сам текст, символы <strong>%s</strong>,</li>
+<li>Текст подтверждения &#8211; для подтверждения будет произнесен отправленный текст.</li>
+<li>Ответ в ID &#8211; передается в драйвер sayit.0, который настроен для вывода звука в доме/квартире/кухне (чтобы услышать ответ).</li>
+</ul>
+<p>Еще пример. В драйвере javascript.0 написан скрипт различных режимов (охрана, тревога, ночь, никого, гости, кино и т.д.), в соответствии с которыми работают остальные скрипты и при смене режима, происходит инициализация определенных переменных. Режимами можно управлять голом (через android app iobroker.vis) или через бота telegram. Настройки правила в таком случае будут примерно следующие:</p>
+<p><a href="wp-content\uploads\text2command-rule7.jpg"><img class="alignnone" src="wp-content\uploads\text2command-rule7.jpg" width="700" height="97"></a></p>
+<p><span style="text-decoration: underline;"><strong>Правило Что нибудь включить/выключить</strong></span></p>
+<p>Это очень простое в настройке и использовании правило, которое позволяет записать определенное значение в определенную переменную. К примеру, если в систему интегрирован &#8220;умный электрический чайник&#8221;, можно заставить его включиться. В примере чайник управляется с помощью контроллера Arduino c ethernet shield по протоколу MQTT, переменная называется <strong>mqtt.0.arduinomini53.relay_pot</strong>. Чтобы включить чайник, нужно в переменную записать значение <strong>true</strong>, как только он вскипит, контроллер сам опубликует значение <strong>false</strong>.</p>
+<p><a href="wp-content\uploads\text2command-rule8.jpg"><img class="alignnone" src="wp-content\uploads\text2command-rule8.jpg" width="700" height="97"></a></p>
+<p>Существует возможность использовать цифровые значения в командах. Если в тексте встречается число, то оно будет использоваться, как значение для управления и предустановленное значение будет проигнорировано. Например &#8220;Включи свет на 25%&#8221;</p>
+<p><span style="text-decoration: underline;"><strong>Правило Спросить о чем нибудь</strong></span></p>
+<p>Данное правило позволяет в ответе выдать значение (поддерживается авто-подстановка и варианты ответов через символ &#8220;/&#8221;) определенной переменной, к примеру текст &#8211; прогноз погоды или цифровое значение &#8211; температуру, влажность и пр.</p>
+<p>Выше приведен пример включения умного чайника, предположим, что он настолько умный, что передает в систему температуру и наличие воды. Поэтому перед включением хорошо бы убедиться, горячий ли он, и есть ли вода. Чтобы узнать температуру (переменная <strong>mqtt.0.arduinomini53.temp_water</strong>), правило будет выглядеть следующим образом:</p>
+<p><a href="wp-content\uploads\text2command-rule9.jpg"><img class="alignnone" src="wp-content\uploads\text2command-rule9.jpg" width="700" height="97"></a></p>
+<p>Стоит помнить о том, что на момент активации правила, в переменной уже должна содержаться необходимая информация.</p>
+<p><strong><span style="text-decoration: underline;">Правила Молодец/Спасибо</span></strong></p>
+<p>Очень простые в использовании и настройки правила. Используются в основном, для поддержания диалога (Just for fun). Ответы можно заменить на собственные &#8211; зависит от вашей фантазии</p>
+<p><a href="wp-content\uploads\text2command-rule10.jpg"><img class="alignnone" src="wp-content\uploads\text2command-rule10.jpg" width="700" height="97"></a></p>
+<h2><span id="i-9"><span id="i-6" tabindex="-1">Работа с объектами экземпляра драйвера</span></span></h2>
+<p>После установки в систему, драйвер создает две переменные в системе:</p>
+<p><a href="wp-content\uploads\text2command-setting3.jpg"><img class="alignnone" src="wp-content\uploads\text2command-setting3.jpg" width="700" height="197"></a></p>
+<ul>
+<li><strong>text</strong> &#8211; в эту переменную надо передавать текстовую фразу для обработки по правилам,</li>
+<li><strong>response</strong> &#8211; в этой переменной будет ответ/подтверждение, если это предусмотрено правилом.</li>
+</ul>
+<p>Аналогом записи текста в переменную <strong>text</strong> является отправка тестовой фразы из настроек драйвера (реализовано для удобства тестирования работы правил). Если указать в настройках <strong>Ответ в ID</strong> &#8211; выбрать переменную (к примеру задействовать драйвер sayit), то ответ будет отправлен и в response, и в указанную переменную (к примеру нужно передать ответ в скрипт для дальнейшей обработки и этот же ответ надо произнести для подтверждения).</p>
+<p>Можно отправлять текстовые команды из javascript, и через функцию, получать ответ, например:</p>
+<p><code>sendTo('text2command', 'Включить свет на кухне', function (err, response) {</code><br>
+<code>  console.log('Response is: ' + response);</code><br>
+<code>});</code></p>
+<h2><span id="i-10"><span id="i-3">Примеры</span></span></h2>
+<p>Как уже писалось выше, драйвер text2comand используется в связке с другими драйверами и приложением iobroker.vis. Примеры работы с адаптером telegram можно посмотреть на <a href="index-140.htm?page_id=4492&amp;lang=ru">страничке</a> описания этого драйвера.</p>
+				
+<footer class="post-data">
+	
+	<div class="entry-meta">
+			</div><!-- .entry-meta -->
+	</footer><!-- .post-data -->
+			</div><!-- .post-entry -->
+	</article><!-- #post-## -->
+
+					
+				
+			</main><!-- #main -->
+			
+<div id="widgets" class="widget-area default-sidebar" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+		
+		<aside id="archives" class="widget-wrapper">
+			<h3 class="widget-title">В архиве</h3>
+			<ul>
+					<li><a href='index-428.htm?m=201902&#038;lang=ru'>February 2019</a></li>
+	<li><a href='index-429.htm?m=201812&#038;lang=ru'>December 2018</a></li>
+	<li><a href='index-430.htm?m=201711&#038;lang=ru'>November 2017</a></li>
+	<li><a href='index-431.htm?m=201609&#038;lang=ru'>September 2016</a></li>
+	<li><a href='index-432.htm?m=201606&#038;lang=ru'>June 2016</a></li>
+	<li><a href='index-433.htm?m=201605&#038;lang=ru'>May 2016</a></li>
+	<li><a href='index-434.htm?m=201603&#038;lang=ru'>March 2016</a></li>
+			</ul>
+		</aside>
+
+		</div><!-- #default-sidebar -->
+	</div><!-- #primary -->
+
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+
+<footer id="footer" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<div id="footer-wrapper">
+
+		<div id="footer-widgets-container">
+					</div><!-- #footer-widgets-container-->
+
+		<div id="menu-social-container">
+			<nav id="footer-menu-container">
+				<ul id="menu-2016_seitenfuss_ru" class="footer-menu"><li id="menu-item-2708" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2708"><a href="index-158.htm?page_id=2692&#038;lang=ru">Контакт</a></li>
+<li id="menu-item-2707" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2707"><a href="index-159.htm?page_id=2693&#038;lang=ru">Правовая информация</a></li>
+<li id="menu-item-2706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2706"><a href="index-160.htm?page_id=2694&#038;lang=ru">Пользовательское соглашение</a></li>
+<li id="menu-item-2705" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2705"><a href="index-161.htm?page_id=2695&#038;lang=ru">Карта сайта</a></li>
+<li id="menu-item-2704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2704"><a href="index-162.htm?page_id=2696&#038;lang=ru">Спасибо</a></li>
+</ul>			</nav><!-- #footer-menu -->
+			<div id="social-icons-container">
+				<ul class="social-icons"></ul><!-- .social-icons -->			</div><!-- #social-icons-container-->
+		</div><!-- #menu-social-container -->
+
+		
+		<div id="footer-base">
+			<div class="copyright">
+				&copy; 2019 <a href="index-2.htm?lang=ru" title="ioBroker">ioBroker</a>			</div><!-- .copyright -->
+
+			<div class="powered">
+				<a href="http://cyberchimps.com/responsive-II/">Чутко II</a> работает на <a href="http://wordpress.org/">WordPress</a>			</div><!-- end .powered -->
+
+			<div class="scroll-top">
+				<a href="#scroll-top" title="прокрутка наверх">&#8679;</a>
+			</div><!-- .scroll-top -->
+		</div><!-- #footer-base -->
+	</div><!-- #footer-wrapper -->
+	</footer><!-- #footer -->
+<div id="cookie-law-info-bar"><span>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.<a data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button" style="display:inline-block; ">Akzeptieren</a> <a href='..\index-1.htm?page_id=2305&#038;lang=de' id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link" style="display:inline-block;">mehr Infos</a></span></div><div id="cookie-law-info-again" style="display:none;"><span id="cookie_hdr_showagain">Privacy & Cookies Policy</span></div><div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  cli_cookiebar_settings='{"animate_speed_hide":"500","animate_speed_show":"500","background":"#fff","border":"#444","border_on":false,"button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"button_2_hidebar":true,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":true,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":false,"show_once":"10000","logging_on":false,"as_popup":false,"popup_overlay":true,"bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"}';
+  /* ]]> */
+</script><div class="scroll-back-to-top-wrapper">
+	<span class="scroll-back-to-top-inner">
+					<i class="fa fa-2x fa-arrow-circle-up"></i>
+			</span>
+</div><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435, \u0447\u0442\u043e \u0432\u044b \u043d\u0435 \u0440\u043e\u0431\u043e\u0442."}}};
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.iobroker.net\/docu\/?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435, \u0447\u0442\u043e \u0432\u044b \u043d\u0435 \u0440\u043e\u0431\u043e\u0442."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\contact-form-7\includes\js\scripts.js?ver=4.9.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\scroll-back-to-top\assets\js\scroll-back-to-top.js'></script>
+<script type='text/javascript' src='wp-content\plugins\table-of-contents-plus\front.min.js?ver=1509'></script>
+<script type='text/javascript' src='wp-content\themes\responsive-mobile\js\responsive-scripts.min.js?ver=1.2.5'></script>
+<script type='text/javascript' src='wp-includes\js\wp-embed.min.js?ver=4.7.5'></script>
+</body>
+</html>
