@@ -6,7 +6,7 @@ This repository is only here to add redirect links to new documentation.
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2014-2019 ioBroker Community
+Copyright (c) 2014-2020 ioBroker Community
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
