@@ -500,5 +500,8 @@
   "index-499.htm": "",
   "index-500.htm": "",
   "index-501.htm": "",
-  "index-502.htm": ""
+  "index-502.htm": "",
+  "press": "https://iobroker.live/press/index.html",
+  "press/": "https://iobroker.live/press/index.html",
+  "press/index.html": "https://iobroker.live/press/index.html"
 }
